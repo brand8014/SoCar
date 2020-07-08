@@ -196,9 +196,9 @@ namespace SoCar.Winform.Forms
             EnableOneControl(e.TableName, e.Action);
         }
 
-        private void barButtonCustomer_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void barButtonCar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
+
         }
     }
 }
