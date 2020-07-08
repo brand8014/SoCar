@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace SoCar.Data
 {
-    public partial class Car
+    public partial class Rent
     {
+        public string CustomerName { get; set; }
+
         public string CarName { get; set; }
 
-        public string Address { get; set; }
+        public int EventCount { get; set; }
 
-        public int DefectCount { get; set; }
     }
 }

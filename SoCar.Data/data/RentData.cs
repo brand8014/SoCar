@@ -19,32 +19,43 @@ namespace SoCar.Data
             SocarEntities context = CreateContext();
 
             var query = from x in context.Rents
-                        select x;
+                        select new { Rent = x, CustomerName = x.Customer.Name, CarName = x.Car.CarType.Name, EventCount = x.Events.Count };
 
 
             if (customerId.HasValue)
-                query = query.Where(x => x.CustomerId == customerId);
+                query = query.Where(x => x.Rent.CustomerId == customerId);
 
             if (locationId.HasValue)
-                query = query.Where(x => x.LocationId == locationId);
+                query = query.Where(x => x.Rent.LocationId == locationId);
 
             if (carId.HasValue)
-                query = query.Where(x => x.CarId == carId);
+                query = query.Where(x => x.Rent.CarId == carId);
 
             if (rentDay.HasValue)
             {
                 var boundaryValue = rentDay.Value.AddDays(1);
-                query = query.Where(x => x.BookAt >= rentDay.Value && x.BookAt <= boundaryValue);
+                query = query.Where(x => x.Rent.BookAt >= rentDay.Value && x.Rent.BookAt <= boundaryValue);
             }
 
 
             if (returnDay.HasValue)
             {
                 var boundaryValue = returnDay.Value.AddDays(1);
-                query = query.Where(x => x.ReturnAt >= returnDay.Value && x.ReturnAt <= boundaryValue);
+                query = query.Where(x => x.Rent.ReturnAt >= returnDay.Value && x.Rent.ReturnAt <= boundaryValue);
             }
 
-            return query.ToList();
+            var items = query.ToList();
+
+            foreach (var x in items)
+            {
+                x.Rent.CustomerName = x.CustomerName;
+                x.Rent.CarName = x.CarName;
+                x.Rent.EventCount = x.EventCount;
+            }
+
+            return query.ToList().ConvertAll(x => x.Rent);
+
+            
 
         }
     }

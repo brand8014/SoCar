@@ -80,12 +80,15 @@
     <Compile Include="data\EventData.cs" />
     <Compile Include="data\InsuranceData.cs" />
     <Compile Include="data\LocationData.cs" />
+    <Compile Include="data\LoginData.cs" />
     <Compile Include="data\RentData.cs" />
     <Compile Include="Defect.cs">
       <DependentUpon>SocarModel.tt</DependentUpon>
     </Compile>
     <Compile Include="entities\Car.cs" />
+    <Compile Include="entities\Event.cs" />
     <Compile Include="entities\Location.cs" />
+    <Compile Include="entities\Rent.cs" />
     <Compile Include="Event.cs">
       <DependentUpon>SocarModel.tt</DependentUpon>
     </Compile>
@@ -93,6 +96,9 @@
       <DependentUpon>SocarModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Location.cs">
+      <DependentUpon>SocarModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
       <DependentUpon>SocarModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />

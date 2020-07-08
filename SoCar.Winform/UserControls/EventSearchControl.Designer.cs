@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txbPeriod = new System.Windows.Forms.TextBox();
-            this.cbbRentId = new System.Windows.Forms.ComboBox();
             this.cbbCodeId = new System.Windows.Forms.ComboBox();
             this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
             this.btnReset = new DevExpress.XtraEditors.SimpleButton();
@@ -41,9 +40,7 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bdsEvent = new System.Windows.Forms.BindingSource(this.components);
             this.bdsCord = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -53,16 +50,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsEvent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCord)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.txbPeriod);
-            this.layoutControl1.Controls.Add(this.cbbRentId);
             this.layoutControl1.Controls.Add(this.cbbCodeId);
             this.layoutControl1.Controls.Add(this.btnSearch);
             this.layoutControl1.Controls.Add(this.btnReset);
@@ -76,21 +70,10 @@
             // 
             // txbPeriod
             // 
-            this.txbPeriod.Location = new System.Drawing.Point(80, 72);
+            this.txbPeriod.Location = new System.Drawing.Point(80, 42);
             this.txbPeriod.Name = "txbPeriod";
             this.txbPeriod.Size = new System.Drawing.Size(228, 25);
             this.txbPeriod.TabIndex = 8;
-            // 
-            // cbbRentId
-            // 
-            this.cbbRentId.DataSource = this.bdsEvent;
-            this.cbbRentId.DisplayMember = "RentId";
-            this.cbbRentId.FormattingEnabled = true;
-            this.cbbRentId.Location = new System.Drawing.Point(80, 42);
-            this.cbbRentId.Name = "cbbRentId";
-            this.cbbRentId.Size = new System.Drawing.Size(228, 23);
-            this.cbbRentId.TabIndex = 7;
-            this.cbbRentId.ValueMember = "RentId";
             // 
             // cbbCodeId
             // 
@@ -133,7 +116,6 @@
             this.emptySpaceItem1,
             this.emptySpaceItem2,
             this.layoutControlItem3,
-            this.layoutControlItem4,
             this.layoutControlItem5});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(320, 210);
@@ -174,9 +156,9 @@
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 89);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 59);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(300, 70);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(300, 100);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem3
@@ -188,27 +170,14 @@
             this.layoutControlItem3.Text = "이벤트명";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(65, 18);
             // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.cbbRentId;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 30);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(300, 30);
-            this.layoutControlItem4.Text = "대여ID";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(65, 18);
-            // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.txbPeriod;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 60);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 30);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(300, 29);
             this.layoutControlItem5.Text = "이벤트기간";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(65, 18);
-            // 
-            // bdsEvent
-            // 
-            this.bdsEvent.DataSource = typeof(SoCar.Data.Event);
             // 
             // bdsCord
             // 
@@ -230,9 +199,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsEvent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCord)).EndInit();
             this.ResumeLayout(false);
 
@@ -251,10 +218,7 @@
         private System.Windows.Forms.ComboBox cbbCodeId;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private System.Windows.Forms.TextBox txbPeriod;
-        private System.Windows.Forms.ComboBox cbbRentId;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private System.Windows.Forms.BindingSource bdsCord;
-        private System.Windows.Forms.BindingSource bdsEvent;
     }
 }

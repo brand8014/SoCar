@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace SoCar.Data
 {
-    public partial class Location
+    public partial class Event:EntityData<Event>
     {
-        public string LocationName { get; set; }
-
+        public string EventName { get; set; }
     }
 }
