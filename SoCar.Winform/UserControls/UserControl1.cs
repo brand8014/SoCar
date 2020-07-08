@@ -145,7 +145,26 @@ namespace SoCar.Winform.UserControls
             InsertLocationForm form = new InsertLocationForm();
             form.ShowDialog();           
         }
-
+        private void nbiInsertCar_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            InsertCarForm form = new InsertCarForm();
+            form.ShowDialog();
+        }
+        private void nbiInsertCustomer_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            InsertCustomerForm form = new InsertCustomerForm();
+            form.ShowDialog();
+        }
+        private void nbiInsertInsurance_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            InsertInsuranceForm form = new InsertInsuranceForm();
+            form.ShowDialog();
+        }
+        private void nbiInsertEvent_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            InsertEventForm form = new InsertEventForm();
+            form.ShowDialog();
+        }
 
 
         private void gvLocation_DoubleClick(object sender, EventArgs e)
@@ -834,6 +853,6 @@ namespace SoCar.Winform.UserControls
 
         }
 
-        
+
     }
 }
