@@ -20,7 +20,7 @@ namespace SoCar.Data
             SocarEntities context = CreateContext();
 
             var query = from x in context.Cars
-                        select new { Car = x, CarName = x.CarType.Name, Address = x.Location.Address };
+                        select new { Car = x, CarName = x.CarType.Name, Address = x.Location.Address, DefectCount = x.Defects.Count };
 
             if (carTypeId.HasValue)
                 query = query.Where(x => x.Car.CarTypeId == carTypeId);
@@ -40,6 +40,7 @@ namespace SoCar.Data
             {
                 x.Car.CarName = x.CarName;
                 x.Car.Address = x.Address;
+                x.Car.DefectCount = x.DefectCount;
             }
 
             return query.ToList().ConvertAll(x => x.Car);
@@ -51,7 +52,8 @@ namespace SoCar.Data
             SocarEntities context = CreateContext();
 
             var query = from x in context.Cars
-                        select new { Car = x, CarName = x.CarType.Name, Address = x.Location.Address };
+                        select new { Car = x, CarName = x.CarType.Name, Address = x.Location.Address, DefectCount = x.Defects.Count };
+
 
             if (carTypeId.HasValue)
                 query = query.Where(x => x.Car.CarTypeId == carTypeId.Value);
@@ -71,6 +73,7 @@ namespace SoCar.Data
             {
                 x.Car.CarName = x.CarName;
                 x.Car.Address = x.Address;
+                x.Car.DefectCount = x.DefectCount;
             }
 
             return query.ToList().ConvertAll(x => x.Car);
@@ -81,10 +84,9 @@ namespace SoCar.Data
         {
             SocarEntities context = CreateContext();
 
-            Dictionary<int, string> dict = context.Codes.Where(x => x.CodeCategoryId == 1).ToDictionary(x => x.CodeId, x => x.Item);
-
             var query = from x in context.Cars
-                        select new { Car = x, CarName = x.CarType.Name, Address = x.Location.Address };
+                        select new { Car = x, CarName = x.CarType.Name, Address = x.Location.Address, DefectCount = x.Defects.Count };
+
 
             if (locationId.HasValue)
                 query = query.Where(x => x.Car.LocationId == locationId);
@@ -95,6 +97,7 @@ namespace SoCar.Data
             {
                 x.Car.CarName = x.CarName;
                 x.Car.Address = x.Address;
+                x.Car.DefectCount = x.DefectCount;
             }
 
             return query.ToList().ConvertAll(x => x.Car);

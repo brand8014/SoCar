@@ -24,23 +24,25 @@ namespace SoCar.Data
             return query.ToList();
         }
 
-        public List<Event> Search(int? codeId, int? rentId, DateTime? period)
+        public List<Event> Search(int? codeId, DateTime? period)
         {
             SocarEntities context = CreateContext();
 
             var query = from x in context.Events
-                        select x;
+                        select new { Event = x, EventName = x.Code.Item };
 
             if (codeId.HasValue)
-                query = query.Where(x => x.EventTypeCode == codeId);
-
-            if (rentId.HasValue)
-                query = query.Where(x => x.RentId == rentId);
+                query = query.Where(x => x.Event.EventTypeCode == codeId);
 
             if (period.HasValue)
-                query = query.Where(x => x.Period > period.Value);
+                query = query.Where(x => x.Event.Period > period.Value);
 
-            return query.ToList();
+            var items = query.ToList();
+
+            foreach (var x in items)
+                x.Event.EventName = x.EventName;
+
+            return query.ToList().ConvertAll(x=> x.Event);
         }
     }
 }

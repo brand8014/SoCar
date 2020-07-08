@@ -37,12 +37,25 @@ namespace SoCar.Data
 
             return query.ToList();
         }
-        
-        public Location Search(int? locationId)
+
+        public List<Location> Search(int? codeId, int? locationId)
         {
             SocarEntities context = CreateContext();
 
-            return context.Locations.FirstOrDefault(x => x.LocationId == locationId);
+            var query = from x in context.Locations
+                        select new { Location = x, LocationName = x.Code.Item }; 
+
+            if (codeId.HasValue)
+                query = query.Where(x => x.Location.LocationCode == codeId);
+            if (locationId.HasValue)
+                query = query.Where(x => x.Location.LocationId == locationId);
+
+            var items = query.ToList();
+
+            foreach (var x in items)
+                x.Location.LocationName = x.LocationName;
+
+            return query.ToList().ConvertAll(x => x.Location);
 
         }
 

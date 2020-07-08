@@ -28,7 +28,7 @@ namespace SoCar.Data.Tests
         [TestMethod()]
         public void Search()
         {
-            List<Event> events = DataRepository.Event.Search(202,null,null);
+            List<Event> events = DataRepository.Event.Search(202,null);
             Assert.IsTrue(events.Count > 0);
         }
     }

@@ -56,9 +56,9 @@ namespace SoCar.Winform.UserControls
 
 
 
-        internal void SearchLocation(int? locationId)
+        internal void SearchLocation(int? codeId ,int? locationId)
         {
-            bdsLocation.DataSource = DataRepository.Location.Search(locationId);
+            bdsLocation.DataSource = DataRepository.Location.Search(codeId,locationId);
             gridControl.MainView = gvLocation;
             gridControl.DataSource = bdsLocation;
         }
@@ -74,9 +74,9 @@ namespace SoCar.Winform.UserControls
             gridControl.MainView = gvCustomer;
             gridControl.DataSource = bdsCustomer;
         }
-        internal void SearchEvent(int? codeId, int? rentId, DateTime? period)
+        internal void SearchEvent(int? codeId, DateTime? period)
         {
-            bdsEvent.DataSource = DataRepository.Event.Search(codeId, rentId, period);
+            bdsEvent.DataSource = DataRepository.Event.Search(codeId, period);
             gridControl.MainView = gvEvent;
             gridControl.DataSource = bdsEvent;
         }
@@ -145,7 +145,26 @@ namespace SoCar.Winform.UserControls
             InsertLocationForm form = new InsertLocationForm();
             form.ShowDialog();           
         }
-
+        private void nbiInsertCar_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            InsertCarForm form = new InsertCarForm();
+            form.ShowDialog();
+        }
+        private void nbiInsertCustomer_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            InsertCustomerForm form = new InsertCustomerForm();
+            form.ShowDialog();
+        }
+        private void nbiInsertInsurance_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            InsertInsuranceForm form = new InsertInsuranceForm();
+            form.ShowDialog();
+        }
+        private void nbiInsertEvent_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            InsertEventForm form = new InsertEventForm();
+            form.ShowDialog();
+        }
 
 
         private void gvLocation_DoubleClick(object sender, EventArgs e)
@@ -199,38 +218,38 @@ namespace SoCar.Winform.UserControls
         private void nbgLocation_CalcGroupClientHeight(object sender, DevExpress.XtraNavBar.NavBarCalcGroupClientHeightEventArgs e)
         {
             if (DesignMode) return;           
-            GetLocationToGrid();
-            OnnbiViewLocationClick(nbgLocation.Caption, nbiViewLocation.Caption);
+           // GetLocationToGrid();
+            //OnnbiViewLocationClick(nbgLocation.Caption, nbiViewLocation.Caption);
         }
         private void nbgCar_CalcGroupClientHeight(object sender, DevExpress.XtraNavBar.NavBarCalcGroupClientHeightEventArgs e)
         {
             if (DesignMode) return;
-            GetCarToGrid();
-            OnnbiViewCarClick(nbgCar.Caption, nbiViewCar.Caption);
+           // GetCarToGrid();
+            //OnnbiViewCarClick(nbgCar.Caption, nbiViewCar.Caption);
         }
         private void nbgCustomer_CalcGroupClientHeight(object sender, DevExpress.XtraNavBar.NavBarCalcGroupClientHeightEventArgs e)
         {
             if (DesignMode) return;
-            GetCustomerToGrid();
-            OnnbiViewCustomerClick(nbgCustomer.Caption, nbiViewCustomer.Caption);
+            //GetCustomerToGrid();
+           // OnnbiViewCustomerClick(nbgCustomer.Caption, nbiViewCustomer.Caption);
         }
         private void nbgInsurance_CalcGroupClientHeight(object sender, DevExpress.XtraNavBar.NavBarCalcGroupClientHeightEventArgs e)
         {
             if (DesignMode) return;
-            GetInsuranceToGrid();
-            OnnbiViewInsuranceClick(nbgInsurance.Caption, nbiViewInsurance.Caption);
+            //GetInsuranceToGrid();
+            //OnnbiViewInsuranceClick(nbgInsurance.Caption, nbiViewInsurance.Caption);
         }
         private void nbgRent_CalcGroupClientHeight(object sender, DevExpress.XtraNavBar.NavBarCalcGroupClientHeightEventArgs e)
         {
             if (DesignMode) return;
-            GetRentToGrid();
-            OnnbiViewRentClick(nbgRent.Caption, nbiViewRent.Caption);
+            //GetRentToGrid();
+            //OnnbiViewRentClick(nbgRent.Caption, nbiViewRent.Caption);
         }
         private void nbgEvent_CalcGroupClientHeight(object sender, DevExpress.XtraNavBar.NavBarCalcGroupClientHeightEventArgs e)
         {
             if (DesignMode) return;
-            GetEventToGrid();
-            OnnbiViewEventClick(nbgEvent.Caption, nbiViewEvent.Caption);
+            //GetEventToGrid();
+            //OnnbiViewEventClick(nbgEvent.Caption, nbiViewEvent.Caption);
         }
 
 
@@ -834,6 +853,6 @@ namespace SoCar.Winform.UserControls
 
         }
 
-        
+
     }
 }
