@@ -89,6 +89,24 @@
     <Compile Include="Forms\InsertCarForm.Designer.cs">
       <DependentUpon>InsertCarForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\InsertCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InsertCustomerForm.Designer.cs">
+      <DependentUpon>InsertCustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InsertEventForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InsertEventForm.Designer.cs">
+      <DependentUpon>InsertEventForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InsertInsuranceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InsertInsuranceForm.Designer.cs">
+      <DependentUpon>InsertInsuranceForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\InsertLocationForm.cs">
       <SubType>Form</SubType>
     </Compile>

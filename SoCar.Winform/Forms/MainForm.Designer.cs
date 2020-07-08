@@ -38,15 +38,14 @@
             this.barButtonRent = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonInsurance = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonEvent = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.uscBasic1 = new SoCar.Winform.UserControls.uscBasic();
             this.carDeleteControl1 = new SoCar.Winform.UserControls.CarDeleteControl();
             this.customerDeleteControl1 = new SoCar.Winform.UserControls.CustomerDeleteControl();
@@ -79,10 +78,9 @@
             this.barButtonCar,
             this.barButtonRent,
             this.barButtonInsurance,
-            this.barButtonEvent,
-            this.barButtonItem1});
+            this.barButtonEvent});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 14;
+            this.ribbonControl1.MaxItemId = 13;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -111,6 +109,7 @@
             this.barButtonCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonCustomer.ImageOptions.Image")));
             this.barButtonCustomer.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonCustomer.ImageOptions.LargeImage")));
             this.barButtonCustomer.Name = "barButtonCustomer";
+            this.barButtonCustomer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonCustomer_ItemClick);
             // 
             // barButtonLocation
             // 
@@ -127,7 +126,6 @@
             this.barButtonCar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonCar.ImageOptions.Image")));
             this.barButtonCar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonCar.ImageOptions.LargeImage")));
             this.barButtonCar.Name = "barButtonCar";
-            this.barButtonCar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonCar_ItemClick);
             // 
             // barButtonRent
             // 
@@ -152,24 +150,16 @@
             this.barButtonEvent.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonEvent.ImageOptions.SvgImage")));
             this.barButtonEvent.Name = "barButtonEvent";
             // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "지역";
-            this.barButtonItem1.Id = 13;
-            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.barButtonItem1.Name = "barButtonItem1";
-            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup2,
-            this.ribbonPageGroup6,
-            this.ribbonPageGroup9,
-            this.ribbonPageGroup10,
-            this.ribbonPageGroup11,
+            this.ribbonPageGroup4,
             this.ribbonPageGroup1,
-            this.ribbonPageGroup12});
+            this.ribbonPageGroup3,
+            this.ribbonPageGroup5,
+            this.ribbonPageGroup6,
+            this.ribbonPageGroup7});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "메뉴";
             // 
@@ -178,35 +168,37 @@
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonHome);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             // 
-            // ribbonPageGroup6
+            // ribbonPageGroup4
             // 
-            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonCar);
-            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
-            // 
-            // ribbonPageGroup9
-            // 
-            this.ribbonPageGroup9.ItemLinks.Add(this.barButtonCustomer);
-            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
-            // 
-            // ribbonPageGroup10
-            // 
-            this.ribbonPageGroup10.ItemLinks.Add(this.barButtonInsurance);
-            this.ribbonPageGroup10.Name = "ribbonPageGroup10";
-            // 
-            // ribbonPageGroup11
-            // 
-            this.ribbonPageGroup11.ItemLinks.Add(this.barButtonRent);
-            this.ribbonPageGroup11.Name = "ribbonPageGroup11";
+            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonCar);
+            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             // 
             // ribbonPageGroup1
             // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonGroup1);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonCustomer);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
-            // ribbonPageGroup12
+            // ribbonPageGroup3
             // 
-            this.ribbonPageGroup12.ItemLinks.Add(this.barButtonEvent);
-            this.ribbonPageGroup12.Name = "ribbonPageGroup12";
+            this.ribbonPageGroup3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPageGroup3.ImageOptions.Image")));
+            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonInsurance, true);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            // 
+            // ribbonPageGroup5
+            // 
+            this.ribbonPageGroup5.ItemLinks.Add(this.barButtonRent);
+            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
+            // 
+            // ribbonPageGroup6
+            // 
+            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonLocation);
+            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
+            // 
+            // ribbonPageGroup7
+            // 
+            this.ribbonPageGroup7.ItemLinks.Add(this.barButtonEvent);
+            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             // 
             // uscBasic1
             // 
@@ -425,6 +417,7 @@
 
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private UserControls.uscBasic uscBasic1;
         private UserControls.CarDeleteControl carDeleteControl1;
         private UserControls.CustomerDeleteControl customerDeleteControl1;
@@ -441,7 +434,11 @@
         private DevExpress.XtraBars.BarButtonGroup barButtonGroup1;
         private DevExpress.XtraBars.BarButtonItem barButtonHome;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
         private DevExpress.XtraBars.BarButtonItem barButtonCustomer;
         private DevExpress.XtraBars.BarButtonItem barButtonLocation;
         private DevExpress.XtraBars.BarButtonItem barButtonCar;
@@ -451,11 +448,5 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
         private DevExpress.XtraBars.Ribbon.RibbonPageCategory ribbonPageCategory1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup11;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup12;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
     }
 }

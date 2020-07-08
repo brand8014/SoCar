@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode4 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode5 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode6 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode7 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode8 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode9 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode10 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode11 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode12 = new DevExpress.XtraGrid.GridLevelNode();
             this.gvCar = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colCarName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPrice1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -77,21 +77,21 @@
             this.bdsLocation = new System.Windows.Forms.BindingSource(this.components);
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
-            this.nbgCustomer = new DevExpress.XtraNavBar.NavBarGroup();
-            this.nbiViewCustomer = new DevExpress.XtraNavBar.NavBarItem();
-            this.nbiInsertCustomer = new DevExpress.XtraNavBar.NavBarItem();
-            this.nbiDeleteCustomer = new DevExpress.XtraNavBar.NavBarItem();
-            this.nbgLocation = new DevExpress.XtraNavBar.NavBarGroup();
-            this.nbiViewLocation = new DevExpress.XtraNavBar.NavBarItem();
-            this.nbiInsertLocation = new DevExpress.XtraNavBar.NavBarItem();
-            this.nbiDeleteLocation = new DevExpress.XtraNavBar.NavBarItem();
             this.nbgCar = new DevExpress.XtraNavBar.NavBarGroup();
             this.nbiViewCar = new DevExpress.XtraNavBar.NavBarItem();
             this.nbiInsertCar = new DevExpress.XtraNavBar.NavBarItem();
             this.nbiDeleteCar = new DevExpress.XtraNavBar.NavBarItem();
+            this.nbgLocation = new DevExpress.XtraNavBar.NavBarGroup();
+            this.nbiViewLocation = new DevExpress.XtraNavBar.NavBarItem();
+            this.nbiInsertLocation = new DevExpress.XtraNavBar.NavBarItem();
+            this.nbiDeleteLocation = new DevExpress.XtraNavBar.NavBarItem();
+            this.nbgCustomer = new DevExpress.XtraNavBar.NavBarGroup();
+            this.nbiViewCustomer = new DevExpress.XtraNavBar.NavBarItem();
+            this.nbiInsertCustomer = new DevExpress.XtraNavBar.NavBarItem();
+            this.nbiDeleteCustomer = new DevExpress.XtraNavBar.NavBarItem();
             this.nbgInsurance = new DevExpress.XtraNavBar.NavBarGroup();
             this.nbiViewInsurance = new DevExpress.XtraNavBar.NavBarItem();
-            this.등록 = new DevExpress.XtraNavBar.NavBarItem();
+            this.nbiInsertInsurance = new DevExpress.XtraNavBar.NavBarItem();
             this.nbiDeleteInsurance = new DevExpress.XtraNavBar.NavBarItem();
             this.nbgRent = new DevExpress.XtraNavBar.NavBarGroup();
             this.nbiViewRent = new DevExpress.XtraNavBar.NavBarItem();
@@ -221,23 +221,23 @@
             // 
             this.gridControl.Cursor = System.Windows.Forms.Cursors.Default;
             this.gridControl.DataSource = this.bdsCar;
-            gridLevelNode1.LevelTemplate = this.gvCar;
-            gridLevelNode1.RelationName = "Level2";
-            gridLevelNode2.RelationName = "Level3";
-            gridLevelNode3.LevelTemplate = this.gvCustomer;
-            gridLevelNode3.RelationName = "Level1";
-            gridLevelNode4.RelationName = "Level4";
-            gridLevelNode5.LevelTemplate = this.gvInsurance;
-            gridLevelNode5.RelationName = "Level5";
-            gridLevelNode6.LevelTemplate = this.gvLocation;
-            gridLevelNode6.RelationName = "Level6";
+            gridLevelNode7.LevelTemplate = this.gvCar;
+            gridLevelNode7.RelationName = "Level2";
+            gridLevelNode8.RelationName = "Level3";
+            gridLevelNode9.LevelTemplate = this.gvCustomer;
+            gridLevelNode9.RelationName = "Level1";
+            gridLevelNode10.RelationName = "Level4";
+            gridLevelNode11.LevelTemplate = this.gvInsurance;
+            gridLevelNode11.RelationName = "Level5";
+            gridLevelNode12.LevelTemplate = this.gvLocation;
+            gridLevelNode12.RelationName = "Level6";
             this.gridControl.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1,
-            gridLevelNode2,
-            gridLevelNode3,
-            gridLevelNode4,
-            gridLevelNode5,
-            gridLevelNode6});
+            gridLevelNode7,
+            gridLevelNode8,
+            gridLevelNode9,
+            gridLevelNode10,
+            gridLevelNode11,
+            gridLevelNode12});
             this.gridControl.Location = new System.Drawing.Point(216, 12);
             this.gridControl.MainView = this.gvEvent;
             this.gridControl.Name = "gridControl";
@@ -524,7 +524,7 @@
             // 
             // navBarControl1
             // 
-            this.navBarControl1.ActiveGroup = this.nbgCustomer;
+            this.navBarControl1.ActiveGroup = this.nbgEvent;
             this.navBarControl1.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
             this.nbgLocation,
             this.nbgCar,
@@ -542,7 +542,7 @@
             this.nbiInsertCustomer,
             this.nbiDeleteCustomer,
             this.nbiViewInsurance,
-            this.등록,
+            this.nbiInsertInsurance,
             this.nbiDeleteInsurance,
             this.nbiViewRent,
             this.nbiInsertRent,
@@ -561,34 +561,34 @@
             this.navBarControl1.TabIndex = 5;
             this.navBarControl1.Text = "navBarControl1";
             // 
-            // nbgCustomer
+            // nbgCar
             // 
-            this.nbgCustomer.Caption = "고객";
-            this.nbgCustomer.Expanded = true;
-            this.nbgCustomer.GroupClientHeight = 3;
-            this.nbgCustomer.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiViewCustomer),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiInsertCustomer),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiDeleteCustomer)});
-            this.nbgCustomer.Name = "nbgCustomer";
-            this.nbgCustomer.CalcGroupClientHeight += new DevExpress.XtraNavBar.NavBarCalcGroupClientHeightEventHandler(this.nbgCustomer_CalcGroupClientHeight);
+            this.nbgCar.Caption = "차";
+            this.nbgCar.GroupClientHeight = 2;
+            this.nbgCar.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiViewCar),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiInsertCar),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiDeleteCar)});
+            this.nbgCar.Name = "nbgCar";
+            this.nbgCar.CalcGroupClientHeight += new DevExpress.XtraNavBar.NavBarCalcGroupClientHeightEventHandler(this.nbgCar_CalcGroupClientHeight);
             // 
-            // nbiViewCustomer
+            // nbiViewCar
             // 
-            this.nbiViewCustomer.Caption = "조회";
-            this.nbiViewCustomer.Name = "nbiViewCustomer";
-            this.nbiViewCustomer.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiViewCustomer_LinkClicked);
+            this.nbiViewCar.Caption = "조회";
+            this.nbiViewCar.Name = "nbiViewCar";
+            this.nbiViewCar.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiViewCar_LinkClicked);
             // 
-            // nbiInsertCustomer
+            // nbiInsertCar
             // 
-            this.nbiInsertCustomer.Caption = "등록";
-            this.nbiInsertCustomer.Name = "nbiInsertCustomer";
+            this.nbiInsertCar.Caption = "등록";
+            this.nbiInsertCar.Name = "nbiInsertCar";
+            this.nbiInsertCar.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiInsertCar_LinkClicked);
             // 
-            // nbiDeleteCustomer
+            // nbiDeleteCar
             // 
-            this.nbiDeleteCustomer.Caption = "삭제";
-            this.nbiDeleteCustomer.Name = "nbiDeleteCustomer";
-            this.nbiDeleteCustomer.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiDeleteCustomer_LinkClicked);
+            this.nbiDeleteCar.Caption = "삭제";
+            this.nbiDeleteCar.Name = "nbiDeleteCar";
+            this.nbiDeleteCar.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiDeleteCar_LinkClicked);
             // 
             // nbgLocation
             // 
@@ -619,41 +619,43 @@
             this.nbiDeleteLocation.Name = "nbiDeleteLocation";
             this.nbiDeleteLocation.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiDeleteLocation_LinkClicked);
             // 
-            // nbgCar
+            // nbgCustomer
             // 
-            this.nbgCar.Caption = "차";
-            this.nbgCar.GroupClientHeight = 2;
-            this.nbgCar.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiViewCar),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiInsertCar),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiDeleteCar)});
-            this.nbgCar.Name = "nbgCar";
-            this.nbgCar.CalcGroupClientHeight += new DevExpress.XtraNavBar.NavBarCalcGroupClientHeightEventHandler(this.nbgCar_CalcGroupClientHeight);
+            this.nbgCustomer.Caption = "고객";
+            this.nbgCustomer.GroupClientHeight = 3;
+            this.nbgCustomer.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiViewCustomer),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiInsertCustomer),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiDeleteCustomer)});
+            this.nbgCustomer.Name = "nbgCustomer";
+            this.nbgCustomer.CalcGroupClientHeight += new DevExpress.XtraNavBar.NavBarCalcGroupClientHeightEventHandler(this.nbgCustomer_CalcGroupClientHeight);
             // 
-            // nbiViewCar
+            // nbiViewCustomer
             // 
-            this.nbiViewCar.Caption = "조회";
-            this.nbiViewCar.Name = "nbiViewCar";
-            this.nbiViewCar.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiViewCar_LinkClicked);
+            this.nbiViewCustomer.Caption = "조회";
+            this.nbiViewCustomer.Name = "nbiViewCustomer";
+            this.nbiViewCustomer.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiViewCustomer_LinkClicked);
             // 
-            // nbiInsertCar
+            // nbiInsertCustomer
             // 
-            this.nbiInsertCar.Caption = "등록";
-            this.nbiInsertCar.Name = "nbiInsertCar";
+            this.nbiInsertCustomer.Caption = "등록";
+            this.nbiInsertCustomer.Name = "nbiInsertCustomer";
+            this.nbiInsertCustomer.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiInsertCustomer_LinkClicked);
             // 
-            // nbiDeleteCar
+            // nbiDeleteCustomer
             // 
-            this.nbiDeleteCar.Caption = "삭제";
-            this.nbiDeleteCar.Name = "nbiDeleteCar";
-            this.nbiDeleteCar.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiDeleteCar_LinkClicked);
+            this.nbiDeleteCustomer.Caption = "삭제";
+            this.nbiDeleteCustomer.Name = "nbiDeleteCustomer";
+            this.nbiDeleteCustomer.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiDeleteCustomer_LinkClicked);
             // 
             // nbgInsurance
             // 
             this.nbgInsurance.Caption = "보험";
+            this.nbgInsurance.Expanded = true;
             this.nbgInsurance.GroupClientHeight = 4;
             this.nbgInsurance.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbiViewInsurance),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.등록),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiInsertInsurance),
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbiDeleteInsurance)});
             this.nbgInsurance.Name = "nbgInsurance";
             this.nbgInsurance.CalcGroupClientHeight += new DevExpress.XtraNavBar.NavBarCalcGroupClientHeightEventHandler(this.nbgInsurance_CalcGroupClientHeight);
@@ -664,10 +666,11 @@
             this.nbiViewInsurance.Name = "nbiViewInsurance";
             this.nbiViewInsurance.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiViewInsurance_LinkClicked);
             // 
-            // 등록
+            // nbiInsertInsurance
             // 
-            this.등록.Caption = "등록";
-            this.등록.Name = "등록";
+            this.nbiInsertInsurance.Caption = "등록";
+            this.nbiInsertInsurance.Name = "nbiInsertInsurance";
+            this.nbiInsertInsurance.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiInsertInsurance_LinkClicked);
             // 
             // nbiDeleteInsurance
             // 
@@ -706,6 +709,7 @@
             // nbgEvent
             // 
             this.nbgEvent.Caption = "이벤트";
+            this.nbgEvent.Expanded = true;
             this.nbgEvent.GroupClientHeight = 6;
             this.nbgEvent.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbiViewEvent),
@@ -724,6 +728,7 @@
             // 
             this.nbiInsertEvent.Caption = "등록";
             this.nbiInsertEvent.Name = "nbiInsertEvent";
+            this.nbiInsertEvent.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiInsertEvent_LinkClicked);
             // 
             // nbiDeleteEvent
             // 
@@ -844,7 +849,7 @@
         private DevExpress.XtraNavBar.NavBarItem nbiInsertCustomer;
         private DevExpress.XtraNavBar.NavBarItem nbiDeleteCustomer;
         private DevExpress.XtraNavBar.NavBarItem nbiViewInsurance;
-        private DevExpress.XtraNavBar.NavBarItem 등록;
+        private DevExpress.XtraNavBar.NavBarItem nbiInsertInsurance;
         private DevExpress.XtraNavBar.NavBarItem nbiDeleteInsurance;
         private DevExpress.XtraNavBar.NavBarItem nbiViewRent;
         private DevExpress.XtraNavBar.NavBarItem nbiInsertRent;
