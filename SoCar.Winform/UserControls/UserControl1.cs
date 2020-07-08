@@ -218,38 +218,38 @@ namespace SoCar.Winform.UserControls
         private void nbgLocation_CalcGroupClientHeight(object sender, DevExpress.XtraNavBar.NavBarCalcGroupClientHeightEventArgs e)
         {
             if (DesignMode) return;           
-            GetLocationToGrid();
-            OnnbiViewLocationClick(nbgLocation.Caption, nbiViewLocation.Caption);
+           // GetLocationToGrid();
+            //OnnbiViewLocationClick(nbgLocation.Caption, nbiViewLocation.Caption);
         }
         private void nbgCar_CalcGroupClientHeight(object sender, DevExpress.XtraNavBar.NavBarCalcGroupClientHeightEventArgs e)
         {
             if (DesignMode) return;
-            GetCarToGrid();
-            OnnbiViewCarClick(nbgCar.Caption, nbiViewCar.Caption);
+           // GetCarToGrid();
+            //OnnbiViewCarClick(nbgCar.Caption, nbiViewCar.Caption);
         }
         private void nbgCustomer_CalcGroupClientHeight(object sender, DevExpress.XtraNavBar.NavBarCalcGroupClientHeightEventArgs e)
         {
             if (DesignMode) return;
-            GetCustomerToGrid();
-            OnnbiViewCustomerClick(nbgCustomer.Caption, nbiViewCustomer.Caption);
+            //GetCustomerToGrid();
+           // OnnbiViewCustomerClick(nbgCustomer.Caption, nbiViewCustomer.Caption);
         }
         private void nbgInsurance_CalcGroupClientHeight(object sender, DevExpress.XtraNavBar.NavBarCalcGroupClientHeightEventArgs e)
         {
             if (DesignMode) return;
-            GetInsuranceToGrid();
-            OnnbiViewInsuranceClick(nbgInsurance.Caption, nbiViewInsurance.Caption);
+            //GetInsuranceToGrid();
+            //OnnbiViewInsuranceClick(nbgInsurance.Caption, nbiViewInsurance.Caption);
         }
         private void nbgRent_CalcGroupClientHeight(object sender, DevExpress.XtraNavBar.NavBarCalcGroupClientHeightEventArgs e)
         {
             if (DesignMode) return;
-            GetRentToGrid();
-            OnnbiViewRentClick(nbgRent.Caption, nbiViewRent.Caption);
+            //GetRentToGrid();
+            //OnnbiViewRentClick(nbgRent.Caption, nbiViewRent.Caption);
         }
         private void nbgEvent_CalcGroupClientHeight(object sender, DevExpress.XtraNavBar.NavBarCalcGroupClientHeightEventArgs e)
         {
             if (DesignMode) return;
-            GetEventToGrid();
-            OnnbiViewEventClick(nbgEvent.Caption, nbiViewEvent.Caption);
+            //GetEventToGrid();
+            //OnnbiViewEventClick(nbgEvent.Caption, nbiViewEvent.Caption);
         }
 
 
