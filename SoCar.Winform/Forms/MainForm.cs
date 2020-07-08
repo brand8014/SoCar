@@ -198,7 +198,9 @@ namespace SoCar.Winform.Forms
 
         private void barButtonCar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            uscBasic1.CarOpen();
         }
+
+       
     }
 }

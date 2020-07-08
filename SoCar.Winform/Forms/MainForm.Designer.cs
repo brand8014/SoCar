@@ -109,7 +109,6 @@
             this.barButtonCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonCustomer.ImageOptions.Image")));
             this.barButtonCustomer.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonCustomer.ImageOptions.LargeImage")));
             this.barButtonCustomer.Name = "barButtonCustomer";
-            this.barButtonCustomer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonCustomer_ItemClick);
             // 
             // barButtonLocation
             // 
@@ -126,6 +125,7 @@
             this.barButtonCar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonCar.ImageOptions.Image")));
             this.barButtonCar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonCar.ImageOptions.LargeImage")));
             this.barButtonCar.Name = "barButtonCar";
+            
             // 
             // barButtonRent
             // 
@@ -181,7 +181,6 @@
             // 
             // ribbonPageGroup3
             // 
-            this.ribbonPageGroup3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPageGroup3.ImageOptions.Image")));
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonInsurance, true);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             // 

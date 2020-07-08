@@ -208,6 +208,12 @@ namespace SoCar.Winform.UserControls
             UpdateInsuranceForm form = new UpdateInsuranceForm(insurance);
             form.ShowDialog();                 
         }
+
+        internal void CarOpen()
+        {
+           
+        }
+
         private void gvRent_DoubleClick(object sender, EventArgs e)
         {
             MessageBox.Show("대여는 수정할 수 없습니다.");
