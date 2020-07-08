@@ -29,6 +29,7 @@
         <AssociationConnector Association="SocarModel.FK_차_차종" />
         <AssociationConnector Association="SocarModel.FK_차보험_차" />
         <AssociationConnector Association="SocarModel.FK_차보험_보험" />
+        <EntityTypeShape EntityType="SocarModel.Login" Width="1.5" PointX="1.5" PointY="7.25" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

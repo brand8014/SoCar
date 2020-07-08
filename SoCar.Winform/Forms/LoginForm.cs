@@ -1,54 +1,48 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using SoCar.Data;
+using SoCar.Winform.BaseForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
-using SoCar.Winform.Forms;
 
-namespace SoCar.Winform
+namespace SoCar.Winform.Forms
 {
-    public partial class LoginForm : DevExpress.XtraEditors.XtraForm
+    public partial class LoginForm : XtraForm
     {
+
         bool IsDone = false;
         public LoginForm()
         {
             InitializeComponent();
         }
 
-        private void txtpsw_EditValueChanged(object sender, EventArgs e)
+        private void txbPW_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void BtnOK_Click(object sender, EventArgs e)
+        private void btnOk_Click(object sender, EventArgs e)
         {
-            if (txtName.Text == string.Empty)
+            List<Login> items = DataRepository.Login.GetAll();
+
+            //로그인 성공시
+            if (items.Any(x => x.UserName == txbName.Text && x.Password == txbPW.Text))
             {
-                txtName.Select();
-                return;
-            }
-            if (txtpsw.Text == string.Empty)
-            {
-                txtpsw.Select();
-                return;
-            }
-            IsDone = txtName.Text != "" && txtName.Text == "hussain" &&
-                txtpsw.Text != "" && txtpsw.Text == "123" ? true : false;
-            if (IsDone)
-            {
-                XtraMessageBox.Show("Error in your information", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Hide();
+                
+                MainForm mainform1 = new MainForm();
+                mainform1.Show();
             }
 
-            this.Hide();
-
-            MainForm mainform1 = new MainForm();
-            mainform1.Show();
-            
+            //로그인 실패시
+            else
+                MessageBox.Show("※ 아이디와 비밀번호를 확인해주세요 ※");
         }
 
         public static new bool IsActive()
@@ -58,12 +52,10 @@ namespace SoCar.Winform
             return login.IsDone ? true : false;
         }
 
-        private void BtnClose_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
             IsDone = false;
             Close();
         }
-
-
     }
 }

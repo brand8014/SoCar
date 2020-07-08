@@ -97,6 +97,13 @@
           <Property Name="Address" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="LocationCode" Type="int" />
         </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
         <EntityType Name="Rent">
           <Key>
             <PropertyRef Name="RentId" />
@@ -280,6 +287,7 @@
           <EntitySet Name="Event" EntityType="Self.Event" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Insurance" EntityType="Self.Insurance" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Location" EntityType="Self.Location" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Rent" EntityType="Self.Rent" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_결함_차" Association="Self.FK_결함_차">
             <End Role="Car" EntitySet="Car" />
@@ -580,6 +588,7 @@
             <End Role="Insurance" EntitySet="Insurances" />
             <End Role="CarInsurance" EntitySet="CarInsurances" />
           </AssociationSet>
+          <EntitySet Name="Logins" EntityType="SocarModel.Login" />
           </EntityContainer>
         <EntityType Name="Car">
           <Key>
@@ -691,6 +700,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -810,6 +826,14 @@
                 <ScalarProperty Name="Goods" ColumnName="Goods" />
                 <ScalarProperty Name="Company" ColumnName="Company" />
                 <ScalarProperty Name="InsuranceId" ColumnName="InsuranceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logins">
+            <EntityTypeMapping TypeName="SocarModel.Login">
+              <MappingFragment StoreEntitySet="Login">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
