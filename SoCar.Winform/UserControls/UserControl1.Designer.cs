@@ -43,7 +43,6 @@
             this.colAccident = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDefects = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCarType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAddress1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl = new DevExpress.XtraGrid.GridControl();
             this.bdsCar = new System.Windows.Forms.BindingSource(this.components);
@@ -63,7 +62,6 @@
             this.colEventTypeCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRateOfDiscount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPeriod = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRent = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gvRent = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colCar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRentAt = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -141,7 +139,6 @@
             this.colAccident,
             this.colNumber,
             this.colDefects,
-            this.colCarType,
             this.colAddress1});
             this.gvCar.GridControl = this.gridControl;
             this.gvCar.Name = "gvCar";
@@ -210,15 +207,6 @@
             this.colDefects.Visible = true;
             this.colDefects.VisibleIndex = 7;
             this.colDefects.Width = 94;
-            // 
-            // colCarType
-            // 
-            this.colCarType.FieldName = "CarType";
-            this.colCarType.MinWidth = 25;
-            this.colCarType.Name = "colCarType";
-            this.colCarType.Visible = true;
-            this.colCarType.VisibleIndex = 8;
-            this.colCarType.Width = 94;
             // 
             // colAddress1
             // 
@@ -386,8 +374,7 @@
             this.gvEvent.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colEventTypeCode,
             this.colRateOfDiscount,
-            this.colPeriod,
-            this.colRent});
+            this.colPeriod});
             this.gvEvent.GridControl = this.gridControl;
             this.gvEvent.Name = "gvEvent";
             this.gvEvent.DoubleClick += new System.EventHandler(this.gvEvent_DoubleClick);
@@ -418,15 +405,6 @@
             this.colPeriod.Visible = true;
             this.colPeriod.VisibleIndex = 2;
             this.colPeriod.Width = 94;
-            // 
-            // colRent
-            // 
-            this.colRent.FieldName = "Rent";
-            this.colRent.MinWidth = 25;
-            this.colRent.Name = "colRent";
-            this.colRent.Visible = true;
-            this.colRent.VisibleIndex = 3;
-            this.colRent.Width = 94;
             // 
             // gvRent
             // 
@@ -622,7 +600,6 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbiDeleteLocation)});
             this.nbgLocation.Name = "nbgLocation";
             this.nbgLocation.CalcGroupClientHeight += new DevExpress.XtraNavBar.NavBarCalcGroupClientHeightEventHandler(this.nbgLocation_CalcGroupClientHeight);
-            
             // 
             // nbiViewLocation
             // 
@@ -895,12 +872,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn colAccident;
         private DevExpress.XtraGrid.Columns.GridColumn colNumber;
         private DevExpress.XtraGrid.Columns.GridColumn colDefects;
-        private DevExpress.XtraGrid.Columns.GridColumn colCarType;
         private DevExpress.XtraGrid.Columns.GridColumn colAddress1;
         private DevExpress.XtraGrid.Columns.GridColumn colEventTypeCode;
         private DevExpress.XtraGrid.Columns.GridColumn colRateOfDiscount;
         private DevExpress.XtraGrid.Columns.GridColumn colPeriod;
-        private DevExpress.XtraGrid.Columns.GridColumn colRent;
         private DevExpress.XtraNavBar.NavBarItem nbiViewLocation;
         //private DevExpress.XtraNavBar.NavBarItem nbiViewCustomer;
         private DevExpress.XtraNavBar.NavBarItem nbiViewCustomer;
