@@ -40,24 +40,6 @@ namespace SoCar.Winform.UserControls
                     codeId = null;
             }
 
-            int? rentId = null;
-            try
-            {
-                rentId = (int)cbbRentId.SelectedValue;
-            }
-            //catch (InvalidCastException e)
-            //{ e.
-            //}
-            catch //(Exception)<--가장큰 익셉션이라 맨밑에 둬야함
-            {
-                //int? artistId = null;
-            }
-            finally
-            {
-                if (rentId == null || rentId.Value < 1)
-                    rentId = null;
-            }
-
             DateTime? period = null;
             try
             {
@@ -76,7 +58,7 @@ namespace SoCar.Winform.UserControls
                     period = null;
             }
 
-            OnSearchButtonClicked(codeId,rentId,period);
+            OnSearchButtonClicked(codeId,period);
             Cursor = Cursors.Arrow;
 
         }
@@ -84,7 +66,6 @@ namespace SoCar.Winform.UserControls
         private void btnReset_Click(object sender, EventArgs e)
         {
             cbbCodeId.SelectedItem = null;
-            cbbRentId.SelectedItem = null;
             txbPeriod.Text = null;
         }
 
@@ -92,8 +73,8 @@ namespace SoCar.Winform.UserControls
         {
             if (DesignMode) return;
             bdsCord.DataSource = DataRepository.Code.GetByCodeCategoryId(2);
-            bdsEvent.DataSource = DataRepository.Event.GetAll();
         }
+
 
         #region SearchButtonClicked event things for C# 3.0
         public event EventHandler<SearchButtonClickedEventArgs> SearchButtonClicked;
@@ -104,9 +85,9 @@ namespace SoCar.Winform.UserControls
                 SearchButtonClicked(this, e);
         }
 
-        private SearchButtonClickedEventArgs OnSearchButtonClicked(int? codeId, int? rentId, DateTime? period)
+        private SearchButtonClickedEventArgs OnSearchButtonClicked(int? codeId, DateTime? period)
         {
-            SearchButtonClickedEventArgs args = new SearchButtonClickedEventArgs(codeId, rentId, period);
+            SearchButtonClickedEventArgs args = new SearchButtonClickedEventArgs(codeId, period);
             OnSearchButtonClicked(args);
 
             return args;
@@ -123,17 +104,15 @@ namespace SoCar.Winform.UserControls
         public class SearchButtonClickedEventArgs : EventArgs
         {
             public int? CodeId { get; set; }
-            public int? RentId { get; set; }
             public DateTime? Period { get; set; }
 
             public SearchButtonClickedEventArgs()
             {
             }
 
-            public SearchButtonClickedEventArgs(int? codeId, int? rentId, DateTime? period)
+            public SearchButtonClickedEventArgs(int? codeId, DateTime? period)
             {
                 CodeId = codeId;
-                RentId = rentId;
                 Period = period;
             }
         }

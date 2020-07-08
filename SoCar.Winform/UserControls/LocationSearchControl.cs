@@ -22,6 +22,24 @@ namespace SoCar.Winform.UserControls
         {
             Cursor = Cursors.WaitCursor;
 
+            int? codeId = null;
+            try
+            {
+                codeId = (int)cbbLocation.SelectedValue;
+            }
+            //catch (InvalidCastException e)
+            //{ e.
+            //}
+            catch //(Exception)<--가장큰 익셉션이라 맨밑에 둬야함
+            {
+                //int? artistId = null;
+            }
+            finally
+            {
+                if (codeId == null || codeId.Value < 1)
+                    codeId = null;
+            }
+
             int? locationId = null;
             try
             {
@@ -40,7 +58,7 @@ namespace SoCar.Winform.UserControls
                     locationId = null;
             }
 
-            OnSearchButtonClicked(locationId);
+            OnSearchButtonClicked(codeId,locationId);
             Cursor = Cursors.Arrow;
         }
 
@@ -64,7 +82,6 @@ namespace SoCar.Winform.UserControls
             bdsLocation.DataSource = DataRepository.Location.GetByCodeCategory((int)cbbLocation.SelectedValue);
 
         }
-
         #region SearchButtonClicked event things for C# 3.0
         public event EventHandler<SearchButtonClickedEventArgs> SearchButtonClicked;
 
@@ -74,9 +91,9 @@ namespace SoCar.Winform.UserControls
                 SearchButtonClicked(this, e);
         }
 
-        private SearchButtonClickedEventArgs OnSearchButtonClicked(int? locationId)
+        private SearchButtonClickedEventArgs OnSearchButtonClicked(int? codeId, int? locationId)
         {
-            SearchButtonClickedEventArgs args = new SearchButtonClickedEventArgs(locationId);
+            SearchButtonClickedEventArgs args = new SearchButtonClickedEventArgs(codeId, locationId);
             OnSearchButtonClicked(args);
 
             return args;
@@ -92,14 +109,16 @@ namespace SoCar.Winform.UserControls
 
         public class SearchButtonClickedEventArgs : EventArgs
         {
+            public int? CodeId { get; set; }
             public int? LocationId { get; set; }
 
             public SearchButtonClickedEventArgs()
             {
             }
 
-            public SearchButtonClickedEventArgs(int? locationId)
+            public SearchButtonClickedEventArgs(int? codeId, int? locationId)
             {
+                CodeId = codeId;
                 LocationId = locationId;
             }
         }

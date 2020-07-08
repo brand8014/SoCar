@@ -36,5 +36,6 @@ namespace SoCar.Data
         public virtual DbSet<Car> Cars { get; set; }
         public virtual DbSet<CarInsurance> CarInsurances { get; set; }
         public virtual DbSet<Insurance> Insurances { get; set; }
+        public virtual DbSet<Login> Logins { get; set; }
     }
 }

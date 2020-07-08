@@ -56,9 +56,9 @@ namespace SoCar.Winform.UserControls
 
 
 
-        internal void SearchLocation(int? locationId)
+        internal void SearchLocation(int? codeId ,int? locationId)
         {
-            bdsLocation.DataSource = DataRepository.Location.Search(locationId);
+            bdsLocation.DataSource = DataRepository.Location.Search(codeId,locationId);
             gridControl.MainView = gvLocation;
             gridControl.DataSource = bdsLocation;
         }
@@ -74,9 +74,9 @@ namespace SoCar.Winform.UserControls
             gridControl.MainView = gvCustomer;
             gridControl.DataSource = bdsCustomer;
         }
-        internal void SearchEvent(int? codeId, int? rentId, DateTime? period)
+        internal void SearchEvent(int? codeId, DateTime? period)
         {
-            bdsEvent.DataSource = DataRepository.Event.Search(codeId, rentId, period);
+            bdsEvent.DataSource = DataRepository.Event.Search(codeId, period);
             gridControl.MainView = gvEvent;
             gridControl.DataSource = bdsEvent;
         }

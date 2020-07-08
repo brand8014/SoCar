@@ -105,12 +105,12 @@ namespace SoCar.Winform.Forms
         }
         private void eventSearchControl1_SearchButtonClicked(object sender, UserControls.EventSearchControl.SearchButtonClickedEventArgs e)
         {
-            uscBasic1.SearchEvent(e.CodeId, e.RentId, e.Period);
+            uscBasic1.SearchEvent(e.CodeId, e.Period);
         }
 
         private void locationSearchControl1_SearchButtonClicked(object sender, UserControls.LocationSearchControl.SearchButtonClickedEventArgs e)
         {
-            uscBasic1.SearchLocation(e.LocationId);
+            uscBasic1.SearchLocation(e.CodeId,e.LocationId);
         }
         private void carSearchControl1_SearchButtonClicked(object sender, UserControls.CarSearchControl.SearchButtonClickedEventArgs e)
         {

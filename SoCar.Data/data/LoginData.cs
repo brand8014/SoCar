@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace SoCar.Data
 {
-    public partial class Location
+    public class LoginData:EntityData<Login>
     {
-        public string LocationName { get; set; }
-
     }
 }
