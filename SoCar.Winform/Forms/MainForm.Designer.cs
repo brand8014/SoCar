@@ -66,10 +66,14 @@
             this.pbxCar1 = new System.Windows.Forms.PictureBox();
             this.imageSlider1 = new DevExpress.XtraEditors.Controls.ImageSlider();
             this.filteringUIContext1 = new DevExpress.Utils.Filtering.FilteringUIContext(this.components);
+            this.label1 = new DevExpress.XtraEditors.LabelControl();
+            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageSlider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.filteringUIContext1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -406,8 +410,9 @@
             // imageSlider1
             // 
             this.imageSlider1.AllowLooping = true;
+            this.imageSlider1.AnimationTime = 1000;
             this.imageSlider1.AutoSlide = DevExpress.XtraEditors.Controls.AutoSlide.Forward;
-            this.imageSlider1.AutoSlideInterval = 1500;
+            this.imageSlider1.AutoSlideInterval = 2000;
             this.imageSlider1.CurrentImageIndex = 0;
             this.imageSlider1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.imageSlider1.Images.Add(((System.Drawing.Image)(resources.GetObject("imageSlider1.Images"))));
@@ -420,6 +425,34 @@
             this.imageSlider1.TabStop = false;
             this.imageSlider1.Text = "imageSlider1";
             // 
+            // label1
+            // 
+            this.label1.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Appearance.Font = new System.Drawing.Font("Expo M", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Appearance.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Appearance.Options.UseBackColor = true;
+            this.label1.Appearance.Options.UseFont = true;
+            this.label1.Appearance.Options.UseForeColor = true;
+            this.label1.AppearancePressed.BackColor = System.Drawing.Color.Transparent;
+            this.label1.AppearancePressed.Options.UseBackColor = true;
+            this.label1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.label1.Location = new System.Drawing.Point(90, 187);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(389, 36);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "자동차 대여관리 프로그램";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Blackadder ITC", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(150, 226);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(329, 37);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Car Rent Management Program";
+            // 
             // MainForm
             // 
             this.Appearance.BackColor = System.Drawing.SystemColors.Control;
@@ -427,6 +460,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1198, 748);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.imageSlider1);
             this.Controls.Add(this.pbxCar1);
             this.Controls.Add(this.eventSearchControl1);
@@ -450,6 +485,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxCar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageSlider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.filteringUIContext1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -493,5 +529,8 @@
         private System.Windows.Forms.PictureBox pbxCar1;
         private DevExpress.XtraEditors.Controls.ImageSlider imageSlider1;
         private DevExpress.Utils.Filtering.FilteringUIContext filteringUIContext1;
+        private DevExpress.XtraEditors.LabelControl label1;
+        private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -26,7 +26,10 @@ namespace SoCar.Winform.Forms
             controls = new Dictionary<string, Control>();
             MakeControls();
             DisableAllControls();
-
+            label1.BackColor = Color.Transparent;
+            label1.Parent = imageSlider1;
+            label2.BackColor = Color.Transparent;
+            label2.Parent = imageSlider1;
             //Text = LoginProxy.Login.UserName;
         }
 
@@ -239,7 +242,7 @@ namespace SoCar.Winform.Forms
             pbxCar1.Visible = true;
 
         }
-       
         
+       
     }
 }
