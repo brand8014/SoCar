@@ -28,7 +28,7 @@ namespace SoCar.Winform.Forms
             DisableAllControls();
 
             //Text = LoginProxy.Login.UserName;
-        }\
+        }
 
         private void uscBasic1_Load(object sender, EventArgs e)
         {
@@ -117,7 +117,7 @@ namespace SoCar.Winform.Forms
         }
         private void carSearchControl1_SearchButtonClicked(object sender, UserControls.CarSearchControl.SearchButtonClickedEventArgs e)
         {
-            uscBasic1.SearchCar(e.CarTypeId, e.Number, e.Location, e.IsRent);
+            uscBasic1.SearchCar(e.CarId, e.CarTypeId, e.LocationId, e.IsRent);
         }
         private void customerSearchControl1_SearchButtonClicked(object sender, UserControls.CustomerSearchControl.SearchButtonClickedEventArgs e)
         {
