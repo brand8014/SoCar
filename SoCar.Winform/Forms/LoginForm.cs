@@ -42,7 +42,7 @@ namespace SoCar.Winform.Forms
             {
                 LoginProxy.Login = login;
 
-                MainForm mainform1 = new MainForm();
+                MainForm mainform = new MainForm();
 
                 if (chkrememberLoginName.Checked)
                 {
@@ -50,7 +50,7 @@ namespace SoCar.Winform.Forms
                     Properties.Settings.Default.LoginIdSave = txbName.Text;
                     Properties.Settings.Default.Save();
                 }
-                mainform1.Show();
+                mainform.Show();
 
                 Close();
             }
