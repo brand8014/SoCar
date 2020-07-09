@@ -98,31 +98,31 @@ namespace SoCar.Winform.UserControls
         private void GetLocationToGrid()
         {
             bdsCode.DataSource = DataRepository.Code.GetByCodeCategoryId(1);
-            bdsLocation.DataSource = DataRepository.Location.GetAll();
+            bdsLocation.DataSource = DataRepository.Location.Search(null,null);
             gridControl.MainView = gvLocation;
             gridControl.DataSource = bdsLocation;
         }
         private void GetRentToGrid()
         {
-            bdsRent.DataSource = DataRepository.Rent.GetAll();
+            bdsRent.DataSource = DataRepository.Rent.Search(null,null,null,null,null);
             gridControl.DataSource = bdsRent;
             gridControl.MainView = gvRent;
         }
         private void GetInsuranceToGrid()
         {
-            bdsInsurance.DataSource = DataRepository.Insurance.GetAll();
+            bdsInsurance.DataSource = DataRepository.Insurance.Search(null,null,null);
             gridControl.DataSource = bdsInsurance;
             gridControl.MainView = gvInsurance;
         }
         private void GetEventToGrid()
         {
-            bdsEvent.DataSource = DataRepository.Event.GetAll();
+            bdsEvent.DataSource = DataRepository.Event.Search(null,null);
             gridControl.DataSource = bdsEvent;
             gridControl.MainView = gvEvent;
         }
         private void GetCustomerToGrid()
         {
-            bdsCustomer.DataSource = DataRepository.Customer.GetAll();
+            bdsCustomer.DataSource = DataRepository.Customer.Search(null,null,null,null);
             gridControl.DataSource = bdsCustomer;
             gridControl.MainView = gvCustomer;
         }
@@ -131,7 +131,7 @@ namespace SoCar.Winform.UserControls
 
         private void GetCarToGrid()
         {
-            bdsCar.DataSource = DataRepository.Car.GetAll();
+            bdsCar.DataSource = DataRepository.Car.Search(null,null,null,null);
             gridControl.MainView = gvCar;
             gridControl.DataSource = bdsCar;
         }
