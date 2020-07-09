@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SoCar.Data;
+using DevExpress.XtraEditors;
 
 namespace SoCar.Winform.UserControls
 {
@@ -25,7 +26,7 @@ namespace SoCar.Winform.UserControls
             int? codeId = null;
             try
             {
-                codeId = int.Parse(lueLocation.SelectedText);
+                codeId = (int?)cbbLocation.SelectedValue;
             }
             //catch (InvalidCastException e)
             //{ e.
@@ -43,7 +44,7 @@ namespace SoCar.Winform.UserControls
             int? locationId = null;
             try
             {
-                locationId = int.Parse(lueAddress.SelectedText);
+                locationId = (int?)cbbAddress.SelectedValue;
             }
             //catch (InvalidCastException e)
             //{ e.
@@ -64,28 +65,24 @@ namespace SoCar.Winform.UserControls
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-
+            cbbLocation.Text = null;
+            cbbAddress.Text =null;
+            
         }
 
         private void LocationSearchControl_Load(object sender, EventArgs e)
         {
             if (DesignMode)
                 return;
-            bdsLocation.DataSource = DataRepository.Location.GetAll();
-            bdsAddress.DataSource = DataRepository.Location.GetAll();
+
+            bdsLocation.DataSource = DataRepository.Code.GetByCodeCategoryId(1);
+
+            cbbLocation.Text = null;
+            cbbAddress.Text = null;
+
         }
 
-        private void cbbLocation_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if (DesignMode)
-                return;
-            
-            int? a = int.Parse(lueLocation.SelectedText);
-            //int? a = (int)lueLocation.EditValue;
 
-            bdsLocation.DataSource = DataRepository.Location.GetByCodeCategory(a);
-            
-        }
         #region SearchButtonClicked event things for C# 3.0
         public event EventHandler<SearchButtonClickedEventArgs> SearchButtonClicked;
 

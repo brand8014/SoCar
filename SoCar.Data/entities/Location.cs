@@ -11,5 +11,9 @@ namespace SoCar.Data
         public string LocationName { get; set; }
         public string LocationFullName { get; set; }
 
+        public string CarName { get; set; }
+
+        public string CarNumber { get; set; }
+
     }
 }

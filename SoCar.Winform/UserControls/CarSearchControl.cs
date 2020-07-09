@@ -110,12 +110,23 @@ namespace SoCar.Winform.UserControls
         {
             if (DesignMode)
                 return;
-            bdsCarType.DataSource = DataRepository.CarType.GetAll();
-            bdsCar.DataSource = DataRepository.Car.GetAll();
-            bdsLocation.DataSource = DataRepository.Location.GetAll();
+            
+            var source = DataRepository.Car.GetAllWithProperties();
+            
+            bdsCar.DataSource = source;
+            bdsCarType.DataSource = source;
+            bdsLocation.DataSource = source;
+
+            Init();
         }
 
         private void btnReset_Click(object sender, EventArgs e)
+        {
+            Init();
+            
+        }
+
+        private void Init()
         {
             cbbCarType.SelectedItem = null;
             cbbNumber.SelectedItem = null;

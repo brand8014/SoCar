@@ -8,10 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SoCar.Data;
+using DevExpress.XtraEditors;
 
 namespace SoCar.Winform.UserControls
 {
-    public partial class InsuranceSearchControl : UserControl
+    public partial class InsuranceSearchControl : XtraUserControl
     {
         public InsuranceSearchControl()
         {
@@ -64,6 +65,12 @@ namespace SoCar.Winform.UserControls
 
         private void btnReset_Click(object sender, EventArgs e)
         {
+            Init();
+            
+        }
+
+        private void Init()
+        {
             cbbCompany.SelectedItem = null;
             cbbGoods.SelectedItem = null;
         }
@@ -74,6 +81,8 @@ namespace SoCar.Winform.UserControls
                 return;
             bdsCompany.DataSource = DataRepository.Code.GetByCodeCategoryId(5);
             bdsGoods.DataSource = DataRepository.Code.GetByCodeCategoryId(6);
+
+            Init();
         }
 
 

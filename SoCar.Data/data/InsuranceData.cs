@@ -36,7 +36,7 @@ namespace SoCar.Data
                 x.Insurance.CompanyName = x.CompanyName;
                 x.Insurance.GoodsName = x.GoodsName;
             }
-            return query.ToList().ConvertAll(x=> x.Insurance);
+            return items.ConvertAll(x=> x.Insurance);
 
         }
 

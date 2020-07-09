@@ -33,7 +33,8 @@
             this.txbPrice = new System.Windows.Forms.TextBox();
             this.txbReturnDay = new System.Windows.Forms.TextBox();
             this.txbRentDay = new System.Windows.Forms.TextBox();
-            this.cbbCarTypeId = new System.Windows.Forms.ComboBox();
+            this.cbbCarId = new System.Windows.Forms.ComboBox();
+            this.bdsCustomer = new System.Windows.Forms.BindingSource(this.components);
             this.cbbLocationId = new System.Windows.Forms.ComboBox();
             this.cbbCustomerId = new System.Windows.Forms.ComboBox();
             this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
@@ -49,9 +50,11 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bdsRent = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsLocation = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsCar = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -63,7 +66,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsRent)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCar)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -71,7 +75,7 @@
             this.layoutControl1.Controls.Add(this.txbPrice);
             this.layoutControl1.Controls.Add(this.txbReturnDay);
             this.layoutControl1.Controls.Add(this.txbRentDay);
-            this.layoutControl1.Controls.Add(this.cbbCarTypeId);
+            this.layoutControl1.Controls.Add(this.cbbCarId);
             this.layoutControl1.Controls.Add(this.cbbLocationId);
             this.layoutControl1.Controls.Add(this.cbbCustomerId);
             this.layoutControl1.Controls.Add(this.btnSearch);
@@ -105,19 +109,26 @@
             this.txbRentDay.Size = new System.Drawing.Size(254, 25);
             this.txbRentDay.TabIndex = 9;
             // 
-            // cbbCarTypeId
+            // cbbCarId
             // 
-            this.cbbCarTypeId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbCarTypeId.FormattingEnabled = true;
-            this.cbbCarTypeId.Location = new System.Drawing.Point(54, 72);
-            this.cbbCarTypeId.Name = "cbbCarTypeId";
-            this.cbbCarTypeId.Size = new System.Drawing.Size(254, 23);
-            this.cbbCarTypeId.TabIndex = 8;
-            this.cbbCarTypeId.ValueMember = "CarId";
+            this.cbbCarId.DataSource = this.bdsCar;
+            this.cbbCarId.DisplayMember = "CarNumber";
+            this.cbbCarId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbCarId.FormattingEnabled = true;
+            this.cbbCarId.Location = new System.Drawing.Point(54, 72);
+            this.cbbCarId.Name = "cbbCarId";
+            this.cbbCarId.Size = new System.Drawing.Size(254, 23);
+            this.cbbCarId.TabIndex = 8;
+            this.cbbCarId.ValueMember = "CarId";
+            // 
+            // bdsCustomer
+            // 
+            this.bdsCustomer.DataSource = typeof(SoCar.Data.Rent);
             // 
             // cbbLocationId
             // 
-            this.cbbLocationId.DataSource = this.bdsRent;
+            this.cbbLocationId.DataSource = this.bdsLocation;
+            this.cbbLocationId.DisplayMember = "Address";
             this.cbbLocationId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbLocationId.FormattingEnabled = true;
             this.cbbLocationId.Location = new System.Drawing.Point(54, 42);
@@ -128,7 +139,7 @@
             // 
             // cbbCustomerId
             // 
-            this.cbbCustomerId.DataSource = this.bdsRent;
+            this.cbbCustomerId.DataSource = this.bdsCustomer;
             this.cbbCustomerId.DisplayMember = "CustomerName";
             this.cbbCustomerId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbCustomerId.FormattingEnabled = true;
@@ -243,7 +254,7 @@
             // 
             this.layoutControlItem5.AppearanceItemCaption.ForeColor = System.Drawing.Color.Black;
             this.layoutControlItem5.AppearanceItemCaption.Options.UseForeColor = true;
-            this.layoutControlItem5.Control = this.cbbCarTypeId;
+            this.layoutControlItem5.Control = this.cbbCarId;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 60);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(300, 30);
@@ -283,9 +294,13 @@
             this.layoutControlItem8.Text = "가격";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(39, 18);
             // 
-            // bdsRent
+            // bdsLocation
             // 
-            this.bdsRent.DataSource = typeof(SoCar.Data.Rent);
+            this.bdsLocation.DataSource = typeof(SoCar.Data.Rent);
+            // 
+            // bdsCar
+            // 
+            this.bdsCar.DataSource = typeof(SoCar.Data.Rent);
             // 
             // RentSearchControl
             // 
@@ -297,6 +312,7 @@
             this.Load += new System.EventHandler(this.RentSearchControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
@@ -308,7 +324,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsRent)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -326,7 +343,7 @@
         private System.Windows.Forms.TextBox txbPrice;
         private System.Windows.Forms.TextBox txbReturnDay;
         private System.Windows.Forms.TextBox txbRentDay;
-        private System.Windows.Forms.ComboBox cbbCarTypeId;
+        private System.Windows.Forms.ComboBox cbbCarId;
         private System.Windows.Forms.ComboBox cbbLocationId;
         private System.Windows.Forms.ComboBox cbbCustomerId;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
@@ -335,6 +352,8 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
-        private System.Windows.Forms.BindingSource bdsRent;
+        private System.Windows.Forms.BindingSource bdsCustomer;
+        private System.Windows.Forms.BindingSource bdsLocation;
+        private System.Windows.Forms.BindingSource bdsCar;
     }
 }

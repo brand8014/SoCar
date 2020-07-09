@@ -22,9 +22,22 @@ namespace SoCar.Winform.UserControls
         {
             if (DesignMode)
                 return;
+            
+            var source = DataRepository.Rent.GetAllWithProperties();
+            
+            bdsCustomer.DataSource = source;
+            bdsLocation.DataSource = source;
+            bdsCar.DataSource = source;
+            
+            Init();
 
-            bdsRent.DataSource = DataRepository.Rent.GetProperties();
+        }
 
+        private void Init()
+        {
+            cbbCustomerId.SelectedItem = null;
+            cbbLocationId.SelectedItem = null;
+            cbbCarId.SelectedItem = null;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -34,7 +47,7 @@ namespace SoCar.Winform.UserControls
             int? customerId = null;
             try
             {
-                customerId = (int)cbbCustomerId.SelectedValue;
+                customerId = (int?)cbbCustomerId.SelectedValue;
             }
             //catch (InvalidCastException e)
             //{ e.
@@ -52,7 +65,7 @@ namespace SoCar.Winform.UserControls
             int? locationId = null;
             try
             {
-                locationId = (int)cbbLocationId.SelectedValue;
+                locationId = (int?)cbbLocationId.SelectedValue;
             }
             //catch (InvalidCastException e)
             //{ e.
@@ -70,7 +83,7 @@ namespace SoCar.Winform.UserControls
             int? carId = null;
             try
             {
-                carId = (int)cbbCarTypeId.SelectedValue;
+                carId = (int?)cbbCarId.SelectedValue;
             }
             //catch (InvalidCastException e)
             //{ e.
@@ -148,9 +161,7 @@ namespace SoCar.Winform.UserControls
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            cbbCarTypeId.SelectedItem = null;
-            cbbCustomerId.SelectedItem = null;
-            cbbLocationId.SelectedItem = null;
+            Init();
         }
 
 
@@ -201,5 +212,7 @@ namespace SoCar.Winform.UserControls
             }
         }
         #endregion
+
+
     }
 }
