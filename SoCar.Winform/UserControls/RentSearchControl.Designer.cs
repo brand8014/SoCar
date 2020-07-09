@@ -36,7 +36,7 @@
             this.cbbCarTypeId = new System.Windows.Forms.ComboBox();
             this.bdsCar = new System.Windows.Forms.BindingSource(this.components);
             this.cbbLocationId = new System.Windows.Forms.ComboBox();
-            this.bdsIocation = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsLocation = new System.Windows.Forms.BindingSource(this.components);
             this.cbbCustomerId = new System.Windows.Forms.ComboBox();
             this.bdsCustomer = new System.Windows.Forms.BindingSource(this.components);
             this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
@@ -55,7 +55,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsIocation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
@@ -113,6 +113,7 @@
             // 
             this.cbbCarTypeId.DataSource = this.bdsCar;
             this.cbbCarTypeId.DisplayMember = "Number";
+            this.cbbCarTypeId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbCarTypeId.FormattingEnabled = true;
             this.cbbCarTypeId.Location = new System.Drawing.Point(54, 72);
             this.cbbCarTypeId.Name = "cbbCarTypeId";
@@ -126,8 +127,9 @@
             // 
             // cbbLocationId
             // 
-            this.cbbLocationId.DataSource = this.bdsIocation;
+            this.cbbLocationId.DataSource = this.bdsLocation;
             this.cbbLocationId.DisplayMember = "Address";
+            this.cbbLocationId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbLocationId.FormattingEnabled = true;
             this.cbbLocationId.Location = new System.Drawing.Point(54, 42);
             this.cbbLocationId.Name = "cbbLocationId";
@@ -135,14 +137,15 @@
             this.cbbLocationId.TabIndex = 7;
             this.cbbLocationId.ValueMember = "LocationId";
             // 
-            // bdsIocation
+            // bdsLocation
             // 
-            this.bdsIocation.DataSource = typeof(SoCar.Data.Location);
+            this.bdsLocation.DataSource = typeof(SoCar.Data.Location);
             // 
             // cbbCustomerId
             // 
             this.cbbCustomerId.DataSource = this.bdsCustomer;
             this.cbbCustomerId.DisplayMember = "Name";
+            this.cbbCustomerId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbCustomerId.FormattingEnabled = true;
             this.cbbCustomerId.Location = new System.Drawing.Point(54, 12);
             this.cbbCustomerId.Name = "cbbCustomerId";
@@ -298,7 +301,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bdsCar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsIocation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
@@ -330,7 +333,7 @@
         private System.Windows.Forms.TextBox txbRentDay;
         private System.Windows.Forms.ComboBox cbbCarTypeId;
         private System.Windows.Forms.ComboBox cbbLocationId;
-        private System.Windows.Forms.BindingSource bdsIocation;
+        private System.Windows.Forms.BindingSource bdsLocation;
         private System.Windows.Forms.ComboBox cbbCustomerId;
         private System.Windows.Forms.BindingSource bdsCustomer;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;

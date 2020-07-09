@@ -24,6 +24,7 @@ namespace SoCar.Winform.UserControls
             if (DesignMode)
                 return;
             bdsCustomer.DataSource = DataRepository.Customer.GetAll();
+            bdsLisence.DataSource = DataRepository.Code.GetByCodeCategoryId(7);
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

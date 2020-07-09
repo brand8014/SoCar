@@ -82,6 +82,7 @@
             // 
             // cbbIsRent
             // 
+            this.cbbIsRent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbIsRent.FormattingEnabled = true;
             this.cbbIsRent.Items.AddRange(new object[] {
             "true",
@@ -95,6 +96,7 @@
             // 
             this.cbbLocation.DataSource = this.bdsLocation;
             this.cbbLocation.DisplayMember = "Address";
+            this.cbbLocation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbLocation.FormattingEnabled = true;
             this.cbbLocation.Location = new System.Drawing.Point(67, 72);
             this.cbbLocation.Name = "cbbLocation";
@@ -110,12 +112,13 @@
             // 
             this.cbbNumber.DataSource = this.bdsCar;
             this.cbbNumber.DisplayMember = "Number";
+            this.cbbNumber.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbNumber.FormattingEnabled = true;
-            this.cbbNumber.Location = new System.Drawing.Point(67, 42);
+            this.cbbNumber.Location = new System.Drawing.Point(67, 12);
             this.cbbNumber.Name = "cbbNumber";
             this.cbbNumber.Size = new System.Drawing.Size(241, 26);
             this.cbbNumber.TabIndex = 7;
-            this.cbbNumber.ValueMember = "Number";
+            this.cbbNumber.ValueMember = "CarId";
             // 
             // bdsCar
             // 
@@ -145,8 +148,9 @@
             // 
             this.cbbCarType.DataSource = this.bdsCarType;
             this.cbbCarType.DisplayMember = "Name";
+            this.cbbCarType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbCarType.FormattingEnabled = true;
-            this.cbbCarType.Location = new System.Drawing.Point(67, 12);
+            this.cbbCarType.Location = new System.Drawing.Point(67, 42);
             this.cbbCarType.Name = "cbbCarType";
             this.cbbCarType.Size = new System.Drawing.Size(241, 26);
             this.cbbCarType.TabIndex = 4;
@@ -166,9 +170,9 @@
             this.layoutControlItem2,
             this.layoutControlItem3,
             this.emptySpaceItem2,
-            this.layoutControlItem4,
             this.layoutControlItem6,
-            this.layoutControlItem7});
+            this.layoutControlItem7,
+            this.layoutControlItem4});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(320, 210);
             this.Root.TextVisible = false;
@@ -176,7 +180,7 @@
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.cbbCarType;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 30);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(300, 30);
             this.layoutControlItem1.Text = "차종";
@@ -225,7 +229,7 @@
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.cbbNumber;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 30);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(300, 30);
             this.layoutControlItem4.Text = "차량번호";

@@ -63,10 +63,15 @@
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbxCar1 = new System.Windows.Forms.PictureBox();
+            this.tmrChangeImage = new System.Windows.Forms.Timer(this.components);
+            this.imageListCar = new System.Windows.Forms.ImageList(this.components);
+            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -105,7 +110,6 @@
             this.barButtonHome.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonHome.ImageOptions.Image")));
             this.barButtonHome.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonHome.ImageOptions.LargeImage")));
             this.barButtonHome.Name = "barButtonHome";
-            this.barButtonHome.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonHome_ItemClick);
             // 
             // barButtonCustomer
             // 
@@ -392,15 +396,42 @@
             this.ribbonPage2});
             this.ribbonPageCategory1.Text = "ribbonPageCategory1";
             // 
-            // pictureBox1
+            // pbxCar1
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 187);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1198, 561);
-            this.pictureBox1.TabIndex = 19;
-            this.pictureBox1.TabStop = false;
+            this.pbxCar1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbxCar1.Location = new System.Drawing.Point(0, 187);
+            this.pbxCar1.Name = "pbxCar1";
+            this.pbxCar1.Size = new System.Drawing.Size(1198, 561);
+            this.pbxCar1.TabIndex = 19;
+            this.pbxCar1.TabStop = false;
+            // 
+            // tmrChangeImage
+            // 
+            this.tmrChangeImage.Enabled = true;
+            this.tmrChangeImage.Interval = 1000;
+            // 
+            // imageListCar
+            // 
+            this.imageListCar.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageListCar.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageListCar.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // layoutControl1
+            // 
+            this.layoutControl1.Location = new System.Drawing.Point(108, 246);
+            this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.Root = this.Root;
+            this.layoutControl1.Size = new System.Drawing.Size(180, 120);
+            this.layoutControl1.TabIndex = 21;
+            this.layoutControl1.Text = "layoutControl1";
+            // 
+            // Root
+            // 
+            this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.Root.GroupBordersVisible = false;
+            this.Root.Name = "Root";
+            this.Root.Size = new System.Drawing.Size(180, 120);
+            this.Root.TextVisible = false;
             // 
             // MainForm
             // 
@@ -409,7 +440,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1198, 748);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.layoutControl1);
+            this.Controls.Add(this.pbxCar1);
             this.Controls.Add(this.eventSearchControl1);
             this.Controls.Add(this.locationSearchControl1);
             this.Controls.Add(this.rentSearchControl1);
@@ -428,7 +460,9 @@
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -469,7 +503,10 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
         private DevExpress.XtraBars.Ribbon.RibbonPageCategory ribbonPageCategory1;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbxCar1;
+        private System.Windows.Forms.Timer tmrChangeImage;
+        private System.Windows.Forms.ImageList imageListCar;
+        private DevExpress.XtraLayout.LayoutControl layoutControl1;
+        private DevExpress.XtraLayout.LayoutControlGroup Root;
     }
 }

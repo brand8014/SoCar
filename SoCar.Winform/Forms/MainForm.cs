@@ -118,7 +118,7 @@ namespace SoCar.Winform.Forms
         }
         private void carSearchControl1_SearchButtonClicked(object sender, UserControls.CarSearchControl.SearchButtonClickedEventArgs e)
         {
-            uscBasic1.SearchCar(e.CarTypeId, e.Number, e.Location, e.IsRent);
+            uscBasic1.SearchCar(e.CarId, e.CarTypeId, e.LocationId, e.IsRent);
         }
         private void customerSearchControl1_SearchButtonClicked(object sender, UserControls.CustomerSearchControl.SearchButtonClickedEventArgs e)
         {
@@ -209,37 +209,37 @@ namespace SoCar.Winform.Forms
 
         private void barButtonLocation_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            pictureBox1.Visible = false;
+            pbxCar1.Visible = false;
             uscBasic1.nbgLocation.Expanded = true;
         }
 
         private void barButtonCustomer_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            pictureBox1.Visible = false;
+            pbxCar1.Visible = false;
             uscBasic1.nbgCustomer.Expanded = true;
         }
 
         private void barButtonInsurance_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            pictureBox1.Visible = false;
+            pbxCar1.Visible = false;
             uscBasic1.nbgInsurance.Expanded = true;
         }
 
         private void barButtonRent_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            pictureBox1.Visible = false;
+            pbxCar1.Visible = false;
             uscBasic1.nbgRent.Expanded = true;
         }
 
         private void barButtonEvent_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            pictureBox1.Visible = false;
+            pbxCar1.Visible = false;
             uscBasic1.nbgEvent.Expanded = true;
         }
 
         private void barButtonHome_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            pictureBox1.Visible = true;
+            pbxCar1.Visible = true;
 
         }
     }
