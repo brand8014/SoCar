@@ -28,7 +28,7 @@ namespace SoCar.Winform.Forms
             DisableAllControls();
 
             //Text = LoginProxy.Login.UserName;
-        }\
+        }
 
         private void uscBasic1_Load(object sender, EventArgs e)
         {

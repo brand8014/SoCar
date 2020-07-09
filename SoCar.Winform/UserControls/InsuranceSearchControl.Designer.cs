@@ -32,7 +32,6 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.cbbGoods = new System.Windows.Forms.ComboBox();
             this.cbbCompany = new System.Windows.Forms.ComboBox();
-            this.bdsInsurance = new System.Windows.Forms.BindingSource(this.components);
             this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
             this.btnReset = new DevExpress.XtraEditors.SimpleButton();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -42,9 +41,9 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.bdsInsurance = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsInsurance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -52,6 +51,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsInsurance)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -93,10 +93,6 @@
             this.cbbCompany.Size = new System.Drawing.Size(241, 23);
             this.cbbCompany.TabIndex = 6;
             this.cbbCompany.ValueMember = "InsuranceId";
-            // 
-            // bdsInsurance
-            // 
-            this.bdsInsurance.DataSource = typeof(SoCar.Data.Insurance);
             // 
             // btnSearch
             // 
@@ -191,6 +187,10 @@
             this.layoutControlItem4.Text = "상품명";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(52, 18);
             // 
+            // bdsInsurance
+            // 
+            this.bdsInsurance.DataSource = typeof(SoCar.Data.Insurance);
+            // 
             // InsuranceSearchControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -201,7 +201,6 @@
             this.Load += new System.EventHandler(this.InsuranceSearchControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bdsInsurance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
@@ -209,6 +208,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsInsurance)).EndInit();
             this.ResumeLayout(false);
 
         }

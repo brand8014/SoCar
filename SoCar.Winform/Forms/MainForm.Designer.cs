@@ -39,6 +39,7 @@
             this.barButtonRent = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonInsurance = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonEvent = new DevExpress.XtraBars.BarButtonItem();
+            this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -66,6 +67,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,35 +85,32 @@
             this.barButtonRent,
             this.barButtonInsurance,
             this.barButtonEvent});
+            this.ribbonControl1.LargeImages = this.imageCollection1;
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.MaxItemId = 13;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(1198, 187);
+            this.ribbonControl1.Size = new System.Drawing.Size(1198, 185);
             // 
             // barButtonGroup1
             // 
             this.barButtonGroup1.Caption = "barButtonGroup1";
             this.barButtonGroup1.Id = 4;
-            this.barButtonGroup1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonGroup1.ImageOptions.Image")));
-            this.barButtonGroup1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonGroup1.ImageOptions.LargeImage")));
             this.barButtonGroup1.Name = "barButtonGroup1";
             // 
             // barButtonHome
             // 
             this.barButtonHome.Caption = "홈";
             this.barButtonHome.Id = 5;
-            this.barButtonHome.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonHome.ImageOptions.Image")));
-            this.barButtonHome.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonHome.ImageOptions.LargeImage")));
+            this.barButtonHome.ImageOptions.LargeImageIndex = 8;
             this.barButtonHome.Name = "barButtonHome";
             // 
             // barButtonCustomer
             // 
             this.barButtonCustomer.Caption = "고객";
             this.barButtonCustomer.Id = 6;
-            this.barButtonCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonCustomer.ImageOptions.Image")));
-            this.barButtonCustomer.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonCustomer.ImageOptions.LargeImage")));
+            this.barButtonCustomer.ImageOptions.LargeImageIndex = 2;
             this.barButtonCustomer.Name = "barButtonCustomer";
             this.barButtonCustomer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonCustomer_ItemClick);
             // 
@@ -119,8 +118,7 @@
             // 
             this.barButtonLocation.Caption = "지역";
             this.barButtonLocation.Id = 7;
-            this.barButtonLocation.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonLocation.ImageOptions.Image")));
-            this.barButtonLocation.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonLocation.ImageOptions.LargeImage")));
+            this.barButtonLocation.ImageOptions.LargeImageIndex = 11;
             this.barButtonLocation.Name = "barButtonLocation";
             this.barButtonLocation.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonLocation_ItemClick);
             // 
@@ -128,8 +126,7 @@
             // 
             this.barButtonCar.Caption = "차";
             this.barButtonCar.Id = 8;
-            this.barButtonCar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonCar.ImageOptions.Image")));
-            this.barButtonCar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonCar.ImageOptions.LargeImage")));
+            this.barButtonCar.ImageOptions.LargeImageIndex = 6;
             this.barButtonCar.Name = "barButtonCar";
             this.barButtonCar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonCar_ItemClick);
             // 
@@ -147,7 +144,7 @@
             // 
             this.barButtonInsurance.Caption = "보험";
             this.barButtonInsurance.Id = 11;
-            this.barButtonInsurance.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonInsurance.ImageOptions.SvgImage")));
+            this.barButtonInsurance.ImageOptions.LargeImageIndex = 13;
             this.barButtonInsurance.Name = "barButtonInsurance";
             this.barButtonInsurance.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonInsurance_ItemClick);
             // 
@@ -155,9 +152,32 @@
             // 
             this.barButtonEvent.Caption = "이벤트";
             this.barButtonEvent.Id = 12;
-            this.barButtonEvent.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonEvent.ImageOptions.SvgImage")));
+            this.barButtonEvent.ImageOptions.LargeImageIndex = 0;
             this.barButtonEvent.Name = "barButtonEvent";
             this.barButtonEvent.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonEvent_ItemClick);
+            // 
+            // imageCollection1
+            // 
+            this.imageCollection1.ImageSize = new System.Drawing.Size(35, 35);
+            this.imageCollection1.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollection1.ImageStream")));
+            this.imageCollection1.Images.SetKeyName(0, "iconfinder_Events_751098 (1).png");
+            this.imageCollection1.Images.SetKeyName(1, "iconfinder_setting_user_interface_app_option_preference_3832196.png");
+            this.imageCollection1.Images.SetKeyName(2, "iconfinder_user_group_man_woman_2639943.png");
+            this.imageCollection1.Images.SetKeyName(3, "iconfinder_Paper_4200478.png");
+            this.imageCollection1.Images.SetKeyName(4, "iconfinder_Cab_3363563.png");
+            this.imageCollection1.Images.SetKeyName(5, "iconfinder_20_2739101.png");
+            this.imageCollection1.Images.SetKeyName(6, "iconfinder_car_2639905.png");
+            this.imageCollection1.Images.SetKeyName(7, "iconfinder__52ui_2303157.png");
+            this.imageCollection1.Images.SetKeyName(8, "iconfinder_home_1372383.png");
+            this.imageCollection1.Images.SetKeyName(9, "iconfinder_00-ELASTOFONT-STORE-READY_map-maker2_2703073.png");
+            this.imageCollection1.Images.SetKeyName(10, "iconfinder_house_384890.png");
+            this.imageCollection1.Images.SetKeyName(11, "iconfinder_location_1585851.png");
+            this.imageCollection1.Images.SetKeyName(12, "iconfinder___Location_1904662.png");
+            this.imageCollection1.Images.SetKeyName(13, "iconfinder_health_protection_healthcare_medical_insurance_4951157.png");
+            this.imageCollection1.Images.SetKeyName(14, "iconfinder_shield_security_protection_antivirus_insurance_3994405.png");
+            this.imageCollection1.Images.SetKeyName(15, "iconfinder_266_car_hand_insurance_transport_safety_3957655.png");
+            this.imageCollection1.Images.SetKeyName(16, "iconfinder_4_insurance_Finance_insurance_money_protection_4308069.png");
+            this.imageCollection1.Images.SetKeyName(17, "iconfinder_calendar-80px_510932.png");
             // 
             // ribbonPage1
             // 
@@ -395,9 +415,9 @@
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 187);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 185);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1198, 561);
+            this.pictureBox1.Size = new System.Drawing.Size(1198, 563);
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
@@ -427,6 +447,7 @@
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -470,5 +491,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageCategory ribbonPageCategory1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private DevExpress.Utils.ImageCollection imageCollection1;
     }
 }

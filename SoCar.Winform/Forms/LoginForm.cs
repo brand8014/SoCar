@@ -50,7 +50,8 @@ namespace SoCar.Winform.Forms
                     Properties.Settings.Default.LoginIdSave = txbName.Text;
                     Properties.Settings.Default.Save();
                 }
-                
+
+                this.Visible = false;
                 mainform1.Show();
                 
                 //close();
