@@ -141,7 +141,7 @@
             // 
             // colEventName
             // 
-            this.colEventName.FieldName = "이벤트명";
+            this.colEventName.FieldName = "EventName";
             this.colEventName.MinWidth = 25;
             this.colEventName.Name = "colEventName";
             this.colEventName.Visible = true;
@@ -150,7 +150,7 @@
             // 
             // colRateOfDiscount
             // 
-            this.colRateOfDiscount.FieldName = "할인율";
+            this.colRateOfDiscount.FieldName = "RateOfDiscount";
             this.colRateOfDiscount.MinWidth = 25;
             this.colRateOfDiscount.Name = "colRateOfDiscount";
             this.colRateOfDiscount.Visible = true;
@@ -159,7 +159,7 @@
             // 
             // colPeriod
             // 
-            this.colPeriod.FieldName = "이벤트기간";
+            this.colPeriod.FieldName = "Period";
             this.colPeriod.MinWidth = 25;
             this.colPeriod.Name = "colPeriod";
             this.colPeriod.Visible = true;
@@ -217,7 +217,7 @@
             // 
             // colLocationName
             // 
-            this.colLocationName.FieldName = "지역";
+            this.colLocationName.FieldName = "LocationName";
             this.colLocationName.MinWidth = 25;
             this.colLocationName.Name = "colLocationName";
             this.colLocationName.Visible = true;
@@ -226,7 +226,7 @@
             // 
             // colAddress
             // 
-            this.colAddress.FieldName = "주소";
+            this.colAddress.FieldName = "Address";
             this.colAddress.MinWidth = 25;
             this.colAddress.Name = "colAddress";
             this.colAddress.Visible = true;
@@ -251,7 +251,7 @@
             // 
             // colPrice1
             // 
-            this.colPrice1.FieldName = "가격";
+            this.colPrice1.FieldName = "Price";
             this.colPrice1.MinWidth = 25;
             this.colPrice1.Name = "colPrice1";
             this.colPrice1.Visible = true;
@@ -260,7 +260,7 @@
             // 
             // colIsRent
             // 
-            this.colIsRent.FieldName = "대여여부";
+            this.colIsRent.FieldName = "IsRent";
             this.colIsRent.MinWidth = 25;
             this.colIsRent.Name = "colIsRent";
             this.colIsRent.Visible = true;
@@ -269,7 +269,7 @@
             // 
             // colMileage
             // 
-            this.colMileage.FieldName = "주행거리";
+            this.colMileage.FieldName = "Mileage";
             this.colMileage.MinWidth = 25;
             this.colMileage.Name = "colMileage";
             this.colMileage.Visible = true;
@@ -278,7 +278,7 @@
             // 
             // colAccident
             // 
-            this.colAccident.FieldName = "사고횟수";
+            this.colAccident.FieldName = "Accident";
             this.colAccident.MinWidth = 25;
             this.colAccident.Name = "colAccident";
             this.colAccident.Visible = true;
@@ -287,7 +287,7 @@
             // 
             // colNumber
             // 
-            this.colNumber.FieldName = "차량번호";
+            this.colNumber.FieldName = "Number";
             this.colNumber.MinWidth = 25;
             this.colNumber.Name = "colNumber";
             this.colNumber.Visible = true;
@@ -296,7 +296,7 @@
             // 
             // colCarName
             // 
-            this.colCarName.FieldName = "차량이름";
+            this.colCarName.FieldName = "CarName";
             this.colCarName.MinWidth = 25;
             this.colCarName.Name = "colCarName";
             this.colCarName.Visible = true;
@@ -305,7 +305,7 @@
             // 
             // colAddress1
             // 
-            this.colAddress1.FieldName = "주소";
+            this.colAddress1.FieldName = "Address";
             this.colAddress1.MinWidth = 25;
             this.colAddress1.Name = "colAddress1";
             this.colAddress1.Visible = true;
@@ -314,7 +314,7 @@
             // 
             // colDefectCount
             // 
-            this.colDefectCount.FieldName = "결함개수";
+            this.colDefectCount.FieldName = "DefectCount";
             this.colDefectCount.MinWidth = 25;
             this.colDefectCount.Name = "colDefectCount";
             this.colDefectCount.Visible = true;
@@ -338,7 +338,7 @@
             // 
             // colCustomerName
             // 
-            this.colCustomerName.FieldName = "고객명";
+            this.colCustomerName.FieldName = "CustomerName";
             this.colCustomerName.MinWidth = 25;
             this.colCustomerName.Name = "colCustomerName";
             this.colCustomerName.Visible = true;
@@ -347,7 +347,7 @@
             // 
             // colCarName1
             // 
-            this.colCarName1.FieldName = "차량이름";
+            this.colCarName1.FieldName = "CarName";
             this.colCarName1.MinWidth = 25;
             this.colCarName1.Name = "colCarName1";
             this.colCarName1.Visible = true;
@@ -356,7 +356,7 @@
             // 
             // colEventCount
             // 
-            this.colEventCount.FieldName = "이벤트횟수";
+            this.colEventCount.FieldName = "EventCount";
             this.colEventCount.MinWidth = 25;
             this.colEventCount.Name = "colEventCount";
             this.colEventCount.Visible = true;
@@ -365,7 +365,7 @@
             // 
             // colRentAt
             // 
-            this.colRentAt.FieldName = "대여시각";
+            this.colRentAt.FieldName = "RentAt";
             this.colRentAt.MinWidth = 25;
             this.colRentAt.Name = "colRentAt";
             this.colRentAt.Visible = true;
@@ -374,7 +374,7 @@
             // 
             // colReturnAt
             // 
-            this.colReturnAt.FieldName = "반납시각";
+            this.colReturnAt.FieldName = "ReturnAt";
             this.colReturnAt.MinWidth = 25;
             this.colReturnAt.Name = "colReturnAt";
             this.colReturnAt.Visible = true;
@@ -383,7 +383,7 @@
             // 
             // colReturnTime
             // 
-            this.colReturnTime.FieldName = "실제반납시각";
+            this.colReturnTime.FieldName = "ReturnTime";
             this.colReturnTime.MinWidth = 25;
             this.colReturnTime.Name = "colReturnTime";
             this.colReturnTime.Visible = true;
@@ -392,7 +392,7 @@
             // 
             // colBookAt
             // 
-            this.colBookAt.FieldName = "예약시각";
+            this.colBookAt.FieldName = "BookAt";
             this.colBookAt.MinWidth = 25;
             this.colBookAt.Name = "colBookAt";
             this.colBookAt.Visible = true;
@@ -401,7 +401,7 @@
             // 
             // colPrice
             // 
-            this.colPrice.FieldName = "가격";
+            this.colPrice.FieldName = "Price";
             this.colPrice.MinWidth = 25;
             this.colPrice.Name = "colPrice";
             this.colPrice.Visible = true;
@@ -423,7 +423,7 @@
             // 
             // colName
             // 
-            this.colName.FieldName = "고객명";
+            this.colName.FieldName = "Name";
             this.colName.MinWidth = 25;
             this.colName.Name = "colName";
             this.colName.Visible = true;
@@ -432,7 +432,7 @@
             // 
             // colAge
             // 
-            this.colAge.FieldName = "나이";
+            this.colAge.FieldName = "Age";
             this.colAge.MinWidth = 25;
             this.colAge.Name = "colAge";
             this.colAge.Visible = true;
@@ -441,7 +441,7 @@
             // 
             // colBirthday
             // 
-            this.colBirthday.FieldName = "생일";
+            this.colBirthday.FieldName = "Birthday";
             this.colBirthday.MinWidth = 25;
             this.colBirthday.Name = "colBirthday";
             this.colBirthday.Visible = true;
@@ -450,7 +450,7 @@
             // 
             // colCellNumber
             // 
-            this.colCellNumber.FieldName = "전화번호";
+            this.colCellNumber.FieldName = "Birthday";
             this.colCellNumber.MinWidth = 25;
             this.colCellNumber.Name = "colCellNumber";
             this.colCellNumber.Visible = true;
@@ -459,7 +459,7 @@
             // 
             // colLisence
             // 
-            this.colLisence.FieldName = "면허증";
+            this.colLisence.FieldName = "License";
             this.colLisence.MinWidth = 25;
             this.colLisence.Name = "colLisence";
             this.colLisence.Visible = true;
@@ -477,7 +477,7 @@
             // 
             // colCompany
             // 
-            this.colCompany.FieldName = "보험사";
+            this.colCompany.FieldName = "Company";
             this.colCompany.MinWidth = 25;
             this.colCompany.Name = "colCompany";
             this.colCompany.Visible = true;
@@ -486,7 +486,7 @@
             // 
             // colGoods
             // 
-            this.colGoods.FieldName = "보험상품";
+            this.colGoods.FieldName = "Goods";
             this.colGoods.MinWidth = 25;
             this.colGoods.Name = "colGoods";
             this.colGoods.Visible = true;
