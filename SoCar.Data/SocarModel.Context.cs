@@ -25,17 +25,17 @@ namespace SoCar.Data
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Car> Cars { get; set; }
+        public virtual DbSet<CarInsurance> CarInsurances { get; set; }
         public virtual DbSet<CarType> CarTypes { get; set; }
         public virtual DbSet<Code> Codes { get; set; }
         public virtual DbSet<CodeCategory> CodeCategories { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Defect> Defects { get; set; }
         public virtual DbSet<Event> Events { get; set; }
-        public virtual DbSet<Location> Locations { get; set; }
-        public virtual DbSet<Rent> Rents { get; set; }
-        public virtual DbSet<Car> Cars { get; set; }
-        public virtual DbSet<CarInsurance> CarInsurances { get; set; }
         public virtual DbSet<Insurance> Insurances { get; set; }
+        public virtual DbSet<Location> Locations { get; set; }
         public virtual DbSet<Login> Logins { get; set; }
+        public virtual DbSet<Rent> Rents { get; set; }
     }
 }

@@ -24,7 +24,7 @@ namespace SoCar.Winform.Forms
         {
             _car = car;
             bdsCarType.DataSource = DataRepository.CarType.GetAll();
-            bdsLocation.DataSource = DataRepository.Location.GetAll();
+            bdsLocation.DataSource = DataRepository.Location.GetLocationFullName();
 
             txePrice.Text = car.Price.ToString();
             txeNumber.Text = car.Number;

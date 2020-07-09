@@ -24,8 +24,8 @@ namespace SoCar.Data
         public string Address { get; set; }
         public Nullable<int> LocationCode { get; set; }
     
-        public virtual Code Code { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Car> Cars { get; set; }
+        public virtual Code Code { get; set; }
     }
 }

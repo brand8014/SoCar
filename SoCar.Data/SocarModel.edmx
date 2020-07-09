@@ -60,7 +60,7 @@
           <Property Name="CellNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Age" Type="int" Nullable="false" />
           <Property Name="Birthday" Type="date" Nullable="false" />
-          <Property Name="Lisence" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LisenceCode" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Defect">
           <Key>
@@ -86,8 +86,8 @@
             <PropertyRef Name="InsuranceId" />
           </Key>
           <Property Name="InsuranceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Company" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Goods" Type="nvarchar" MaxLength="200" />
+          <Property Name="CompanyCode" Type="int" Nullable="false" />
+          <Property Name="GoodsCode" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Location">
           <Key>
@@ -118,8 +118,46 @@
           <Property Name="BookAt" Type="datetime" Nullable="false" />
           <Property Name="Price" Type="int" Nullable="false" />
         </EntityType>
+        <Association Name="FK_Customer_Code">
+          <End Role="Code" Type="Self.Code" Multiplicity="1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Code">
+              <PropertyRef Name="CodeId" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="LisenceCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Insurance_Code1">
+          <End Role="Code" Type="Self.Code" Multiplicity="1" />
+          <End Role="Insurance" Type="Self.Insurance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Code">
+              <PropertyRef Name="CodeId" />
+            </Principal>
+            <Dependent Role="Insurance">
+              <PropertyRef Name="CompanyCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Insurance_Code2">
+          <End Role="Code" Type="Self.Code" Multiplicity="1" />
+          <End Role="Insurance" Type="Self.Insurance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Code">
+              <PropertyRef Name="CodeId" />
+            </Principal>
+            <Dependent Role="Insurance">
+              <PropertyRef Name="GoodsCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_결함_차">
-          <End Role="Car" Type="Self.Car" Multiplicity="1" />
+          <End Role="Car" Type="Self.Car" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Defect" Type="Self.Defect" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Car">
@@ -169,7 +207,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_대여_차">
-          <End Role="Car" Type="Self.Car" Multiplicity="1" />
+          <End Role="Car" Type="Self.Car" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Rent" Type="Self.Rent" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Car">
@@ -181,7 +221,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_위치_코드">
-          <End Role="Code" Type="Self.Code" Multiplicity="0..1" />
+          <End Role="Code" Type="Self.Code" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Location" Type="Self.Location" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Code">
@@ -193,7 +235,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_이벤트_대여">
-          <End Role="Rent" Type="Self.Rent" Multiplicity="1" />
+          <End Role="Rent" Type="Self.Rent" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Event" Type="Self.Event" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Rent">
@@ -217,7 +261,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_차_위치">
-          <End Role="Location" Type="Self.Location" Multiplicity="1" />
+          <End Role="Location" Type="Self.Location" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Car" Type="Self.Car" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Location">
@@ -229,7 +275,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_차_차종">
-          <End Role="CarType" Type="Self.CarType" Multiplicity="1" />
+          <End Role="CarType" Type="Self.CarType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Car" Type="Self.Car" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CarType">
@@ -253,7 +301,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_차보험_차">
-          <End Role="Car" Type="Self.Car" Multiplicity="1" />
+          <End Role="Car" Type="Self.Car" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="CarInsurance" Type="Self.CarInsurance" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Car">
@@ -265,7 +315,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_코드_코드카테고리">
-          <End Role="CodeCategory" Type="Self.CodeCategory" Multiplicity="1" />
+          <End Role="CodeCategory" Type="Self.CodeCategory" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Code" Type="Self.Code" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CodeCategory">
@@ -289,6 +341,18 @@
           <EntitySet Name="Location" EntityType="Self.Location" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Rent" EntityType="Self.Rent" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Customer_Code" Association="Self.FK_Customer_Code">
+            <End Role="Code" EntitySet="Code" />
+            <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Insurance_Code1" Association="Self.FK_Insurance_Code1">
+            <End Role="Code" EntitySet="Code" />
+            <End Role="Insurance" EntitySet="Insurance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Insurance_Code2" Association="Self.FK_Insurance_Code2">
+            <End Role="Code" EntitySet="Code" />
+            <End Role="Insurance" EntitySet="Insurance" />
+          </AssociationSet>
           <AssociationSet Name="FK_결함_차" Association="Self.FK_결함_차">
             <End Role="Car" EntitySet="Car" />
             <End Role="Defect" EntitySet="Defect" />
@@ -346,224 +410,19 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SocarModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="CarType">
-          <Key>
-            <PropertyRef Name="CarTypeId" />
-          </Key>
-          <Property Name="CarTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="IsAuto" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Cars" Relationship="SocarModel.FK_차_차종" FromRole="CarType" ToRole="Car" />
-        </EntityType>
-        <EntityType Name="Code">
-          <Key>
-            <PropertyRef Name="CodeId" />
-          </Key>
-          <Property Name="CodeId" Type="Int32" Nullable="false" />
-          <Property Name="CodeCategoryId" Type="Int32" Nullable="false" />
-          <Property Name="Item" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Defects" Relationship="Self.FK_결함_코드" FromRole="Code" ToRole="Defect" />
-          <NavigationProperty Name="Defects1" Relationship="Self.FK_결함_코드2" FromRole="Code" ToRole="Defect" />
-          <NavigationProperty Name="Locations" Relationship="Self.FK_위치_코드" FromRole="Code" ToRole="Location" />
-          <NavigationProperty Name="Events" Relationship="Self.FK_이벤트_코드" FromRole="Code" ToRole="Event" />
-          <NavigationProperty Name="CodeCategory" Relationship="Self.FK_코드_코드카테고리" FromRole="Code" ToRole="CodeCategory" />
-        </EntityType>
-        <EntityType Name="CodeCategory">
-          <Key>
-            <PropertyRef Name="CodeCategoryId" />
-          </Key>
-          <Property Name="CodeCategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Codes" Relationship="Self.FK_코드_코드카테고리" FromRole="CodeCategory" ToRole="Code" />
-        </EntityType>
-        <EntityType Name="Customer">
-          <Key>
-            <PropertyRef Name="CustomerId" />
-          </Key>
-          <Property Name="CustomerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="CellNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Age" Type="Int32" Nullable="false" />
-          <Property Name="Birthday" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Lisence" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Rents" Relationship="Self.FK_대여_고객" FromRole="Customer" ToRole="Rent" />
-        </EntityType>
-        <EntityType Name="Defect">
-          <Key>
-            <PropertyRef Name="DefectId" />
-          </Key>
-          <Property Name="DefectId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="PartCode" Type="Int32" Nullable="false" />
-          <Property Name="DefectStateCode" Type="Int32" Nullable="false" />
-          <Property Name="CarId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Code" Relationship="Self.FK_결함_코드" FromRole="Defect" ToRole="Code" />
-          <NavigationProperty Name="Code1" Relationship="Self.FK_결함_코드2" FromRole="Defect" ToRole="Code" />
-          <NavigationProperty Name="Car" Relationship="SocarModel.FK_결함_차" FromRole="Defect" ToRole="Car" />
-        </EntityType>
-        <EntityType Name="Event">
-          <Key>
-            <PropertyRef Name="EventId" />
-          </Key>
-          <Property Name="EventId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="EventTypeCode" Type="Int32" Nullable="false" />
-          <Property Name="RentId" Type="Int32" Nullable="false" />
-          <Property Name="RateOfDiscount" Type="Int32" Nullable="false" />
-          <Property Name="Period" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="Code" Relationship="Self.FK_이벤트_코드" FromRole="Event" ToRole="Code" />
-          <NavigationProperty Name="Rent" Relationship="Self.FK_이벤트_대여" FromRole="Event" ToRole="Rent" />
-        </EntityType>
-        <EntityType Name="Location">
-          <Key>
-            <PropertyRef Name="LocationId" />
-          </Key>
-          <Property Name="LocationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="LocationCode" Type="Int32" />
-          <NavigationProperty Name="Code" Relationship="Self.FK_위치_코드" FromRole="Location" ToRole="Code" />
-          <NavigationProperty Name="Cars" Relationship="SocarModel.FK_차_위치" FromRole="Location" ToRole="Car" />
-        </EntityType>
-        <EntityType Name="Rent">
-          <Key>
-            <PropertyRef Name="RentId" />
-          </Key>
-          <Property Name="RentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CarId" Type="Int32" Nullable="false" />
-          <Property Name="RentAt" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="ReturnAt" Type="DateTime" Precision="3" />
-          <Property Name="LocationId" Type="Int32" Nullable="false" />
-          <Property Name="CustomerId" Type="Int32" Nullable="false" />
-          <Property Name="ReturnTime" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="BookAt" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Price" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Customer" Relationship="Self.FK_대여_고객" FromRole="Rent" ToRole="Customer" />
-          <NavigationProperty Name="Events" Relationship="Self.FK_이벤트_대여" FromRole="Rent" ToRole="Event" />
-          <NavigationProperty Name="Car" Relationship="SocarModel.FK_대여_차" FromRole="Rent" ToRole="Car" />
-        </EntityType>
-        <Association Name="FK_결함_코드">
-          <End Role="Code" Type="Self.Code" Multiplicity="1" />
-          <End Role="Defect" Type="Self.Defect" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Code">
-              <PropertyRef Name="CodeId" />
-            </Principal>
-            <Dependent Role="Defect">
-              <PropertyRef Name="PartCode" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_결함_코드2">
-          <End Role="Code" Type="Self.Code" Multiplicity="1" />
-          <End Role="Defect" Type="Self.Defect" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Code">
-              <PropertyRef Name="CodeId" />
-            </Principal>
-            <Dependent Role="Defect">
-              <PropertyRef Name="DefectStateCode" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_위치_코드">
-          <End Role="Code" Type="Self.Code" Multiplicity="0..1" />
-          <End Role="Location" Type="Self.Location" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Code">
-              <PropertyRef Name="CodeId" />
-            </Principal>
-            <Dependent Role="Location">
-              <PropertyRef Name="LocationCode" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_이벤트_코드">
-          <End Role="Code" Type="Self.Code" Multiplicity="1" />
-          <End Role="Event" Type="Self.Event" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Code">
-              <PropertyRef Name="CodeId" />
-            </Principal>
-            <Dependent Role="Event">
-              <PropertyRef Name="EventTypeCode" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_코드_코드카테고리">
-          <End Role="CodeCategory" Type="Self.CodeCategory" Multiplicity="1" />
-          <End Role="Code" Type="Self.Code" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CodeCategory">
-              <PropertyRef Name="CodeCategoryId" />
-            </Principal>
-            <Dependent Role="Code">
-              <PropertyRef Name="CodeCategoryId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_대여_고객">
-          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
-          <End Role="Rent" Type="Self.Rent" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Customer">
-              <PropertyRef Name="CustomerId" />
-            </Principal>
-            <Dependent Role="Rent">
-              <PropertyRef Name="CustomerId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_이벤트_대여">
-          <End Role="Rent" Type="Self.Rent" Multiplicity="1" />
-          <End Role="Event" Type="Self.Event" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Rent">
-              <PropertyRef Name="RentId" />
-            </Principal>
-            <Dependent Role="Event">
-              <PropertyRef Name="RentId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="SocarEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="CarTypes" EntityType="Self.CarType" />
-          <EntitySet Name="Codes" EntityType="Self.Code" />
-          <EntitySet Name="CodeCategories" EntityType="Self.CodeCategory" />
-          <EntitySet Name="Customers" EntityType="Self.Customer" />
-          <EntitySet Name="Defects" EntityType="Self.Defect" />
-          <EntitySet Name="Events" EntityType="Self.Event" />
-          <EntitySet Name="Locations" EntityType="Self.Location" />
-          <EntitySet Name="Rents" EntityType="Self.Rent" />
-          <AssociationSet Name="FK_결함_코드" Association="Self.FK_결함_코드">
-            <End Role="Code" EntitySet="Codes" />
-            <End Role="Defect" EntitySet="Defects" />
-          </AssociationSet>
-          <AssociationSet Name="FK_결함_코드2" Association="Self.FK_결함_코드2">
-            <End Role="Code" EntitySet="Codes" />
-            <End Role="Defect" EntitySet="Defects" />
-          </AssociationSet>
-          <AssociationSet Name="FK_위치_코드" Association="Self.FK_위치_코드">
-            <End Role="Code" EntitySet="Codes" />
-            <End Role="Location" EntitySet="Locations" />
-          </AssociationSet>
-          <AssociationSet Name="FK_이벤트_코드" Association="Self.FK_이벤트_코드">
-            <End Role="Code" EntitySet="Codes" />
-            <End Role="Event" EntitySet="Events" />
-          </AssociationSet>
-          <AssociationSet Name="FK_코드_코드카테고리" Association="Self.FK_코드_코드카테고리">
-            <End Role="CodeCategory" EntitySet="CodeCategories" />
-            <End Role="Code" EntitySet="Codes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_대여_고객" Association="Self.FK_대여_고객">
-            <End Role="Customer" EntitySet="Customers" />
-            <End Role="Rent" EntitySet="Rents" />
-          </AssociationSet>
-          <AssociationSet Name="FK_이벤트_대여" Association="Self.FK_이벤트_대여">
-            <End Role="Rent" EntitySet="Rents" />
-            <End Role="Event" EntitySet="Events" />
-          </AssociationSet>
           <EntitySet Name="Cars" EntityType="SocarModel.Car" />
           <EntitySet Name="CarInsurances" EntityType="SocarModel.CarInsurance" />
+          <EntitySet Name="CarTypes" EntityType="SocarModel.CarType" />
+          <EntitySet Name="Codes" EntityType="SocarModel.Code" />
+          <EntitySet Name="CodeCategories" EntityType="SocarModel.CodeCategory" />
+          <EntitySet Name="Customers" EntityType="SocarModel.Customer" />
+          <EntitySet Name="Defects" EntityType="SocarModel.Defect" />
+          <EntitySet Name="Events" EntityType="SocarModel.Event" />
           <EntitySet Name="Insurances" EntityType="SocarModel.Insurance" />
+          <EntitySet Name="Locations" EntityType="SocarModel.Location" />
+          <EntitySet Name="Logins" EntityType="SocarModel.Login" />
+          <EntitySet Name="Rents" EntityType="SocarModel.Rent" />
           <AssociationSet Name="FK_결함_차" Association="SocarModel.FK_결함_차">
             <End Role="Car" EntitySet="Cars" />
             <End Role="Defect" EntitySet="Defects" />
@@ -588,8 +447,47 @@
             <End Role="Insurance" EntitySet="Insurances" />
             <End Role="CarInsurance" EntitySet="CarInsurances" />
           </AssociationSet>
-          <EntitySet Name="Logins" EntityType="SocarModel.Login" />
-          </EntityContainer>
+          <AssociationSet Name="FK_Customer_Code" Association="SocarModel.FK_Customer_Code">
+            <End Role="Code" EntitySet="Codes" />
+            <End Role="Customer" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Insurance_Code1" Association="SocarModel.FK_Insurance_Code1">
+            <End Role="Code" EntitySet="Codes" />
+            <End Role="Insurance" EntitySet="Insurances" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Insurance_Code2" Association="SocarModel.FK_Insurance_Code2">
+            <End Role="Code" EntitySet="Codes" />
+            <End Role="Insurance" EntitySet="Insurances" />
+          </AssociationSet>
+          <AssociationSet Name="FK_결함_코드" Association="SocarModel.FK_결함_코드">
+            <End Role="Code" EntitySet="Codes" />
+            <End Role="Defect" EntitySet="Defects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_결함_코드2" Association="SocarModel.FK_결함_코드2">
+            <End Role="Code" EntitySet="Codes" />
+            <End Role="Defect" EntitySet="Defects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_위치_코드" Association="SocarModel.FK_위치_코드">
+            <End Role="Code" EntitySet="Codes" />
+            <End Role="Location" EntitySet="Locations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_이벤트_코드" Association="SocarModel.FK_이벤트_코드">
+            <End Role="Code" EntitySet="Codes" />
+            <End Role="Event" EntitySet="Events" />
+          </AssociationSet>
+          <AssociationSet Name="FK_코드_코드카테고리" Association="SocarModel.FK_코드_코드카테고리">
+            <End Role="CodeCategory" EntitySet="CodeCategories" />
+            <End Role="Code" EntitySet="Codes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_대여_고객" Association="SocarModel.FK_대여_고객">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Rent" EntitySet="Rents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_이벤트_대여" Association="SocarModel.FK_이벤트_대여">
+            <End Role="Rent" EntitySet="Rents" />
+            <End Role="Event" EntitySet="Events" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="Car">
           <Key>
             <PropertyRef Name="CarId" />
@@ -619,17 +517,126 @@
           <NavigationProperty Name="Car" Relationship="SocarModel.FK_차보험_차" FromRole="CarInsurance" ToRole="Car" />
           <NavigationProperty Name="Insurance" Relationship="SocarModel.FK_차보험_보험" FromRole="CarInsurance" ToRole="Insurance" />
         </EntityType>
+        <EntityType Name="CarType">
+          <Key>
+            <PropertyRef Name="CarTypeId" />
+          </Key>
+          <Property Name="CarTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Size" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsAuto" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Cars" Relationship="SocarModel.FK_차_차종" FromRole="CarType" ToRole="Car" />
+        </EntityType>
+        <EntityType Name="Code">
+          <Key>
+            <PropertyRef Name="CodeId" />
+          </Key>
+          <Property Name="CodeId" Type="Int32" Nullable="false" />
+          <Property Name="CodeCategoryId" Type="Int32" Nullable="false" />
+          <Property Name="Item" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Customers" Relationship="SocarModel.FK_Customer_Code" FromRole="Code" ToRole="Customer" />
+          <NavigationProperty Name="Insurances" Relationship="SocarModel.FK_Insurance_Code1" FromRole="Code" ToRole="Insurance" />
+          <NavigationProperty Name="Insurances1" Relationship="SocarModel.FK_Insurance_Code2" FromRole="Code" ToRole="Insurance" />
+          <NavigationProperty Name="Defects" Relationship="SocarModel.FK_결함_코드" FromRole="Code" ToRole="Defect" />
+          <NavigationProperty Name="Defects1" Relationship="SocarModel.FK_결함_코드2" FromRole="Code" ToRole="Defect" />
+          <NavigationProperty Name="Locations" Relationship="SocarModel.FK_위치_코드" FromRole="Code" ToRole="Location" />
+          <NavigationProperty Name="Events" Relationship="SocarModel.FK_이벤트_코드" FromRole="Code" ToRole="Event" />
+          <NavigationProperty Name="CodeCategory" Relationship="SocarModel.FK_코드_코드카테고리" FromRole="Code" ToRole="CodeCategory" />
+        </EntityType>
+        <EntityType Name="CodeCategory">
+          <Key>
+            <PropertyRef Name="CodeCategoryId" />
+          </Key>
+          <Property Name="CodeCategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Codes" Relationship="SocarModel.FK_코드_코드카테고리" FromRole="CodeCategory" ToRole="Code" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerId" />
+          </Key>
+          <Property Name="CustomerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CellNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Age" Type="Int32" Nullable="false" />
+          <Property Name="Birthday" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="LisenceCode" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Code" Relationship="SocarModel.FK_Customer_Code" FromRole="Customer" ToRole="Code" />
+          <NavigationProperty Name="Rents" Relationship="SocarModel.FK_대여_고객" FromRole="Customer" ToRole="Rent" />
+        </EntityType>
+        <EntityType Name="Defect">
+          <Key>
+            <PropertyRef Name="DefectId" />
+          </Key>
+          <Property Name="DefectId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PartCode" Type="Int32" Nullable="false" />
+          <Property Name="DefectStateCode" Type="Int32" Nullable="false" />
+          <Property Name="CarId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Car" Relationship="SocarModel.FK_결함_차" FromRole="Defect" ToRole="Car" />
+          <NavigationProperty Name="Code" Relationship="SocarModel.FK_결함_코드" FromRole="Defect" ToRole="Code" />
+          <NavigationProperty Name="Code1" Relationship="SocarModel.FK_결함_코드2" FromRole="Defect" ToRole="Code" />
+        </EntityType>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="EventId" />
+          </Key>
+          <Property Name="EventId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EventTypeCode" Type="Int32" Nullable="false" />
+          <Property Name="RentId" Type="Int32" Nullable="false" />
+          <Property Name="RateOfDiscount" Type="Int32" Nullable="false" />
+          <Property Name="Period" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Code" Relationship="SocarModel.FK_이벤트_코드" FromRole="Event" ToRole="Code" />
+          <NavigationProperty Name="Rent" Relationship="SocarModel.FK_이벤트_대여" FromRole="Event" ToRole="Rent" />
+        </EntityType>
         <EntityType Name="Insurance">
           <Key>
             <PropertyRef Name="InsuranceId" />
           </Key>
           <Property Name="InsuranceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Company" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Goods" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyCode" Type="Int32" Nullable="false" />
+          <Property Name="GoodsCode" Type="Int32" Nullable="false" />
           <NavigationProperty Name="CarInsurances" Relationship="SocarModel.FK_차보험_보험" FromRole="Insurance" ToRole="CarInsurance" />
+          <NavigationProperty Name="Code" Relationship="SocarModel.FK_Insurance_Code1" FromRole="Insurance" ToRole="Code" />
+          <NavigationProperty Name="Code1" Relationship="SocarModel.FK_Insurance_Code2" FromRole="Insurance" ToRole="Code" />
+        </EntityType>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="LocationId" />
+          </Key>
+          <Property Name="LocationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LocationCode" Type="Int32" />
+          <NavigationProperty Name="Cars" Relationship="SocarModel.FK_차_위치" FromRole="Location" ToRole="Car" />
+          <NavigationProperty Name="Code" Relationship="SocarModel.FK_위치_코드" FromRole="Location" ToRole="Code" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Rent">
+          <Key>
+            <PropertyRef Name="RentId" />
+          </Key>
+          <Property Name="RentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CarId" Type="Int32" Nullable="false" />
+          <Property Name="RentAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ReturnAt" Type="DateTime" Precision="3" />
+          <Property Name="LocationId" Type="Int32" Nullable="false" />
+          <Property Name="CustomerId" Type="Int32" Nullable="false" />
+          <Property Name="ReturnTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="BookAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Price" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Car" Relationship="SocarModel.FK_대여_차" FromRole="Rent" ToRole="Car" />
+          <NavigationProperty Name="Customer" Relationship="SocarModel.FK_대여_고객" FromRole="Rent" ToRole="Customer" />
+          <NavigationProperty Name="Events" Relationship="SocarModel.FK_이벤트_대여" FromRole="Rent" ToRole="Event" />
         </EntityType>
         <Association Name="FK_결함_차">
-          <End Type="SocarModel.Car" Role="Car" Multiplicity="1" />
+          <End Type="SocarModel.Car" Role="Car" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="SocarModel.Defect" Role="Defect" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Car">
@@ -641,7 +648,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_대여_차">
-          <End Type="SocarModel.Car" Role="Car" Multiplicity="1" />
+          <End Type="SocarModel.Car" Role="Car" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="SocarModel.Rent" Role="Rent" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Car">
@@ -653,7 +662,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_차_위치">
-          <End Type="SocarModel.Location" Role="Location" Multiplicity="1" />
+          <End Type="SocarModel.Location" Role="Location" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="SocarModel.Car" Role="Car" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Location">
@@ -665,7 +676,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_차_차종">
-          <End Type="SocarModel.CarType" Role="CarType" Multiplicity="1" />
+          <End Type="SocarModel.CarType" Role="CarType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="SocarModel.Car" Role="Car" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CarType">
@@ -677,7 +690,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_차보험_차">
-          <End Type="SocarModel.Car" Role="Car" Multiplicity="1" />
+          <End Type="SocarModel.Car" Role="Car" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="SocarModel.CarInsurance" Role="CarInsurance" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Car">
@@ -700,103 +715,140 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="Login">
-          <Key>
-            <PropertyRef Name="UserName" />
-          </Key>
-          <Property Name="UserName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Password" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-        </EntityType>
+        <Association Name="FK_Customer_Code">
+          <End Type="SocarModel.Code" Role="Code" Multiplicity="1" />
+          <End Type="SocarModel.Customer" Role="Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Code">
+              <PropertyRef Name="CodeId" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="LisenceCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Insurance_Code1">
+          <End Type="SocarModel.Code" Role="Code" Multiplicity="1" />
+          <End Type="SocarModel.Insurance" Role="Insurance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Code">
+              <PropertyRef Name="CodeId" />
+            </Principal>
+            <Dependent Role="Insurance">
+              <PropertyRef Name="CompanyCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Insurance_Code2">
+          <End Type="SocarModel.Code" Role="Code" Multiplicity="1" />
+          <End Type="SocarModel.Insurance" Role="Insurance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Code">
+              <PropertyRef Name="CodeId" />
+            </Principal>
+            <Dependent Role="Insurance">
+              <PropertyRef Name="GoodsCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_결함_코드">
+          <End Type="SocarModel.Code" Role="Code" Multiplicity="1" />
+          <End Type="SocarModel.Defect" Role="Defect" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Code">
+              <PropertyRef Name="CodeId" />
+            </Principal>
+            <Dependent Role="Defect">
+              <PropertyRef Name="PartCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_결함_코드2">
+          <End Type="SocarModel.Code" Role="Code" Multiplicity="1" />
+          <End Type="SocarModel.Defect" Role="Defect" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Code">
+              <PropertyRef Name="CodeId" />
+            </Principal>
+            <Dependent Role="Defect">
+              <PropertyRef Name="DefectStateCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_위치_코드">
+          <End Type="SocarModel.Code" Role="Code" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="SocarModel.Location" Role="Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Code">
+              <PropertyRef Name="CodeId" />
+            </Principal>
+            <Dependent Role="Location">
+              <PropertyRef Name="LocationCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_이벤트_코드">
+          <End Type="SocarModel.Code" Role="Code" Multiplicity="1" />
+          <End Type="SocarModel.Event" Role="Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Code">
+              <PropertyRef Name="CodeId" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="EventTypeCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_코드_코드카테고리">
+          <End Type="SocarModel.CodeCategory" Role="CodeCategory" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="SocarModel.Code" Role="Code" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CodeCategory">
+              <PropertyRef Name="CodeCategoryId" />
+            </Principal>
+            <Dependent Role="Code">
+              <PropertyRef Name="CodeCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_대여_고객">
+          <End Type="SocarModel.Customer" Role="Customer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="SocarModel.Rent" Role="Rent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="Rent">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_이벤트_대여">
+          <End Type="SocarModel.Rent" Role="Rent" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="SocarModel.Event" Role="Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rent">
+              <PropertyRef Name="RentId" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="RentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="SocarModelStoreContainer" CdmEntityContainer="SocarEntities">
-          <EntitySetMapping Name="CarTypes">
-            <EntityTypeMapping TypeName="SocarModel.CarType">
-              <MappingFragment StoreEntitySet="CarType">
-                <ScalarProperty Name="CarTypeId" ColumnName="CarTypeId" />
-                <ScalarProperty Name="Size" ColumnName="Size" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="IsAuto" ColumnName="IsAuto" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Codes">
-            <EntityTypeMapping TypeName="SocarModel.Code">
-              <MappingFragment StoreEntitySet="Code">
-                <ScalarProperty Name="CodeId" ColumnName="CodeId" />
-                <ScalarProperty Name="CodeCategoryId" ColumnName="CodeCategoryId" />
-                <ScalarProperty Name="Item" ColumnName="Item" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="CodeCategories">
-            <EntityTypeMapping TypeName="SocarModel.CodeCategory">
-              <MappingFragment StoreEntitySet="CodeCategory">
-                <ScalarProperty Name="CodeCategoryId" ColumnName="CodeCategoryId" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Customers">
-            <EntityTypeMapping TypeName="SocarModel.Customer">
-              <MappingFragment StoreEntitySet="Customer">
-                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="CellNumber" ColumnName="CellNumber" />
-                <ScalarProperty Name="Age" ColumnName="Age" />
-                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
-                <ScalarProperty Name="Lisence" ColumnName="Lisence" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Defects">
-            <EntityTypeMapping TypeName="SocarModel.Defect">
-              <MappingFragment StoreEntitySet="Defect">
-                <ScalarProperty Name="DefectId" ColumnName="DefectId" />
-                <ScalarProperty Name="PartCode" ColumnName="PartCode" />
-                <ScalarProperty Name="DefectStateCode" ColumnName="DefectStateCode" />
-                <ScalarProperty Name="CarId" ColumnName="CarId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Events">
-            <EntityTypeMapping TypeName="SocarModel.Event">
-              <MappingFragment StoreEntitySet="Event">
-                <ScalarProperty Name="EventId" ColumnName="EventId" />
-                <ScalarProperty Name="EventTypeCode" ColumnName="EventTypeCode" />
-                <ScalarProperty Name="RentId" ColumnName="RentId" />
-                <ScalarProperty Name="RateOfDiscount" ColumnName="RateOfDiscount" />
-                <ScalarProperty Name="Period" ColumnName="Period" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Locations">
-            <EntityTypeMapping TypeName="SocarModel.Location">
-              <MappingFragment StoreEntitySet="Location">
-                <ScalarProperty Name="LocationId" ColumnName="LocationId" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Rents">
-            <EntityTypeMapping TypeName="SocarModel.Rent">
-              <MappingFragment StoreEntitySet="Rent">
-                <ScalarProperty Name="RentId" ColumnName="RentId" />
-                <ScalarProperty Name="CarId" ColumnName="CarId" />
-                <ScalarProperty Name="RentAt" ColumnName="RentAt" />
-                <ScalarProperty Name="ReturnAt" ColumnName="ReturnAt" />
-                <ScalarProperty Name="LocationId" ColumnName="LocationId" />
-                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
-                <ScalarProperty Name="ReturnTime" ColumnName="ReturnTime" />
-                <ScalarProperty Name="BookAt" ColumnName="BookAt" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Cars">
             <EntityTypeMapping TypeName="SocarModel.Car">
               <MappingFragment StoreEntitySet="Car">
@@ -820,12 +872,81 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="CarTypes">
+            <EntityTypeMapping TypeName="SocarModel.CarType">
+              <MappingFragment StoreEntitySet="CarType">
+                <ScalarProperty Name="IsAuto" ColumnName="IsAuto" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="CarTypeId" ColumnName="CarTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Codes">
+            <EntityTypeMapping TypeName="SocarModel.Code">
+              <MappingFragment StoreEntitySet="Code">
+                <ScalarProperty Name="Item" ColumnName="Item" />
+                <ScalarProperty Name="CodeCategoryId" ColumnName="CodeCategoryId" />
+                <ScalarProperty Name="CodeId" ColumnName="CodeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CodeCategories">
+            <EntityTypeMapping TypeName="SocarModel.CodeCategory">
+              <MappingFragment StoreEntitySet="CodeCategory">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CodeCategoryId" ColumnName="CodeCategoryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="SocarModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="LisenceCode" ColumnName="LisenceCode" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="CellNumber" ColumnName="CellNumber" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Defects">
+            <EntityTypeMapping TypeName="SocarModel.Defect">
+              <MappingFragment StoreEntitySet="Defect">
+                <ScalarProperty Name="CarId" ColumnName="CarId" />
+                <ScalarProperty Name="DefectStateCode" ColumnName="DefectStateCode" />
+                <ScalarProperty Name="PartCode" ColumnName="PartCode" />
+                <ScalarProperty Name="DefectId" ColumnName="DefectId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Events">
+            <EntityTypeMapping TypeName="SocarModel.Event">
+              <MappingFragment StoreEntitySet="Event">
+                <ScalarProperty Name="Period" ColumnName="Period" />
+                <ScalarProperty Name="RateOfDiscount" ColumnName="RateOfDiscount" />
+                <ScalarProperty Name="RentId" ColumnName="RentId" />
+                <ScalarProperty Name="EventTypeCode" ColumnName="EventTypeCode" />
+                <ScalarProperty Name="EventId" ColumnName="EventId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Insurances">
             <EntityTypeMapping TypeName="SocarModel.Insurance">
               <MappingFragment StoreEntitySet="Insurance">
-                <ScalarProperty Name="Goods" ColumnName="Goods" />
-                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="GoodsCode" ColumnName="GoodsCode" />
+                <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
                 <ScalarProperty Name="InsuranceId" ColumnName="InsuranceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Locations">
+            <EntityTypeMapping TypeName="SocarModel.Location">
+              <MappingFragment StoreEntitySet="Location">
+                <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="LocationId" ColumnName="LocationId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -834,6 +955,21 @@
               <MappingFragment StoreEntitySet="Login">
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rents">
+            <EntityTypeMapping TypeName="SocarModel.Rent">
+              <MappingFragment StoreEntitySet="Rent">
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="BookAt" ColumnName="BookAt" />
+                <ScalarProperty Name="ReturnTime" ColumnName="ReturnTime" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+                <ScalarProperty Name="ReturnAt" ColumnName="ReturnAt" />
+                <ScalarProperty Name="RentAt" ColumnName="RentAt" />
+                <ScalarProperty Name="CarId" ColumnName="CarId" />
+                <ScalarProperty Name="RentId" ColumnName="RentId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -26,7 +26,7 @@ namespace SoCar.Data
                 query = query.Where(x => x.Car.CarTypeId == carTypeId);
 
             if (string.IsNullOrEmpty(number) == false)
-                query = query.Where(x => x.Car.Number == number);
+                query = query.Where(x => x.Car.Number.Contains(number));
 
             if (location.HasValue)
                 query = query.Where(x => x.Car.LocationId == location);
@@ -102,5 +102,6 @@ namespace SoCar.Data
 
             return query.ToList().ConvertAll(x => x.Car);
         }
+
     }
 }

@@ -255,6 +255,9 @@
     <EmbeddedResource Include="BaseForms\ChildRootForm.resx">
       <DependentUpon>ChildRootForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InsertEventForm.resx">
+      <DependentUpon>InsertEventForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -294,6 +297,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UserControls\CarSearchControl.resx">
       <DependentUpon>CarSearchControl.cs</DependentUpon>

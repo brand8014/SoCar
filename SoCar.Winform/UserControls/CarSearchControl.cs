@@ -44,7 +44,7 @@ namespace SoCar.Winform.UserControls
 
             try
             {
-                number = (string)cbbNumber.SelectedValue;
+                number = (string)cbbNumber.Text;
             }
             //catch (InvalidCastException e)
             //{ e.

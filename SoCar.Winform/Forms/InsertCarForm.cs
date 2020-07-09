@@ -24,7 +24,7 @@ namespace SoCar.Winform.Forms
         private void InsertCarForm_Load(object sender, EventArgs e)
         {
             bdsCarType.DataSource = DataRepository.CarType.GetAll();
-            bdsLocation.DataSource = DataRepository.Location.GetAll();
+            bdsLocation.DataSource = DataRepository.Location.GetLocationFullName();
         }
 
 
@@ -52,8 +52,6 @@ namespace SoCar.Winform.Forms
             _car.LocationId = (int)cbbLocation.SelectedValue;
             _car.CarTypeId = (int)cbbCarType.SelectedValue;
             _car.Number = txeCarNum.Text;
-
-
         }
 
         private void btnClose_Click(object sender, EventArgs e)

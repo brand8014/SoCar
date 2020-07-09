@@ -17,6 +17,9 @@ namespace SoCar.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Code()
         {
+            this.Customers = new HashSet<Customer>();
+            this.Insurances = new HashSet<Insurance>();
+            this.Insurances1 = new HashSet<Insurance>();
             this.Defects = new HashSet<Defect>();
             this.Defects1 = new HashSet<Defect>();
             this.Locations = new HashSet<Location>();
@@ -27,6 +30,12 @@ namespace SoCar.Data
         public int CodeCategoryId { get; set; }
         public string Item { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Customer> Customers { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Insurance> Insurances { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Insurance> Insurances1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Defect> Defects { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
