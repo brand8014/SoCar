@@ -14,5 +14,10 @@ namespace SoCar.Data
 
         public int EventCount { get; set; }
 
+        public string Address { get; set; }
+
+        public string CarNumber { get; set; }
+
+
     }
 }

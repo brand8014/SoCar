@@ -71,7 +71,7 @@ namespace SoCar.Winform.UserControls
         {
             if (DesignMode)
                 return;
-            bdsLocation.DataSource = DataRepository.Code.GetByCodeCategoryId(1);
+            bdsLocation.DataSource = DataRepository.Location.GetAll();
             bdsAddress.DataSource = DataRepository.Location.GetAll();
         }
 

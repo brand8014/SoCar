@@ -21,7 +21,7 @@ namespace SoCar.Data
             SocarEntities context = CreateContext();
 
             var query = from x in context.Insurances
-                        select new { Insurance = x, CompanyName = x.Code.Item ,GoodsName = x.Code.Item };
+                        select new { Insurance = x, CompanyName = x.Code.Item ,GoodsName = x.Code1.Item };
 
             if (companyCode.HasValue)
                 query = query.Where(x => x.Insurance.CompanyCode==companyCode);

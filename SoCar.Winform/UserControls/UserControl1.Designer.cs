@@ -44,6 +44,7 @@
             this.gvLocation = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colLocationName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAddress = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gvInsurance = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gvCar = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colPrice1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIsRent = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -68,31 +69,28 @@
             this.colBirthday = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCellNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLisence = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gvInsurance = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colCompany = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colGoods = new DevExpress.XtraGrid.Columns.GridColumn();
             this.bdsEvent = new System.Windows.Forms.BindingSource(this.components);
             this.bdsCar = new System.Windows.Forms.BindingSource(this.components);
             this.bdsLocation = new System.Windows.Forms.BindingSource(this.components);
             this.bdsCustomer = new System.Windows.Forms.BindingSource(this.components);
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
-            this.nbgCar = new DevExpress.XtraNavBar.NavBarGroup();
-            this.nbiViewCar = new DevExpress.XtraNavBar.NavBarItem();
-            this.nbiInsertCar = new DevExpress.XtraNavBar.NavBarItem();
-            this.nbiDeleteCar = new DevExpress.XtraNavBar.NavBarItem();
-            this.nbgLocation = new DevExpress.XtraNavBar.NavBarGroup();
-            this.nbiViewLocation = new DevExpress.XtraNavBar.NavBarItem();
-            this.nbiInsertLocation = new DevExpress.XtraNavBar.NavBarItem();
-            this.nbiDeleteLocation = new DevExpress.XtraNavBar.NavBarItem();
-            this.nbgCustomer = new DevExpress.XtraNavBar.NavBarGroup();
-            this.nbiViewCustomer = new DevExpress.XtraNavBar.NavBarItem();
-            this.nbiInsertCustomer = new DevExpress.XtraNavBar.NavBarItem();
-            this.nbiDeleteCustomer = new DevExpress.XtraNavBar.NavBarItem();
             this.nbgInsurance = new DevExpress.XtraNavBar.NavBarGroup();
             this.nbiViewInsurance = new DevExpress.XtraNavBar.NavBarItem();
             this.nbiInsertInsurance = new DevExpress.XtraNavBar.NavBarItem();
             this.nbiDeleteInsurance = new DevExpress.XtraNavBar.NavBarItem();
+            this.nbgLocation = new DevExpress.XtraNavBar.NavBarGroup();
+            this.nbiViewLocation = new DevExpress.XtraNavBar.NavBarItem();
+            this.nbiInsertLocation = new DevExpress.XtraNavBar.NavBarItem();
+            this.nbiDeleteLocation = new DevExpress.XtraNavBar.NavBarItem();
+            this.nbgCar = new DevExpress.XtraNavBar.NavBarGroup();
+            this.nbiViewCar = new DevExpress.XtraNavBar.NavBarItem();
+            this.nbiInsertCar = new DevExpress.XtraNavBar.NavBarItem();
+            this.nbiDeleteCar = new DevExpress.XtraNavBar.NavBarItem();
+            this.nbgCustomer = new DevExpress.XtraNavBar.NavBarGroup();
+            this.nbiViewCustomer = new DevExpress.XtraNavBar.NavBarItem();
+            this.nbiInsertCustomer = new DevExpress.XtraNavBar.NavBarItem();
+            this.nbiDeleteCustomer = new DevExpress.XtraNavBar.NavBarItem();
             this.nbgRent = new DevExpress.XtraNavBar.NavBarGroup();
             this.nbiViewRent = new DevExpress.XtraNavBar.NavBarItem();
             this.nbiInsertRent = new DevExpress.XtraNavBar.NavBarItem();
@@ -107,14 +105,16 @@
             this.bdsCode = new System.Windows.Forms.BindingSource(this.components);
             this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
             this.bdsInsurance = new System.Windows.Forms.BindingSource(this.components);
+            this.colCompanyName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGoodsName = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gvEvent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsRent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvLocation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvInsurance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvRent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCustomer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvInsurance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsEvent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).BeginInit();
@@ -169,13 +169,12 @@
             // gridControl
             // 
             this.gridControl.Cursor = System.Windows.Forms.Cursors.Default;
-            this.gridControl.DataSource = this.bdsRent;
+            this.gridControl.DataSource = this.bdsInsurance;
             gridLevelNode1.LevelTemplate = this.gvEvent;
             gridLevelNode1.RelationName = "Level2";
             gridLevelNode2.RelationName = "Level3";
             gridLevelNode3.LevelTemplate = this.gvLocation;
             gridLevelNode3.RelationName = "Level1";
-            gridLevelNode4.LevelTemplate = this.gvInsurance;
             gridLevelNode4.RelationName = "Level4";
             gridLevelNode5.LevelTemplate = this.gvCar;
             gridLevelNode5.RelationName = "Level5";
@@ -189,16 +188,16 @@
             gridLevelNode5,
             gridLevelNode6});
             this.gridControl.Location = new System.Drawing.Point(216, 12);
-            this.gridControl.MainView = this.gvCustomer;
+            this.gridControl.MainView = this.gvInsurance;
             this.gridControl.Name = "gridControl";
             this.gridControl.Size = new System.Drawing.Size(708, 661);
             this.gridControl.TabIndex = 4;
             this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvLocation,
+            this.gvInsurance,
             this.gvCar,
             this.gvRent,
             this.gvCustomer,
-            this.gvInsurance,
             this.gvEvent});
             this.gridControl.Click += new System.EventHandler(this.gridControl_Click);
             // 
@@ -233,6 +232,15 @@
             this.colAddress.Visible = true;
             this.colAddress.VisibleIndex = 1;
             this.colAddress.Width = 94;
+            // 
+            // gvInsurance
+            // 
+            this.gvInsurance.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colCompanyName,
+            this.colGoodsName});
+            this.gvInsurance.GridControl = this.gridControl;
+            this.gvInsurance.Name = "gvInsurance";
+            this.gvInsurance.DoubleClick += new System.EventHandler(this.gvInsurance_DoubleClick);
             // 
             // gvCar
             // 
@@ -467,33 +475,6 @@
             this.colLisence.VisibleIndex = 4;
             this.colLisence.Width = 94;
             // 
-            // gvInsurance
-            // 
-            this.gvInsurance.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colCompany,
-            this.colGoods});
-            this.gvInsurance.GridControl = this.gridControl;
-            this.gvInsurance.Name = "gvInsurance";
-            this.gvInsurance.DoubleClick += new System.EventHandler(this.gvInsurance_DoubleClick);
-            // 
-            // colCompany
-            // 
-            this.colCompany.FieldName = "Company";
-            this.colCompany.MinWidth = 25;
-            this.colCompany.Name = "colCompany";
-            this.colCompany.Visible = true;
-            this.colCompany.VisibleIndex = 0;
-            this.colCompany.Width = 94;
-            // 
-            // colGoods
-            // 
-            this.colGoods.FieldName = "Goods";
-            this.colGoods.MinWidth = 25;
-            this.colGoods.Name = "colGoods";
-            this.colGoods.Visible = true;
-            this.colGoods.VisibleIndex = 1;
-            this.colGoods.Width = 94;
-            // 
             // bdsEvent
             // 
             this.bdsEvent.DataSource = typeof(SoCar.Data.Event);
@@ -562,34 +543,35 @@
             this.navBarControl1.TabIndex = 5;
             this.navBarControl1.Text = "navBarControl1";
             // 
-            // nbgCar
+            // nbgInsurance
             // 
-            this.nbgCar.Caption = "차";
-            this.nbgCar.GroupClientHeight = 2;
-            this.nbgCar.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiViewCar),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiInsertCar),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiDeleteCar)});
-            this.nbgCar.Name = "nbgCar";
-            this.nbgCar.CalcGroupClientHeight += new DevExpress.XtraNavBar.NavBarCalcGroupClientHeightEventHandler(this.nbgCar_CalcGroupClientHeight);
+            this.nbgInsurance.Caption = "보험";
+            this.nbgInsurance.Expanded = true;
+            this.nbgInsurance.GroupClientHeight = 4;
+            this.nbgInsurance.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiViewInsurance),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiInsertInsurance),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiDeleteInsurance)});
+            this.nbgInsurance.Name = "nbgInsurance";
+            this.nbgInsurance.CalcGroupClientHeight += new DevExpress.XtraNavBar.NavBarCalcGroupClientHeightEventHandler(this.nbgInsurance_CalcGroupClientHeight);
             // 
-            // nbiViewCar
+            // nbiViewInsurance
             // 
-            this.nbiViewCar.Caption = "조회";
-            this.nbiViewCar.Name = "nbiViewCar";
-            this.nbiViewCar.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiViewCar_LinkClicked);
+            this.nbiViewInsurance.Caption = "조회";
+            this.nbiViewInsurance.Name = "nbiViewInsurance";
+            this.nbiViewInsurance.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiViewInsurance_LinkClicked);
             // 
-            // nbiInsertCar
+            // nbiInsertInsurance
             // 
-            this.nbiInsertCar.Caption = "등록";
-            this.nbiInsertCar.Name = "nbiInsertCar";
-            this.nbiInsertCar.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiInsertCar_LinkClicked);
+            this.nbiInsertInsurance.Caption = "등록";
+            this.nbiInsertInsurance.Name = "nbiInsertInsurance";
+            this.nbiInsertInsurance.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiInsertInsurance_LinkClicked);
             // 
-            // nbiDeleteCar
+            // nbiDeleteInsurance
             // 
-            this.nbiDeleteCar.Caption = "삭제";
-            this.nbiDeleteCar.Name = "nbiDeleteCar";
-            this.nbiDeleteCar.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiDeleteCar_LinkClicked);
+            this.nbiDeleteInsurance.Caption = "삭제";
+            this.nbiDeleteInsurance.Name = "nbiDeleteInsurance";
+            this.nbiDeleteInsurance.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiDeleteInsurance_LinkClicked);
             // 
             // nbgLocation
             // 
@@ -620,6 +602,35 @@
             this.nbiDeleteLocation.Name = "nbiDeleteLocation";
             this.nbiDeleteLocation.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiDeleteLocation_LinkClicked);
             // 
+            // nbgCar
+            // 
+            this.nbgCar.Caption = "차";
+            this.nbgCar.GroupClientHeight = 2;
+            this.nbgCar.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiViewCar),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiInsertCar),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiDeleteCar)});
+            this.nbgCar.Name = "nbgCar";
+            this.nbgCar.CalcGroupClientHeight += new DevExpress.XtraNavBar.NavBarCalcGroupClientHeightEventHandler(this.nbgCar_CalcGroupClientHeight);
+            // 
+            // nbiViewCar
+            // 
+            this.nbiViewCar.Caption = "조회";
+            this.nbiViewCar.Name = "nbiViewCar";
+            this.nbiViewCar.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiViewCar_LinkClicked);
+            // 
+            // nbiInsertCar
+            // 
+            this.nbiInsertCar.Caption = "등록";
+            this.nbiInsertCar.Name = "nbiInsertCar";
+            this.nbiInsertCar.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiInsertCar_LinkClicked);
+            // 
+            // nbiDeleteCar
+            // 
+            this.nbiDeleteCar.Caption = "삭제";
+            this.nbiDeleteCar.Name = "nbiDeleteCar";
+            this.nbiDeleteCar.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiDeleteCar_LinkClicked);
+            // 
             // nbgCustomer
             // 
             this.nbgCustomer.Caption = "고객";
@@ -648,36 +659,6 @@
             this.nbiDeleteCustomer.Caption = "삭제";
             this.nbiDeleteCustomer.Name = "nbiDeleteCustomer";
             this.nbiDeleteCustomer.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiDeleteCustomer_LinkClicked);
-            // 
-            // nbgInsurance
-            // 
-            this.nbgInsurance.Caption = "보험";
-            this.nbgInsurance.Expanded = true;
-            this.nbgInsurance.GroupClientHeight = 4;
-            this.nbgInsurance.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiViewInsurance),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiInsertInsurance),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiDeleteInsurance)});
-            this.nbgInsurance.Name = "nbgInsurance";
-            this.nbgInsurance.CalcGroupClientHeight += new DevExpress.XtraNavBar.NavBarCalcGroupClientHeightEventHandler(this.nbgInsurance_CalcGroupClientHeight);
-            // 
-            // nbiViewInsurance
-            // 
-            this.nbiViewInsurance.Caption = "조회";
-            this.nbiViewInsurance.Name = "nbiViewInsurance";
-            this.nbiViewInsurance.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiViewInsurance_LinkClicked);
-            // 
-            // nbiInsertInsurance
-            // 
-            this.nbiInsertInsurance.Caption = "등록";
-            this.nbiInsertInsurance.Name = "nbiInsertInsurance";
-            this.nbiInsertInsurance.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiInsertInsurance_LinkClicked);
-            // 
-            // nbiDeleteInsurance
-            // 
-            this.nbiDeleteInsurance.Caption = "삭제";
-            this.nbiDeleteInsurance.Name = "nbiDeleteInsurance";
-            this.nbiDeleteInsurance.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiDeleteInsurance_LinkClicked);
             // 
             // nbgRent
             // 
@@ -778,6 +759,24 @@
             // 
             this.bdsInsurance.DataSource = typeof(SoCar.Data.Insurance);
             // 
+            // colCompanyName
+            // 
+            this.colCompanyName.FieldName = "CompanyName";
+            this.colCompanyName.MinWidth = 25;
+            this.colCompanyName.Name = "colCompanyName";
+            this.colCompanyName.Visible = true;
+            this.colCompanyName.VisibleIndex = 0;
+            this.colCompanyName.Width = 94;
+            // 
+            // colGoodsName
+            // 
+            this.colGoodsName.FieldName = "GoodsName";
+            this.colGoodsName.MinWidth = 25;
+            this.colGoodsName.Name = "colGoodsName";
+            this.colGoodsName.Visible = true;
+            this.colGoodsName.VisibleIndex = 1;
+            this.colGoodsName.Width = 94;
+            // 
             // uscBasic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -789,10 +788,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsRent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvLocation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvInsurance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvRent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCustomer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvInsurance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsEvent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).EndInit();
@@ -856,8 +855,6 @@
         private System.Windows.Forms.BindingSource bdsEvent;
         private DevExpress.XtraGrid.Views.Grid.GridView gvEvent;
         private System.Windows.Forms.BindingSource bdsInsurance;
-        private DevExpress.XtraGrid.Columns.GridColumn colCompany;
-        private DevExpress.XtraGrid.Columns.GridColumn colGoods;
         private System.Windows.Forms.BindingSource bdsRent;
         private DevExpress.XtraGrid.Views.Grid.GridView gvRent;
         private DevExpress.XtraNavBar.NavBarItem nbiViewLocation;
@@ -884,5 +881,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colEventName;
         private DevExpress.XtraGrid.Columns.GridColumn colRateOfDiscount;
         private DevExpress.XtraGrid.Columns.GridColumn colPeriod;
+        private DevExpress.XtraGrid.Columns.GridColumn colCompanyName;
+        private DevExpress.XtraGrid.Columns.GridColumn colGoodsName;
     }
 }

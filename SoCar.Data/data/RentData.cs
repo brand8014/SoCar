@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -57,6 +58,25 @@ namespace SoCar.Data
 
             
 
+        }
+
+        public List<Rent> GetProperties()
+        {
+            SocarEntities context = CreateContext();
+
+            var query = from x in context.Rents
+                        select new { Rent = x, CustomerName = x.Customer.Name, CarNumber = x.Car.Number, Address = x.Car.Location.Address };
+
+            var items = query.ToList();
+
+            foreach (var x in items)
+            {
+                x.Rent.CustomerName = x.CustomerName;
+                x.Rent.CarNumber = x.CarNumber;
+                x.Rent.Address = x.Address;
+            }
+
+            return items.ConvertAll(x => x.Rent);
         }
     }
 }

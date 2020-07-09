@@ -528,7 +528,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageCategory ribbonPageCategory1;
         private DevExpress.Utils.Filtering.FilteringUIContext filteringUIContext1;
         private DevExpress.XtraEditors.Controls.ImageSlider imageSlider1;
-        private DevExpress.Utils.Filtering.FilteringUIContext filteringUIContext1;
+     //   private DevExpress.Utils.Filtering.FilteringUIContext filteringUIContext1;
         private DevExpress.XtraEditors.LabelControl label1;
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
         private System.Windows.Forms.Label label2;
