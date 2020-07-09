@@ -26,8 +26,8 @@ namespace SoCar.Winform.Forms
 
         private void UpdateInsuranceForm_Load(object sender, EventArgs e)
         {
-            txeCompany.Text = _insurance.Company;
-            txeGoods.Text = _insurance.Goods;
+            txeCompany.Text = Convert.ToString(_insurance.CompanyCode);
+            txeGoods.Text = Convert.ToString(_insurance.GoodsCode);
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -49,8 +49,8 @@ namespace SoCar.Winform.Forms
 
         private void WriteToEntity()
         {
-            _insurance.Company = txeCompany.Text;
-            _insurance.Goods = txeGoods.Text;
+            _insurance.CompanyCode = int.Parse(txeCompany.Text);
+            _insurance.GoodsCode = int.Parse(txeGoods.Text);
         }
     }
 }

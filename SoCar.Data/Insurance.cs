@@ -21,10 +21,12 @@ namespace SoCar.Data
         }
     
         public int InsuranceId { get; set; }
-        public string Company { get; set; }
-        public string Goods { get; set; }
+        public int CompanyCode { get; set; }
+        public int GoodsCode { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CarInsurance> CarInsurances { get; set; }
+        public virtual Code Code { get; set; }
+        public virtual Code Code1 { get; set; }
     }
 }

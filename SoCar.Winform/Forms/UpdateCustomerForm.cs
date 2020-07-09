@@ -47,7 +47,7 @@ namespace SoCar.Winform.Forms
         {
             _customer.Name = txeName.Text;
             _customer.CellNumber = txeCellNumber.Text;
-            _customer.Lisence = cbbLisence.Text;
+            _customer.LisenceCode = int.Parse(cbbLisence.Text);
 
         ;
         }
@@ -61,7 +61,7 @@ namespace SoCar.Winform.Forms
         {
             txeName.EditValue = _customer.Name;
             txeCellNumber.EditValue = _customer.CellNumber;
-            cbbLisence.SelectedItem = _customer.Lisence.ToString();
+            cbbLisence.SelectedItem = _customer.LisenceCode.ToString();
         }
     }
 }

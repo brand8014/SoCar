@@ -14,7 +14,7 @@ namespace SoCar.Data
             return context.Customers.FirstOrDefault(x => x.CustomerId == customerId);
         }
 
-        public List<Customer> Search(int? customerId, int? age, string cellNumber, string lisence)
+        public List<Customer> Search(int? customerId, int? age, string cellNumber, int? lisence)
         {
             SocarEntities context = CreateContext();
 
@@ -28,10 +28,10 @@ namespace SoCar.Data
                 query = query.Where(x => x.Age == age);
 
             if (string.IsNullOrEmpty(cellNumber) == false)
-                query = query.Where(x => x.CellNumber == cellNumber);
+                query = query.Where(x => x.CellNumber.Contains(cellNumber));
 
-            if (string.IsNullOrEmpty(lisence) == false)
-                query = query.Where(x => x.Lisence == lisence);
+            if (lisence.HasValue)
+                query = query.Where(x => x.LisenceCode == lisence);
 
 
             return query.ToList();

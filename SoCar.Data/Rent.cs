@@ -30,9 +30,9 @@ namespace SoCar.Data
         public System.DateTime BookAt { get; set; }
         public int Price { get; set; }
     
+        public virtual Car Car { get; set; }
         public virtual Customer Customer { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Event> Events { get; set; }
-        public virtual Car Car { get; set; }
     }
 }

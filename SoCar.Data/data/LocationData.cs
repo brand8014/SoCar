@@ -27,13 +27,14 @@ namespace SoCar.Data
             return query.FirstOrDefault();
         }
 
-        public List<Location> GetByCodeCategory(int codeId)
+        public List<Location> GetByCodeCategory(int? codeId)
         {
             SocarEntities context = CreateContext();
 
-            var query = from x in context.Locations
-                        where x.LocationCode == codeId
+            var query = from x in context.Locations      
                         select x;
+            if (codeId.HasValue)
+                query = query.Where(x => x.LocationCode == codeId);
 
             return query.ToList();
         }

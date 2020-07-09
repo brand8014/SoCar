@@ -38,8 +38,8 @@ namespace SoCar.Winform.Forms
 
         private void WriteToEntity()
         {
-            _insurance.Company = txeCompany.Text;
-            _insurance.Goods = txeGoods.Text;
+            _insurance.CompanyCode = int.Parse(txeCompany.Text);
+            _insurance.GoodsCode = int.Parse(txeGoods.Text);
 
 
         }
