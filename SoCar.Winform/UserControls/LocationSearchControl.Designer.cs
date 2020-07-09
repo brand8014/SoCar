@@ -31,7 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.lueAddress = new DevExpress.XtraEditors.LookUpEdit();
+            this.bdsAddress = new System.Windows.Forms.BindingSource(this.components);
             this.lueLocation = new DevExpress.XtraEditors.LookUpEdit();
+            this.bdsLocation = new System.Windows.Forms.BindingSource(this.components);
             this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
             this.btnReset = new DevExpress.XtraEditors.SimpleButton();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -41,12 +43,12 @@
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bdsAddress = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsLocation = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueAddress.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsAddress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueLocation.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -54,8 +56,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsAddress)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -88,6 +88,10 @@
             this.lueAddress.StyleController = this.layoutControl1;
             this.lueAddress.TabIndex = 9;
             // 
+            // bdsAddress
+            // 
+            this.bdsAddress.DataSource = typeof(SoCar.Data.Code);
+            // 
             // lueLocation
             // 
             this.lueLocation.Location = new System.Drawing.Point(41, 12);
@@ -107,6 +111,10 @@
             this.lueLocation.Size = new System.Drawing.Size(267, 24);
             this.lueLocation.StyleController = this.layoutControl1;
             this.lueLocation.TabIndex = 8;
+            // 
+            // bdsLocation
+            // 
+            this.bdsLocation.DataSource = typeof(SoCar.Data.Location);
             // 
             // btnSearch
             // 
@@ -185,6 +193,8 @@
             // 
             // layoutControlItem5
             // 
+            this.layoutControlItem5.AppearanceItemCaption.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItem5.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem5.Control = this.lueLocation;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
@@ -194,20 +204,14 @@
             // 
             // layoutControlItem6
             // 
+            this.layoutControlItem6.AppearanceItemCaption.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItem6.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem6.Control = this.lueAddress;
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 28);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(300, 28);
             this.layoutControlItem6.Text = "주소";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(26, 18);
-            // 
-            // bdsAddress
-            // 
-            this.bdsAddress.DataSource = typeof(SoCar.Data.Code);
-            // 
-            // bdsLocation
-            // 
-            this.bdsLocation.DataSource = typeof(SoCar.Data.Location);
             // 
             // LocationSearchControl
             // 
@@ -220,7 +224,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lueAddress.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsAddress)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueLocation.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
@@ -228,8 +234,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsAddress)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).EndInit();
             this.ResumeLayout(false);
 
         }

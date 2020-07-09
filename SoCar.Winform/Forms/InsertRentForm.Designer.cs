@@ -59,6 +59,7 @@
             this.ClientSize = new System.Drawing.Size(594, 467);
             this.Controls.Add(this.layoutControl1);
             this.Name = "InsertRentForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InsertRentForm";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();

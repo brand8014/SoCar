@@ -31,7 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.cbbGoods = new System.Windows.Forms.ComboBox();
+            this.bdsGoods = new System.Windows.Forms.BindingSource(this.components);
             this.cbbCompany = new System.Windows.Forms.ComboBox();
+            this.bdsCompany = new System.Windows.Forms.BindingSource(this.components);
             this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
             this.btnReset = new DevExpress.XtraEditors.SimpleButton();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -41,11 +43,10 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bdsGoods = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsCompany = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsInsurance = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsGoods)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCompany)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -53,9 +54,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsGoods)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCompany)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsInsurance)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -84,6 +82,10 @@
             this.cbbGoods.TabIndex = 7;
             this.cbbGoods.ValueMember = "CodeId";
             // 
+            // bdsGoods
+            // 
+            this.bdsGoods.DataSource = typeof(SoCar.Data.Code);
+            // 
             // cbbCompany
             // 
             this.cbbCompany.DataSource = this.bdsCompany;
@@ -94,9 +96,11 @@
             this.cbbCompany.Name = "cbbCompany";
             this.cbbCompany.Size = new System.Drawing.Size(241, 23);
             this.cbbCompany.TabIndex = 6;
-            this.cbbCompany.ValueMember = "CodeId";
-            // 
             this.cbbCompany.ValueMember = "InsuranceId";
+            // 
+            // bdsCompany
+            // 
+            this.bdsCompany.DataSource = typeof(SoCar.Data.Code);
             // 
             // btnSearch
             // 
@@ -175,6 +179,8 @@
             // 
             // layoutControlItem3
             // 
+            this.layoutControlItem3.AppearanceItemCaption.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItem3.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem3.Control = this.cbbCompany;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
@@ -184,24 +190,14 @@
             // 
             // layoutControlItem4
             // 
+            this.layoutControlItem4.AppearanceItemCaption.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItem4.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem4.Control = this.cbbGoods;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 30);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(300, 30);
             this.layoutControlItem4.Text = "상품명";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(52, 18);
-            // 
-            // bdsGoods
-            // 
-            this.bdsGoods.DataSource = typeof(SoCar.Data.Code);
-            // 
-            // bdsCompany
-            // 
-            this.bdsCompany.DataSource = typeof(SoCar.Data.Code);
-            // 
-            // bdsInsurance
-            // 
-            this.bdsInsurance.DataSource = typeof(SoCar.Data.Insurance);
             // 
             // InsuranceSearchControl
             // 
@@ -213,6 +209,8 @@
             this.Load += new System.EventHandler(this.InsuranceSearchControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bdsGoods)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCompany)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
@@ -220,9 +218,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsGoods)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCompany)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsInsurance)).EndInit();
             this.ResumeLayout(false);
 
         }
