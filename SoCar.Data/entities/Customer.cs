@@ -10,5 +10,7 @@ namespace SoCar.Data
     {
         public string Lisence { get; set; }
 
+        public int RentCount { get; set; }
+
     }
 }

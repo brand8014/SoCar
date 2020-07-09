@@ -65,6 +65,12 @@ namespace SoCar.Winform.UserControls
 
         private void btnReset_Click(object sender, EventArgs e)
         {
+            Init();
+            
+        }
+
+        private void Init()
+        {
             cbbCodeId.SelectedItem = null;
             txbPeriod.Text = null;
         }
@@ -73,6 +79,8 @@ namespace SoCar.Winform.UserControls
         {
             if (DesignMode) return;
             bdsCord.DataSource = DataRepository.Code.GetByCodeCategoryId(2);
+
+            Init();
         }
 
 

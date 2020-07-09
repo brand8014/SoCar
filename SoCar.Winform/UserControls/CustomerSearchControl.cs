@@ -25,6 +25,8 @@ namespace SoCar.Winform.UserControls
                 return;
             bdsCustomer.DataSource = DataRepository.Customer.GetAll();
             bdsLisence.DataSource = DataRepository.Code.GetByCodeCategoryId(7);
+
+            Init();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -118,10 +120,16 @@ namespace SoCar.Winform.UserControls
 
         private void btnReset_Click(object sender, EventArgs e)
         {
+            Init();
+            
+        }
+
+        private void Init()
+        {
             cbbCustomer.SelectedItem = null;
             cbbLisence.SelectedItem = null;
         }
-     
+
         #region SearchButtonClicked event things for C# 3.0
         public event EventHandler<SearchButtonClickedEventArgs> SearchButtonClicked;
 

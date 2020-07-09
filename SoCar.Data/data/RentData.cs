@@ -60,7 +60,7 @@ namespace SoCar.Data
 
         }
 
-        public List<Rent> GetProperties()
+        public List<Rent> GetAllWithProperties()
         {
             SocarEntities context = CreateContext();
 

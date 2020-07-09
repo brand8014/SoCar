@@ -42,7 +42,7 @@ namespace SoCar.Data
             foreach (var x in items)
                 x.Event.EventName = x.EventName;
 
-            return query.ToList().ConvertAll(x=> x.Event);
+            return items.ConvertAll(x=> x.Event);
         }
     }
 }

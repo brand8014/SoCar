@@ -45,7 +45,14 @@ namespace SoCar.Data
             SocarEntities context = CreateContext();
 
             var query = from x in context.Locations
-                        select new { Location = x, LocationName = x.Code.Item }; 
+                        select new
+                        {
+                            Location = x,
+                            LocationName = x.Code.Item,
+                            LocationFullName = x.Code.Item + " " + x.Address,
+                            CarName = x.Cars.Select(y => y.CarType.Name).FirstOrDefault(),
+                            CarNumber = x.Cars.Select(y => y.Number).FirstOrDefault()
+                        };
 
             if (codeId.HasValue)
                 query = query.Where(x => x.Location.LocationCode == codeId);
@@ -55,9 +62,14 @@ namespace SoCar.Data
             var items = query.ToList();
 
             foreach (var x in items)
+            {
                 x.Location.LocationName = x.LocationName;
+                x.Location.LocationFullName = x.LocationFullName;
+                x.Location.CarName = x.CarName;
+                x.Location.CarNumber = x.CarNumber;
+            }
 
-            return query.ToList().ConvertAll(x => x.Location);
+            return items.ConvertAll(x => x.Location);
 
         }
 
@@ -81,5 +93,31 @@ namespace SoCar.Data
             return query.ToList().ConvertAll(x=>x.Location);
         }
 
+        public List<Location> GetAllWithProperties()
+        {
+            var context = CreateContext();
+
+            var query = from x in context.Locations
+                        select new
+                        {
+                            Location = x,
+                            LocationName = x.Code.Item,
+                            LocationFullName = x.Code.Item + " " + x.Address,
+                            CarName = x.Cars.Select(y => y.CarType.Name).FirstOrDefault(),
+                            CarNumber = x.Cars.Select(y => y.Number).FirstOrDefault()
+                        };
+
+            var items = query.ToList();
+
+            foreach (var x in items)
+            {
+                x.Location.LocationName = x.LocationName;
+                x.Location.LocationFullName = x.LocationFullName;
+                x.Location.CarName = x.CarName;
+                x.Location.CarNumber = x.CarNumber;
+            }
+
+            return items.ConvertAll(x => x.Location);
+        }
     }
 }

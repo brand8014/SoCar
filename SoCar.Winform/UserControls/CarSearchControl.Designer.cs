@@ -106,7 +106,7 @@
             // 
             // bdsLocation
             // 
-            this.bdsLocation.DataSource = typeof(SoCar.Data.Location);
+            this.bdsLocation.DataSource = typeof(SoCar.Data.Car);
             // 
             // cbbNumber
             // 
@@ -147,7 +147,7 @@
             // cbbCarType
             // 
             this.cbbCarType.DataSource = this.bdsCarType;
-            this.cbbCarType.DisplayMember = "Name";
+            this.cbbCarType.DisplayMember = "CarName";
             this.cbbCarType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbCarType.FormattingEnabled = true;
             this.cbbCarType.Location = new System.Drawing.Point(67, 42);
@@ -158,7 +158,7 @@
             // 
             // bdsCarType
             // 
-            this.bdsCarType.DataSource = typeof(SoCar.Data.CarType);
+            this.bdsCarType.DataSource = typeof(SoCar.Data.Car);
             // 
             // Root
             // 
