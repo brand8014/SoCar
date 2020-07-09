@@ -27,7 +27,7 @@ namespace SoCar.Winform.Forms
             MakeControls();
             DisableAllControls();
 
-            Text = LoginProxy.Login.UserName;
+            //Text = LoginProxy.Login.UserName;
         }
 
         private void uscBasic1_Load(object sender, EventArgs e)
@@ -117,7 +117,7 @@ namespace SoCar.Winform.Forms
         }
         private void carSearchControl1_SearchButtonClicked(object sender, UserControls.CarSearchControl.SearchButtonClickedEventArgs e)
         {
-            uscBasic1.SearchCar(e.CarTypeId, e.Number, e.Location, e.IsRent);
+            uscBasic1.SearchCar(e.CarId, e.CarTypeId, e.LocationId, e.IsRent);
         }
         private void customerSearchControl1_SearchButtonClicked(object sender, UserControls.CustomerSearchControl.SearchButtonClickedEventArgs e)
         {
@@ -206,42 +206,38 @@ namespace SoCar.Winform.Forms
 
         private void barButtonLocation_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            pictureBox1.Visible = false;
             uscBasic1.nbgLocation.Expanded = true;
         }
 
         private void barButtonCustomer_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            pictureBox1.Visible = false;
             uscBasic1.nbgCustomer.Expanded = true;
         }
 
         private void barButtonInsurance_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            pictureBox1.Visible = false;
             uscBasic1.nbgInsurance.Expanded = true;
         }
 
         private void barButtonRent_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            pictureBox1.Visible = false;
             uscBasic1.nbgRent.Expanded = true;
         }
 
         private void barButtonEvent_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            pictureBox1.Visible = false;
             uscBasic1.nbgEvent.Expanded = true;
         }
 
-        int intImgNum = 0;
-
-        
-        private void tmrChangeImage_Tick(object sender, EventArgs e)
+        private void barButtonHome_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            pbxCar1.Image = imageListCar.Images[intImgNum];
+            pictureBox1.Visible = true;
 
-            intImgNum++; 
-
-            if(intImgNum == 3)
-            {
-                intImgNum = 0;
-            }
         }
     }
 }

@@ -62,9 +62,9 @@ namespace SoCar.Winform.UserControls
             gridControl.MainView = gvLocation;
             gridControl.DataSource = bdsLocation;
         }
-        internal void SearchCar(int? carTypeId, string number, int? location, bool? isRent)
+        internal void SearchCar(int? carId, int? carTypeId, int? location, bool? isRent)
         {
-            bdsCar.DataSource = DataRepository.Car.Search(carTypeId, number, location, isRent);
+            bdsCar.DataSource = DataRepository.Car.Search(carId, carTypeId, location, isRent);
             gridControl.MainView = gvCar;
             gridControl.DataSource = bdsCar;
         }

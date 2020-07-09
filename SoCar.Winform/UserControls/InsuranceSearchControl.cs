@@ -26,7 +26,7 @@ namespace SoCar.Winform.UserControls
             int? companyCode = null;
             try
             {
-                companyCode = (int)cbbCompany.SelectedValue;
+                companyCode = (int?)cbbCompany.SelectedValue;
             }
             //catch (InvalidCastException e)
             //{ e.
@@ -44,7 +44,7 @@ namespace SoCar.Winform.UserControls
             int? goodsCode = null;
             try
             {
-                goodsCode = int.Parse(cbbGoods.Text);
+                goodsCode = (int?)cbbGoods.SelectedValue;
             }
             //catch (InvalidCastException e)
             //{ e.
@@ -72,7 +72,8 @@ namespace SoCar.Winform.UserControls
         {
             if (DesignMode)
                 return;
-            bdsInsurance.DataSource = DataRepository.Insurance.GetWithoutRedundancy();
+            bdsCompany.DataSource = DataRepository.Code.GetByCodeCategoryId(5);
+            bdsGoods.DataSource = DataRepository.Code.GetByCodeCategoryId(6);
         }
 
 

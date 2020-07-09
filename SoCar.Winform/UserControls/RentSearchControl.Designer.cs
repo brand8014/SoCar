@@ -113,6 +113,7 @@
             // 
             this.cbbCarTypeId.DataSource = this.bdsCar;
             this.cbbCarTypeId.DisplayMember = "Number";
+            this.cbbCarTypeId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbCarTypeId.FormattingEnabled = true;
             this.cbbCarTypeId.Location = new System.Drawing.Point(54, 72);
             this.cbbCarTypeId.Name = "cbbCarTypeId";
@@ -128,6 +129,7 @@
             // 
             this.cbbLocationId.DataSource = this.bdsIocation;
             this.cbbLocationId.DisplayMember = "Address";
+            this.cbbLocationId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbLocationId.FormattingEnabled = true;
             this.cbbLocationId.Location = new System.Drawing.Point(54, 42);
             this.cbbLocationId.Name = "cbbLocationId";
@@ -143,6 +145,7 @@
             // 
             this.cbbCustomerId.DataSource = this.bdsCustomer;
             this.cbbCustomerId.DisplayMember = "Name";
+            this.cbbCustomerId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbCustomerId.FormattingEnabled = true;
             this.cbbCustomerId.Location = new System.Drawing.Point(54, 12);
             this.cbbCustomerId.Name = "cbbCustomerId";
