@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using SoCar.Data;
 using SoCar.Winform.BaseForms;
+using SoCar.Winform.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,7 @@ using System.Windows.Forms;
 
 namespace SoCar.Winform.Forms
 {
-    public partial class LoginForm : XtraForm
+    public partial class LoginForm : RootForm
     {
 
         bool IsDone = false;
@@ -27,35 +28,50 @@ namespace SoCar.Winform.Forms
 
         }
 
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            txbName.Text = Properties.Settings.Default.LoginIdSave;
+
+        }
+
         private void btnOk_Click(object sender, EventArgs e)
         {
-            List<Login> items = DataRepository.Login.GetAll();
-
+            Login login = DataRepository.Login.Get(txbName.Text, txbPW.Text);
             //로그인 성공시
-            if (items.Any(x => x.UserName == txbName.Text && x.Password == txbPW.Text))
+            if (login != null)
             {
-                this.Hide();
-                
+                LoginProxy.Login = login;
+
                 MainForm mainform1 = new MainForm();
+
+                if (chkrememberLoginName.Checked)
+                {
+                    // 로그인 OK 버튼 실행할 때 저장
+                    Properties.Settings.Default.LoginIdSave = txbName.Text;
+                    Properties.Settings.Default.Save();
+                }
                 mainform1.Show();
+
+                Close();
             }
+
+
 
             //로그인 실패시
             else
+            {
                 MessageBox.Show("※ 아이디와 비밀번호를 확인해주세요 ※");
+                
+            }
         }
 
-        public static new bool IsActive()
-        {
-            LoginForm login = new LoginForm();
-            login.ShowDialog();
-            return login.IsDone ? true : false;
-        }
-
+        
         private void btnClose_Click(object sender, EventArgs e)
         {
             IsDone = false;
             Close();
         }
+
+        
     }
 }

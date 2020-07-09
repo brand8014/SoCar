@@ -30,9 +30,9 @@
         {
             this.txbName = new System.Windows.Forms.TextBox();
             this.txbPW = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblPW = new System.Windows.Forms.Label();
+            this.chkrememberLoginName = new System.Windows.Forms.CheckBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -52,38 +52,39 @@
             this.txbPW.Location = new System.Drawing.Point(138, 143);
             this.txbPW.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbPW.Name = "txbPW";
+            this.txbPW.PasswordChar = '*';
             this.txbPW.Size = new System.Drawing.Size(156, 26);
             this.txbPW.TabIndex = 1;
             this.txbPW.TextChanged += new System.EventHandler(this.txbPW_TextChanged);
             // 
-            // label1
+            // lblName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(49, 112);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 18);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "UserName :";
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(49, 112);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(87, 18);
+            this.lblName.TabIndex = 2;
+            this.lblName.Text = "UserName :";
             // 
-            // label2
+            // lblPW
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(50, 145);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 18);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Password :";
+            this.lblPW.AutoSize = true;
+            this.lblPW.Location = new System.Drawing.Point(50, 145);
+            this.lblPW.Name = "lblPW";
+            this.lblPW.Size = new System.Drawing.Size(79, 18);
+            this.lblPW.TabIndex = 3;
+            this.lblPW.Text = "Password :";
             // 
-            // checkBox1
+            // chkrememberLoginName
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(92, 193);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(181, 22);
-            this.checkBox1.TabIndex = 4;
-            this.checkBox1.Text = "Save Login Information";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkrememberLoginName.AutoSize = true;
+            this.chkrememberLoginName.Location = new System.Drawing.Point(122, 191);
+            this.chkrememberLoginName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chkrememberLoginName.Name = "chkrememberLoginName";
+            this.chkrememberLoginName.Size = new System.Drawing.Size(121, 22);
+            this.chkrememberLoginName.TabIndex = 4;
+            this.chkrememberLoginName.Text = "Save Login ID";
+            this.chkrememberLoginName.UseVisualStyleBackColor = true;
             // 
             // btnClose
             // 
@@ -110,19 +111,23 @@
             // 
             // LoginForm
             // 
+            this.Appearance.BackColor = System.Drawing.SystemColors.Control;
+            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(353, 354);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.chkrememberLoginName);
+            this.Controls.Add(this.lblPW);
+            this.Controls.Add(this.lblName);
             this.Controls.Add(this.txbPW);
             this.Controls.Add(this.txbName);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "LoginForm";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,9 +137,9 @@
 
         private System.Windows.Forms.TextBox txbName;
         private System.Windows.Forms.TextBox txbPW;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblPW;
+        private System.Windows.Forms.CheckBox chkrememberLoginName;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnOk;
     }

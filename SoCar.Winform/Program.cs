@@ -1,5 +1,7 @@
 ﻿//using SoCar.Winform.BaseForms;
+using SoCar.Data;
 using SoCar.Winform.Forms;
+using SoCar.Winform.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +20,11 @@ namespace SoCar.Winform
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm( ));
+
+            //Application.Run(new LoginForm( ));
+            //LoginProxy.Login = DataRepository.Login.GetByPK(1);
+            LoginProxy.Login = DataRepository.Login.Get("abc123", "abc123");
+            Application.Run(new MainForm());
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using SoCar.Data;
+using SoCar.Winform.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,6 +26,8 @@ namespace SoCar.Winform.Forms
             controls = new Dictionary<string, Control>();
             MakeControls();
             DisableAllControls();
+
+            Text = LoginProxy.Login.UserName;
         }
 
         private void uscBasic1_Load(object sender, EventArgs e)
