@@ -47,8 +47,8 @@ namespace SoCar.Winform.Forms
 
         private void WriteToEntity()
         {
-            _insurance.CompanyCode = int.Parse(cbbCompanyCode.Text);
-            _insurance.GoodsCode = int.Parse(cbbGoodsCode.Text);
+            _insurance.CompanyCode = (int)cbbCompanyCode.SelectedValue;
+            _insurance.GoodsCode = (int)cbbGoodsCode.SelectedValue;
 
 
         }
