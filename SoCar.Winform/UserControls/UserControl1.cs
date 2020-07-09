@@ -211,7 +211,7 @@ namespace SoCar.Winform.UserControls
 
         internal void CarOpen()
         {
-           
+            
         }
 
         private void gvRent_DoubleClick(object sender, EventArgs e)
