@@ -52,8 +52,8 @@ namespace SoCar.Winform.Forms
                 }
                 
                 mainform1.Show();
-
-                //Close();
+                
+                //close();
             }
 
             //로그인 실패시
@@ -67,9 +67,9 @@ namespace SoCar.Winform.Forms
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Close();
+            Application.Exit(); 
         }
-
+        
         
     }
 }

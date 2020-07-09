@@ -228,5 +228,7 @@ namespace SoCar.Winform.Forms
         {
             uscBasic1.nbgEvent.Expanded = true;
         }
+
+      
     }
 }
