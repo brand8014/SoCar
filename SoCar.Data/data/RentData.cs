@@ -56,7 +56,7 @@ namespace SoCar.Data
 
             return query.ToList().ConvertAll(x => x.Rent);
 
-            
+
 
         }
 
