@@ -79,6 +79,7 @@
             // 
             this.cbbCodeId.DataSource = this.bdsCord;
             this.cbbCodeId.DisplayMember = "Item";
+            this.cbbCodeId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbCodeId.FormattingEnabled = true;
             this.cbbCodeId.Location = new System.Drawing.Point(80, 12);
             this.cbbCodeId.Name = "cbbCodeId";

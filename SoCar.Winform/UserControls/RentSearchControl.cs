@@ -22,9 +22,10 @@ namespace SoCar.Winform.UserControls
         {
             if (DesignMode)
                 return;
-            bdsCar.DataSource = DataRepository.Car.GetAll();
+
             bdsCustomer.DataSource = DataRepository.Customer.GetAll();
-            bdsIocation.DataSource = DataRepository.Location.GetAll();
+            bdsLocation.DataSource = DataRepository.Location.GetAll();
+            bdsCar.DataSource = DataRepository.Car.GetAll();
 
         }
 

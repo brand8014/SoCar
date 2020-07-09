@@ -77,14 +77,14 @@
             this.bdsCustomer = new System.Windows.Forms.BindingSource(this.components);
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
-            this.nbgLocation = new DevExpress.XtraNavBar.NavBarGroup();
-            this.nbiViewLocation = new DevExpress.XtraNavBar.NavBarItem();
-            this.nbiInsertLocation = new DevExpress.XtraNavBar.NavBarItem();
-            this.nbiDeleteLocation = new DevExpress.XtraNavBar.NavBarItem();
             this.nbgCar = new DevExpress.XtraNavBar.NavBarGroup();
             this.nbiViewCar = new DevExpress.XtraNavBar.NavBarItem();
             this.nbiInsertCar = new DevExpress.XtraNavBar.NavBarItem();
             this.nbiDeleteCar = new DevExpress.XtraNavBar.NavBarItem();
+            this.nbgLocation = new DevExpress.XtraNavBar.NavBarGroup();
+            this.nbiViewLocation = new DevExpress.XtraNavBar.NavBarItem();
+            this.nbiInsertLocation = new DevExpress.XtraNavBar.NavBarItem();
+            this.nbiDeleteLocation = new DevExpress.XtraNavBar.NavBarItem();
             this.nbgCustomer = new DevExpress.XtraNavBar.NavBarGroup();
             this.nbiViewCustomer = new DevExpress.XtraNavBar.NavBarItem();
             this.nbiInsertCustomer = new DevExpress.XtraNavBar.NavBarItem();
@@ -175,6 +175,7 @@
             gridLevelNode2.RelationName = "Level3";
             gridLevelNode3.LevelTemplate = this.gvLocation;
             gridLevelNode3.RelationName = "Level1";
+            gridLevelNode4.LevelTemplate = this.gvInsurance;
             gridLevelNode4.RelationName = "Level4";
             gridLevelNode5.LevelTemplate = this.gvCar;
             gridLevelNode5.RelationName = "Level5";
@@ -524,7 +525,7 @@
             // 
             // navBarControl1
             // 
-            this.navBarControl1.ActiveGroup = this.nbgLocation;
+            this.navBarControl1.ActiveGroup = this.nbgInsurance;
             this.navBarControl1.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
             this.nbgLocation,
             this.nbgCar,
@@ -561,36 +562,6 @@
             this.navBarControl1.TabIndex = 5;
             this.navBarControl1.Text = "navBarControl1";
             // 
-            // nbgLocation
-            // 
-            this.nbgLocation.Caption = "지역";
-            this.nbgLocation.Expanded = true;
-            this.nbgLocation.GroupClientHeight = 1;
-            this.nbgLocation.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiViewLocation),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiInsertLocation),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiDeleteLocation)});
-            this.nbgLocation.Name = "nbgLocation";
-            this.nbgLocation.CalcGroupClientHeight += new DevExpress.XtraNavBar.NavBarCalcGroupClientHeightEventHandler(this.nbgLocation_CalcGroupClientHeight);
-            // 
-            // nbiViewLocation
-            // 
-            this.nbiViewLocation.Caption = "조회";
-            this.nbiViewLocation.Name = "nbiViewLocation";
-            this.nbiViewLocation.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiViewLocation_LinkClicked);
-            // 
-            // nbiInsertLocation
-            // 
-            this.nbiInsertLocation.Caption = "등록";
-            this.nbiInsertLocation.Name = "nbiInsertLocation";
-            this.nbiInsertLocation.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiInsertLocation_LinkClicked);
-            // 
-            // nbiDeleteLocation
-            // 
-            this.nbiDeleteLocation.Caption = "삭제";
-            this.nbiDeleteLocation.Name = "nbiDeleteLocation";
-            this.nbiDeleteLocation.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiDeleteLocation_LinkClicked);
-            // 
             // nbgCar
             // 
             this.nbgCar.Caption = "차";
@@ -619,6 +590,35 @@
             this.nbiDeleteCar.Caption = "삭제";
             this.nbiDeleteCar.Name = "nbiDeleteCar";
             this.nbiDeleteCar.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiDeleteCar_LinkClicked);
+            // 
+            // nbgLocation
+            // 
+            this.nbgLocation.Caption = "지역";
+            this.nbgLocation.GroupClientHeight = 1;
+            this.nbgLocation.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiViewLocation),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiInsertLocation),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiDeleteLocation)});
+            this.nbgLocation.Name = "nbgLocation";
+            this.nbgLocation.CalcGroupClientHeight += new DevExpress.XtraNavBar.NavBarCalcGroupClientHeightEventHandler(this.nbgLocation_CalcGroupClientHeight);
+            // 
+            // nbiViewLocation
+            // 
+            this.nbiViewLocation.Caption = "조회";
+            this.nbiViewLocation.Name = "nbiViewLocation";
+            this.nbiViewLocation.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiViewLocation_LinkClicked);
+            // 
+            // nbiInsertLocation
+            // 
+            this.nbiInsertLocation.Caption = "등록";
+            this.nbiInsertLocation.Name = "nbiInsertLocation";
+            this.nbiInsertLocation.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiInsertLocation_LinkClicked);
+            // 
+            // nbiDeleteLocation
+            // 
+            this.nbiDeleteLocation.Caption = "삭제";
+            this.nbiDeleteLocation.Name = "nbiDeleteLocation";
+            this.nbiDeleteLocation.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiDeleteLocation_LinkClicked);
             // 
             // nbgCustomer
             // 
@@ -652,6 +652,7 @@
             // nbgInsurance
             // 
             this.nbgInsurance.Caption = "보험";
+            this.nbgInsurance.Expanded = true;
             this.nbgInsurance.GroupClientHeight = 4;
             this.nbgInsurance.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbiViewInsurance),

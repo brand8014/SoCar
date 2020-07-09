@@ -41,6 +41,8 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.bdsGoods = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsCompany = new System.Windows.Forms.BindingSource(this.components);
             this.bdsInsurance = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -51,6 +53,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsGoods)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCompany)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsInsurance)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,28 +74,28 @@
             // 
             // cbbGoods
             // 
+            this.cbbGoods.DataSource = this.bdsGoods;
+            this.cbbGoods.DisplayMember = "Item";
             this.cbbGoods.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbGoods.FormattingEnabled = true;
-            this.cbbGoods.Items.AddRange(new object[] {
-            "책임보험(기본)",
-            "책임보험(특약)",
-            "종합보험(기본)",
-            "종합보험(특약)"});
             this.cbbGoods.Location = new System.Drawing.Point(67, 42);
             this.cbbGoods.Name = "cbbGoods";
             this.cbbGoods.Size = new System.Drawing.Size(241, 23);
             this.cbbGoods.TabIndex = 7;
+            this.cbbGoods.ValueMember = "CodeId";
             // 
             // cbbCompany
             // 
-            this.cbbCompany.DataSource = this.bdsInsurance;
-            this.cbbCompany.DisplayMember = "Company";
+            this.cbbCompany.DataSource = this.bdsCompany;
+            this.cbbCompany.DisplayMember = "Item";
             this.cbbCompany.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbCompany.FormattingEnabled = true;
             this.cbbCompany.Location = new System.Drawing.Point(67, 12);
             this.cbbCompany.Name = "cbbCompany";
             this.cbbCompany.Size = new System.Drawing.Size(241, 23);
             this.cbbCompany.TabIndex = 6;
+            this.cbbCompany.ValueMember = "CodeId";
+            // 
             this.cbbCompany.ValueMember = "InsuranceId";
             // 
             // btnSearch
@@ -187,6 +191,14 @@
             this.layoutControlItem4.Text = "상품명";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(52, 18);
             // 
+            // bdsGoods
+            // 
+            this.bdsGoods.DataSource = typeof(SoCar.Data.Code);
+            // 
+            // bdsCompany
+            // 
+            this.bdsCompany.DataSource = typeof(SoCar.Data.Code);
+            // 
             // bdsInsurance
             // 
             this.bdsInsurance.DataSource = typeof(SoCar.Data.Insurance);
@@ -208,6 +220,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsGoods)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCompany)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsInsurance)).EndInit();
             this.ResumeLayout(false);
 
@@ -223,10 +237,11 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
-        private System.Windows.Forms.BindingSource bdsInsurance;
         private System.Windows.Forms.ComboBox cbbGoods;
         private System.Windows.Forms.ComboBox cbbCompany;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private System.Windows.Forms.BindingSource bdsGoods;
+        private System.Windows.Forms.BindingSource bdsCompany;
     }
 }

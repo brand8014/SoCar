@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.txeGoods = new DevExpress.XtraEditors.TextEdit();
-            this.txeCompany = new DevExpress.XtraEditors.TextEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -40,10 +40,11 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lueCompanyCode = new DevExpress.XtraEditors.LookUpEdit();
+            this.bdsCodeForCompany = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txeGoods.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txeCompany.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -51,6 +52,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueCompanyCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCodeForCompany)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -58,7 +61,7 @@
             this.layoutControl1.Controls.Add(this.btnUpdate);
             this.layoutControl1.Controls.Add(this.btnClose);
             this.layoutControl1.Controls.Add(this.txeGoods);
-            this.layoutControl1.Controls.Add(this.txeCompany);
+            this.layoutControl1.Controls.Add(this.lueCompanyCode);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -94,14 +97,6 @@
             this.txeGoods.StyleController = this.layoutControl1;
             this.txeGoods.TabIndex = 5;
             // 
-            // txeCompany
-            // 
-            this.txeCompany.Location = new System.Drawing.Point(67, 12);
-            this.txeCompany.Name = "txeCompany";
-            this.txeCompany.Size = new System.Drawing.Size(399, 24);
-            this.txeCompany.StyleController = this.layoutControl1;
-            this.txeCompany.TabIndex = 4;
-            // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -119,7 +114,7 @@
             // 
             // layoutControlItem1
             // 
-            this.layoutControlItem1.Control = this.txeCompany;
+            this.layoutControlItem1.Control = this.lueCompanyCode;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(458, 28);
@@ -175,6 +170,28 @@
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
+            // lueCompanyCode
+            // 
+            this.lueCompanyCode.Location = new System.Drawing.Point(67, 12);
+            this.lueCompanyCode.Name = "lueCompanyCode";
+            this.lueCompanyCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueCompanyCode.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Item", "Item", 43, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.lueCompanyCode.Properties.DataSource = this.bdsCodeForCompany;
+            this.lueCompanyCode.Properties.DisplayMember = "Item";
+            this.lueCompanyCode.Properties.NullText = "";
+            this.lueCompanyCode.Properties.PopupSizeable = false;
+            this.lueCompanyCode.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.lueCompanyCode.Properties.ValueMember = "CodeId";
+            this.lueCompanyCode.Size = new System.Drawing.Size(399, 24);
+            this.lueCompanyCode.StyleController = this.layoutControl1;
+            this.lueCompanyCode.TabIndex = 4;
+            // 
+            // bdsCodeForCompany
+            // 
+            this.bdsCodeForCompany.DataSource = typeof(SoCar.Data.Code);
+            // 
             // UpdateInsuranceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -187,7 +204,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txeGoods.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txeCompany.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
@@ -195,6 +211,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueCompanyCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCodeForCompany)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -204,7 +222,6 @@
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraEditors.TextEdit txeGoods;
-        private DevExpress.XtraEditors.TextEdit txeCompany;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
@@ -213,5 +230,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraEditors.SimpleButton btnUpdate;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
+        private DevExpress.XtraEditors.LookUpEdit lueCompanyCode;
+        private System.Windows.Forms.BindingSource bdsCodeForCompany;
     }
 }

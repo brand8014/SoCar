@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
-            this.cbbLisence = new System.Windows.Forms.ComboBox();
+            this.cbbLisenceCode = new System.Windows.Forms.ComboBox();
             this.txeCellNumber = new DevExpress.XtraEditors.TextEdit();
             this.txeName = new DevExpress.XtraEditors.TextEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -42,6 +43,7 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.bdsCode = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txeCellNumber.Properties)).BeginInit();
@@ -54,13 +56,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCode)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.btnUpdate);
             this.layoutControl1.Controls.Add(this.btnClose);
-            this.layoutControl1.Controls.Add(this.cbbLisence);
+            this.layoutControl1.Controls.Add(this.cbbLisenceCode);
             this.layoutControl1.Controls.Add(this.txeCellNumber);
             this.layoutControl1.Controls.Add(this.txeName);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -91,17 +94,17 @@
             this.btnClose.Text = "닫기(&C)";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // cbbLisence
+            // cbbLisenceCode
             // 
-            this.cbbLisence.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbLisence.FormattingEnabled = true;
-            this.cbbLisence.Items.AddRange(new object[] {
-            "1종보통",
-            "2종보통"});
-            this.cbbLisence.Location = new System.Drawing.Point(67, 68);
-            this.cbbLisence.Name = "cbbLisence";
-            this.cbbLisence.Size = new System.Drawing.Size(399, 26);
-            this.cbbLisence.TabIndex = 8;
+            this.cbbLisenceCode.DataSource = this.bdsCode;
+            this.cbbLisenceCode.DisplayMember = "Item";
+            this.cbbLisenceCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbLisenceCode.FormattingEnabled = true;
+            this.cbbLisenceCode.Location = new System.Drawing.Point(67, 68);
+            this.cbbLisenceCode.Name = "cbbLisenceCode";
+            this.cbbLisenceCode.Size = new System.Drawing.Size(399, 26);
+            this.cbbLisenceCode.TabIndex = 8;
+            this.cbbLisenceCode.ValueMember = "CodeId";
             // 
             // txeCellNumber
             // 
@@ -155,7 +158,7 @@
             // 
             // layoutControlItem5
             // 
-            this.layoutControlItem5.Control = this.cbbLisence;
+            this.layoutControlItem5.Control = this.cbbLisenceCode;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 56);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(458, 30);
@@ -202,6 +205,10 @@
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
+            // bdsCode
+            // 
+            this.bdsCode.DataSource = typeof(SoCar.Data.Code);
+            // 
             // UpdateCustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -223,6 +230,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCode)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -237,11 +245,12 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraEditors.SimpleButton btnClose;
-        private System.Windows.Forms.ComboBox cbbLisence;
+        private System.Windows.Forms.ComboBox cbbLisenceCode;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraEditors.SimpleButton btnUpdate;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
+        private System.Windows.Forms.BindingSource bdsCode;
     }
 }

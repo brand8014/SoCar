@@ -28,9 +28,8 @@ namespace SoCar.Winform.UserControls
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
+            
             OnCarDeleteButtonClick();
-
         }
         #region CarDeleteButtonClick event things for C# 3.0
         public event EventHandler<CarDeleteButtonClickEventArgs> CarDeleteButtonClick;

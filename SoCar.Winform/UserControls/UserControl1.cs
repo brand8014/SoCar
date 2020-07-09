@@ -62,9 +62,9 @@ namespace SoCar.Winform.UserControls
             gridControl.MainView = gvLocation;
             gridControl.DataSource = bdsLocation;
         }
-        internal void SearchCar(int? carTypeId, string number, int? location, bool? isRent)
+        internal void SearchCar(int? carId, int? carTypeId, int? location, bool? isRent)
         {
-            bdsCar.DataSource = DataRepository.Car.Search(carTypeId, number, location, isRent);
+            bdsCar.DataSource = DataRepository.Car.Search(carId, carTypeId, location, isRent);
             gridControl.MainView = gvCar;
             gridControl.DataSource = bdsCar;
         }
@@ -200,14 +200,13 @@ namespace SoCar.Winform.UserControls
         }
         private void gvInsurance_DoubleClick(object sender, EventArgs e)
         {
+            
             Insurance insurance = bdsInsurance.Current as Insurance;
             if (insurance == null)
                 return;
             UpdateInsuranceForm form = new UpdateInsuranceForm(insurance);
             form.ShowDialog();                 
         }
-
-
 
         private void gvRent_DoubleClick(object sender, EventArgs e)
         {
@@ -216,6 +215,7 @@ namespace SoCar.Winform.UserControls
 
 
 
+        //TODO : nbg선택시 동작 ( 필요없음, 삭제요망)
         private void nbgLocation_CalcGroupClientHeight(object sender, DevExpress.XtraNavBar.NavBarCalcGroupClientHeightEventArgs e)
         {
             if (DesignMode) return;           
@@ -261,7 +261,7 @@ namespace SoCar.Winform.UserControls
         }
         private void nbiDeleteCar_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            OnnbiDeleteCarClick(nbgLocation.Caption, nbiDeleteCar.Caption);
+            OnnbiDeleteCarClick(nbgCar.Caption, nbiDeleteCar.Caption);
         }
         private void nbiDeleteCustomer_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
@@ -273,12 +273,13 @@ namespace SoCar.Winform.UserControls
         }
         private void nbiDeleteRent_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            OnnbiDeleteRentClick(nbgInsurance.Caption, nbiDeleteInsurance.Caption);
+            OnnbiDeleteRentClick(nbgRent.Caption, nbiDeleteRent.Caption);
         }
         private void nbiDeleteEvent_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             OnnbiDeleteEventClick(nbgEvent.Caption, nbiDeleteEvent.Caption);
         }
+
 
 
 
@@ -298,10 +299,16 @@ namespace SoCar.Winform.UserControls
         {
             Car car = bdsCar.Current as Car;
             if (car == null)
+            {
+                MessageBox.Show("선택된 차가 없습니다.");
                 return;
+            }
             if (Helpers.Helper.SureToDelete() == false)
+            {
+                
                 return;
-
+            }
+            
             DataRepository.Car.Delete(car);
 
             bdsCar.Remove(car);

@@ -51,7 +51,7 @@ namespace SoCar.Winform.Forms
                     Properties.Settings.Default.Save();
                 }
 
-                this.Visible = false;
+                //this.Visible = false;
                 mainform1.Show();
                 
                 //close();

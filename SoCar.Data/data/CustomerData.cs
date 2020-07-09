@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,23 +20,32 @@ namespace SoCar.Data
             SocarEntities context = CreateContext();
 
             var query = from x in context.Customers
-                        select x;
+                        select new { Customer = x, Lisence = x.Code.Item };
 
             if (customerId.HasValue)
-                query = query.Where(x => x.CustomerId == customerId);
+                query = query.Where(x => x.Customer.CustomerId == customerId);
 
             if (age.HasValue)
-                query = query.Where(x => x.Age == age);
+                query = query.Where(x => x.Customer.Age == age);
 
             if (string.IsNullOrEmpty(cellNumber) == false)
-                query = query.Where(x => x.CellNumber.Contains(cellNumber));
+                query = query.Where(x => x.Customer.CellNumber.Contains(cellNumber));
 
             if (lisence.HasValue)
-                query = query.Where(x => x.LisenceCode == lisence);
+                query = query.Where(x => x.Customer.LisenceCode == lisence);
 
+            var items = query.ToList();
 
-            return query.ToList();
+            foreach (var x in items)
+            {
+                x.Customer.Lisence = x.Lisence;
+            }
+
+            return query.ToList().ConvertAll(x=> x.Customer);
 
         }
+
+       
+
     }
 }

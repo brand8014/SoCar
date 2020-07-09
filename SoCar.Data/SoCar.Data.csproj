@@ -86,7 +86,9 @@
       <DependentUpon>SocarModel.tt</DependentUpon>
     </Compile>
     <Compile Include="entities\Car.cs" />
+    <Compile Include="entities\Customer.cs" />
     <Compile Include="entities\Event.cs" />
+    <Compile Include="entities\Insurance.cs" />
     <Compile Include="entities\Location.cs" />
     <Compile Include="entities\Rent.cs" />
     <Compile Include="Event.cs">
