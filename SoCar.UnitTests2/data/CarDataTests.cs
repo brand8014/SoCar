@@ -27,29 +27,7 @@ namespace SoCar.Data.Tests
             Assert.IsTrue(cars.Count > 0);
         }
 
-        [TestMethod()]
-        public void SearchWithCarName()
-        {
-            List<Car> cars = DataRepository.Car.SearchWithCarName(1, null, null, null);
 
-            List<string> carNames = new List<string>();
 
-            foreach (var item in cars)
-            {
-                carNames.Add(item.CarName);
-            }
-
-            Assert.IsTrue(carNames[0] == "마티즈");
-
-            // Assert.IsTrue(carNames.Any(x => x.Contains("마티즈")));
-        }
-
-        [TestMethod()]
-        public void SearchWithCarNameAndAddress()
-        {
-            List<Car> cars = DataRepository.Car.SearchWithCarNameAndAddress(1);
-
-            Assert.IsTrue(cars[0].CarName == "마티즈" && cars[0].Address == "화곡역주차장");
-        }
     }
 }

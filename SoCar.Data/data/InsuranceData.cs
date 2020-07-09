@@ -34,14 +34,5 @@ namespace SoCar.Data
 
         }
 
-        public List<int> GetWithoutRedundancy()
-        {
-            SocarEntities context = CreateContext();
-
-            var query = from x in context.Insurances
-                        select x.CompanyCode;
-
-            return query.Distinct().ToList();
-        }
     }
 }
