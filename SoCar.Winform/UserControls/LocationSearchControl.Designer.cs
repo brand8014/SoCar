@@ -31,9 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.lueAddress = new DevExpress.XtraEditors.LookUpEdit();
-            this.bdsAddress = new System.Windows.Forms.BindingSource(this.components);
             this.lueLocation = new DevExpress.XtraEditors.LookUpEdit();
-            this.bdsLocation = new System.Windows.Forms.BindingSource(this.components);
             this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
             this.btnReset = new DevExpress.XtraEditors.SimpleButton();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -43,12 +41,12 @@
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.bdsAddress = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsLocation = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueAddress.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsAddress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueLocation.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -56,6 +54,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsAddress)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -74,7 +74,7 @@
             // 
             // lueAddress
             // 
-            this.lueAddress.Location = new System.Drawing.Point(41, 38);
+            this.lueAddress.Location = new System.Drawing.Point(41, 40);
             this.lueAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lueAddress.Name = "lueAddress";
             this.lueAddress.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -86,13 +86,9 @@
             this.lueAddress.StyleController = this.layoutControl1;
             this.lueAddress.TabIndex = 9;
             // 
-            // bdsAddress
-            // 
-            this.bdsAddress.DataSource = typeof(SoCar.Data.Code);
-            // 
             // lueLocation
             // 
-            this.lueLocation.Location = new System.Drawing.Point(41, 10);
+            this.lueLocation.Location = new System.Drawing.Point(41, 12);
             this.lueLocation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lueLocation.Name = "lueLocation";
             this.lueLocation.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -104,13 +100,9 @@
             this.lueLocation.StyleController = this.layoutControl1;
             this.lueLocation.TabIndex = 8;
             // 
-            // bdsLocation
-            // 
-            this.bdsLocation.DataSource = typeof(SoCar.Data.Location);
-            // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(62, 173);
+            this.btnSearch.Location = new System.Drawing.Point(62, 171);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(121, 27);
             this.btnSearch.StyleController = this.layoutControl1;
@@ -120,7 +112,7 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(187, 173);
+            this.btnReset.Location = new System.Drawing.Point(187, 171);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(121, 27);
             this.btnReset.StyleController = this.layoutControl1;
@@ -146,7 +138,7 @@
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.btnReset;
-            this.layoutControlItem1.Location = new System.Drawing.Point(175, 163);
+            this.layoutControlItem1.Location = new System.Drawing.Point(175, 159);
             this.layoutControlItem1.MaxSize = new System.Drawing.Size(125, 31);
             this.layoutControlItem1.MinSize = new System.Drawing.Size(125, 31);
             this.layoutControlItem1.Name = "layoutControlItem1";
@@ -158,7 +150,7 @@
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.btnSearch;
-            this.layoutControlItem2.Location = new System.Drawing.Point(50, 163);
+            this.layoutControlItem2.Location = new System.Drawing.Point(50, 159);
             this.layoutControlItem2.MaxSize = new System.Drawing.Size(125, 31);
             this.layoutControlItem2.MinSize = new System.Drawing.Size(125, 31);
             this.layoutControlItem2.Name = "layoutControlItem2";
@@ -172,13 +164,13 @@
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(0, 56);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(300, 107);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(300, 103);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 163);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 159);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
             this.emptySpaceItem2.Size = new System.Drawing.Size(50, 31);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
@@ -201,6 +193,14 @@
             this.layoutControlItem6.Text = "주소";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(26, 18);
             // 
+            // bdsAddress
+            // 
+            this.bdsAddress.DataSource = typeof(SoCar.Data.Code);
+            // 
+            // bdsLocation
+            // 
+            this.bdsLocation.DataSource = typeof(SoCar.Data.Location);
+            // 
             // LocationSearchControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -212,9 +212,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lueAddress.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsAddress)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueLocation.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
@@ -222,6 +220,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsAddress)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).EndInit();
             this.ResumeLayout(false);
 
         }

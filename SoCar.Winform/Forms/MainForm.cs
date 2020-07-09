@@ -229,6 +229,19 @@ namespace SoCar.Winform.Forms
             uscBasic1.nbgEvent.Expanded = true;
         }
 
-      
+        int intImgNum = 0;
+
+        
+        private void tmrChangeImage_Tick(object sender, EventArgs e)
+        {
+            pbxCar1.Image = imageListCar.Images[intImgNum];
+
+            intImgNum++; 
+
+            if(intImgNum == 3)
+            {
+                intImgNum = 0;
+            }
+        }
     }
 }
