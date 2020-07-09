@@ -203,7 +203,7 @@ namespace SoCar.Winform.Forms
 
         private void barButtonCar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            pictureBox1.Visible = false;
+            pbxCar1.Visible = false;
             uscBasic1.nbgCar.Expanded = true;
         }
 
