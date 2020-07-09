@@ -22,7 +22,13 @@ namespace SoCar.Winform.Forms
         public UpdateCustomerForm(Customer customer) : this()
         {
             _customer = customer;
-
+            bdsCode.DataSource = DataRepository.Code.GetByCodeCategoryId(7);
+        }
+        private void UpdateCustomerForm_Load(object sender, EventArgs e)
+        {
+            txeName.EditValue = _customer.Name;
+            txeCellNumber.EditValue = _customer.CellNumber;
+            cbbLisenceCode.SelectedItem = _customer.LisenceCode.ToString();
         }
 
 
@@ -47,9 +53,7 @@ namespace SoCar.Winform.Forms
         {
             _customer.Name = txeName.Text;
             _customer.CellNumber = txeCellNumber.Text;
-            _customer.LisenceCode = int.Parse(cbbLisence.Text);
-
-        ;
+            _customer.LisenceCode = (int)cbbLisenceCode.SelectedValue;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -57,11 +61,6 @@ namespace SoCar.Winform.Forms
             Close();
         }
 
-        private void UpdateCustomerForm_Load(object sender, EventArgs e)
-        {
-            txeName.EditValue = _customer.Name;
-            txeCellNumber.EditValue = _customer.CellNumber;
-            cbbLisence.SelectedItem = _customer.LisenceCode.ToString();
-        }
+
     }
 }

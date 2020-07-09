@@ -84,6 +84,12 @@
     <Compile Include="BaseForms\ChildRootForm.Designer.cs">
       <DependentUpon>ChildRootForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\InsertRentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InsertRentForm.Designer.cs">
+      <DependentUpon>InsertRentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,8 +262,17 @@
     <EmbeddedResource Include="BaseForms\ChildRootForm.resx">
       <DependentUpon>ChildRootForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InsertCustomerForm.resx">
+      <DependentUpon>InsertCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\InsertEventForm.resx">
       <DependentUpon>InsertEventForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InsertInsuranceForm.resx">
+      <DependentUpon>InsertInsuranceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InsertRentForm.resx">
+      <DependentUpon>InsertRentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

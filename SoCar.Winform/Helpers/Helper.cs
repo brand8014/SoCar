@@ -15,7 +15,7 @@ namespace SoCar.Winform.Helpers
         {
 
             return XtraMessageBox.Show(
-                    "레알?",
+                    "삭제하시겠습니까?",
                     "질문",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question,

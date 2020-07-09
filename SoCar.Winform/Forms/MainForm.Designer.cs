@@ -63,16 +63,14 @@
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
-            this.pbxCar1 = new System.Windows.Forms.PictureBox();
-            this.imageSlider1 = new DevExpress.XtraEditors.Controls.ImageSlider();
             this.filteringUIContext1 = new DevExpress.Utils.Filtering.FilteringUIContext(this.components);
+            this.imageSlider1 = new DevExpress.XtraEditors.Controls.ImageSlider();
             this.label1 = new DevExpress.XtraEditors.LabelControl();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxCar1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageSlider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.filteringUIContext1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageSlider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,6 +110,7 @@
             this.barButtonHome.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonHome.ImageOptions.Image")));
             this.barButtonHome.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonHome.ImageOptions.LargeImage")));
             this.barButtonHome.Name = "barButtonHome";
+            this.barButtonHome.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonHome_ItemClick_1);
             // 
             // barButtonCustomer
             // 
@@ -240,8 +239,7 @@
             // 
             // carDeleteControl1
             // 
-            this.carDeleteControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.carDeleteControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.carDeleteControl1.Location = new System.Drawing.Point(863, 194);
             this.carDeleteControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -252,8 +250,7 @@
             // 
             // customerDeleteControl1
             // 
-            this.customerDeleteControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.customerDeleteControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.customerDeleteControl1.Location = new System.Drawing.Point(863, 194);
             this.customerDeleteControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -264,8 +261,7 @@
             // 
             // eventDeleteControl1
             // 
-            this.eventDeleteControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.eventDeleteControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.eventDeleteControl1.Location = new System.Drawing.Point(863, 194);
             this.eventDeleteControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -276,8 +272,7 @@
             // 
             // insuranceDeleteControl1
             // 
-            this.insuranceDeleteControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.insuranceDeleteControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.insuranceDeleteControl1.Location = new System.Drawing.Point(863, 194);
             this.insuranceDeleteControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -288,8 +283,7 @@
             // 
             // locationDeleteControl1
             // 
-            this.locationDeleteControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.locationDeleteControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.locationDeleteControl1.Location = new System.Drawing.Point(863, 194);
             this.locationDeleteControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -300,8 +294,7 @@
             // 
             // rentDeleteControl1
             // 
-            this.rentDeleteControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.rentDeleteControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rentDeleteControl1.Location = new System.Drawing.Point(863, 194);
             this.rentDeleteControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -312,8 +305,7 @@
             // 
             // insuranceSearchControl1
             // 
-            this.insuranceSearchControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.insuranceSearchControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.insuranceSearchControl1.Location = new System.Drawing.Point(863, 194);
             this.insuranceSearchControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -324,8 +316,7 @@
             // 
             // customerSearchControl1
             // 
-            this.customerSearchControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.customerSearchControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.customerSearchControl1.Location = new System.Drawing.Point(863, 194);
             this.customerSearchControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -336,8 +327,7 @@
             // 
             // carSearchControl1
             // 
-            this.carSearchControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.carSearchControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.carSearchControl1.Location = new System.Drawing.Point(863, 193);
             this.carSearchControl1.Name = "carSearchControl1";
@@ -347,8 +337,7 @@
             // 
             // rentSearchControl1
             // 
-            this.rentSearchControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.rentSearchControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rentSearchControl1.Location = new System.Drawing.Point(863, 194);
             this.rentSearchControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -359,8 +348,7 @@
             // 
             // locationSearchControl1
             // 
-            this.locationSearchControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.locationSearchControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.locationSearchControl1.Location = new System.Drawing.Point(863, 194);
             this.locationSearchControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -371,8 +359,7 @@
             // 
             // eventSearchControl1
             // 
-            this.eventSearchControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.eventSearchControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.eventSearchControl1.Location = new System.Drawing.Point(863, 194);
             this.eventSearchControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -397,15 +384,6 @@
             this.ribbonPageCategory1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage2});
             this.ribbonPageCategory1.Text = "ribbonPageCategory1";
-            // 
-            // pbxCar1
-            // 
-            this.pbxCar1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbxCar1.Location = new System.Drawing.Point(0, 187);
-            this.pbxCar1.Name = "pbxCar1";
-            this.pbxCar1.Size = new System.Drawing.Size(1198, 561);
-            this.pbxCar1.TabIndex = 19;
-            this.pbxCar1.TabStop = false;
             // 
             // imageSlider1
             // 
@@ -463,7 +441,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.imageSlider1);
-            this.Controls.Add(this.pbxCar1);
+            this.Controls.Add(this.ribbonControl1);
             this.Controls.Add(this.eventSearchControl1);
             this.Controls.Add(this.locationSearchControl1);
             this.Controls.Add(this.rentSearchControl1);
@@ -474,7 +452,6 @@
             this.Controls.Add(this.locationDeleteControl1);
             this.Controls.Add(this.insuranceDeleteControl1);
             this.Controls.Add(this.uscBasic1);
-            this.Controls.Add(this.ribbonControl1);
             this.Controls.Add(this.customerDeleteControl1);
             this.Controls.Add(this.carDeleteControl1);
             this.Controls.Add(this.eventDeleteControl1);
@@ -482,7 +459,7 @@
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxCar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filteringUIContext1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageSlider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.filteringUIContext1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
@@ -526,7 +503,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
         private DevExpress.XtraBars.Ribbon.RibbonPageCategory ribbonPageCategory1;
-        private System.Windows.Forms.PictureBox pbxCar1;
+        private DevExpress.Utils.Filtering.FilteringUIContext filteringUIContext1;
         private DevExpress.XtraEditors.Controls.ImageSlider imageSlider1;
         private DevExpress.Utils.Filtering.FilteringUIContext filteringUIContext1;
         private DevExpress.XtraEditors.LabelControl label1;

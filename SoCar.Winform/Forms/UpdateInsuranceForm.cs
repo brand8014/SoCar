@@ -26,7 +26,8 @@ namespace SoCar.Winform.Forms
 
         private void UpdateInsuranceForm_Load(object sender, EventArgs e)
         {
-            txeCompany.Text = Convert.ToString(_insurance.CompanyCode);
+            bdsCodeForCompany.DataSource = DataRepository.Code.GetByCodeCategoryId(5);
+            lueCompanyCode.Text = Convert.ToString(_insurance.CompanyCode);
             txeGoods.Text = Convert.ToString(_insurance.GoodsCode);
         }
 
@@ -49,7 +50,7 @@ namespace SoCar.Winform.Forms
 
         private void WriteToEntity()
         {
-            _insurance.CompanyCode = int.Parse(txeCompany.Text);
+            _insurance.CompanyCode = int.Parse(lueCompanyCode.Text);
             _insurance.GoodsCode = int.Parse(txeGoods.Text);
         }
     }

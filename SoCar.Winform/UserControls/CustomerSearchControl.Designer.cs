@@ -36,6 +36,7 @@
             this.txbNumber = new System.Windows.Forms.TextBox();
             this.txbAge = new System.Windows.Forms.TextBox();
             this.cbbCustomer = new System.Windows.Forms.ComboBox();
+            this.bdsCustomer = new System.Windows.Forms.BindingSource(this.components);
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -49,6 +50,7 @@
             this.bdsCustomer = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -135,6 +137,10 @@
             this.cbbCustomer.Size = new System.Drawing.Size(239, 23);
             this.cbbCustomer.TabIndex = 9;
             this.cbbCustomer.ValueMember = "CustomerId";
+            // 
+            // bdsCustomer
+            // 
+            this.bdsCustomer.DataSource = typeof(SoCar.Data.Customer);
             // 
             // Root
             // 
@@ -248,6 +254,7 @@
             this.Load += new System.EventHandler(this.CustomerSearchControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();

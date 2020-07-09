@@ -32,36 +32,36 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.cbbIsRent = new System.Windows.Forms.ComboBox();
             this.cbbLocation = new System.Windows.Forms.ComboBox();
+            this.bdsLocation = new System.Windows.Forms.BindingSource(this.components);
             this.cbbNumber = new System.Windows.Forms.ComboBox();
+            this.bdsCar = new System.Windows.Forms.BindingSource(this.components);
             this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
             this.btnReset = new DevExpress.XtraEditors.SimpleButton();
             this.cbbCarType = new System.Windows.Forms.ComboBox();
+            this.bdsCarType = new System.Windows.Forms.BindingSource(this.components);
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bdsLocation = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsCar = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsCarType = new System.Windows.Forms.BindingSource(this.components);
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCarType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCarType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -104,6 +104,10 @@
             this.cbbLocation.TabIndex = 9;
             this.cbbLocation.ValueMember = "LocationId";
             // 
+            // bdsLocation
+            // 
+            this.bdsLocation.DataSource = typeof(SoCar.Data.Location);
+            // 
             // cbbNumber
             // 
             this.cbbNumber.DataSource = this.bdsCar;
@@ -115,6 +119,10 @@
             this.cbbNumber.Size = new System.Drawing.Size(241, 26);
             this.cbbNumber.TabIndex = 7;
             this.cbbNumber.ValueMember = "CarId";
+            // 
+            // bdsCar
+            // 
+            this.bdsCar.DataSource = typeof(SoCar.Data.Car);
             // 
             // btnSearch
             // 
@@ -147,6 +155,10 @@
             this.cbbCarType.Size = new System.Drawing.Size(241, 26);
             this.cbbCarType.TabIndex = 4;
             this.cbbCarType.ValueMember = "CarTypeId";
+            // 
+            // bdsCarType
+            // 
+            this.bdsCarType.DataSource = typeof(SoCar.Data.CarType);
             // 
             // Root
             // 
@@ -214,15 +226,6 @@
             this.emptySpaceItem2.Size = new System.Drawing.Size(50, 31);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.cbbNumber;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(300, 30);
-            this.layoutControlItem4.Text = "차량번호";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(52, 18);
-            // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.cbbLocation;
@@ -241,17 +244,14 @@
             this.layoutControlItem7.Text = "대여가능";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(52, 18);
             // 
-            // bdsLocation
+            // layoutControlItem4
             // 
-            this.bdsLocation.DataSource = typeof(SoCar.Data.Location);
-            // 
-            // bdsCar
-            // 
-            this.bdsCar.DataSource = typeof(SoCar.Data.Car);
-            // 
-            // bdsCarType
-            // 
-            this.bdsCarType.DataSource = typeof(SoCar.Data.CarType);
+            this.layoutControlItem4.Control = this.cbbNumber;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(300, 30);
+            this.layoutControlItem4.Text = "차량번호";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(52, 18);
             // 
             // CarSearchControl
             // 
@@ -263,18 +263,18 @@
             this.Load += new System.EventHandler(this.CarSearchControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCarType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCarType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             this.ResumeLayout(false);
 
         }

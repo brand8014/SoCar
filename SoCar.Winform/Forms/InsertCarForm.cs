@@ -25,10 +25,9 @@ namespace SoCar.Winform.Forms
         {
             bdsCarType.DataSource = DataRepository.CarType.GetAll();
             bdsLocation.DataSource = DataRepository.Location.GetLocationFullName();
+            txeMilage.Text = "0";
+            txeAccident.Text = "0";
         }
-
-
-
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
@@ -52,6 +51,8 @@ namespace SoCar.Winform.Forms
             _car.LocationId = (int)cbbLocation.SelectedValue;
             _car.CarTypeId = (int)cbbCarType.SelectedValue;
             _car.Number = txeCarNum.Text;
+            _car.Accident = int.Parse(txeAccident.Text);
+            _car.Mileage = int.Parse(txeMilage.Text);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
