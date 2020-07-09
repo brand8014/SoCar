@@ -26,6 +26,7 @@ namespace SoCar.Winform
             //LoginProxy.Login = DataRepository.Login.Get("abc123", "abc123");
             //Application.Run(new MainForm());
             Application.Run(new LoginForm());
+            
 
         }
     }

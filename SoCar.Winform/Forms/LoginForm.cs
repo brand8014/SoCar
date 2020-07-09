@@ -23,6 +23,7 @@ namespace SoCar.Winform.Forms
             InitializeComponent();
         }
 
+
         private void txbPW_TextChanged(object sender, EventArgs e)
         {
 
@@ -50,10 +51,12 @@ namespace SoCar.Winform.Forms
                     Properties.Settings.Default.LoginIdSave = txbName.Text;
                     Properties.Settings.Default.Save();
                 }
-                
+
+                this.Visible = false;
                 mainform1.Show();
 
                 //Close();
+                
             }
 
             //로그인 실패시
