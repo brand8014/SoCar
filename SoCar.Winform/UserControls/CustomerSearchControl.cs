@@ -90,10 +90,10 @@ namespace SoCar.Winform.UserControls
 
             Cursor = Cursors.WaitCursor;
 
-            string lisence = null;
+            int? lisenceId = null;
             try
             {
-                lisence = (string)cbbLisence.SelectedValue;
+                lisenceId = (int)cbbLisence.SelectedValue;
             }
             //catch (InvalidCastException e)
             //{ e.
@@ -104,11 +104,11 @@ namespace SoCar.Winform.UserControls
             }
             finally
             {
-                if (lisence == null)
-                    lisence = null;
+                if (lisenceId == null)
+                    lisenceId = null;
             }
 
-            OnSearchButtonClicked(customerId, age, cellNumber, lisence);
+            OnSearchButtonClicked(customerId, age, cellNumber, lisenceId);
             Cursor = Cursors.Arrow;
 
 
@@ -120,6 +120,7 @@ namespace SoCar.Winform.UserControls
             cbbCustomer.SelectedItem = null;
             cbbLisence.SelectedItem = null;
         }
+     
         #region SearchButtonClicked event things for C# 3.0
         public event EventHandler<SearchButtonClickedEventArgs> SearchButtonClicked;
 
@@ -129,9 +130,9 @@ namespace SoCar.Winform.UserControls
                 SearchButtonClicked(this, e);
         }
 
-        private SearchButtonClickedEventArgs OnSearchButtonClicked(int? customerId, int? age, string cellNumber, string lisence)
+        private SearchButtonClickedEventArgs OnSearchButtonClicked(int? customerId, int? age, string cellNumber, int? lisenceId)
         {
-            SearchButtonClickedEventArgs args = new SearchButtonClickedEventArgs(customerId, age, cellNumber, lisence);
+            SearchButtonClickedEventArgs args = new SearchButtonClickedEventArgs(customerId, age, cellNumber, lisenceId);
             OnSearchButtonClicked(args);
 
             return args;
@@ -150,18 +151,18 @@ namespace SoCar.Winform.UserControls
             public int? CustomerId { get; set; }
             public int? Age { get; set; }
             public string CellNumber { get; set; }
-            public string Lisence { get; set; }
+            public int? LisenceId { get; set; }
 
             public SearchButtonClickedEventArgs()
             {
             }
 
-            public SearchButtonClickedEventArgs(int? customerId, int? age, string cellNumber, string lisence)
+            public SearchButtonClickedEventArgs(int? customerId, int? age, string cellNumber, int? lisenceId)
             {
                 CustomerId = customerId;
                 Age = age;
                 CellNumber = cellNumber;
-                Lisence = lisence;
+                LisenceId = lisenceId;
             }
         }
         #endregion

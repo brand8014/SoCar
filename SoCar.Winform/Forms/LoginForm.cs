@@ -34,10 +34,14 @@ namespace SoCar.Winform.Forms
             //로그인 성공시
             if (items.Any(x => x.UserName == txbName.Text && x.Password == txbPW.Text))
             {
-                this.Hide();
+               
                 
                 MainForm mainform1 = new MainForm();
+               
                 mainform1.Show();
+
+                Close();
+                
             }
 
             //로그인 실패시

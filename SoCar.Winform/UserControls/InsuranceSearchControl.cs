@@ -22,10 +22,11 @@ namespace SoCar.Winform.UserControls
         {
             Cursor = Cursors.WaitCursor;
 
-            int? insuranceId = null;
+
+            int? companyCode = null;
             try
             {
-                insuranceId = (int)cbbInsuranceId.SelectedValue;
+                companyCode = (int)cbbCompany.SelectedValue;
             }
             //catch (InvalidCastException e)
             //{ e.
@@ -36,14 +37,14 @@ namespace SoCar.Winform.UserControls
             }
             finally
             {
-                if (insuranceId == null || insuranceId.Value < 1)
-                    insuranceId = null;
+                if (companyCode == null || companyCode.Value < 1)
+                    companyCode = null;
             }
 
-            string company = null;
+            int? goodsCode = null;
             try
             {
-                company = (string)cbbCompany.SelectedValue;
+                goodsCode = int.Parse(cbbGoods.Text);
             }
             //catch (InvalidCastException e)
             //{ e.
@@ -54,34 +55,15 @@ namespace SoCar.Winform.UserControls
             }
             finally
             {
-                if (string.IsNullOrEmpty(company))
-                    company = null;
+                if (goodsCode == null || goodsCode.Value < 1)
+                    goodsCode = null;
             }
-
-            string goods = null;
-            try
-            {
-                goods = (string)cbbGoods.SelectedValue;
-            }
-            //catch (InvalidCastException e)
-            //{ e.
-            //}
-            catch //(Exception)<--가장큰 익셉션이라 맨밑에 둬야함
-            {
-                //int? artistId = null;
-            }
-            finally
-            {
-                if (string.IsNullOrEmpty(goods))
-                    goods = null;
-            }
-            OnSearchButtonClicked(insuranceId, company, goods);
+            OnSearchButtonClicked(companyCode, goodsCode);
             Cursor = Cursors.Arrow;
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            cbbInsuranceId.SelectedItem = null;
             cbbCompany.SelectedItem = null;
             cbbGoods.SelectedItem = null;
         }
@@ -90,8 +72,9 @@ namespace SoCar.Winform.UserControls
         {
             if (DesignMode)
                 return;
-            bdsInsurance.DataSource = DataRepository.Insurance.GetAll();
+            bdsInsurance.DataSource = DataRepository.Insurance.GetWithoutRedundancy();
         }
+
 
         #region SearchButtonClicked event things for C# 3.0
         public event EventHandler<SearchButtonClickedEventArgs> SearchButtonClicked;
@@ -102,9 +85,9 @@ namespace SoCar.Winform.UserControls
                 SearchButtonClicked(this, e);
         }
 
-        private SearchButtonClickedEventArgs OnSearchButtonClicked(int? insuranceId, string company, string goods)
+        private SearchButtonClickedEventArgs OnSearchButtonClicked(int? companyCode, int? goodsCode)
         {
-            SearchButtonClickedEventArgs args = new SearchButtonClickedEventArgs(insuranceId, company, goods);
+            SearchButtonClickedEventArgs args = new SearchButtonClickedEventArgs(companyCode, goodsCode);
             OnSearchButtonClicked(args);
 
             return args;
@@ -120,19 +103,17 @@ namespace SoCar.Winform.UserControls
 
         public class SearchButtonClickedEventArgs : EventArgs
         {
-            public int? InsuranceId { get; set; }
-            public string Company { get; set; }
-            public string Goods { get; set; }
+            public int? CompanyCode { get; set; }
+            public int? GoodsCode { get; set; }
 
             public SearchButtonClickedEventArgs()
             {
             }
 
-            public SearchButtonClickedEventArgs(int? insuranceId, string company, string goods)
+            public SearchButtonClickedEventArgs(int? companyCode, int? goodsCode)
             {
-                InsuranceId = insuranceId;
-                Company = company;
-                Goods = goods;
+                CompanyCode = companyCode;
+                GoodsCode = goodsCode;
             }
         }
         #endregion

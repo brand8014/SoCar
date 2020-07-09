@@ -51,7 +51,7 @@ namespace SoCar.Winform.Forms
             _customer.CellNumber = txeCellNumber.Text;
             _customer.Age = int.Parse(txeAge.Text);
             _customer.Birthday = DateTime.ParseExact(txeBirth.Text, "yyyyMMdd", null);
-            _customer.Lisence = cbbLicense.Text;
+            _customer.LisenceCode = int.Parse(cbbLicense.Text);
 
 
         }

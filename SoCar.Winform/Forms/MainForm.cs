@@ -118,11 +118,11 @@ namespace SoCar.Winform.Forms
         }
         private void customerSearchControl1_SearchButtonClicked(object sender, UserControls.CustomerSearchControl.SearchButtonClickedEventArgs e)
         {
-            uscBasic1.SearchCustomer(e.CustomerId, e.Age, e.CellNumber, e.Lisence);
+            uscBasic1.SearchCustomer(e.CustomerId, e.Age, e.CellNumber, e.LisenceId);
  
         } private void insuranceSearchControl1_SearchButtonClicked(object sender, UserControls.InsuranceSearchControl.SearchButtonClickedEventArgs e)
         {
-            uscBasic1.SearchInsurance(e.InsuranceId, e.Company, e.Goods); 
+            uscBasic1.SearchInsurance(e.CompanyCode, e.GoodsCode); 
                
         }
 

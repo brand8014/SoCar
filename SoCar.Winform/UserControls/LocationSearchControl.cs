@@ -79,8 +79,9 @@ namespace SoCar.Winform.UserControls
         {
             if (DesignMode)
                 return;
-            bdsLocation.DataSource = DataRepository.Location.GetByCodeCategory((int)cbbLocation.SelectedValue);
-
+            int? a = (int?)cbbLocation.SelectedValue;
+            bdsLocation.DataSource = DataRepository.Location.GetByCodeCategory(a);
+            
         }
         #region SearchButtonClicked event things for C# 3.0
         public event EventHandler<SearchButtonClickedEventArgs> SearchButtonClicked;
