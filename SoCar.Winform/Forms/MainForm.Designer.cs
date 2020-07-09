@@ -74,7 +74,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.imageSlider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -111,7 +110,7 @@
             this.barButtonHome.Id = 5;
             this.barButtonHome.ImageOptions.LargeImageIndex = 8;
             this.barButtonHome.Name = "barButtonHome";
-            this.barButtonHome.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonHome_ItemClick_1);
+            //this.barButtonHome.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonHome_ItemClick_1);
             // 
             // barButtonCustomer
             // 
@@ -485,7 +484,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.filteringUIContext1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -528,7 +526,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageCategory ribbonPageCategory1;
         private DevExpress.Utils.Filtering.FilteringUIContext filteringUIContext1;
         private DevExpress.XtraEditors.Controls.ImageSlider imageSlider1;
-        private DevExpress.Utils.Filtering.FilteringUIContext filteringUIContext1;
+        //private DevExpress.Utils.Filtering.FilteringUIContext filteringUIContext1;
         private DevExpress.XtraEditors.LabelControl label1;
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
         private System.Windows.Forms.Label label2;

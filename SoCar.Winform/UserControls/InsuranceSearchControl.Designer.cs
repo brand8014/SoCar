@@ -43,7 +43,7 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.bdsGoods = new System.Windows.Forms.BindingSource(this.components);
             this.bdsCompany = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsInsurance = new System.Windows.Forms.BindingSource(this.components);
+            //this.bdsInsurance = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
@@ -55,7 +55,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsGoods)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCompany)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsInsurance)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.bdsInsurance)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -201,7 +201,7 @@
             // 
             // bdsInsurance
             // 
-            this.bdsInsurance.DataSource = typeof(SoCar.Data.Insurance);
+            //this.bdsInsurance.DataSource = typeof(SoCar.Data.Insurance);
             // 
             // InsuranceSearchControl
             // 
@@ -222,7 +222,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsGoods)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCompany)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsInsurance)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.bdsInsurance)).EndInit();
             this.ResumeLayout(false);
 
         }
