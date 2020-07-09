@@ -63,13 +63,11 @@
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
-            this.filteringUIContext1 = new DevExpress.Utils.Filtering.FilteringUIContext(this.components);
             this.imageSlider1 = new DevExpress.XtraEditors.Controls.ImageSlider();
             this.label1 = new DevExpress.XtraEditors.LabelControl();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.filteringUIContext1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageSlider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.SuspendLayout();
@@ -110,7 +108,6 @@
             this.barButtonHome.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonHome.ImageOptions.Image")));
             this.barButtonHome.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonHome.ImageOptions.LargeImage")));
             this.barButtonHome.Name = "barButtonHome";
-            this.barButtonHome.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonHome_ItemClick_1);
             // 
             // barButtonCustomer
             // 
@@ -390,7 +387,7 @@
             this.imageSlider1.AllowLooping = true;
             this.imageSlider1.AnimationTime = 1000;
             this.imageSlider1.AutoSlide = DevExpress.XtraEditors.Controls.AutoSlide.Forward;
-            this.imageSlider1.AutoSlideInterval = 2000;
+            this.imageSlider1.AutoSlideInterval = 2500;
             this.imageSlider1.CurrentImageIndex = 0;
             this.imageSlider1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.imageSlider1.Images.Add(((System.Drawing.Image)(resources.GetObject("imageSlider1.Images"))));
@@ -459,9 +456,7 @@
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.filteringUIContext1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageSlider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.filteringUIContext1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -505,7 +500,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageCategory ribbonPageCategory1;
         private DevExpress.Utils.Filtering.FilteringUIContext filteringUIContext1;
         private DevExpress.XtraEditors.Controls.ImageSlider imageSlider1;
-        private DevExpress.Utils.Filtering.FilteringUIContext filteringUIContext1;
+       // private DevExpress.Utils.Filtering.FilteringUIContext filteringUIContext1;
         private DevExpress.XtraEditors.LabelControl label1;
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
         private System.Windows.Forms.Label label2;
