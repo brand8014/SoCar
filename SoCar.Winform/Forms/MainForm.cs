@@ -125,7 +125,7 @@ namespace SoCar.Winform.Forms
  
         } private void insuranceSearchControl1_SearchButtonClicked(object sender, UserControls.InsuranceSearchControl.SearchButtonClickedEventArgs e)
         {
-            uscBasic1.SearchInsurance(e.InsuranceId, e.Company, e.Goods); 
+            uscBasic1.SearchInsurance(e.InsuranceId, e.CompanyCode, e.GoodsCode); 
                
         }
 

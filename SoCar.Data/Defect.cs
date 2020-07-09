@@ -19,8 +19,8 @@ namespace SoCar.Data
         public int DefectStateCode { get; set; }
         public int CarId { get; set; }
     
+        public virtual Car Car { get; set; }
         public virtual Code Code { get; set; }
         public virtual Code Code1 { get; set; }
-        public virtual Car Car { get; set; }
     }
 }

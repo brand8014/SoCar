@@ -68,9 +68,9 @@ namespace SoCar.Winform.UserControls
             gridControl.MainView = gvCar;
             gridControl.DataSource = bdsCar;
         }
-        internal void SearchCustomer(int? customerId, int? age, string cellNumber, string lisence)
+        internal void SearchCustomer(int? customerId, int? age, string cellNumber, int? lisenceCode)
         {
-            bdsCustomer.DataSource = DataRepository.Customer.Search(customerId,age, cellNumber, lisence);
+            bdsCustomer.DataSource = DataRepository.Customer.Search(customerId,age, cellNumber, lisenceCode);
             gridControl.MainView = gvCustomer;
             gridControl.DataSource = bdsCustomer;
         }
@@ -86,9 +86,9 @@ namespace SoCar.Winform.UserControls
             gridControl.MainView = gvRent;
             gridControl.DataSource = bdsRent;
         }
-        internal void SearchInsurance(int? insuranceId, string company, string goods)
+        internal void SearchInsurance(int? insuranceId, int? companyCode, int? goodsCode)
         {
-            bdsInsurance.DataSource = DataRepository.Insurance.Search(insuranceId, company, goods);
+            bdsInsurance.DataSource = DataRepository.Insurance.Search(insuranceId, companyCode, goodsCode);
             gridControl.MainView = gvInsurance;
             gridControl.DataSource = bdsInsurance;
         }

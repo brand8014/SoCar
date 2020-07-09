@@ -9,6 +9,7 @@ namespace SoCar.Data
     public partial class Location
     {
         public string LocationName { get; set; }
+        public string LocationFullName { get; set; }
 
     }
 }

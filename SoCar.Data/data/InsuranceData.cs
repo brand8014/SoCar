@@ -14,7 +14,7 @@ namespace SoCar.Data
             return context.Insurances.FirstOrDefault(x => x.InsuranceId == insuranceId);
         }
 
-        public List<Insurance> Search(int? insuranceId, string company, string goods)
+        public List<Insurance> Search(int? insuranceId, int? companyCode, int? goodsCode)
         {
             SocarEntities context = CreateContext();
 
@@ -24,11 +24,11 @@ namespace SoCar.Data
             if (insuranceId.HasValue)
                 query = query.Where(x => x.InsuranceId == insuranceId);
 
-            if (string.IsNullOrEmpty(company) == false)
-                query = query.Where(x => x.Company == company);
+            if (goodsCode.HasValue)
+                query = query.Where(x => x.CompanyCode == companyCode);
 
-            if (string.IsNullOrEmpty(goods) == false)
-                query = query.Where(x => x.Goods == goods);
+            if (goodsCode.HasValue)
+                query = query.Where(x => x.GoodsCode == goodsCode);
 
 
             return query.ToList();

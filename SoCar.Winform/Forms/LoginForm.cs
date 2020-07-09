@@ -40,6 +40,7 @@ namespace SoCar.Winform.Forms
             //로그인 성공시
             if (login != null)
             {
+                
                 LoginProxy.Login = login;
 
                 MainForm mainform1 = new MainForm();
@@ -50,8 +51,10 @@ namespace SoCar.Winform.Forms
                     Properties.Settings.Default.LoginIdSave = txbName.Text;
                     Properties.Settings.Default.Save();
                 }
+               
                 mainform1.Show();
-
+                //Dispose();
+                //Hide();
                 Close();
             }
 
