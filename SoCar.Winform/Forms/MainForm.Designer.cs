@@ -409,10 +409,11 @@
             // 
             this.tmrChangeImage.Enabled = true;
             this.tmrChangeImage.Interval = 1000;
-            this.tmrChangeImage.Tick += new System.EventHandler(this.tmrChangeImage_Tick);
             // 
             // imageListCar
             // 
+            this.imageListCar.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageListCar.ImageSize = new System.Drawing.Size(16, 16);
             this.imageListCar.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // layoutControl1

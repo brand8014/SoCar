@@ -21,16 +21,22 @@ namespace SoCar.Data
             SocarEntities context = CreateContext();
 
             var query = from x in context.Insurances
-                        select x;
+                        select new { Insurance = x, CompanyName = x.Code.Item ,GoodsName = x.Code.Item };
 
             if (companyCode.HasValue)
-                query = query.Where(x => x.CompanyCode==companyCode);
+                query = query.Where(x => x.Insurance.CompanyCode==companyCode);
 
             if (goodsCode.HasValue)
-                query = query.Where(x => x.GoodsCode==goodsCode);
+                query = query.Where(x => x.Insurance.GoodsCode==goodsCode);
 
+            var items = query.ToList();
 
-            return query.ToList();
+            foreach (var x in items)
+            {
+                x.Insurance.CompanyName = x.CompanyName;
+                x.Insurance.GoodsName = x.GoodsName;
+            }
+            return query.ToList().ConvertAll(x=> x.Insurance);
 
         }
 
