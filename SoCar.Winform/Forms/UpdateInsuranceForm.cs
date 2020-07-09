@@ -26,8 +26,8 @@ namespace SoCar.Winform.Forms
 
         private void UpdateInsuranceForm_Load(object sender, EventArgs e)
         {
-            txeCompany.Text = _insurance.CompanyCode.ToString();
-            txeGoods.Text = _insurance.GoodsCode.ToString();
+            txeCompany.Text = Convert.ToString(_insurance.CompanyCode);
+            txeGoods.Text = Convert.ToString(_insurance.GoodsCode);
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)

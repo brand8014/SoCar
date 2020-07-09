@@ -17,7 +17,7 @@ namespace SoCar.Winform.Forms
     public partial class LoginForm : RootForm
     {
 
-        bool IsDone = false;
+       
         public LoginForm()
         {
             InitializeComponent();
@@ -40,7 +40,6 @@ namespace SoCar.Winform.Forms
             //로그인 성공시
             if (login != null)
             {
-                
                 LoginProxy.Login = login;
 
                 MainForm mainform1 = new MainForm();
@@ -51,14 +50,11 @@ namespace SoCar.Winform.Forms
                     Properties.Settings.Default.LoginIdSave = txbName.Text;
                     Properties.Settings.Default.Save();
                 }
-               
+                
                 mainform1.Show();
-                //Dispose();
-                //Hide();
-                Close();
+
+                //Close();
             }
-
-
 
             //로그인 실패시
             else
@@ -68,10 +64,9 @@ namespace SoCar.Winform.Forms
             }
         }
 
-        
+
         private void btnClose_Click(object sender, EventArgs e)
         {
-            IsDone = false;
             Close();
         }
 

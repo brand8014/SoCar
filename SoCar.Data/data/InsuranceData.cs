@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Common.CommandTrees;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace SoCar.Data
@@ -14,25 +16,32 @@ namespace SoCar.Data
             return context.Insurances.FirstOrDefault(x => x.InsuranceId == insuranceId);
         }
 
-        public List<Insurance> Search(int? insuranceId, int? companyCode, int? goodsCode)
+        public List<Insurance> Search(int? companyCode, int? goodsCode)
         {
             SocarEntities context = CreateContext();
 
             var query = from x in context.Insurances
                         select x;
 
-            if (insuranceId.HasValue)
-                query = query.Where(x => x.InsuranceId == insuranceId);
+            if (companyCode.HasValue)
+                query = query.Where(x => x.CompanyCode==companyCode);
 
             if (goodsCode.HasValue)
-                query = query.Where(x => x.CompanyCode == companyCode);
-
-            if (goodsCode.HasValue)
-                query = query.Where(x => x.GoodsCode == goodsCode);
+                query = query.Where(x => x.GoodsCode==goodsCode);
 
 
             return query.ToList();
 
+        }
+
+        public List<int> GetWithoutRedundancy()
+        {
+            SocarEntities context = CreateContext();
+
+            var query = from x in context.Insurances
+                        select x.CompanyCode;
+
+            return query.Distinct().ToList();
         }
     }
 }

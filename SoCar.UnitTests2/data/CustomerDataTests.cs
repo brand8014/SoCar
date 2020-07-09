@@ -21,7 +21,7 @@ namespace SoCar.Data.Tests
         [TestMethod()]
         public void Search()
         {
-            List<Customer> customers = DataRepository.Customer.Search(null,null,null,"1종보통");
+            List<Customer> customers = DataRepository.Customer.Search(null,null,null,701);
             Assert.IsTrue(customers.Count > 0);
         }
     }
