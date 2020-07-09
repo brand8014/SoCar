@@ -209,10 +209,7 @@ namespace SoCar.Winform.UserControls
             form.ShowDialog();                 
         }
 
-        internal void CarOpen()
-        {
-           
-        }
+
 
         private void gvRent_DoubleClick(object sender, EventArgs e)
         {
