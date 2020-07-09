@@ -25,7 +25,7 @@ namespace SoCar.Winform.UserControls
             int? codeId = null;
             try
             {
-                codeId = (int)cbbLocation.SelectedValue;
+                codeId = int.Parse(lueLocation.SelectedText);
             }
             //catch (InvalidCastException e)
             //{ e.
@@ -43,7 +43,7 @@ namespace SoCar.Winform.UserControls
             int? locationId = null;
             try
             {
-                locationId = (int)cbbAddress.SelectedValue;
+                locationId = int.Parse(lueAddress.SelectedText);
             }
             //catch (InvalidCastException e)
             //{ e.
@@ -71,15 +71,16 @@ namespace SoCar.Winform.UserControls
         {
             if (DesignMode)
                 return;
-            bdsCode.DataSource = DataRepository.Code.GetByCodeCategoryId(1);
-            bdsLocation.DataSource = DataRepository.Location.GetAll();
+            bdsLocation.DataSource = DataRepository.Code.GetByCodeCategoryId(1);
+            bdsAddress.DataSource = DataRepository.Location.GetAll();
         }
 
         private void cbbLocation_SelectedValueChanged(object sender, EventArgs e)
         {
             if (DesignMode)
                 return;
-            int? a = (int?)cbbLocation.SelectedValue;
+            
+            int? a = int.Parse(lueLocation.SelectedText);
             bdsLocation.DataSource = DataRepository.Location.GetByCodeCategory(a);
             
         }

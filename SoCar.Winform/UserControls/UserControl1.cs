@@ -110,7 +110,7 @@ namespace SoCar.Winform.UserControls
         }
         private void GetInsuranceToGrid()
         {
-            bdsInsurance.DataSource = DataRepository.Insurance.Search(null,null,null);
+            bdsInsurance.DataSource = DataRepository.Insurance.Search(null,null);
             gridControl.DataSource = bdsInsurance;
             gridControl.MainView = gvInsurance;
         }
