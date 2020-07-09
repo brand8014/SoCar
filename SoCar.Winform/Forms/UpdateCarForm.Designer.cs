@@ -44,7 +44,6 @@ namespace SoCar.Winform.Forms
             this.bdsLocation = new System.Windows.Forms.BindingSource(this.components);
             this.txePrice = new DevExpress.XtraEditors.TextEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -52,9 +51,10 @@ namespace SoCar.Winform.Forms
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.bdsCode = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -65,7 +65,6 @@ namespace SoCar.Winform.Forms
             ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txePrice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
@@ -73,9 +72,10 @@ namespace SoCar.Winform.Forms
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCode)).BeginInit();
             this.SuspendLayout();
             // 
@@ -222,17 +222,10 @@ namespace SoCar.Winform.Forms
             this.Root.Size = new System.Drawing.Size(478, 332);
             this.Root.TextVisible = false;
             // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.txePrice;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 60);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(458, 28);
-            this.layoutControlItem1.Text = "가격";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(52, 18);
-            // 
             // layoutControlItem2
             // 
+            this.layoutControlItem2.AppearanceItemCaption.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItem2.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem2.Control = this.cbbLocationId;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
@@ -242,6 +235,8 @@ namespace SoCar.Winform.Forms
             // 
             // layoutControlItem4
             // 
+            this.layoutControlItem4.AppearanceItemCaption.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItem4.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem4.Control = this.cbbCarType;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 30);
             this.layoutControlItem4.Name = "layoutControlItem4";
@@ -285,6 +280,8 @@ namespace SoCar.Winform.Forms
             // 
             // layoutControlItem7
             // 
+            this.layoutControlItem7.AppearanceItemCaption.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItem7.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem7.Control = this.txeNumber;
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 88);
             this.layoutControlItem7.Name = "layoutControlItem7";
@@ -292,17 +289,10 @@ namespace SoCar.Winform.Forms
             this.layoutControlItem7.Text = "차번호";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(52, 18);
             // 
-            // layoutControlItem8
-            // 
-            this.layoutControlItem8.Control = this.txeAccident;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 144);
-            this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(458, 28);
-            this.layoutControlItem8.Text = "사고횟수";
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(52, 18);
-            // 
             // layoutControlItem9
             // 
+            this.layoutControlItem9.AppearanceItemCaption.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItem9.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem9.Control = this.txeMilage;
             this.layoutControlItem9.Location = new System.Drawing.Point(0, 116);
             this.layoutControlItem9.Name = "layoutControlItem9";
@@ -312,12 +302,36 @@ namespace SoCar.Winform.Forms
             // 
             // layoutControlItem3
             // 
+            this.layoutControlItem3.AppearanceItemCaption.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItem3.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem3.Control = this.cbbIsRent;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 172);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(458, 30);
             this.layoutControlItem3.Text = "대여여부";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(52, 18);
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.AppearanceItemCaption.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItem1.AppearanceItemCaption.Options.UseForeColor = true;
+            this.layoutControlItem1.Control = this.txePrice;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 60);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(458, 28);
+            this.layoutControlItem1.Text = "가격";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(52, 18);
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.AppearanceItemCaption.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItem8.AppearanceItemCaption.Options.UseForeColor = true;
+            this.layoutControlItem8.Control = this.txeAccident;
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 144);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(458, 28);
+            this.layoutControlItem8.Text = "사고횟수";
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(52, 18);
             // 
             // bdsCode
             // 
@@ -341,7 +355,6 @@ namespace SoCar.Winform.Forms
             ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txePrice.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
@@ -349,9 +362,10 @@ namespace SoCar.Winform.Forms
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCode)).EndInit();
             this.ResumeLayout(false);
 

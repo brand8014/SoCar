@@ -210,6 +210,8 @@
             // 
             // layoutControlItem5
             // 
+            this.layoutControlItem5.AppearanceItemCaption.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItem5.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem5.Control = this.cbbEventTypeCode;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
@@ -219,6 +221,8 @@
             // 
             // layoutControlItem8
             // 
+            this.layoutControlItem8.AppearanceItemCaption.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItem8.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem8.Control = this.cbbCustomer;
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 30);
             this.layoutControlItem8.Name = "layoutControlItem8";
@@ -228,6 +232,8 @@
             // 
             // layoutControlItem7
             // 
+            this.layoutControlItem7.AppearanceItemCaption.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItem7.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem7.Control = this.txeRateOfDiscount;
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 60);
             this.layoutControlItem7.Name = "layoutControlItem7";
@@ -237,6 +243,8 @@
             // 
             // layoutControlItem6
             // 
+            this.layoutControlItem6.AppearanceItemCaption.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItem6.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem6.Control = this.txePeriod;
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 88);
             this.layoutControlItem6.Name = "layoutControlItem6";

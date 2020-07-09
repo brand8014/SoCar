@@ -178,6 +178,8 @@
             // 
             // layoutControlItem5
             // 
+            this.layoutControlItem5.AppearanceItemCaption.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItem5.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem5.Control = this.cbbCompanyCode;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
@@ -187,6 +189,8 @@
             // 
             // layoutControlItem6
             // 
+            this.layoutControlItem6.AppearanceItemCaption.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItem6.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem6.Control = this.cbbGoodsCode;
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 30);
             this.layoutControlItem6.Name = "layoutControlItem6";

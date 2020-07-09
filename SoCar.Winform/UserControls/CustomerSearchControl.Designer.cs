@@ -33,6 +33,7 @@
             this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
             this.btnReset = new DevExpress.XtraEditors.SimpleButton();
             this.cbbLisence = new System.Windows.Forms.ComboBox();
+            this.bdsLisence = new System.Windows.Forms.BindingSource(this.components);
             this.txbNumber = new System.Windows.Forms.TextBox();
             this.txbAge = new System.Windows.Forms.TextBox();
             this.cbbCustomer = new System.Windows.Forms.ComboBox();
@@ -46,10 +47,9 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.bdsLisence = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsCustomer = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLisence)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
@@ -60,8 +60,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsLisence)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCustomer)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -111,6 +109,10 @@
             this.cbbLisence.Size = new System.Drawing.Size(239, 23);
             this.cbbLisence.TabIndex = 12;
             this.cbbLisence.ValueMember = "CodeId";
+            // 
+            // bdsLisence
+            // 
+            this.bdsLisence.DataSource = typeof(SoCar.Data.Code);
             // 
             // txbNumber
             // 
@@ -169,6 +171,8 @@
             // 
             // layoutControlItem2
             // 
+            this.layoutControlItem2.AppearanceItemCaption.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItem2.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem2.Control = this.cbbCustomer;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
@@ -178,6 +182,8 @@
             // 
             // layoutControlItem3
             // 
+            this.layoutControlItem3.AppearanceItemCaption.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItem3.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem3.Control = this.txbAge;
             this.layoutControlItem3.CustomizationFormText = "나이";
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 30);
@@ -188,6 +194,8 @@
             // 
             // layoutControlItem4
             // 
+            this.layoutControlItem4.AppearanceItemCaption.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItem4.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem4.Control = this.txbNumber;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 59);
             this.layoutControlItem4.Name = "layoutControlItem4";
@@ -197,6 +205,8 @@
             // 
             // layoutControlItem6
             // 
+            this.layoutControlItem6.AppearanceItemCaption.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItem6.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem6.Control = this.cbbLisence;
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 88);
             this.layoutControlItem6.Name = "layoutControlItem6";
@@ -236,14 +246,6 @@
             this.emptySpaceItem2.Size = new System.Drawing.Size(48, 31);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // bdsLisence
-            // 
-            this.bdsLisence.DataSource = typeof(SoCar.Data.Code);
-            // 
-            // bdsCustomer
-            // 
-            this.bdsCustomer.DataSource = typeof(SoCar.Data.Customer);
-            // 
             // CustomerSearchControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -254,6 +256,7 @@
             this.Load += new System.EventHandler(this.CustomerSearchControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLisence)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
@@ -264,8 +267,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsLisence)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCustomer)).EndInit();
             this.ResumeLayout(false);
 
         }

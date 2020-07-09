@@ -204,6 +204,7 @@ namespace SoCar.Winform.Forms
 
         private void barButtonCar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            imageSlider1.Visible = false;
             uscBasic1.nbgCar.Expanded = true;
         }
 
