@@ -21,12 +21,11 @@ namespace SoCar.Winform.Forms
             InitializeComponent();
         }
 
+
         private void InsertCustomerForm_Load(object sender, EventArgs e)
         {
-            //bdsCustomer.DataSource = DataRepository.Customer.GetAll();
-
+            bdsCode.DataSource = DataRepository.Code.GetByCodeCategoryId(7);
         }
-
 
 
         private void btnInsert_Click(object sender, EventArgs e)
@@ -51,7 +50,7 @@ namespace SoCar.Winform.Forms
             _customer.CellNumber = txeCellNumber.Text;
             _customer.Age = int.Parse(txeAge.Text);
             _customer.Birthday = DateTime.ParseExact(txeBirth.Text, "yyyyMMdd", null);
-            _customer.LisenceCode = int.Parse(cbbLicense.Text);
+            _customer.LisenceCode = (int)cbbLicense.SelectedValue;
 
 
         }
@@ -60,5 +59,7 @@ namespace SoCar.Winform.Forms
         {
             Close();
         }
+
+
     }
 }

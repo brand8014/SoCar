@@ -27,7 +27,7 @@ namespace SoCar.Winform.Forms
         private void InsertEventForm_Load(object sender, EventArgs e)
         {
             bdsEventTypeCode.DataSource = DataRepository.Event.GetAll();
-            bdsCode.DataSource = DataRepository.Code.GetAll();
+            bdsCode.DataSource = DataRepository.Code.GetByCodeCategoryId(2);
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)

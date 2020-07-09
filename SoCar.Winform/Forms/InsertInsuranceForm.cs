@@ -18,7 +18,16 @@ namespace SoCar.Winform.Forms
         public InsertInsuranceForm()
         {
             InitializeComponent();
+            
+            
         }
+        private void InsertInsuranceForm_Load(object sender, EventArgs e)
+        {
+            bdsCodeForCompany.DataSource = DataRepository.Code.GetByCodeCategoryId(5);
+            bdsCodeForGoods.DataSource = DataRepository.Code.GetByCodeCategoryId(6);
+        }
+
+
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
@@ -38,8 +47,8 @@ namespace SoCar.Winform.Forms
 
         private void WriteToEntity()
         {
-            _insurance.CompanyCode = int.Parse(txeCompany.Text);
-            _insurance.GoodsCode = int.Parse(txeGoods.Text);
+            _insurance.CompanyCode = int.Parse(cbbCompanyCode.Text);
+            _insurance.GoodsCode = int.Parse(cbbGoodsCode.Text);
 
 
         }
@@ -48,5 +57,7 @@ namespace SoCar.Winform.Forms
         {
             Close();
         }
+
+
     }
 }

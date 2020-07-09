@@ -255,8 +255,14 @@
     <EmbeddedResource Include="BaseForms\ChildRootForm.resx">
       <DependentUpon>ChildRootForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InsertCustomerForm.resx">
+      <DependentUpon>InsertCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\InsertEventForm.resx">
       <DependentUpon>InsertEventForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InsertInsuranceForm.resx">
+      <DependentUpon>InsertInsuranceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

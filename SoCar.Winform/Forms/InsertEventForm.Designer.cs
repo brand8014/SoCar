@@ -35,7 +35,9 @@
             this.txeRateOfDiscount = new DevExpress.XtraEditors.TextEdit();
             this.txePeriod = new DevExpress.XtraEditors.TextEdit();
             this.cbbCustomer = new System.Windows.Forms.ComboBox();
+            this.bdsEventTypeCode = new System.Windows.Forms.BindingSource(this.components);
             this.cbbEventTypeCode = new System.Windows.Forms.ComboBox();
+            this.bdsCode = new System.Windows.Forms.BindingSource(this.components);
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -46,12 +48,12 @@
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.button1 = new System.Windows.Forms.Button();
-            this.bdsEventTypeCode = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsCode = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txeRateOfDiscount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txePeriod.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsEventTypeCode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
@@ -61,8 +63,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsEventTypeCode)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCode)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -136,10 +136,15 @@
             this.cbbCustomer.ValueMember = "RentId";
             this.cbbCustomer.SelectedIndexChanged += new System.EventHandler(this.InsertEventForm_Load);
             // 
+            // bdsEventTypeCode
+            // 
+            this.bdsEventTypeCode.DataSource = typeof(SoCar.Data.Event);
+            // 
             // cbbEventTypeCode
             // 
             this.cbbEventTypeCode.DataSource = this.bdsCode;
             this.cbbEventTypeCode.DisplayMember = "Item";
+            this.cbbEventTypeCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbEventTypeCode.FormattingEnabled = true;
             this.cbbEventTypeCode.Location = new System.Drawing.Point(67, 12);
             this.cbbEventTypeCode.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
@@ -147,6 +152,10 @@
             this.cbbEventTypeCode.Size = new System.Drawing.Size(335, 26);
             this.cbbEventTypeCode.TabIndex = 4;
             this.cbbEventTypeCode.ValueMember = "CodeId";
+            // 
+            // bdsCode
+            // 
+            this.bdsCode.DataSource = typeof(SoCar.Data.Code);
             // 
             // Root
             // 
@@ -245,14 +254,6 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // bdsEventTypeCode
-            // 
-            this.bdsEventTypeCode.DataSource = typeof(SoCar.Data.Event);
-            // 
-            // bdsCode
-            // 
-            this.bdsCode.DataSource = typeof(SoCar.Data.Code);
-            // 
             // InsertEventForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -268,6 +269,8 @@
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txeRateOfDiscount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txePeriod.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsEventTypeCode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
@@ -277,8 +280,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsEventTypeCode)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCode)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -28,7 +28,7 @@ namespace SoCar.Winform.Forms
             DisableAllControls();
 
             //Text = LoginProxy.Login.UserName;
-        }\
+        }
 
         private void uscBasic1_Load(object sender, EventArgs e)
         {
@@ -94,6 +94,7 @@ namespace SoCar.Winform.Forms
         }
         private void EnableOneControl(string tableName, string action)
         {
+            MessageBox.Show(tableName + action);
             controls[tableName + action].Enabled = true;
             controls[tableName + action].Visible = true;
         }
@@ -139,6 +140,7 @@ namespace SoCar.Winform.Forms
 
         private void carDeleteControl1_CarDeleteButtonClick(object sender, UserControls.CarDeleteControl.CarDeleteButtonClickEventArgs e)
         {
+           
             uscBasic1.DeleteOneCar();
         }
 
@@ -201,6 +203,7 @@ namespace SoCar.Winform.Forms
 
         private void barButtonCar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            pictureBox1.Visible = false;
             uscBasic1.nbgCar.Expanded = true;
         }
 

@@ -261,7 +261,7 @@ namespace SoCar.Winform.UserControls
         }
         private void nbiDeleteCar_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            OnnbiDeleteCarClick(nbgLocation.Caption, nbiDeleteCar.Caption);
+            OnnbiDeleteCarClick(nbgCar.Caption, nbiDeleteCar.Caption);
         }
         private void nbiDeleteCustomer_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
@@ -273,7 +273,7 @@ namespace SoCar.Winform.UserControls
         }
         private void nbiDeleteRent_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            OnnbiDeleteRentClick(nbgInsurance.Caption, nbiDeleteInsurance.Caption);
+            OnnbiDeleteRentClick(nbgRent.Caption, nbiDeleteRent.Caption);
         }
         private void nbiDeleteEvent_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
@@ -298,10 +298,16 @@ namespace SoCar.Winform.UserControls
         {
             Car car = bdsCar.Current as Car;
             if (car == null)
+            {
+                MessageBox.Show("선택된 차가 없습니다.");
                 return;
+            }
             if (Helpers.Helper.SureToDelete() == false)
+            {
+                
                 return;
-
+            }
+            
             DataRepository.Car.Delete(car);
 
             bdsCar.Remove(car);

@@ -32,10 +32,13 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.cbbIsRent = new System.Windows.Forms.ComboBox();
             this.cbbLocation = new System.Windows.Forms.ComboBox();
+            this.bdsLocation = new System.Windows.Forms.BindingSource(this.components);
             this.cbbNumber = new System.Windows.Forms.ComboBox();
+            this.bdsCar = new System.Windows.Forms.BindingSource(this.components);
             this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
             this.btnReset = new DevExpress.XtraEditors.SimpleButton();
             this.cbbCarType = new System.Windows.Forms.ComboBox();
+            this.bdsCarType = new System.Windows.Forms.BindingSource(this.components);
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -45,11 +48,11 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bdsLocation = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsCar = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsCarType = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCarType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
@@ -59,9 +62,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCarType)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -102,6 +102,10 @@
             this.cbbLocation.TabIndex = 9;
             this.cbbLocation.ValueMember = "LocationId";
             // 
+            // bdsLocation
+            // 
+            this.bdsLocation.DataSource = typeof(SoCar.Data.Location);
+            // 
             // cbbNumber
             // 
             this.cbbNumber.DataSource = this.bdsCar;
@@ -112,6 +116,10 @@
             this.cbbNumber.Size = new System.Drawing.Size(241, 26);
             this.cbbNumber.TabIndex = 7;
             this.cbbNumber.ValueMember = "Number";
+            // 
+            // bdsCar
+            // 
+            this.bdsCar.DataSource = typeof(SoCar.Data.Car);
             // 
             // btnSearch
             // 
@@ -143,6 +151,10 @@
             this.cbbCarType.Size = new System.Drawing.Size(241, 26);
             this.cbbCarType.TabIndex = 4;
             this.cbbCarType.ValueMember = "CarTypeId";
+            // 
+            // bdsCarType
+            // 
+            this.bdsCarType.DataSource = typeof(SoCar.Data.CarType);
             // 
             // Root
             // 
@@ -237,18 +249,6 @@
             this.layoutControlItem7.Text = "대여가능";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(52, 18);
             // 
-            // bdsLocation
-            // 
-            this.bdsLocation.DataSource = typeof(SoCar.Data.Location);
-            // 
-            // bdsCar
-            // 
-            this.bdsCar.DataSource = typeof(SoCar.Data.Car);
-            // 
-            // bdsCarType
-            // 
-            this.bdsCarType.DataSource = typeof(SoCar.Data.CarType);
-            // 
             // CarSearchControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -259,6 +259,9 @@
             this.Load += new System.EventHandler(this.CarSearchControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCarType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
@@ -268,9 +271,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCarType)).EndInit();
             this.ResumeLayout(false);
 
         }
