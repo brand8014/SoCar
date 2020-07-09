@@ -109,6 +109,7 @@
             this.barButtonCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonCustomer.ImageOptions.Image")));
             this.barButtonCustomer.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonCustomer.ImageOptions.LargeImage")));
             this.barButtonCustomer.Name = "barButtonCustomer";
+            this.barButtonCustomer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonCustomer_ItemClick);
             // 
             // barButtonLocation
             // 
@@ -117,6 +118,7 @@
             this.barButtonLocation.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonLocation.ImageOptions.Image")));
             this.barButtonLocation.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonLocation.ImageOptions.LargeImage")));
             this.barButtonLocation.Name = "barButtonLocation";
+            this.barButtonLocation.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonLocation_ItemClick);
             // 
             // barButtonCar
             // 
@@ -125,7 +127,7 @@
             this.barButtonCar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonCar.ImageOptions.Image")));
             this.barButtonCar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonCar.ImageOptions.LargeImage")));
             this.barButtonCar.Name = "barButtonCar";
-            
+            this.barButtonCar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonCar_ItemClick);
             // 
             // barButtonRent
             // 
@@ -135,6 +137,7 @@
             this.barButtonRent.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonRent.ImageOptions.LargeImage")));
             this.barButtonRent.ImageOptions.SvgImageSize = new System.Drawing.Size(100, 100);
             this.barButtonRent.Name = "barButtonRent";
+            this.barButtonRent.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonRent_ItemClick);
             // 
             // barButtonInsurance
             // 
@@ -142,6 +145,7 @@
             this.barButtonInsurance.Id = 11;
             this.barButtonInsurance.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonInsurance.ImageOptions.SvgImage")));
             this.barButtonInsurance.Name = "barButtonInsurance";
+            this.barButtonInsurance.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonInsurance_ItemClick);
             // 
             // barButtonEvent
             // 
@@ -149,6 +153,7 @@
             this.barButtonEvent.Id = 12;
             this.barButtonEvent.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonEvent.ImageOptions.SvgImage")));
             this.barButtonEvent.Name = "barButtonEvent";
+            this.barButtonEvent.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonEvent_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -170,28 +175,28 @@
             // 
             // ribbonPageGroup4
             // 
-            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonCar);
+            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonLocation);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             // 
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonGroup1);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonCustomer);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonCar);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
             // ribbonPageGroup3
             // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonInsurance, true);
+            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonCustomer, true);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             // 
             // ribbonPageGroup5
             // 
-            this.ribbonPageGroup5.ItemLinks.Add(this.barButtonRent);
+            this.ribbonPageGroup5.ItemLinks.Add(this.barButtonInsurance);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             // 
             // ribbonPageGroup6
             // 
-            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonLocation);
+            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonRent);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             // 
             // ribbonPageGroup7

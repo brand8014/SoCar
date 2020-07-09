@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SoCar.Data
 {
-    public class LoginData:EntityData<Login>
+    public class LoginData : EntityData<Login>
     {
     }
 }

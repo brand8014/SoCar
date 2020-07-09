@@ -198,9 +198,32 @@ namespace SoCar.Winform.Forms
 
         private void barButtonCar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            uscBasic1.CarOpen();
+            uscBasic1.nbgCar.Expanded = true;
         }
 
-       
+        private void barButtonLocation_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            uscBasic1.nbgLocation.Expanded = true;
+        }
+
+        private void barButtonCustomer_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            uscBasic1.nbgCustomer.Expanded = true;
+        }
+
+        private void barButtonInsurance_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            uscBasic1.nbgInsurance.Expanded = true;
+        }
+
+        private void barButtonRent_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            uscBasic1.nbgRent.Expanded = true;
+        }
+
+        private void barButtonEvent_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            uscBasic1.nbgEvent.Expanded = true;
+        }
     }
 }

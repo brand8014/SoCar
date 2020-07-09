@@ -18,6 +18,7 @@ namespace SoCar.Data
         public static InsuranceData Insurance { get; } = new InsuranceData();
         public static LocationData Location { get; } = new LocationData();
         public static RentData Rent { get; } = new RentData();
+
         public static LoginData Login { get; } = new LoginData();
 
 
