@@ -94,7 +94,7 @@ namespace SoCar.Winform.Forms
         }
         private void EnableOneControl(string tableName, string action)
         {
-            MessageBox.Show(tableName + action);
+            //MessageBox.Show(tableName + action);
             controls[tableName + action].Enabled = true;
             controls[tableName + action].Visible = true;
         }
@@ -201,48 +201,53 @@ namespace SoCar.Winform.Forms
             EnableOneControl(e.TableName, e.Action);
         }
 
+
+
+
         private void barButtonCar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            pictureBox1.Visible = false;
+            imageSlider1.Visible = false;
             uscBasic1.nbgCar.Expanded = true;
         }
 
         private void barButtonLocation_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            pbxCar1.Visible = false;
+            imageSlider1.Visible = false;
+
             uscBasic1.nbgLocation.Expanded = true;
         }
 
         private void barButtonCustomer_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            pbxCar1.Visible = false;
+            imageSlider1.Visible = false;
+
             uscBasic1.nbgCustomer.Expanded = true;
         }
 
         private void barButtonInsurance_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            pbxCar1.Visible = false;
+            imageSlider1.Visible = false;
+
             uscBasic1.nbgInsurance.Expanded = true;
         }
 
         private void barButtonRent_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            pbxCar1.Visible = false;
+            imageSlider1.Visible = false;
+
             uscBasic1.nbgRent.Expanded = true;
         }
 
         private void barButtonEvent_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            pbxCar1.Visible = false;
+            imageSlider1.Visible = false;
+
             uscBasic1.nbgEvent.Expanded = true;
         }
 
-        private void barButtonHome_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void barButtonHome_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            pbxCar1.Visible = true;
-
+            imageSlider1.Visible = true;
         }
-       
-        
     }
 }

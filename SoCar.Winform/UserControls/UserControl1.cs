@@ -200,14 +200,13 @@ namespace SoCar.Winform.UserControls
         }
         private void gvInsurance_DoubleClick(object sender, EventArgs e)
         {
+            
             Insurance insurance = bdsInsurance.Current as Insurance;
             if (insurance == null)
                 return;
             UpdateInsuranceForm form = new UpdateInsuranceForm(insurance);
             form.ShowDialog();                 
         }
-
-
 
         private void gvRent_DoubleClick(object sender, EventArgs e)
         {
@@ -216,6 +215,7 @@ namespace SoCar.Winform.UserControls
 
 
 
+        //TODO : nbg선택시 동작 ( 필요없음, 삭제요망)
         private void nbgLocation_CalcGroupClientHeight(object sender, DevExpress.XtraNavBar.NavBarCalcGroupClientHeightEventArgs e)
         {
             if (DesignMode) return;           
@@ -279,6 +279,7 @@ namespace SoCar.Winform.UserControls
         {
             OnnbiDeleteEventClick(nbgEvent.Caption, nbiDeleteEvent.Caption);
         }
+
 
 
 
