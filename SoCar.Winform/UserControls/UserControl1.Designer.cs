@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode4 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode5 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode6 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode7 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode8 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode9 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode10 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode11 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode12 = new DevExpress.XtraGrid.GridLevelNode();
             this.gvEvent = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colEventName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRateOfDiscount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPeriod = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl = new DevExpress.XtraGrid.GridControl();
-            this.bdsCustomer = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsInsurance = new System.Windows.Forms.BindingSource(this.components);
             this.gvLocation = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colLocationName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAddress = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -62,20 +62,20 @@
             this.colReturnTime = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBookAt = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPrice = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gvCustomer = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCellNumber = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colAge = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBirthday = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colLisence = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gvInsurance = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colCompanyName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colGoodsName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.bdsInsurance = new System.Windows.Forms.BindingSource(this.components);
+            this.gvCustomer = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAge = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBirthday = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCellNumber = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLisence = new DevExpress.XtraGrid.Columns.GridColumn();
             this.bdsRent = new System.Windows.Forms.BindingSource(this.components);
             this.bdsEvent = new System.Windows.Forms.BindingSource(this.components);
             this.bdsCar = new System.Windows.Forms.BindingSource(this.components);
             this.bdsLocation = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsCustomer = new System.Windows.Forms.BindingSource(this.components);
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
             this.nbgInsurance = new DevExpress.XtraNavBar.NavBarGroup();
@@ -109,17 +109,17 @@
             this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
             ((System.ComponentModel.ISupportInitialize)(this.gvEvent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCustomer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsInsurance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvLocation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvRent)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvInsurance)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsInsurance)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsRent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsEvent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
@@ -169,24 +169,24 @@
             // gridControl
             // 
             this.gridControl.Cursor = System.Windows.Forms.Cursors.Default;
-            this.gridControl.DataSource = this.bdsCustomer;
-            gridLevelNode1.LevelTemplate = this.gvEvent;
-            gridLevelNode1.RelationName = "Level2";
-            gridLevelNode2.RelationName = "Level3";
-            gridLevelNode3.LevelTemplate = this.gvLocation;
-            gridLevelNode3.RelationName = "Level1";
-            gridLevelNode4.RelationName = "Level4";
-            gridLevelNode5.LevelTemplate = this.gvCar;
-            gridLevelNode5.RelationName = "Level5";
-            gridLevelNode6.LevelTemplate = this.gvRent;
-            gridLevelNode6.RelationName = "Level6";
+            this.gridControl.DataSource = this.bdsInsurance;
+            gridLevelNode7.LevelTemplate = this.gvEvent;
+            gridLevelNode7.RelationName = "Level2";
+            gridLevelNode8.RelationName = "Level3";
+            gridLevelNode9.LevelTemplate = this.gvLocation;
+            gridLevelNode9.RelationName = "Level1";
+            gridLevelNode10.RelationName = "Level4";
+            gridLevelNode11.LevelTemplate = this.gvCar;
+            gridLevelNode11.RelationName = "Level5";
+            gridLevelNode12.LevelTemplate = this.gvRent;
+            gridLevelNode12.RelationName = "Level6";
             this.gridControl.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1,
-            gridLevelNode2,
-            gridLevelNode3,
-            gridLevelNode4,
-            gridLevelNode5,
-            gridLevelNode6});
+            gridLevelNode7,
+            gridLevelNode8,
+            gridLevelNode9,
+            gridLevelNode10,
+            gridLevelNode11,
+            gridLevelNode12});
             this.gridControl.Location = new System.Drawing.Point(216, 12);
             this.gridControl.MainView = this.gvInsurance;
             this.gridControl.Name = "gridControl";
@@ -196,14 +196,14 @@
             this.gvLocation,
             this.gvCar,
             this.gvRent,
-            this.gvCustomer,
             this.gvInsurance,
+            this.gvCustomer,
             this.gvEvent});
             this.gridControl.Click += new System.EventHandler(this.gridControl_Click);
             // 
-            // bdsCustomer
+            // bdsInsurance
             // 
-            this.bdsCustomer.DataSource = typeof(SoCar.Data.Customer);
+            this.bdsInsurance.DataSource = typeof(SoCar.Data.Insurance);
             // 
             // gvLocation
             // 
@@ -408,64 +408,6 @@
             this.colPrice.VisibleIndex = 2;
             this.colPrice.Width = 97;
             // 
-            // gvCustomer
-            // 
-            this.gvCustomer.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colName,
-            this.colCellNumber,
-            this.colAge,
-            this.colBirthday,
-            this.colLisence});
-            this.gvCustomer.GridControl = this.gridControl;
-            this.gvCustomer.Name = "gvCustomer";
-            this.gvCustomer.OptionsBehavior.ReadOnly = true;
-            this.gvCustomer.DoubleClick += new System.EventHandler(this.gvCustomer_DoubleClick);
-            // 
-            // colName
-            // 
-            this.colName.FieldName = "Name";
-            this.colName.MinWidth = 25;
-            this.colName.Name = "colName";
-            this.colName.Visible = true;
-            this.colName.VisibleIndex = 0;
-            this.colName.Width = 94;
-            // 
-            // colCellNumber
-            // 
-            this.colCellNumber.FieldName = "CellNumber";
-            this.colCellNumber.MinWidth = 25;
-            this.colCellNumber.Name = "colCellNumber";
-            this.colCellNumber.Visible = true;
-            this.colCellNumber.VisibleIndex = 3;
-            this.colCellNumber.Width = 94;
-            // 
-            // colAge
-            // 
-            this.colAge.FieldName = "Age";
-            this.colAge.MinWidth = 25;
-            this.colAge.Name = "colAge";
-            this.colAge.Visible = true;
-            this.colAge.VisibleIndex = 1;
-            this.colAge.Width = 94;
-            // 
-            // colBirthday
-            // 
-            this.colBirthday.FieldName = "Birthday";
-            this.colBirthday.MinWidth = 25;
-            this.colBirthday.Name = "colBirthday";
-            this.colBirthday.Visible = true;
-            this.colBirthday.VisibleIndex = 2;
-            this.colBirthday.Width = 94;
-            // 
-            // colLisence
-            // 
-            this.colLisence.FieldName = "Lisence";
-            this.colLisence.MinWidth = 25;
-            this.colLisence.Name = "colLisence";
-            this.colLisence.Visible = true;
-            this.colLisence.VisibleIndex = 4;
-            this.colLisence.Width = 94;
-            // 
             // gvInsurance
             // 
             this.gvInsurance.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -493,9 +435,63 @@
             this.colGoodsName.VisibleIndex = 1;
             this.colGoodsName.Width = 94;
             // 
-            // bdsInsurance
+            // gvCustomer
             // 
-            this.bdsInsurance.DataSource = typeof(SoCar.Data.Insurance);
+            this.gvCustomer.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colName,
+            this.colAge,
+            this.colBirthday,
+            this.colCellNumber,
+            this.colLisence});
+            this.gvCustomer.GridControl = this.gridControl;
+            this.gvCustomer.Name = "gvCustomer";
+            this.gvCustomer.OptionsBehavior.ReadOnly = true;
+            this.gvCustomer.DoubleClick += new System.EventHandler(this.gvCustomer_DoubleClick);
+            // 
+            // colName
+            // 
+            this.colName.FieldName = "Name";
+            this.colName.MinWidth = 25;
+            this.colName.Name = "colName";
+            this.colName.Visible = true;
+            this.colName.VisibleIndex = 0;
+            this.colName.Width = 94;
+            // 
+            // colAge
+            // 
+            this.colAge.FieldName = "Age";
+            this.colAge.MinWidth = 25;
+            this.colAge.Name = "colAge";
+            this.colAge.Visible = true;
+            this.colAge.VisibleIndex = 1;
+            this.colAge.Width = 94;
+            // 
+            // colBirthday
+            // 
+            this.colBirthday.FieldName = "Birthday";
+            this.colBirthday.MinWidth = 25;
+            this.colBirthday.Name = "colBirthday";
+            this.colBirthday.Visible = true;
+            this.colBirthday.VisibleIndex = 2;
+            this.colBirthday.Width = 94;
+            // 
+            // colCellNumber
+            // 
+            this.colCellNumber.FieldName = "Birthday";
+            this.colCellNumber.MinWidth = 25;
+            this.colCellNumber.Name = "colCellNumber";
+            this.colCellNumber.Visible = true;
+            this.colCellNumber.VisibleIndex = 3;
+            this.colCellNumber.Width = 94;
+            // 
+            // colLisence
+            // 
+            this.colLisence.FieldName = "License";
+            this.colLisence.MinWidth = 25;
+            this.colLisence.Name = "colLisence";
+            this.colLisence.Visible = true;
+            this.colLisence.VisibleIndex = 4;
+            this.colLisence.Width = 94;
             // 
             // bdsRent
             // 
@@ -512,6 +508,10 @@
             // bdsLocation
             // 
             this.bdsLocation.DataSource = typeof(SoCar.Data.Location);
+            // 
+            // bdsCustomer
+            // 
+            this.bdsCustomer.DataSource = typeof(SoCar.Data.Customer);
             // 
             // layoutControl1
             // 
@@ -567,6 +567,10 @@
             // 
             // nbgInsurance
             // 
+            this.nbgInsurance.Appearance.ForeColor = System.Drawing.Color.White;
+            this.nbgInsurance.Appearance.Options.UseForeColor = true;
+            this.nbgInsurance.AppearancePressed.ForeColor = System.Drawing.Color.Black;
+            this.nbgInsurance.AppearancePressed.Options.UseForeColor = true;
             this.nbgInsurance.Caption = "보험";
             this.nbgInsurance.Expanded = true;
             this.nbgInsurance.GroupClientHeight = 4;
@@ -597,6 +601,12 @@
             // 
             // nbgLocation
             // 
+            this.nbgLocation.Appearance.ForeColor = System.Drawing.Color.White;
+            this.nbgLocation.Appearance.Options.UseForeColor = true;
+            this.nbgLocation.AppearanceHotTracked.ForeColor = System.Drawing.Color.White;
+            this.nbgLocation.AppearanceHotTracked.Options.UseForeColor = true;
+            this.nbgLocation.AppearancePressed.ForeColor = System.Drawing.Color.White;
+            this.nbgLocation.AppearancePressed.Options.UseForeColor = true;
             this.nbgLocation.Caption = "지역";
             this.nbgLocation.GroupClientHeight = 1;
             this.nbgLocation.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
@@ -626,6 +636,10 @@
             // 
             // nbgCar
             // 
+            this.nbgCar.Appearance.ForeColor = System.Drawing.Color.White;
+            this.nbgCar.Appearance.Options.UseForeColor = true;
+            this.nbgCar.AppearancePressed.ForeColor = System.Drawing.Color.Black;
+            this.nbgCar.AppearancePressed.Options.UseForeColor = true;
             this.nbgCar.Caption = "차";
             this.nbgCar.GroupClientHeight = 2;
             this.nbgCar.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
@@ -655,6 +669,10 @@
             // 
             // nbgCustomer
             // 
+            this.nbgCustomer.Appearance.ForeColor = System.Drawing.Color.White;
+            this.nbgCustomer.Appearance.Options.UseForeColor = true;
+            this.nbgCustomer.AppearancePressed.ForeColor = System.Drawing.Color.Black;
+            this.nbgCustomer.AppearancePressed.Options.UseForeColor = true;
             this.nbgCustomer.Caption = "고객";
             this.nbgCustomer.GroupClientHeight = 3;
             this.nbgCustomer.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
@@ -684,6 +702,10 @@
             // 
             // nbgRent
             // 
+            this.nbgRent.Appearance.ForeColor = System.Drawing.Color.White;
+            this.nbgRent.Appearance.Options.UseForeColor = true;
+            this.nbgRent.AppearancePressed.ForeColor = System.Drawing.Color.Black;
+            this.nbgRent.AppearancePressed.Options.UseForeColor = true;
             this.nbgRent.Caption = "대여";
             this.nbgRent.GroupClientHeight = 5;
             this.nbgRent.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
@@ -712,6 +734,10 @@
             // 
             // nbgEvent
             // 
+            this.nbgEvent.Appearance.ForeColor = System.Drawing.Color.White;
+            this.nbgEvent.Appearance.Options.UseForeColor = true;
+            this.nbgEvent.AppearancePressed.ForeColor = System.Drawing.Color.Black;
+            this.nbgEvent.AppearancePressed.Options.UseForeColor = true;
             this.nbgEvent.Caption = "이벤트";
             this.nbgEvent.GroupClientHeight = 6;
             this.nbgEvent.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
@@ -786,17 +812,17 @@
             this.Size = new System.Drawing.Size(936, 685);
             ((System.ComponentModel.ISupportInitialize)(this.gvEvent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCustomer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsInsurance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvLocation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvRent)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvInsurance)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsInsurance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsRent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsEvent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
@@ -834,6 +860,11 @@
         private DevExpress.XtraNavBar.NavBarItem nbiDeleteCar;
         private DevExpress.XtraGrid.Views.Grid.GridView gvCustomer;
         private DevExpress.XtraGrid.Views.Grid.GridView gvInsurance;
+        private DevExpress.XtraGrid.Columns.GridColumn colName;
+        private DevExpress.XtraGrid.Columns.GridColumn colCellNumber;
+        private DevExpress.XtraGrid.Columns.GridColumn colAge;
+        private DevExpress.XtraGrid.Columns.GridColumn colBirthday;
+        private DevExpress.XtraGrid.Columns.GridColumn colLisence;
         public DevExpress.XtraNavBar.NavBarGroup nbgEvent;
         private DevExpress.XtraNavBar.NavBarItem nbiViewEvent;
         private DevExpress.XtraNavBar.NavBarItem nbiInsertEvent;
@@ -878,10 +909,5 @@
         private DevExpress.XtraGrid.Columns.GridColumn colPeriod;
         private DevExpress.XtraGrid.Columns.GridColumn colCompanyName;
         private DevExpress.XtraGrid.Columns.GridColumn colGoodsName;
-        private DevExpress.XtraGrid.Columns.GridColumn colName;
-        private DevExpress.XtraGrid.Columns.GridColumn colCellNumber;
-        private DevExpress.XtraGrid.Columns.GridColumn colAge;
-        private DevExpress.XtraGrid.Columns.GridColumn colBirthday;
-        private DevExpress.XtraGrid.Columns.GridColumn colLisence;
     }
 }

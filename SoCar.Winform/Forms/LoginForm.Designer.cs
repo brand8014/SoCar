@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.txbName = new System.Windows.Forms.TextBox();
             this.txbPW = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
@@ -60,6 +61,7 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
+            this.lblName.ForeColor = System.Drawing.Color.Black;
             this.lblName.Location = new System.Drawing.Point(49, 112);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(87, 18);
@@ -69,6 +71,7 @@
             // lblPW
             // 
             this.lblPW.AutoSize = true;
+            this.lblPW.ForeColor = System.Drawing.Color.Black;
             this.lblPW.Location = new System.Drawing.Point(50, 145);
             this.lblPW.Name = "lblPW";
             this.lblPW.Size = new System.Drawing.Size(79, 18);
@@ -78,6 +81,7 @@
             // chkrememberLoginName
             // 
             this.chkrememberLoginName.AutoSize = true;
+            this.chkrememberLoginName.ForeColor = System.Drawing.Color.Black;
             this.chkrememberLoginName.Location = new System.Drawing.Point(122, 191);
             this.chkrememberLoginName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.chkrememberLoginName.Name = "chkrememberLoginName";
@@ -88,6 +92,7 @@
             // 
             // btnClose
             // 
+            this.btnClose.ForeColor = System.Drawing.Color.Black;
             this.btnClose.Location = new System.Drawing.Point(97, 243);
             this.btnClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnClose.Name = "btnClose";
@@ -123,6 +128,7 @@
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.txbPW);
             this.Controls.Add(this.txbName);
+            this.IconOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("LoginForm.IconOptions.SvgImage")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LoginForm";
