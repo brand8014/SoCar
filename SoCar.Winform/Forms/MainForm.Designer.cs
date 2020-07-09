@@ -516,7 +516,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
         private DevExpress.XtraBars.Ribbon.RibbonPageCategory ribbonPageCategory1;
-        private DevExpress.Utils.Filtering.FilteringUIContext filteringUIContext1;
+       // private DevExpress.Utils.Filtering.FilteringUIContext filteringUIContext1;
         private DevExpress.XtraEditors.Controls.ImageSlider imageSlider1;
 
         private DevExpress.XtraEditors.LabelControl label1;
