@@ -30,6 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.cbbGoodsCode = new System.Windows.Forms.ComboBox();
+            this.bdsCodeForGoods = new System.Windows.Forms.BindingSource(this.components);
+            this.cbbCompanyCode = new System.Windows.Forms.ComboBox();
+            this.bdsCodeForCompany = new System.Windows.Forms.BindingSource(this.components);
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -37,15 +41,13 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.button1 = new System.Windows.Forms.Button();
-            this.cbbCompanyCode = new System.Windows.Forms.ComboBox();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.cbbGoodsCode = new System.Windows.Forms.ComboBox();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bdsCodeForCompany = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsCodeForGoods = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCodeForGoods)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCodeForCompany)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
@@ -53,8 +55,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCodeForCompany)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCodeForGoods)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -72,6 +72,38 @@
             this.layoutControl1.Size = new System.Drawing.Size(478, 244);
             this.layoutControl1.TabIndex = 3;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // cbbGoodsCode
+            // 
+            this.cbbGoodsCode.DataSource = this.bdsCodeForGoods;
+            this.cbbGoodsCode.DisplayMember = "Item";
+            this.cbbGoodsCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbGoodsCode.FormattingEnabled = true;
+            this.cbbGoodsCode.Location = new System.Drawing.Point(54, 42);
+            this.cbbGoodsCode.Name = "cbbGoodsCode";
+            this.cbbGoodsCode.Size = new System.Drawing.Size(412, 26);
+            this.cbbGoodsCode.TabIndex = 9;
+            this.cbbGoodsCode.ValueMember = "CodeId";
+            // 
+            // bdsCodeForGoods
+            // 
+            this.bdsCodeForGoods.DataSource = typeof(SoCar.Data.Code);
+            // 
+            // cbbCompanyCode
+            // 
+            this.cbbCompanyCode.DataSource = this.bdsCodeForCompany;
+            this.cbbCompanyCode.DisplayMember = "Item";
+            this.cbbCompanyCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbCompanyCode.FormattingEnabled = true;
+            this.cbbCompanyCode.Location = new System.Drawing.Point(54, 12);
+            this.cbbCompanyCode.Name = "cbbCompanyCode";
+            this.cbbCompanyCode.Size = new System.Drawing.Size(412, 26);
+            this.cbbCompanyCode.TabIndex = 8;
+            this.cbbCompanyCode.ValueMember = "CodeId";
+            // 
+            // bdsCodeForCompany
+            // 
+            this.bdsCodeForCompany.DataSource = typeof(SoCar.Data.Code);
             // 
             // simpleButton2
             // 
@@ -144,6 +176,28 @@
             this.emptySpaceItem1.Size = new System.Drawing.Size(458, 133);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.AppearanceItemCaption.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItem5.AppearanceItemCaption.Options.UseForeColor = true;
+            this.layoutControlItem5.Control = this.cbbCompanyCode;
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(458, 30);
+            this.layoutControlItem5.Text = "보험사";
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(39, 18);
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.AppearanceItemCaption.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItem6.AppearanceItemCaption.Options.UseForeColor = true;
+            this.layoutControlItem6.Control = this.cbbGoodsCode;
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 30);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(458, 30);
+            this.layoutControlItem6.Text = "상품명";
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(39, 18);
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(453, 235);
@@ -153,56 +207,6 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // cbbCompanyCode
-            // 
-            this.cbbCompanyCode.DataSource = this.bdsCodeForCompany;
-            this.cbbCompanyCode.DisplayMember = "Item";
-            this.cbbCompanyCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbCompanyCode.FormattingEnabled = true;
-            this.cbbCompanyCode.Location = new System.Drawing.Point(54, 12);
-            this.cbbCompanyCode.Name = "cbbCompanyCode";
-            this.cbbCompanyCode.Size = new System.Drawing.Size(412, 26);
-            this.cbbCompanyCode.TabIndex = 8;
-            this.cbbCompanyCode.ValueMember = "CodeId";
-            // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.cbbCompanyCode;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(458, 30);
-            this.layoutControlItem5.Text = "보험사";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(39, 18);
-            // 
-            // cbbGoodsCode
-            // 
-            this.cbbGoodsCode.DataSource = this.bdsCodeForGoods;
-            this.cbbGoodsCode.DisplayMember = "Item";
-            this.cbbGoodsCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbGoodsCode.FormattingEnabled = true;
-            this.cbbGoodsCode.Location = new System.Drawing.Point(54, 42);
-            this.cbbGoodsCode.Name = "cbbGoodsCode";
-            this.cbbGoodsCode.Size = new System.Drawing.Size(412, 26);
-            this.cbbGoodsCode.TabIndex = 9;
-            this.cbbGoodsCode.ValueMember = "CodeId";
-            // 
-            // layoutControlItem6
-            // 
-            this.layoutControlItem6.Control = this.cbbGoodsCode;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 30);
-            this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(458, 30);
-            this.layoutControlItem6.Text = "상품명";
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(39, 18);
-            // 
-            // bdsCodeForCompany
-            // 
-            this.bdsCodeForCompany.DataSource = typeof(SoCar.Data.Code);
-            // 
-            // bdsCodeForGoods
-            // 
-            this.bdsCodeForGoods.DataSource = typeof(SoCar.Data.Code);
             // 
             // InsertInsuranceForm
             // 
@@ -217,6 +221,8 @@
             this.Load += new System.EventHandler(this.InsertInsuranceForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCodeForGoods)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCodeForCompany)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
@@ -224,8 +230,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCodeForCompany)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCodeForGoods)).EndInit();
             this.ResumeLayout(false);
 
         }
