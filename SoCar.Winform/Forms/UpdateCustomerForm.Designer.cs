@@ -117,6 +117,7 @@
             this.txeCellNumber.Size = new System.Drawing.Size(399, 24);
             this.txeCellNumber.StyleController = this.layoutControl1;
             this.txeCellNumber.TabIndex = 5;
+            this.txeCellNumber.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.txeCellNumber_EditValueChanging);
             // 
             // txeName
             // 

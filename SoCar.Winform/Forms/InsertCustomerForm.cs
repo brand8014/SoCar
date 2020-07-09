@@ -40,7 +40,7 @@ namespace SoCar.Winform.Forms
             {
                 MessageBox.Show(ex.Message);
             }
-
+            MessageBox.Show("등록되었습니다.");
             Close();
         }
 
@@ -60,6 +60,26 @@ namespace SoCar.Winform.Forms
             Close();
         }
 
+        private void txeCellNumber_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            Helpers.InputConstraint.OnlyIntConstraint(txeCellNumber);
+        }
 
+        private void txeBirth_Leave(object sender, EventArgs e)
+        {         
+            txeAge.Text = Helpers.InputConstraint.DateConstraintAndCalculateAge(txeBirth);
+
+        }
+
+        private void txeBirth_InvalidValue(object sender, DevExpress.XtraEditors.Controls.InvalidValueExceptionEventArgs e)
+        {
+            
+        }
+
+        private void txeBirth_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            Helpers.InputConstraint.OnlyIntConstraint(txeBirth);
+
+        }
     }
 }

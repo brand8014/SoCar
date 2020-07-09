@@ -81,6 +81,8 @@ namespace SoCar.Winform.UserControls
                 return;
             
             int? a = int.Parse(lueLocation.SelectedText);
+            //int? a = (int)lueLocation.EditValue;
+
             bdsLocation.DataSource = DataRepository.Location.GetByCodeCategory(a);
             
         }

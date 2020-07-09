@@ -1,4 +1,5 @@
-﻿using SoCar.Data;
+﻿using DevExpress.XtraEditors.Filtering;
+using SoCar.Data;
 using SoCar.Winform.BaseForms;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,6 @@ namespace SoCar.Winform.Forms
         public InsertLocationForm()
         {
             InitializeComponent();
-            _location = new Location();
         }
 
         private void InsertLocationForm_Load(object sender, EventArgs e)
@@ -28,7 +28,7 @@ namespace SoCar.Winform.Forms
 
         private void btnInsertLocation_Click(object sender, EventArgs e)
         {
-            
+            _location = new Location();
             WriteToEntity();
             try
             {
@@ -39,13 +39,14 @@ namespace SoCar.Winform.Forms
                 MessageBox.Show(ex.Message);
             }
 
-            
+            MessageBox.Show("등록되었습니다.");
             Close();
+            
         }
 
         private void WriteToEntity()
         {
-            _location.Address = txeAddress.Text;
+            _location.Address = txeAddress.Text.Replace(" ","");
             _location.LocationCode = (int)cbbLocation.SelectedValue;
         }
 

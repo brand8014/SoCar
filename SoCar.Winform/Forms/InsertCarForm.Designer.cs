@@ -97,6 +97,7 @@
             this.txeAccident.Size = new System.Drawing.Size(399, 24);
             this.txeAccident.StyleController = this.layoutControl1;
             this.txeAccident.TabIndex = 11;
+            this.txeAccident.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.txeAccident_EditValueChanging);
             // 
             // txeMilage
             // 
@@ -105,6 +106,7 @@
             this.txeMilage.Size = new System.Drawing.Size(399, 24);
             this.txeMilage.StyleController = this.layoutControl1;
             this.txeMilage.TabIndex = 10;
+            this.txeMilage.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.txeMilage_EditValueChanging);
             // 
             // btnInsert
             // 
@@ -172,6 +174,7 @@
             this.txePrice.Size = new System.Drawing.Size(399, 24);
             this.txePrice.StyleController = this.layoutControl1;
             this.txePrice.TabIndex = 4;
+            this.txePrice.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.txePrice_EditValueChanging);
             // 
             // Root
             // 

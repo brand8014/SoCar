@@ -106,7 +106,7 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Cars", "Cars", 40, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Code", "Code", 44, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.lueLocation.Properties.DataSource = this.bdsLocation;
-            this.lueLocation.Properties.DisplayMember = "LocationName";
+            this.lueLocation.Properties.DisplayMember = "Address";
             this.lueLocation.Properties.ValueMember = "LocationId";
             this.lueLocation.Size = new System.Drawing.Size(267, 24);
             this.lueLocation.StyleController = this.layoutControl1;

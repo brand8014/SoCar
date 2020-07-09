@@ -44,6 +44,7 @@ namespace SoCar.Winform.Forms
             }
 
             Close();
+            MessageBox.Show("등록되었습니다.");
         }
 
 
@@ -61,6 +62,16 @@ namespace SoCar.Winform.Forms
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void txeRateOfDiscount_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            Helpers.InputConstraint.OnlyIntConstraint(txeRateOfDiscount);
+        }
+
+        private void txePeriod_Leave(object sender, EventArgs e)
+        {
+            Helpers.InputConstraint.DateConstraint(txePeriod);
         }
     }
 }
