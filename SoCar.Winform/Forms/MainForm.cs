@@ -30,7 +30,7 @@ namespace SoCar.Winform.Forms
             label1.Parent = imageSlider1;
             label2.BackColor = Color.Transparent;
             label2.Parent = imageSlider1;
-            Text = LoginProxy.Login.UserName;
+            Text = "차량 대여관리 프로그램" + " " + "(" + LoginProxy.Login.UserName + ")";
         }
 
         private void uscBasic1_Load(object sender, EventArgs e)
