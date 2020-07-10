@@ -30,9 +30,7 @@
             this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.cbbRentId = new System.Windows.Forms.ComboBox();
-            this.bdsRent = new System.Windows.Forms.BindingSource(this.components);
             this.cbbEventTypeId = new System.Windows.Forms.ComboBox();
-            this.bdsCode = new System.Windows.Forms.BindingSource(this.components);
             this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.txePeriod = new DevExpress.XtraEditors.TextEdit();
@@ -46,10 +44,10 @@
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.bdsRent = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsCode = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsRent)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txePeriod.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeRateOfDiscount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
@@ -61,6 +59,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsRent)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCode)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -91,10 +91,6 @@
             this.cbbRentId.TabIndex = 12;
             this.cbbRentId.ValueMember = "RentId";
             // 
-            // bdsRent
-            // 
-            this.bdsRent.DataSource = typeof(SoCar.Data.Rent);
-            // 
             // cbbEventTypeId
             // 
             this.cbbEventTypeId.DataSource = this.bdsCode;
@@ -106,10 +102,6 @@
             this.cbbEventTypeId.Size = new System.Drawing.Size(381, 26);
             this.cbbEventTypeId.TabIndex = 11;
             this.cbbEventTypeId.ValueMember = "CodeId";
-            // 
-            // bdsCode
-            // 
-            this.bdsCode.DataSource = typeof(SoCar.Data.Code);
             // 
             // btnUpdate
             // 
@@ -250,6 +242,14 @@
             this.layoutControlItem2.Text = "대여ID";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(70, 18);
             // 
+            // bdsRent
+            // 
+            this.bdsRent.DataSource = typeof(SoCar.Data.Rent);
+            // 
+            // bdsCode
+            // 
+            this.bdsCode.DataSource = typeof(SoCar.Data.Code);
+            // 
             // UpdateEventForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -261,8 +261,6 @@
             this.Load += new System.EventHandler(this.UpdateEventForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bdsRent)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txePeriod.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeRateOfDiscount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
@@ -274,6 +272,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsRent)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCode)).EndInit();
             this.ResumeLayout(false);
 
         }

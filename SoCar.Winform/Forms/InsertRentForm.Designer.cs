@@ -38,20 +38,20 @@
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.lueLocationCode = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bdsLocation = new System.Windows.Forms.BindingSource(this.components);
             this.lueLocationId = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.lueCarId = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bdsCar = new System.Windows.Forms.BindingSource(this.components);
             this.lueCompanyCode = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bdsInsurance = new System.Windows.Forms.BindingSource(this.components);
             this.lueGoodsCode = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.lueEventId = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.bdsEvent = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsInsurance = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsCar = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsLocation = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
@@ -61,20 +61,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueLocationCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueLocationId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueCarId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueCompanyCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsInsurance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueGoodsCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueEventId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsEvent)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsInsurance)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -197,10 +197,6 @@
             this.layoutControlItem2.Text = "시/군/구";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(52, 18);
             // 
-            // bdsLocation
-            // 
-            this.bdsLocation.DataSource = typeof(SoCar.Data.Location);
-            // 
             // lueLocationId
             // 
             this.lueLocationId.Location = new System.Drawing.Point(67, 40);
@@ -257,10 +253,6 @@
             this.layoutControlItem1.Text = "차";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(52, 18);
             // 
-            // bdsCar
-            // 
-            this.bdsCar.DataSource = typeof(SoCar.Data.Car);
-            // 
             // lueCompanyCode
             // 
             this.lueCompanyCode.Location = new System.Drawing.Point(67, 96);
@@ -283,10 +275,6 @@
             this.layoutControlItem4.Size = new System.Drawing.Size(241, 28);
             this.layoutControlItem4.Text = "보험";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(52, 18);
-            // 
-            // bdsInsurance
-            // 
-            this.bdsInsurance.DataSource = typeof(SoCar.Data.Insurance);
             // 
             // lueGoodsCode
             // 
@@ -343,6 +331,18 @@
             // 
             this.bdsEvent.DataSource = typeof(SoCar.Data.Event);
             // 
+            // bdsInsurance
+            // 
+            this.bdsInsurance.DataSource = typeof(SoCar.Data.Insurance);
+            // 
+            // bdsCar
+            // 
+            this.bdsCar.DataSource = typeof(SoCar.Data.Car);
+            // 
+            // bdsLocation
+            // 
+            this.bdsLocation.DataSource = typeof(SoCar.Data.Location);
+            // 
             // InsertRentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -361,20 +361,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueLocationCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueLocationId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueCarId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueCompanyCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsInsurance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueGoodsCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueEventId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsEvent)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsInsurance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).EndInit();
             this.ResumeLayout(false);
 
         }

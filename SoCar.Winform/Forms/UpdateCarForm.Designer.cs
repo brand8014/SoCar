@@ -39,9 +39,7 @@ namespace SoCar.Winform.Forms
             this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.cbbCarType = new System.Windows.Forms.ComboBox();
-            this.bdsCarType = new System.Windows.Forms.BindingSource(this.components);
             this.cbbLocationId = new System.Windows.Forms.ComboBox();
-            this.bdsLocation = new System.Windows.Forms.BindingSource(this.components);
             this.txePrice = new DevExpress.XtraEditors.TextEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -55,14 +53,14 @@ namespace SoCar.Winform.Forms
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.bdsCarType = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsLocation = new System.Windows.Forms.BindingSource(this.components);
             this.bdsCode = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txeMilage.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeAccident.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeNumber.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCarType)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txePrice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -76,6 +74,8 @@ namespace SoCar.Winform.Forms
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCarType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCode)).BeginInit();
             this.SuspendLayout();
             // 
@@ -174,10 +174,6 @@ namespace SoCar.Winform.Forms
             this.cbbCarType.TabIndex = 7;
             this.cbbCarType.ValueMember = "CarTypeId";
             // 
-            // bdsCarType
-            // 
-            this.bdsCarType.DataSource = typeof(SoCar.Data.CarType);
-            // 
             // cbbLocationId
             // 
             this.cbbLocationId.DataSource = this.bdsLocation;
@@ -190,10 +186,6 @@ namespace SoCar.Winform.Forms
             this.cbbLocationId.Size = new System.Drawing.Size(399, 26);
             this.cbbLocationId.TabIndex = 5;
             this.cbbLocationId.ValueMember = "LocationId";
-            // 
-            // bdsLocation
-            // 
-            this.bdsLocation.DataSource = typeof(SoCar.Data.Location);
             // 
             // txePrice
             // 
@@ -336,6 +328,14 @@ namespace SoCar.Winform.Forms
             this.layoutControlItem8.Text = "사고횟수";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(52, 18);
             // 
+            // bdsCarType
+            // 
+            this.bdsCarType.DataSource = typeof(SoCar.Data.CarType);
+            // 
+            // bdsLocation
+            // 
+            this.bdsLocation.DataSource = typeof(SoCar.Data.Location);
+            // 
             // bdsCode
             // 
             this.bdsCode.DataSource = typeof(SoCar.Data.Code);
@@ -354,8 +354,6 @@ namespace SoCar.Winform.Forms
             ((System.ComponentModel.ISupportInitialize)(this.txeMilage.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeAccident.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeNumber.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCarType)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txePrice.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
@@ -369,6 +367,8 @@ namespace SoCar.Winform.Forms
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCarType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCode)).EndInit();
             this.ResumeLayout(false);
 

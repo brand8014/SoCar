@@ -51,10 +51,10 @@ namespace SoCar.Winform.Forms
                     Properties.Settings.Default.Save();
                 }
 
-                //this.Visible = false;
-                mainform1.Show();
+                this.Visible = false;
+                mainform1.ShowDialog();
                 
-                //close();
+                Close();
             }
 
             //로그인 실패시

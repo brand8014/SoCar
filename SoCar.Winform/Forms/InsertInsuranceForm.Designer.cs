@@ -31,9 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.cbbGoodsCode = new System.Windows.Forms.ComboBox();
-            this.bdsCodeForGoods = new System.Windows.Forms.BindingSource(this.components);
             this.cbbCompanyCode = new System.Windows.Forms.ComboBox();
-            this.bdsCodeForCompany = new System.Windows.Forms.BindingSource(this.components);
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -44,10 +42,10 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.button1 = new System.Windows.Forms.Button();
+            this.bdsCodeForGoods = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsCodeForCompany = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCodeForGoods)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCodeForCompany)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
@@ -55,6 +53,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCodeForGoods)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCodeForCompany)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -85,10 +85,6 @@
             this.cbbGoodsCode.TabIndex = 9;
             this.cbbGoodsCode.ValueMember = "CodeId";
             // 
-            // bdsCodeForGoods
-            // 
-            this.bdsCodeForGoods.DataSource = typeof(SoCar.Data.Code);
-            // 
             // cbbCompanyCode
             // 
             this.cbbCompanyCode.DataSource = this.bdsCodeForCompany;
@@ -100,10 +96,6 @@
             this.cbbCompanyCode.Size = new System.Drawing.Size(412, 26);
             this.cbbCompanyCode.TabIndex = 8;
             this.cbbCompanyCode.ValueMember = "CodeId";
-            // 
-            // bdsCodeForCompany
-            // 
-            this.bdsCodeForCompany.DataSource = typeof(SoCar.Data.Code);
             // 
             // simpleButton2
             // 
@@ -208,6 +200,14 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // bdsCodeForGoods
+            // 
+            this.bdsCodeForGoods.DataSource = typeof(SoCar.Data.Code);
+            // 
+            // bdsCodeForCompany
+            // 
+            this.bdsCodeForCompany.DataSource = typeof(SoCar.Data.Code);
+            // 
             // InsertInsuranceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -217,13 +217,10 @@
             this.Controls.Add(this.button1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "InsertInsuranceForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InsertCustomerForm";
             this.Load += new System.EventHandler(this.InsertInsuranceForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCodeForGoods)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCodeForCompany)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
@@ -231,6 +228,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCodeForGoods)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCodeForCompany)).EndInit();
             this.ResumeLayout(false);
 
         }
