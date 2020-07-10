@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode4 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode5 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode6 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode7 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode8 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode9 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode10 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode11 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode12 = new DevExpress.XtraGrid.GridLevelNode();
             this.gvCustomer = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCellNumber = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -202,23 +202,23 @@
             // 
             this.gridControl.Cursor = System.Windows.Forms.Cursors.Default;
             this.gridControl.DataSource = this.bdsLocation;
-            gridLevelNode1.RelationName = "Level2";
-            gridLevelNode2.LevelTemplate = this.gvCustomer;
-            gridLevelNode2.RelationName = "Level3";
-            gridLevelNode3.LevelTemplate = this.gvInsurance;
-            gridLevelNode3.RelationName = "Level1";
-            gridLevelNode4.RelationName = "Level4";
-            gridLevelNode5.LevelTemplate = this.gvCar;
-            gridLevelNode5.RelationName = "Level5";
-            gridLevelNode6.LevelTemplate = this.gvRent;
-            gridLevelNode6.RelationName = "Level6";
+            gridLevelNode7.RelationName = "Level2";
+            gridLevelNode8.LevelTemplate = this.gvCustomer;
+            gridLevelNode8.RelationName = "Level3";
+            gridLevelNode9.LevelTemplate = this.gvInsurance;
+            gridLevelNode9.RelationName = "Level1";
+            gridLevelNode10.RelationName = "Level4";
+            gridLevelNode11.LevelTemplate = this.gvCar;
+            gridLevelNode11.RelationName = "Level5";
+            gridLevelNode12.LevelTemplate = this.gvRent;
+            gridLevelNode12.RelationName = "Level6";
             this.gridControl.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1,
-            gridLevelNode2,
-            gridLevelNode3,
-            gridLevelNode4,
-            gridLevelNode5,
-            gridLevelNode6});
+            gridLevelNode7,
+            gridLevelNode8,
+            gridLevelNode9,
+            gridLevelNode10,
+            gridLevelNode11,
+            gridLevelNode12});
             this.gridControl.Location = new System.Drawing.Point(216, 12);
             this.gridControl.MainView = this.gvLocation;
             this.gridControl.Name = "gridControl";
