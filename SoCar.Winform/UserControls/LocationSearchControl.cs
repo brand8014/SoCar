@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SoCar.Data;
 using DevExpress.XtraEditors;
+using DevExpress.XtraBars.Commands;
 
 namespace SoCar.Winform.UserControls
 {
-    public partial class LocationSearchControl : UserControl
+    public partial class LocationSearchControl : XtraUserControl
     {
         public LocationSearchControl()
         {
@@ -67,6 +68,7 @@ namespace SoCar.Winform.UserControls
         {
             cbbLocation.Text = null;
             cbbAddress.Text =null;
+            cbbAddress.Enabled = false;
             
         }
 
@@ -76,10 +78,10 @@ namespace SoCar.Winform.UserControls
                 return;
 
             bdsLocation.DataSource = DataRepository.Code.GetByCodeCategoryId(1);
-
             cbbLocation.Text = null;
             cbbAddress.Text = null;
 
+            cbbAddress.Enabled = false;
         }
 
 
@@ -124,5 +126,17 @@ namespace SoCar.Winform.UserControls
             }
         }
         #endregion
+
+        private void cbbLocation_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (DesignMode)
+                return;
+
+            cbbAddress.Enabled = true;
+
+            int? codeCategoryId = (int?)cbbLocation.SelectedValue;
+
+            bdsAddress.DataSource = DataRepository.Location.GetByCodeCategory(codeCategoryId);
+        }
     }
 }

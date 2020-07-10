@@ -56,7 +56,7 @@ namespace SoCar.Winform.UserControls
             int? age = null;
             try
             {
-                age = int.Parse(txbAge.SelectedText);
+                age = Convert.ToInt32(txbAge.Text);
             }
             //catch (InvalidCastException e)
             //{ e.
@@ -76,7 +76,7 @@ namespace SoCar.Winform.UserControls
             string cellNumber = null;
             try
             {
-                cellNumber = txbNumber.SelectedText;
+                cellNumber = txbNumber.Text;
             }
             //catch (InvalidCastException e)
             //{ e.
@@ -128,6 +128,8 @@ namespace SoCar.Winform.UserControls
         {
             cbbCustomer.SelectedItem = null;
             cbbLisence.SelectedItem = null;
+            txbAge.Text = "";
+            txbNumber.Text = "";
         }
 
         #region SearchButtonClicked event things for C# 3.0
