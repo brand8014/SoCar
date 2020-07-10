@@ -21,7 +21,7 @@ ADO.NET에 포함되지않아서 임의로 dummy속성을 테이블에 추가한다
 
 
 
-# pointof interest
+# Point Of Interest
 ## 문제1
 * 유저컨트롤 간 상호작용
 ### 해결
@@ -55,7 +55,7 @@ ADO.NET에 포함되지않아서 임의로 dummy속성을 테이블에 추가한다
 
 
 
-# Point Of Interest
+
  ## Form의 삭제이벤트가 발생하지 않는 문제
 ## 문제1
 ### 증상
