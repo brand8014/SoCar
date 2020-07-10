@@ -163,6 +163,11 @@ namespace SoCar.Winform.UserControls
             InsertEventForm form = new InsertEventForm();
             form.ShowDialog();
         }
+        private void nbiInsertRent_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            InsertRentForm form = new InsertRentForm();
+            form.ShowDialog();
+        }
 
 
         private void gvLocation_DoubleClick(object sender, EventArgs e)
@@ -867,6 +872,6 @@ namespace SoCar.Winform.UserControls
 
         }
 
-
+        
     }
 }

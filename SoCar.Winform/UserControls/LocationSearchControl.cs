@@ -124,5 +124,19 @@ namespace SoCar.Winform.UserControls
             }
         }
         #endregion
+
+        private void cbbLocation_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbbLocation.SelectedValue == null)
+            {
+                bdsAddress.Clear();
+                cbbAddress.Enabled = false;
+                return;
+            }
+                
+            cbbAddress.Enabled = true;
+            bdsAddress.DataSource = DataRepository.Location.Search((int)cbbLocation.SelectedValue, null);
+
+        }
     }
 }

@@ -528,7 +528,7 @@
             // 
             // navBarControl1
             // 
-            this.navBarControl1.ActiveGroup = this.nbgLocation;
+            this.navBarControl1.ActiveGroup = this.nbgRent;
             this.navBarControl1.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
             this.nbgLocation,
             this.nbgCar,
@@ -574,7 +574,6 @@
             this.nbgLocation.AppearancePressed.ForeColor = System.Drawing.Color.White;
             this.nbgLocation.AppearancePressed.Options.UseForeColor = true;
             this.nbgLocation.Caption = "지역";
-            this.nbgLocation.Expanded = true;
             this.nbgLocation.GroupClientHeight = 1;
             this.nbgLocation.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbiViewLocation),
@@ -707,6 +706,7 @@
             this.nbgRent.AppearancePressed.ForeColor = System.Drawing.Color.Black;
             this.nbgRent.AppearancePressed.Options.UseForeColor = true;
             this.nbgRent.Caption = "대여";
+            this.nbgRent.Expanded = true;
             this.nbgRent.GroupClientHeight = 5;
             this.nbgRent.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbiViewRent),
@@ -725,6 +725,7 @@
             // 
             this.nbiInsertRent.Caption = "등록";
             this.nbiInsertRent.Name = "nbiInsertRent";
+            this.nbiInsertRent.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiInsertRent_LinkClicked);
             // 
             // nbiDeleteRent
             // 
