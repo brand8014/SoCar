@@ -29,6 +29,16 @@
         {
             this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.lueEvent = new DevExpress.XtraEditors.LookUpEdit();
+            this.bdsEvent = new System.Windows.Forms.BindingSource(this.components);
+            this.lueGoods = new DevExpress.XtraEditors.LookUpEdit();
+            this.bdsInsurance = new System.Windows.Forms.BindingSource(this.components);
+            this.lueCompany = new DevExpress.XtraEditors.LookUpEdit();
+            this.lueCar = new DevExpress.XtraEditors.LookUpEdit();
+            this.bdsCar = new System.Windows.Forms.BindingSource(this.components);
+            this.lueAddress = new DevExpress.XtraEditors.LookUpEdit();
+            this.bdsLocation = new System.Windows.Forms.BindingSource(this.components);
+            this.lueLocation = new DevExpress.XtraEditors.LookUpEdit();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -36,55 +46,45 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.lueLocationCode = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.lueLocationId = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.lueCarId = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.lueCompanyCode = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.lueGoodsCode = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.lueEventId = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bdsEvent = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsInsurance = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsCar = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsLocation = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lueEvent.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsEvent)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueGoods.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsInsurance)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueCompany.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueCar.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueAddress.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueLocation.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueLocationCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueLocationId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueCarId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueCompanyCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueGoodsCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueEventId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsEvent)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsInsurance)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.lueEventId);
-            this.layoutControl1.Controls.Add(this.lueGoodsCode);
-            this.layoutControl1.Controls.Add(this.lueCompanyCode);
-            this.layoutControl1.Controls.Add(this.lueCarId);
-            this.layoutControl1.Controls.Add(this.lueLocationId);
-            this.layoutControl1.Controls.Add(this.lueLocationCode);
+            this.layoutControl1.Controls.Add(this.lueEvent);
+            this.layoutControl1.Controls.Add(this.lueGoods);
+            this.layoutControl1.Controls.Add(this.lueCompany);
+            this.layoutControl1.Controls.Add(this.lueCar);
+            this.layoutControl1.Controls.Add(this.lueAddress);
+            this.layoutControl1.Controls.Add(this.lueLocation);
             this.layoutControl1.Controls.Add(this.simpleButton1);
             this.layoutControl1.Controls.Add(this.btnClose);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -94,6 +94,125 @@
             this.layoutControl1.Size = new System.Drawing.Size(478, 450);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // lueEvent
+            // 
+            this.lueEvent.Enabled = false;
+            this.lueEvent.Location = new System.Drawing.Point(67, 124);
+            this.lueEvent.Name = "lueEvent";
+            this.lueEvent.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueEvent.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("EventName", "Event Name", 90, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RateOfDiscount", "Rate Of Discount", 120, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Period", "Period", 48, DevExpress.Utils.FormatType.DateTime, "yyyy-MM-dd", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.lueEvent.Properties.DataSource = this.bdsEvent;
+            this.lueEvent.Properties.DisplayMember = "EventName";
+            this.lueEvent.Properties.ValueMember = "EventId";
+            this.lueEvent.Size = new System.Drawing.Size(399, 24);
+            this.lueEvent.StyleController = this.layoutControl1;
+            this.lueEvent.TabIndex = 16;
+            this.lueEvent.EditValueChanged += new System.EventHandler(this.lueEvent_EditValueChanged);
+            // 
+            // bdsEvent
+            // 
+            this.bdsEvent.DataSource = typeof(SoCar.Data.Event);
+            // 
+            // lueGoods
+            // 
+            this.lueGoods.Enabled = false;
+            this.lueGoods.Location = new System.Drawing.Point(253, 96);
+            this.lueGoods.Name = "lueGoods";
+            this.lueGoods.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueGoods.Properties.DataSource = this.bdsInsurance;
+            this.lueGoods.Properties.DisplayMember = "GoodsName";
+            this.lueGoods.Properties.ValueMember = "GoodsCode";
+            this.lueGoods.Size = new System.Drawing.Size(213, 24);
+            this.lueGoods.StyleController = this.layoutControl1;
+            this.lueGoods.TabIndex = 15;
+            this.lueGoods.EditValueChanged += new System.EventHandler(this.lueGoods_EditValueChanged);
+            // 
+            // bdsInsurance
+            // 
+            this.bdsInsurance.DataSource = typeof(SoCar.Data.Insurance);
+            // 
+            // lueCompany
+            // 
+            this.lueCompany.Enabled = false;
+            this.lueCompany.Location = new System.Drawing.Point(67, 96);
+            this.lueCompany.Name = "lueCompany";
+            this.lueCompany.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueCompany.Properties.DataSource = this.bdsInsurance;
+            this.lueCompany.Properties.DisplayMember = "CompanyName";
+            this.lueCompany.Properties.ValueMember = "CompanyCode";
+            this.lueCompany.Size = new System.Drawing.Size(182, 24);
+            this.lueCompany.StyleController = this.layoutControl1;
+            this.lueCompany.TabIndex = 14;
+            this.lueCompany.EditValueChanged += new System.EventHandler(this.lueCompany_EditValueChanged);
+            // 
+            // lueCar
+            // 
+            this.lueCar.Enabled = false;
+            this.lueCar.Location = new System.Drawing.Point(67, 68);
+            this.lueCar.Name = "lueCar";
+            this.lueCar.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueCar.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Price", "Price", 39, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("IsRent", "Is Rent", 57, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Number", "Number", 61, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CarName", "Car Name", 75, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Address", "Address", 61, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.lueCar.Properties.DataSource = this.bdsCar;
+            this.lueCar.Properties.DisplayMember = "CarName";
+            this.lueCar.Properties.ValueMember = "CarId";
+            this.lueCar.Size = new System.Drawing.Size(399, 24);
+            this.lueCar.StyleController = this.layoutControl1;
+            this.lueCar.TabIndex = 13;
+            this.lueCar.EditValueChanged += new System.EventHandler(this.lueCar_EditValueChanged);
+            // 
+            // bdsCar
+            // 
+            this.bdsCar.DataSource = typeof(SoCar.Data.Car);
+            // 
+            // lueAddress
+            // 
+            this.lueAddress.Enabled = false;
+            this.lueAddress.Location = new System.Drawing.Point(67, 40);
+            this.lueAddress.Name = "lueAddress";
+            this.lueAddress.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueAddress.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Address", "Address", 61, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.lueAddress.Properties.DataSource = this.bdsLocation;
+            this.lueAddress.Properties.DisplayMember = "Address";
+            this.lueAddress.Properties.ValueMember = "LocationId";
+            this.lueAddress.Size = new System.Drawing.Size(399, 24);
+            this.lueAddress.StyleController = this.layoutControl1;
+            this.lueAddress.TabIndex = 12;
+            this.lueAddress.EditValueChanged += new System.EventHandler(this.lueAddress_EditValueChanged);
+            // 
+            // bdsLocation
+            // 
+            this.bdsLocation.DataSource = typeof(SoCar.Data.Location);
+            // 
+            // lueLocation
+            // 
+            this.lueLocation.Location = new System.Drawing.Point(67, 12);
+            this.lueLocation.Name = "lueLocation";
+            this.lueLocation.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueLocation.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LocationName", "Location Name", 106, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.lueLocation.Properties.DataSource = this.bdsLocation;
+            this.lueLocation.Properties.DisplayMember = "LocationName";
+            this.lueLocation.Properties.ValueMember = "LocationCode";
+            this.lueLocation.Size = new System.Drawing.Size(399, 24);
+            this.lueLocation.StyleController = this.layoutControl1;
+            this.lueLocation.TabIndex = 11;
+            this.lueLocation.EditValueChanged += new System.EventHandler(this.lueLocation_EditValueChanged);
             // 
             // simpleButton1
             // 
@@ -112,6 +231,7 @@
             this.btnClose.StyleController = this.layoutControl1;
             this.btnClose.TabIndex = 9;
             this.btnClose.Text = "닫기(&C)";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // Root
             // 
@@ -172,176 +292,59 @@
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
-            // lueLocationCode
-            // 
-            this.lueLocationCode.Location = new System.Drawing.Point(67, 12);
-            this.lueLocationCode.Name = "lueLocationCode";
-            this.lueLocationCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueLocationCode.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LocationName", "Location Name", 106, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.lueLocationCode.Properties.DataSource = this.bdsLocation;
-            this.lueLocationCode.Properties.DisplayMember = "LocationName";
-            this.lueLocationCode.Properties.ValueMember = "LocationCode";
-            this.lueLocationCode.Size = new System.Drawing.Size(399, 24);
-            this.lueLocationCode.StyleController = this.layoutControl1;
-            this.lueLocationCode.TabIndex = 11;
-            this.lueLocationCode.EditValueChanged += new System.EventHandler(this.lueLocationCode_EditValueChanged);
-            // 
             // layoutControlItem2
             // 
-            this.layoutControlItem2.Control = this.lueLocationCode;
+            this.layoutControlItem2.Control = this.lueLocation;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(458, 28);
             this.layoutControlItem2.Text = "시/군/구";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(52, 18);
             // 
-            // lueLocationId
-            // 
-            this.lueLocationId.Location = new System.Drawing.Point(67, 40);
-            this.lueLocationId.Name = "lueLocationId";
-            this.lueLocationId.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueLocationId.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LocationName", "Location Name", 106, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Address", "Address", 61, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Cars", "Cars", 38, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.lueLocationId.Properties.DataSource = this.bdsLocation;
-            this.lueLocationId.Properties.DisplayMember = "Address";
-            this.lueLocationId.Properties.ValueMember = "LocationId";
-            this.lueLocationId.Size = new System.Drawing.Size(399, 24);
-            this.lueLocationId.StyleController = this.layoutControl1;
-            this.lueLocationId.TabIndex = 12;
-            this.lueLocationId.EditValueChanged += new System.EventHandler(this.lueLocationId_EditValueChanged);
-            // 
             // layoutControlItem3
             // 
-            this.layoutControlItem3.Control = this.lueLocationId;
+            this.layoutControlItem3.Control = this.lueAddress;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 28);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(458, 28);
             this.layoutControlItem3.Text = "상세주소";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(52, 18);
             // 
-            // lueCarId
-            // 
-            this.lueCarId.Location = new System.Drawing.Point(67, 68);
-            this.lueCarId.Name = "lueCarId";
-            this.lueCarId.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueCarId.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Price", "Price", 39, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("IsRent", "Is Rent", 57, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Number", "Number", 61, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CarName", "Car Name", 75, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Address", "Address", 61, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.lueCarId.Properties.DataSource = this.bdsCar;
-            this.lueCarId.Properties.DisplayMember = "CarName";
-            this.lueCarId.Properties.ValueMember = "CarId";
-            this.lueCarId.Size = new System.Drawing.Size(399, 24);
-            this.lueCarId.StyleController = this.layoutControl1;
-            this.lueCarId.TabIndex = 13;
-            this.lueCarId.EditValueChanged += new System.EventHandler(this.lueCarId_EditValueChanged);
-            // 
             // layoutControlItem1
             // 
-            this.layoutControlItem1.Control = this.lueCarId;
+            this.layoutControlItem1.Control = this.lueCar;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 56);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(458, 28);
             this.layoutControlItem1.Text = "차";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(52, 18);
             // 
-            // lueCompanyCode
-            // 
-            this.lueCompanyCode.Location = new System.Drawing.Point(67, 96);
-            this.lueCompanyCode.Name = "lueCompanyCode";
-            this.lueCompanyCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueCompanyCode.Properties.DataSource = this.bdsInsurance;
-            this.lueCompanyCode.Properties.DisplayMember = "CompanyName";
-            this.lueCompanyCode.Properties.ValueMember = "CompanyCode";
-            this.lueCompanyCode.Size = new System.Drawing.Size(182, 24);
-            this.lueCompanyCode.StyleController = this.layoutControl1;
-            this.lueCompanyCode.TabIndex = 14;
-            this.lueCompanyCode.EditValueChanged += new System.EventHandler(this.lueCompanyCode_EditValueChanged);
-            // 
             // layoutControlItem4
             // 
-            this.layoutControlItem4.Control = this.lueCompanyCode;
+            this.layoutControlItem4.Control = this.lueCompany;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 84);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(241, 28);
             this.layoutControlItem4.Text = "보험";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(52, 18);
             // 
-            // lueGoodsCode
-            // 
-            this.lueGoodsCode.Location = new System.Drawing.Point(253, 96);
-            this.lueGoodsCode.Name = "lueGoodsCode";
-            this.lueGoodsCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueGoodsCode.Properties.DataSource = this.bdsInsurance;
-            this.lueGoodsCode.Properties.DisplayMember = "GoodsName";
-            this.lueGoodsCode.Properties.ValueMember = "GoodsCode";
-            this.lueGoodsCode.Size = new System.Drawing.Size(213, 24);
-            this.lueGoodsCode.StyleController = this.layoutControl1;
-            this.lueGoodsCode.TabIndex = 15;
-            this.lueGoodsCode.EditValueChanged += new System.EventHandler(this.lueGoodsCode_EditValueChanged);
-            // 
             // layoutControlItem5
             // 
-            this.layoutControlItem5.Control = this.lueGoodsCode;
+            this.layoutControlItem5.Control = this.lueGoods;
             this.layoutControlItem5.Location = new System.Drawing.Point(241, 84);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(217, 28);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
-            // lueEventId
-            // 
-            this.lueEventId.Enabled = false;
-            this.lueEventId.Location = new System.Drawing.Point(67, 124);
-            this.lueEventId.Name = "lueEventId";
-            this.lueEventId.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueEventId.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("EventName", "Event Name", 90, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RateOfDiscount", "Rate Of Discount", 120, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Period", "Period", 48, DevExpress.Utils.FormatType.DateTime, "yyyy-MM-dd", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.lueEventId.Properties.DataSource = this.bdsEvent;
-            this.lueEventId.Properties.DisplayMember = "EventName";
-            this.lueEventId.Properties.ValueMember = "EventId";
-            this.lueEventId.Size = new System.Drawing.Size(399, 24);
-            this.lueEventId.StyleController = this.layoutControl1;
-            this.lueEventId.TabIndex = 16;
-            this.lueEventId.EditValueChanged += new System.EventHandler(this.lueEventId_EditValueChanged);
-            // 
             // layoutControlItem8
             // 
-            this.layoutControlItem8.Control = this.lueEventId;
+            this.layoutControlItem8.Control = this.lueEvent;
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 112);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(458, 28);
             this.layoutControlItem8.Text = "이벤트";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(52, 18);
-            // 
-            // bdsEvent
-            // 
-            this.bdsEvent.DataSource = typeof(SoCar.Data.Event);
-            // 
-            // bdsInsurance
-            // 
-            this.bdsInsurance.DataSource = typeof(SoCar.Data.Insurance);
-            // 
-            // bdsCar
-            // 
-            this.bdsCar.DataSource = typeof(SoCar.Data.Car);
-            // 
-            // bdsLocation
-            // 
-            this.bdsLocation.DataSource = typeof(SoCar.Data.Location);
             // 
             // InsertRentForm
             // 
@@ -354,27 +357,27 @@
             this.Load += new System.EventHandler(this.InsertRentForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lueEvent.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsEvent)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueGoods.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsInsurance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueCompany.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueCar.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueAddress.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueLocation.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueLocationCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueLocationId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueCarId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueCompanyCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueGoodsCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueEventId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsEvent)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsInsurance)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -389,16 +392,16 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
-        private DevExpress.XtraEditors.LookUpEdit lueEventId;
+        private DevExpress.XtraEditors.LookUpEdit lueEvent;
         private System.Windows.Forms.BindingSource bdsEvent;
-        private DevExpress.XtraEditors.LookUpEdit lueGoodsCode;
+        private DevExpress.XtraEditors.LookUpEdit lueGoods;
         private System.Windows.Forms.BindingSource bdsInsurance;
-        private DevExpress.XtraEditors.LookUpEdit lueCompanyCode;
-        private DevExpress.XtraEditors.LookUpEdit lueCarId;
+        private DevExpress.XtraEditors.LookUpEdit lueCompany;
+        private DevExpress.XtraEditors.LookUpEdit lueCar;
         private System.Windows.Forms.BindingSource bdsCar;
-        private DevExpress.XtraEditors.LookUpEdit lueLocationId;
+        private DevExpress.XtraEditors.LookUpEdit lueAddress;
         private System.Windows.Forms.BindingSource bdsLocation;
-        private DevExpress.XtraEditors.LookUpEdit lueLocationCode;
+        private DevExpress.XtraEditors.LookUpEdit lueLocation;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;

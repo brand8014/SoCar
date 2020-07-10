@@ -11,6 +11,7 @@ namespace SoCar.Data
         public string CompanyName { get; set; }
 
         public string GoodsName { get; set; }
+        
 
     }
 }

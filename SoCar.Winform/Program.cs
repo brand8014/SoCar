@@ -21,7 +21,7 @@ namespace SoCar.Winform
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new LoginForm( ));
+            Application.Run(new InsertRentForm());
             //LoginProxy.Login = DataRepository.Login.GetByPK(1);
             //LoginProxy.Login = DataRepository.Login.Get("abc123", "abc123");
             //Application.Run(new LoginForm());

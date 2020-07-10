@@ -39,6 +39,7 @@
             this.barButtonRent = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonInsurance = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonEvent = new DevExpress.XtraBars.BarButtonItem();
+            this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -66,10 +67,9 @@
             this.imageSlider1 = new DevExpress.XtraEditors.Controls.ImageSlider();
             this.label1 = new DevExpress.XtraEditors.LabelControl();
             this.label2 = new System.Windows.Forms.Label();
-            this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageSlider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageSlider1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -92,7 +92,7 @@
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(1198, 187);
+            this.ribbonControl1.Size = new System.Drawing.Size(1198, 185);
             // 
             // barButtonGroup1
             // 
@@ -156,6 +156,29 @@
             this.barButtonEvent.ImageOptions.LargeImageIndex = 0;
             this.barButtonEvent.Name = "barButtonEvent";
             this.barButtonEvent.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonEvent_ItemClick);
+            // 
+            // imageCollection1
+            // 
+            this.imageCollection1.ImageSize = new System.Drawing.Size(35, 35);
+            this.imageCollection1.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollection1.ImageStream")));
+            this.imageCollection1.Images.SetKeyName(0, "iconfinder_Events_751098 (1).png");
+            this.imageCollection1.Images.SetKeyName(1, "iconfinder_setting_user_interface_app_option_preference_3832196.png");
+            this.imageCollection1.Images.SetKeyName(2, "iconfinder_user_group_man_woman_2639943.png");
+            this.imageCollection1.Images.SetKeyName(3, "iconfinder_Paper_4200478.png");
+            this.imageCollection1.Images.SetKeyName(4, "iconfinder_Cab_3363563.png");
+            this.imageCollection1.Images.SetKeyName(5, "iconfinder_20_2739101.png");
+            this.imageCollection1.Images.SetKeyName(6, "iconfinder_car_2639905.png");
+            this.imageCollection1.Images.SetKeyName(7, "iconfinder__52ui_2303157.png");
+            this.imageCollection1.Images.SetKeyName(8, "iconfinder_home_1372383.png");
+            this.imageCollection1.Images.SetKeyName(9, "iconfinder_00-ELASTOFONT-STORE-READY_map-maker2_2703073.png");
+            this.imageCollection1.Images.SetKeyName(10, "iconfinder_house_384890.png");
+            this.imageCollection1.Images.SetKeyName(11, "iconfinder_location_1585851.png");
+            this.imageCollection1.Images.SetKeyName(12, "iconfinder___Location_1904662.png");
+            this.imageCollection1.Images.SetKeyName(13, "iconfinder_health_protection_healthcare_medical_insurance_4951157.png");
+            this.imageCollection1.Images.SetKeyName(14, "iconfinder_shield_security_protection_antivirus_insurance_3994405.png");
+            this.imageCollection1.Images.SetKeyName(15, "iconfinder_266_car_hand_insurance_transport_safety_3957655.png");
+            this.imageCollection1.Images.SetKeyName(16, "iconfinder_4_insurance_Finance_insurance_money_protection_4308069.png");
+            this.imageCollection1.Images.SetKeyName(17, "iconfinder_calendar-80px_510932.png");
             // 
             // ribbonPage1
             // 
@@ -388,9 +411,9 @@
             this.imageSlider1.Images.Add(((System.Drawing.Image)(resources.GetObject("imageSlider1.Images"))));
             this.imageSlider1.Images.Add(((System.Drawing.Image)(resources.GetObject("imageSlider1.Images1"))));
             this.imageSlider1.Images.Add(((System.Drawing.Image)(resources.GetObject("imageSlider1.Images2"))));
-            this.imageSlider1.Location = new System.Drawing.Point(0, 187);
+            this.imageSlider1.Location = new System.Drawing.Point(0, 185);
             this.imageSlider1.Name = "imageSlider1";
-            this.imageSlider1.Size = new System.Drawing.Size(1198, 561);
+            this.imageSlider1.Size = new System.Drawing.Size(1198, 563);
             this.imageSlider1.TabIndex = 21;
             this.imageSlider1.TabStop = false;
             this.imageSlider1.Text = "imageSlider1";
@@ -423,29 +446,6 @@
             this.label2.TabIndex = 25;
             this.label2.Text = "Car Rent Management Program";
             // 
-            // imageCollection1
-            // 
-            this.imageCollection1.ImageSize = new System.Drawing.Size(35, 35);
-            this.imageCollection1.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollection1.ImageStream")));
-            this.imageCollection1.Images.SetKeyName(0, "iconfinder_Events_751098 (1).png");
-            this.imageCollection1.Images.SetKeyName(1, "iconfinder_setting_user_interface_app_option_preference_3832196.png");
-            this.imageCollection1.Images.SetKeyName(2, "iconfinder_user_group_man_woman_2639943.png");
-            this.imageCollection1.Images.SetKeyName(3, "iconfinder_Paper_4200478.png");
-            this.imageCollection1.Images.SetKeyName(4, "iconfinder_Cab_3363563.png");
-            this.imageCollection1.Images.SetKeyName(5, "iconfinder_20_2739101.png");
-            this.imageCollection1.Images.SetKeyName(6, "iconfinder_car_2639905.png");
-            this.imageCollection1.Images.SetKeyName(7, "iconfinder__52ui_2303157.png");
-            this.imageCollection1.Images.SetKeyName(8, "iconfinder_home_1372383.png");
-            this.imageCollection1.Images.SetKeyName(9, "iconfinder_00-ELASTOFONT-STORE-READY_map-maker2_2703073.png");
-            this.imageCollection1.Images.SetKeyName(10, "iconfinder_house_384890.png");
-            this.imageCollection1.Images.SetKeyName(11, "iconfinder_location_1585851.png");
-            this.imageCollection1.Images.SetKeyName(12, "iconfinder___Location_1904662.png");
-            this.imageCollection1.Images.SetKeyName(13, "iconfinder_health_protection_healthcare_medical_insurance_4951157.png");
-            this.imageCollection1.Images.SetKeyName(14, "iconfinder_shield_security_protection_antivirus_insurance_3994405.png");
-            this.imageCollection1.Images.SetKeyName(15, "iconfinder_266_car_hand_insurance_transport_safety_3957655.png");
-            this.imageCollection1.Images.SetKeyName(16, "iconfinder_4_insurance_Finance_insurance_money_protection_4308069.png");
-            this.imageCollection1.Images.SetKeyName(17, "iconfinder_calendar-80px_510932.png");
-            // 
             // MainForm
             // 
             this.Appearance.BackColor = System.Drawing.SystemColors.Control;
@@ -474,8 +474,8 @@
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageSlider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageSlider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
