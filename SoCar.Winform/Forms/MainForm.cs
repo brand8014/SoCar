@@ -40,6 +40,7 @@ namespace SoCar.Winform.Forms
 
         private void uscBasic1_nbiDeleteLocationClick(object sender, UserControls.uscBasic.nbiDeleteLocationClickEventArgs e)
         {
+          
             DisableAllControls();
             EnableOneControl(e.TableName, e.Action);        
         }
