@@ -44,7 +44,7 @@ namespace SoCar.Winform.Forms
                 //MessageBox.Show("test");
                 MessageBox.Show(ex.Message);
             }
-
+            MessageBox.Show("수정되었습니다.");
             Close();
         }
 

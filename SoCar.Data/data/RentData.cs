@@ -56,11 +56,11 @@ namespace SoCar.Data
 
             return query.ToList().ConvertAll(x => x.Rent);
 
-            
+
 
         }
 
-        public List<Rent> GetProperties()
+        public List<Rent> GetAllWithProperties()
         {
             SocarEntities context = CreateContext();
 

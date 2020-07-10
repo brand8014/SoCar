@@ -51,7 +51,7 @@ namespace SoCar.Winform.Forms
             {
                 MessageBox.Show(ex.Message);
             }
-
+            MessageBox.Show("수정되었습니다.");
             Close();
         }
 
@@ -67,6 +67,16 @@ namespace SoCar.Winform.Forms
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void txeRateOfDiscount_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            Helpers.InputConstraint.OnlyIntConstraint(txeRateOfDiscount);
+        }
+
+        private void txePeriod_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            Helpers.InputConstraint.DateConstraint(txePeriod);
         }
     }
 }

@@ -1,5 +1,8 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.Mvvm.DataAnnotations;
+using DevExpress.Mvvm.Native;
+using DevExpress.XtraEditors;
 using SoCar.Data;
+using SoCar.Winform.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,7 +44,7 @@ namespace SoCar.Winform.Forms
             {
                 MessageBox.Show(ex.Message);
             }
-
+            MessageBox.Show("등록되었습니다.");
             Close();
         }
 
@@ -50,7 +53,7 @@ namespace SoCar.Winform.Forms
             _car.Price = int.Parse(txePrice.Text);
             _car.LocationId = (int)cbbLocation.SelectedValue;
             _car.CarTypeId = (int)cbbCarType.SelectedValue;
-            _car.Number = txeCarNum.Text;
+            _car.Number = txeCarNum.Text.Replace(" ","");
             _car.Accident = int.Parse(txeAccident.Text);
             _car.Mileage = int.Parse(txeMilage.Text);
         }
@@ -60,6 +63,23 @@ namespace SoCar.Winform.Forms
             Close();
         }
 
+
+        private void txePrice_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {           
+            Helpers.InputConstraint.OnlyIntConstraint(txePrice);      
+        }
+
+        private void txeMilage_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            Helpers.InputConstraint.OnlyIntConstraint(txeMilage);
+
+        }
+
+        private void txeAccident_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            Helpers.InputConstraint.OnlyIntConstraint(txeAccident);
+
+        }
     }
 
 }

@@ -41,7 +41,7 @@ namespace SoCar.Winform.Forms
             {
                 MessageBox.Show(ex.Message);
             }
-
+            MessageBox.Show("등록되었습니다.");
             Close();
         }
 

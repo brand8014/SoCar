@@ -53,14 +53,14 @@ namespace SoCar.Winform.Forms
                 //MessageBox.Show("test");
                 MessageBox.Show(ex.Message);
             }
-
+            MessageBox.Show("수정되었습니다.");
             Close();
         }
 
         private void WriteToEntity()
         {
             _car.Price = int.Parse(txePrice.Text);
-            _car.Number = txeNumber.Text;
+            _car.Number = txeNumber.Text.Replace(" ","");
             _car.LocationId = int.Parse(cbbLocationId.SelectedValue.ToString());
             _car.CarTypeId = int.Parse(cbbCarType.SelectedValue.ToString());
             _car.Accident = int.Parse(txeAccident.Text);
@@ -69,5 +69,19 @@ namespace SoCar.Winform.Forms
 
         }
 
+        private void txePrice_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            Helpers.InputConstraint.OnlyIntConstraint(txePrice);
+        }
+
+        private void txeMilage_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            Helpers.InputConstraint.OnlyIntConstraint(txeMilage);
+        }
+
+        private void txeAccident_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            Helpers.InputConstraint.OnlyIntConstraint(txeAccident);
+        }
     }
 }

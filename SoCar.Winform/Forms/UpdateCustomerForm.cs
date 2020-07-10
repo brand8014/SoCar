@@ -45,7 +45,7 @@ namespace SoCar.Winform.Forms
                 //MessageBox.Show("test");
                 MessageBox.Show(ex.Message);
             }
-
+            MessageBox.Show("수정되었습니다.");
             Close();
         }
 
@@ -61,6 +61,9 @@ namespace SoCar.Winform.Forms
             Close();
         }
 
-
+        private void txeCellNumber_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            Helpers.InputConstraint.OnlyIntConstraint(txeCellNumber);
+        }
     }
 }

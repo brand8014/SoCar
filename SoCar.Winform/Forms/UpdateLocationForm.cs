@@ -21,29 +21,22 @@ namespace SoCar.Winform.Forms
             InitializeComponent();
         }
         public UpdateLocationForm(Location location) : this()
-        {
-            //_location = new Location();
-            
-            _location = location;
-            
-            bdsCode.DataSource = DataRepository.Code.GetByCodeCategoryId(1);
+        {        
+            _location = location;           
         }
 
         public void UpdateForm_Load(object sender, EventArgs e)
         {
+            bdsCode.DataSource = DataRepository.Code.GetByCodeCategoryId(1);
             txeAddress.Text = _location.Address;
             cbbLocation.SelectedValue = _location.LocationCode;
-            //cbbLocation.text = _location.Code.Item;
-            //cbbLocation.Text = _location.LocationCode.ToString();
         }
 
 
         private void WriteToEntity()
-        {
-           
+        {          
             _location.Address = txeAddress.Text;
-            _location.LocationCode = (int)cbbLocation.SelectedValue;
-            
+            _location.LocationCode = (int)cbbLocation.SelectedValue;       
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -57,10 +50,9 @@ namespace SoCar.Winform.Forms
             }
             catch (Exception ex)
             {
-                //MessageBox.Show("test");
                 MessageBox.Show(ex.Message);
             }
-
+            MessageBox.Show("수정되었습니다.");
             Close();
         }
 
@@ -68,5 +60,7 @@ namespace SoCar.Winform.Forms
         {
             Close();
         }
+
+        
     }
 }

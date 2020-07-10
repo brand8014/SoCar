@@ -123,12 +123,15 @@
             // 
             // txeBirth
             // 
-            this.txeBirth.Location = new System.Drawing.Point(67, 96);
+            this.txeBirth.Location = new System.Drawing.Point(67, 68);
             this.txeBirth.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txeBirth.Name = "txeBirth";
             this.txeBirth.Size = new System.Drawing.Size(274, 24);
             this.txeBirth.StyleController = this.layoutControl1;
             this.txeBirth.TabIndex = 5;
+            this.txeBirth.InvalidValue += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.txeBirth_InvalidValue);
+            this.txeBirth.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.txeBirth_EditValueChanging);
+            this.txeBirth.Leave += new System.EventHandler(this.txeBirth_Leave);
             // 
             // txeCellNumber
             // 
@@ -138,12 +141,14 @@
             this.txeCellNumber.Size = new System.Drawing.Size(274, 24);
             this.txeCellNumber.StyleController = this.layoutControl1;
             this.txeCellNumber.TabIndex = 5;
+            this.txeCellNumber.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.txeCellNumber_EditValueChanging);
             // 
             // txeAge
             // 
-            this.txeAge.Location = new System.Drawing.Point(67, 68);
+            this.txeAge.Location = new System.Drawing.Point(67, 96);
             this.txeAge.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txeAge.Name = "txeAge";
+            this.txeAge.Properties.ReadOnly = true;
             this.txeAge.Size = new System.Drawing.Size(274, 24);
             this.txeAge.StyleController = this.layoutControl1;
             this.txeAge.TabIndex = 5;
@@ -186,8 +191,8 @@
             this.emptySpaceItem1,
             this.layoutControlItem1,
             this.layoutControlItem6,
-            this.layoutControlItem7,
-            this.layoutControlItem5});
+            this.layoutControlItem5,
+            this.layoutControlItem7});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(353, 263);
             this.Root.TextVisible = false;
@@ -253,7 +258,7 @@
             this.layoutControlItem6.AppearanceItemCaption.ForeColor = System.Drawing.Color.Black;
             this.layoutControlItem6.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem6.Control = this.txeAge;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 56);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 84);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(333, 28);
             this.layoutControlItem6.Text = "나이";
@@ -264,7 +269,7 @@
             this.layoutControlItem7.AppearanceItemCaption.ForeColor = System.Drawing.Color.Black;
             this.layoutControlItem7.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem7.Control = this.txeBirth;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 84);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 56);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Size = new System.Drawing.Size(333, 28);
             this.layoutControlItem7.Text = "생년월일";
@@ -294,7 +299,6 @@
             this.Controls.Add(this.button1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "InsertCustomerForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InsertCustomerForm";
             this.Load += new System.EventHandler(this.InsertCustomerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

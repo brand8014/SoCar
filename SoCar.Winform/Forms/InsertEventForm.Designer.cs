@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.txeRateOfDiscount = new DevExpress.XtraEditors.TextEdit();
@@ -47,9 +48,12 @@
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.button1 = new System.Windows.Forms.Button();
+            this.bdsRent = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeRateOfDiscount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txePeriod.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsEventTypeCode)).BeginInit();
@@ -63,10 +67,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsRent)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.lookUpEdit1);
             this.layoutControl1.Controls.Add(this.simpleButton2);
             this.layoutControl1.Controls.Add(this.simpleButton1);
             this.layoutControl1.Controls.Add(this.txeRateOfDiscount);
@@ -82,6 +89,19 @@
             this.layoutControl1.Size = new System.Drawing.Size(414, 241);
             this.layoutControl1.TabIndex = 3;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // lookUpEdit1
+            // 
+            this.lookUpEdit1.Location = new System.Drawing.Point(67, 72);
+            this.lookUpEdit1.Name = "lookUpEdit1";
+            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEdit1.Properties.DataSource = this.bdsRent;
+            this.lookUpEdit1.Properties.DisplayMember = "CarName";
+            this.lookUpEdit1.Properties.ValueMember = "RentId";
+            this.lookUpEdit1.Size = new System.Drawing.Size(335, 24);
+            this.lookUpEdit1.StyleController = this.layoutControl1;
+            this.lookUpEdit1.TabIndex = 8;
             // 
             // simpleButton2
             // 
@@ -107,21 +127,23 @@
             // 
             // txeRateOfDiscount
             // 
-            this.txeRateOfDiscount.Location = new System.Drawing.Point(67, 72);
+            this.txeRateOfDiscount.Location = new System.Drawing.Point(67, 100);
             this.txeRateOfDiscount.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txeRateOfDiscount.Name = "txeRateOfDiscount";
             this.txeRateOfDiscount.Size = new System.Drawing.Size(335, 24);
             this.txeRateOfDiscount.StyleController = this.layoutControl1;
             this.txeRateOfDiscount.TabIndex = 5;
+            this.txeRateOfDiscount.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.txeRateOfDiscount_EditValueChanging);
             // 
             // txePeriod
             // 
-            this.txePeriod.Location = new System.Drawing.Point(67, 100);
+            this.txePeriod.Location = new System.Drawing.Point(67, 128);
             this.txePeriod.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txePeriod.Name = "txePeriod";
             this.txePeriod.Size = new System.Drawing.Size(335, 24);
             this.txePeriod.StyleController = this.layoutControl1;
             this.txePeriod.TabIndex = 5;
+            this.txePeriod.Leave += new System.EventHandler(this.txePeriod_Leave);
             // 
             // cbbCustomer
             // 
@@ -169,7 +191,8 @@
             this.layoutControlItem5,
             this.layoutControlItem8,
             this.layoutControlItem7,
-            this.layoutControlItem6});
+            this.layoutControlItem6,
+            this.layoutControlItem1});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(414, 241);
             this.Root.TextVisible = false;
@@ -203,9 +226,9 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 116);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 144);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(394, 74);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(394, 46);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem5
@@ -235,7 +258,7 @@
             this.layoutControlItem7.AppearanceItemCaption.ForeColor = System.Drawing.Color.Black;
             this.layoutControlItem7.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem7.Control = this.txeRateOfDiscount;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 60);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 88);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Size = new System.Drawing.Size(394, 28);
             this.layoutControlItem7.Text = "할인율";
@@ -246,11 +269,20 @@
             this.layoutControlItem6.AppearanceItemCaption.ForeColor = System.Drawing.Color.Black;
             this.layoutControlItem6.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem6.Control = this.txePeriod;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 88);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 116);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(394, 28);
             this.layoutControlItem6.Text = "할인기간";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(52, 18);
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.lookUpEdit1;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 60);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(394, 28);
+            this.layoutControlItem1.Text = "대여";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(52, 18);
             // 
             // button1
             // 
@@ -262,6 +294,10 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // bdsRent
+            // 
+            this.bdsRent.DataSource = typeof(SoCar.Data.Rent);
+            // 
             // InsertEventForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -271,11 +307,11 @@
             this.Controls.Add(this.button1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "InsertEventForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InsertEventForm";
             this.Load += new System.EventHandler(this.InsertEventForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeRateOfDiscount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txePeriod.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsEventTypeCode)).EndInit();
@@ -289,6 +325,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsRent)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -314,5 +352,8 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private System.Windows.Forms.BindingSource bdsEventTypeCode;
         private System.Windows.Forms.BindingSource bdsCode;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEdit1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private System.Windows.Forms.BindingSource bdsRent;
     }
 }

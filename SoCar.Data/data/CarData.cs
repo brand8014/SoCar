@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -43,7 +44,27 @@ namespace SoCar.Data
                 x.Car.DefectCount = x.DefectCount;
             }
 
-            return query.ToList().ConvertAll(x => x.Car);
+            return items.ConvertAll(x => x.Car);
+
+        }
+
+        public List<Car> GetAllWithProperties()
+        {
+            SocarEntities context = CreateContext();
+
+            var query = from x in context.Cars
+                        select new { Car = x, CarName = x.CarType.Name, Address = x.Location.Address, DefectCount = x.Defects.Count };
+
+            var items = query.ToList();
+
+            foreach (var x in items)
+            {
+                x.Car.CarName = x.CarName;
+                x.Car.Address = x.Address;
+                x.Car.DefectCount = x.DefectCount;
+            }
+
+            return items.ConvertAll(x => x.Car);
 
         }
 

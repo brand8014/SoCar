@@ -169,6 +169,7 @@
       <DependentUpon>UpdateSampleForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Helper.cs" />
+    <Compile Include="Helpers\InputConstraint.cs" />
     <Compile Include="Helpers\LoginProxy.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

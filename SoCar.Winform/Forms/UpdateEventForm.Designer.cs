@@ -138,6 +138,7 @@
             this.txePeriod.Size = new System.Drawing.Size(381, 24);
             this.txePeriod.StyleController = this.layoutControl1;
             this.txePeriod.TabIndex = 7;
+            this.txePeriod.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.txePeriod_EditValueChanging);
             // 
             // txeRateOfDiscount
             // 
@@ -146,6 +147,7 @@
             this.txeRateOfDiscount.Size = new System.Drawing.Size(381, 24);
             this.txeRateOfDiscount.StyleController = this.layoutControl1;
             this.txeRateOfDiscount.TabIndex = 6;
+            this.txeRateOfDiscount.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.txeRateOfDiscount_EditValueChanging);
             // 
             // Root
             // 

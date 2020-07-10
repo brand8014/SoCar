@@ -20,7 +20,12 @@ namespace SoCar.Data
             SocarEntities context = CreateContext();
 
             var query = from x in context.Customers
-                        select new { Customer = x, Lisence = x.Code.Item };
+                        select new
+                        {
+                            Customer = x,
+                            Lisence = x.Code.Item,
+                            RentCount = x.Rents.Count
+                        };
 
             if (customerId.HasValue)
                 query = query.Where(x => x.Customer.CustomerId == customerId);
@@ -39,9 +44,10 @@ namespace SoCar.Data
             foreach (var x in items)
             {
                 x.Customer.Lisence = x.Lisence;
+                x.Customer.RentCount = x.RentCount;
             }
 
-            return query.ToList().ConvertAll(x=> x.Customer);
+            return items.ConvertAll(x=> x.Customer);
 
         }
 
