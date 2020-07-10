@@ -92,7 +92,7 @@
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(1198, 185);
+            this.ribbonControl1.Size = new System.Drawing.Size(1198, 178);
             // 
             // barButtonGroup1
             // 
@@ -106,6 +106,7 @@
             this.barButtonHome.Id = 5;
             this.barButtonHome.ImageOptions.LargeImageIndex = 8;
             this.barButtonHome.Name = "barButtonHome";
+            this.barButtonHome.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonHome_ItemClick);
             // 
             // barButtonCustomer
             // 
@@ -237,7 +238,7 @@
             this.uscBasic1.Location = new System.Drawing.Point(0, 194);
             this.uscBasic1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uscBasic1.Name = "uscBasic1";
-            this.uscBasic1.Size = new System.Drawing.Size(857, 541);
+            this.uscBasic1.Size = new System.Drawing.Size(857, 545);
             this.uscBasic1.TabIndex = 1;
             this.uscBasic1.nbiViewLocationClick += new System.EventHandler<SoCar.Winform.UserControls.uscBasic.nbiViewLocationClickEventArgs>(this.uscBasic1_nbiViewLocationClick);
             this.uscBasic1.nbiViewCarClick += new System.EventHandler<SoCar.Winform.UserControls.uscBasic.nbiViewCarClickEventArgs>(this.uscBasic1_nbiViewCarClick);
@@ -259,7 +260,7 @@
             this.carDeleteControl1.Location = new System.Drawing.Point(863, 194);
             this.carDeleteControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.carDeleteControl1.Name = "carDeleteControl1";
-            this.carDeleteControl1.Size = new System.Drawing.Size(316, 541);
+            this.carDeleteControl1.Size = new System.Drawing.Size(316, 545);
             this.carDeleteControl1.TabIndex = 2;
             this.carDeleteControl1.CarDeleteButtonClick += new System.EventHandler<SoCar.Winform.UserControls.CarDeleteControl.CarDeleteButtonClickEventArgs>(this.carDeleteControl1_CarDeleteButtonClick);
             // 
@@ -270,7 +271,7 @@
             this.customerDeleteControl1.Location = new System.Drawing.Point(863, 194);
             this.customerDeleteControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.customerDeleteControl1.Name = "customerDeleteControl1";
-            this.customerDeleteControl1.Size = new System.Drawing.Size(316, 541);
+            this.customerDeleteControl1.Size = new System.Drawing.Size(316, 545);
             this.customerDeleteControl1.TabIndex = 3;
             this.customerDeleteControl1.CustomerDeleteButtonClick += new System.EventHandler<SoCar.Winform.UserControls.CustomerDeleteControl.CustomerDeleteButtonClickEventArgs>(this.customerDeleteControl1_CustomerDeleteButtonClick);
             // 
@@ -281,7 +282,7 @@
             this.eventDeleteControl1.Location = new System.Drawing.Point(863, 194);
             this.eventDeleteControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.eventDeleteControl1.Name = "eventDeleteControl1";
-            this.eventDeleteControl1.Size = new System.Drawing.Size(316, 541);
+            this.eventDeleteControl1.Size = new System.Drawing.Size(316, 545);
             this.eventDeleteControl1.TabIndex = 4;
             this.eventDeleteControl1.EventDeleteButtonClick += new System.EventHandler<SoCar.Winform.UserControls.EventDeleteControl.EventDeleteButtonClickEventArgs>(this.eventDeleteControl1_EventDeleteButtonClick);
             // 
@@ -292,7 +293,7 @@
             this.insuranceDeleteControl1.Location = new System.Drawing.Point(863, 194);
             this.insuranceDeleteControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.insuranceDeleteControl1.Name = "insuranceDeleteControl1";
-            this.insuranceDeleteControl1.Size = new System.Drawing.Size(316, 541);
+            this.insuranceDeleteControl1.Size = new System.Drawing.Size(316, 545);
             this.insuranceDeleteControl1.TabIndex = 5;
             this.insuranceDeleteControl1.InsuranceDeleteButtonClick += new System.EventHandler<SoCar.Winform.UserControls.InsuranceDeleteControl.InsuranceDeleteButtonClickEventArgs>(this.insuranceDeleteControl1_InsuranceDeleteButtonClick);
             // 
@@ -303,7 +304,7 @@
             this.locationDeleteControl1.Location = new System.Drawing.Point(863, 194);
             this.locationDeleteControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.locationDeleteControl1.Name = "locationDeleteControl1";
-            this.locationDeleteControl1.Size = new System.Drawing.Size(316, 541);
+            this.locationDeleteControl1.Size = new System.Drawing.Size(316, 545);
             this.locationDeleteControl1.TabIndex = 6;
             this.locationDeleteControl1.LocationDeleteButtonClick += new System.EventHandler<SoCar.Winform.UserControls.LocationDeleteControl.LocationDeleteButtonClickEventArgs>(this.locationDeleteControl1_LocationDeleteButtonClick);
             // 
@@ -314,7 +315,7 @@
             this.rentDeleteControl1.Location = new System.Drawing.Point(863, 194);
             this.rentDeleteControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rentDeleteControl1.Name = "rentDeleteControl1";
-            this.rentDeleteControl1.Size = new System.Drawing.Size(316, 541);
+            this.rentDeleteControl1.Size = new System.Drawing.Size(316, 545);
             this.rentDeleteControl1.TabIndex = 7;
             this.rentDeleteControl1.RentDeleteButtonClick += new System.EventHandler<SoCar.Winform.UserControls.RentDeleteControl.RentDeleteButtonClickEventArgs>(this.rentDeleteControl1_RentDeleteButtonClick);
             // 
@@ -325,7 +326,7 @@
             this.insuranceSearchControl1.Location = new System.Drawing.Point(863, 194);
             this.insuranceSearchControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.insuranceSearchControl1.Name = "insuranceSearchControl1";
-            this.insuranceSearchControl1.Size = new System.Drawing.Size(316, 541);
+            this.insuranceSearchControl1.Size = new System.Drawing.Size(316, 545);
             this.insuranceSearchControl1.TabIndex = 9;
             this.insuranceSearchControl1.SearchButtonClicked += new System.EventHandler<SoCar.Winform.UserControls.InsuranceSearchControl.SearchButtonClickedEventArgs>(this.insuranceSearchControl1_SearchButtonClicked);
             // 
@@ -336,7 +337,7 @@
             this.customerSearchControl1.Location = new System.Drawing.Point(863, 194);
             this.customerSearchControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.customerSearchControl1.Name = "customerSearchControl1";
-            this.customerSearchControl1.Size = new System.Drawing.Size(316, 541);
+            this.customerSearchControl1.Size = new System.Drawing.Size(316, 545);
             this.customerSearchControl1.TabIndex = 10;
             this.customerSearchControl1.SearchButtonClicked += new System.EventHandler<SoCar.Winform.UserControls.CustomerSearchControl.SearchButtonClickedEventArgs>(this.customerSearchControl1_SearchButtonClicked);
             // 
@@ -346,7 +347,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.carSearchControl1.Location = new System.Drawing.Point(863, 193);
             this.carSearchControl1.Name = "carSearchControl1";
-            this.carSearchControl1.Size = new System.Drawing.Size(316, 541);
+            this.carSearchControl1.Size = new System.Drawing.Size(316, 545);
             this.carSearchControl1.TabIndex = 11;
             this.carSearchControl1.SearchButtonClicked += new System.EventHandler<SoCar.Winform.UserControls.CarSearchControl.SearchButtonClickedEventArgs>(this.carSearchControl1_SearchButtonClicked);
             // 
@@ -357,7 +358,7 @@
             this.rentSearchControl1.Location = new System.Drawing.Point(863, 194);
             this.rentSearchControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rentSearchControl1.Name = "rentSearchControl1";
-            this.rentSearchControl1.Size = new System.Drawing.Size(316, 541);
+            this.rentSearchControl1.Size = new System.Drawing.Size(316, 545);
             this.rentSearchControl1.TabIndex = 13;
             this.rentSearchControl1.SearchButtonClicked += new System.EventHandler<SoCar.Winform.UserControls.RentSearchControl.SearchButtonClickedEventArgs>(this.rentSearchControl1_SearchButtonClicked);
             // 
@@ -368,7 +369,7 @@
             this.locationSearchControl1.Location = new System.Drawing.Point(863, 194);
             this.locationSearchControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.locationSearchControl1.Name = "locationSearchControl1";
-            this.locationSearchControl1.Size = new System.Drawing.Size(316, 541);
+            this.locationSearchControl1.Size = new System.Drawing.Size(316, 545);
             this.locationSearchControl1.TabIndex = 15;
             this.locationSearchControl1.SearchButtonClicked += new System.EventHandler<SoCar.Winform.UserControls.LocationSearchControl.SearchButtonClickedEventArgs>(this.locationSearchControl1_SearchButtonClicked);
             // 
@@ -379,7 +380,7 @@
             this.eventSearchControl1.Location = new System.Drawing.Point(863, 194);
             this.eventSearchControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.eventSearchControl1.Name = "eventSearchControl1";
-            this.eventSearchControl1.Size = new System.Drawing.Size(316, 541);
+            this.eventSearchControl1.Size = new System.Drawing.Size(316, 545);
             this.eventSearchControl1.TabIndex = 17;
             this.eventSearchControl1.SearchButtonClicked += new System.EventHandler<SoCar.Winform.UserControls.EventSearchControl.SearchButtonClickedEventArgs>(this.eventSearchControl1_SearchButtonClicked);
             // 
@@ -411,9 +412,9 @@
             this.imageSlider1.Images.Add(((System.Drawing.Image)(resources.GetObject("imageSlider1.Images"))));
             this.imageSlider1.Images.Add(((System.Drawing.Image)(resources.GetObject("imageSlider1.Images1"))));
             this.imageSlider1.Images.Add(((System.Drawing.Image)(resources.GetObject("imageSlider1.Images2"))));
-            this.imageSlider1.Location = new System.Drawing.Point(0, 185);
+            this.imageSlider1.Location = new System.Drawing.Point(0, 178);
             this.imageSlider1.Name = "imageSlider1";
-            this.imageSlider1.Size = new System.Drawing.Size(1198, 563);
+            this.imageSlider1.Size = new System.Drawing.Size(1198, 574);
             this.imageSlider1.TabIndex = 21;
             this.imageSlider1.TabStop = false;
             this.imageSlider1.Text = "imageSlider1";
@@ -452,7 +453,7 @@
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1198, 748);
+            this.ClientSize = new System.Drawing.Size(1198, 752);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.imageSlider1);

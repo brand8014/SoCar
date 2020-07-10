@@ -8,10 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SoCar.Data;
+using DevExpress.XtraEditors;
 
 namespace SoCar.Winform.UserControls
 {
-    public partial class RentSearchControl : UserControl
+    public partial class RentSearchControl : XtraUserControl
     {
         public RentSearchControl()
         {
@@ -38,6 +39,9 @@ namespace SoCar.Winform.UserControls
             cbbCustomerId.SelectedItem = null;
             cbbLocationId.SelectedItem = null;
             cbbCarId.SelectedItem = null;
+            txbRentDay.Text = "";
+            txbReturnDay.Text = "";
+            txbPrice.Text = "";
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
