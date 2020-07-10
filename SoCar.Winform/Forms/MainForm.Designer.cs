@@ -106,7 +106,6 @@
             this.barButtonHome.Id = 5;
             this.barButtonHome.ImageOptions.LargeImageIndex = 8;
             this.barButtonHome.Name = "barButtonHome";
-            this.barButtonHome.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonHome_ItemClick);
             // 
             // barButtonCustomer
             // 
@@ -383,7 +382,7 @@
             this.imageSlider1.AllowLooping = true;
             this.imageSlider1.AnimationTime = 1000;
             this.imageSlider1.AutoSlide = DevExpress.XtraEditors.Controls.AutoSlide.Forward;
-            this.imageSlider1.AutoSlideInterval = 2000;
+            this.imageSlider1.AutoSlideInterval = 2500;
             this.imageSlider1.CurrentImageIndex = 0;
             this.imageSlider1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.imageSlider1.Images.Add(((System.Drawing.Image)(resources.GetObject("imageSlider1.Images"))));
@@ -517,7 +516,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
         private DevExpress.XtraBars.Ribbon.RibbonPageCategory ribbonPageCategory1;
-        private DevExpress.Utils.Filtering.FilteringUIContext filteringUIContext1;
+       // private DevExpress.Utils.Filtering.FilteringUIContext filteringUIContext1;
         private DevExpress.XtraEditors.Controls.ImageSlider imageSlider1;
 
         private DevExpress.XtraEditors.LabelControl label1;
