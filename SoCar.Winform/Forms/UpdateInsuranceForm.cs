@@ -27,13 +27,14 @@ namespace SoCar.Winform.Forms
         private void UpdateInsuranceForm_Load(object sender, EventArgs e)
         {
             bdsCodeForCompany.DataSource = DataRepository.Code.GetByCodeCategoryId(5);
-            lueCompanyCode.Text = Convert.ToString(_insurance.CompanyCode);
-            txeGoods.Text = Convert.ToString(_insurance.GoodsCode);
+            bdsCodeForGoods.DataSource = DataRepository.Code.GetByCodeCategoryId(6);
+            cbbCompanyCode.SelectedValue = _insurance.CompanyCode;
+            cbbGoods.SelectedValue = _insurance.GoodsCode;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (txeGoods.Text == "")
+            if (cbbGoods.Text == "")
             {
                 MessageBox.Show("보험상품을 입력하세요");
                 return;
@@ -55,8 +56,8 @@ namespace SoCar.Winform.Forms
 
         private void WriteToEntity()
         {
-            _insurance.CompanyCode = int.Parse(lueCompanyCode.Text);
-            _insurance.GoodsCode = int.Parse(txeGoods.Text);
+            _insurance.CompanyCode = (int)cbbCompanyCode.SelectedValue;
+            _insurance.GoodsCode = (int)cbbGoods.SelectedValue;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
