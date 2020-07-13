@@ -40,17 +40,6 @@
 
 ***
 # 관리항목
-### 지역
-
-### 차
-
-### 고객
-
-### 보험
-
-### 대여
-
-### 이벤트
 
 ### 1 고객정보
 회원으로 가입된 고객들의 정보와 함께 해당 고객이 과거에
@@ -70,13 +59,13 @@
 ### 언어
 * C# 3.0+
 ### 프레임워크
-* .NET FRAMEWORK 4.8
+* .NET Framework 4.8
 * Entity Framework 6.2
-* WINFORM
+* Winform
 ### 데이터베이스
 * MSSQL Server 2019
 ### Third Party Control
-* DevExpress
+* DevExpress Winform
 ***
 
 ### 데이터베이스 스키마
