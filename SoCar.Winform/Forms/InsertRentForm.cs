@@ -28,6 +28,7 @@ namespace SoCar.Winform.Forms
             //MessageBox.Show(DateTime.Parse(teRentAt.EditValue.ToString()).TimeOfDay.ToString());
             //MessageBox.Show(DateTime.Parse(teRentAt.EditValue.ToString()).Day.ToString());
             //MessageBox.Show((DateTime.Parse(CalanderControl.EditValue.ToString()).Date + DateTime.Parse(teRentAt.EditValue.ToString()).TimeOfDay).ToString());
+            //hi
             bdsCode.DataSource = DataRepository.Code.GetByCodeCategoryId(1);
             bdsLocation.DataSource = DataRepository.Location.GetAllWithProperties();
             
