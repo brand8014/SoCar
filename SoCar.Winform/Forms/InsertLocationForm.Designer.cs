@@ -34,6 +34,7 @@
             this.btnInsert = new DevExpress.XtraEditors.SimpleButton();
             this.txeAddress = new DevExpress.XtraEditors.TextEdit();
             this.cbbLocation = new System.Windows.Forms.ComboBox();
+            this.bdsCode = new System.Windows.Forms.BindingSource(this.components);
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -41,10 +42,10 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.bdsCode = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txeAddress.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -52,7 +53,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCode)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -114,6 +114,10 @@
             this.cbbLocation.Size = new System.Drawing.Size(352, 26);
             this.cbbLocation.TabIndex = 4;
             this.cbbLocation.ValueMember = "CodeId";
+            // 
+            // bdsCode
+            // 
+            this.bdsCode.DataSource = typeof(SoCar.Data.Code);
             // 
             // Root
             // 
@@ -186,10 +190,6 @@
             this.emptySpaceItem1.Size = new System.Drawing.Size(385, 52);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // bdsCode
-            // 
-            this.bdsCode.DataSource = typeof(SoCar.Data.Code);
-            // 
             // InsertLocationForm
             // 
             this.Appearance.BackColor = System.Drawing.SystemColors.Control;
@@ -200,11 +200,12 @@
             this.Controls.Add(this.layoutControl1);
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "InsertLocationForm";
-            this.Text = "InsertLocationForm";
+            this.Text = "지역 등록";
             this.Load += new System.EventHandler(this.InsertLocationForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txeAddress.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
@@ -212,7 +213,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCode)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -47,8 +47,8 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.bdsCustomer = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -65,8 +65,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCustomer)).BeginInit();
             this.SuspendLayout();
             // 
@@ -264,17 +264,6 @@
             this.layoutControlItem6.Text = "나이";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(52, 18);
             // 
-            // layoutControlItem7
-            // 
-            this.layoutControlItem7.AppearanceItemCaption.ForeColor = System.Drawing.Color.Black;
-            this.layoutControlItem7.AppearanceItemCaption.Options.UseForeColor = true;
-            this.layoutControlItem7.Control = this.txeBirth;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 56);
-            this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(333, 28);
-            this.layoutControlItem7.Text = "생년월일";
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(52, 18);
-            // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.AppearanceItemCaption.ForeColor = System.Drawing.Color.Black;
@@ -285,6 +274,17 @@
             this.layoutControlItem5.Size = new System.Drawing.Size(333, 30);
             this.layoutControlItem5.Text = "면허종류";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(52, 18);
+            // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.AppearanceItemCaption.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItem7.AppearanceItemCaption.Options.UseForeColor = true;
+            this.layoutControlItem7.Control = this.txeBirth;
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 56);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.Size = new System.Drawing.Size(333, 28);
+            this.layoutControlItem7.Text = "생년월일";
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(52, 18);
             // 
             // bdsCustomer
             // 
@@ -299,7 +299,7 @@
             this.Controls.Add(this.button1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "InsertCustomerForm";
-            this.Text = "InsertCustomerForm";
+            this.Text = "고객 등록";
             this.Load += new System.EventHandler(this.InsertCustomerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
@@ -316,8 +316,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCustomer)).EndInit();
             this.ResumeLayout(false);
 

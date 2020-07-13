@@ -29,11 +29,20 @@
         {
             this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.tseUseTime = new DevExpress.XtraEditors.TimeSpanEdit();
+            this.teRentAt = new DevExpress.XtraEditors.TimeEdit();
+            this.CalanderControl = new DevExpress.XtraEditors.Controls.CalendarControl();
             this.lueEvent = new DevExpress.XtraEditors.LookUpEdit();
+            this.bdsEvent = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsCode = new System.Windows.Forms.BindingSource(this.components);
             this.lueGoods = new DevExpress.XtraEditors.LookUpEdit();
+            this.bdsInsurance = new System.Windows.Forms.BindingSource(this.components);
             this.lueCompany = new DevExpress.XtraEditors.LookUpEdit();
+            this.bdsCompany = new System.Windows.Forms.BindingSource(this.components);
             this.lueCar = new DevExpress.XtraEditors.LookUpEdit();
+            this.bdsCar = new System.Windows.Forms.BindingSource(this.components);
             this.lueAddress = new DevExpress.XtraEditors.LookUpEdit();
+            this.bdsLocation = new System.Windows.Forms.BindingSource(this.components);
             this.lueLocation = new DevExpress.XtraEditors.LookUpEdit();
             this.btnInsertRent = new DevExpress.XtraEditors.SimpleButton();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
@@ -48,25 +57,25 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bdsInsurance = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsCode = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsCar = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsLocation = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsCompany = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsEvent = new System.Windows.Forms.BindingSource(this.components);
-            this.CalanderControl = new DevExpress.XtraEditors.Controls.CalendarControl();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.teRentAt = new DevExpress.XtraEditors.TimeEdit();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.tseUseTime = new DevExpress.XtraEditors.TimeSpanEdit();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tseUseTime.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teRentAt.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CalanderControl.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueEvent.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsEvent)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueGoods.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsInsurance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueCompany.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCompany)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueCar.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueAddress.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueLocation.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
@@ -79,17 +88,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsInsurance)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCode)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCompany)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsEvent)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CalanderControl.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teRentAt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tseUseTime.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,6 +114,39 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // tseUseTime
+            // 
+            this.tseUseTime.EditValue = System.TimeSpan.Parse("00:00:00");
+            this.tseUseTime.Location = new System.Drawing.Point(67, 486);
+            this.tseUseTime.Name = "tseUseTime";
+            this.tseUseTime.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.tseUseTime.Size = new System.Drawing.Size(399, 24);
+            this.tseUseTime.StyleController = this.layoutControl1;
+            this.tseUseTime.TabIndex = 19;
+            // 
+            // teRentAt
+            // 
+            this.teRentAt.EditValue = new System.DateTime(2020, 7, 10, 0, 0, 0, 0);
+            this.teRentAt.Location = new System.Drawing.Point(67, 458);
+            this.teRentAt.Name = "teRentAt";
+            this.teRentAt.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.teRentAt.Size = new System.Drawing.Size(399, 24);
+            this.teRentAt.StyleController = this.layoutControl1;
+            this.teRentAt.TabIndex = 18;
+            // 
+            // CalanderControl
+            // 
+            this.CalanderControl.AutoSize = false;
+            this.CalanderControl.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.CalanderControl.Location = new System.Drawing.Point(12, 152);
+            this.CalanderControl.Name = "CalanderControl";
+            this.CalanderControl.Size = new System.Drawing.Size(454, 302);
+            this.CalanderControl.StyleController = this.layoutControl1;
+            this.CalanderControl.TabIndex = 17;
+            // 
             // lueEvent
             // 
             this.lueEvent.Enabled = false;
@@ -130,6 +163,14 @@
             this.lueEvent.StyleController = this.layoutControl1;
             this.lueEvent.TabIndex = 16;
             this.lueEvent.EditValueChanged += new System.EventHandler(this.lueEvent_EditValueChanged);
+            // 
+            // bdsEvent
+            // 
+            this.bdsEvent.DataSource = this.bdsCode;
+            // 
+            // bdsCode
+            // 
+            this.bdsCode.DataSource = typeof(SoCar.Data.Code);
             // 
             // lueGoods
             // 
@@ -148,6 +189,10 @@
             this.lueGoods.TabIndex = 15;
             this.lueGoods.EditValueChanged += new System.EventHandler(this.lueGoods_EditValueChanged);
             // 
+            // bdsInsurance
+            // 
+            this.bdsInsurance.DataSource = typeof(SoCar.Data.Insurance);
+            // 
             // lueCompany
             // 
             this.lueCompany.Enabled = false;
@@ -164,6 +209,10 @@
             this.lueCompany.StyleController = this.layoutControl1;
             this.lueCompany.TabIndex = 14;
             this.lueCompany.EditValueChanged += new System.EventHandler(this.lueCompany_EditValueChanged);
+            // 
+            // bdsCompany
+            // 
+            this.bdsCompany.DataSource = typeof(SoCar.Data.Code);
             // 
             // lueCar
             // 
@@ -186,6 +235,10 @@
             this.lueCar.TabIndex = 13;
             this.lueCar.EditValueChanged += new System.EventHandler(this.lueCar_EditValueChanged);
             // 
+            // bdsCar
+            // 
+            this.bdsCar.DataSource = typeof(SoCar.Data.Car);
+            // 
             // lueAddress
             // 
             this.lueAddress.Enabled = false;
@@ -202,6 +255,10 @@
             this.lueAddress.StyleController = this.layoutControl1;
             this.lueAddress.TabIndex = 12;
             this.lueAddress.EditValueChanged += new System.EventHandler(this.lueAddress_EditValueChanged);
+            // 
+            // bdsLocation
+            // 
+            this.bdsLocation.DataSource = typeof(SoCar.Data.Location);
             // 
             // lueLocation
             // 
@@ -355,41 +412,6 @@
             this.layoutControlItem8.Text = "이벤트";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(52, 18);
             // 
-            // bdsInsurance
-            // 
-            this.bdsInsurance.DataSource = typeof(SoCar.Data.Insurance);
-            // 
-            // bdsCode
-            // 
-            this.bdsCode.DataSource = typeof(SoCar.Data.Code);
-            // 
-            // bdsCar
-            // 
-            this.bdsCar.DataSource = typeof(SoCar.Data.Car);
-            // 
-            // bdsLocation
-            // 
-            this.bdsLocation.DataSource = typeof(SoCar.Data.Location);
-            // 
-            // bdsCompany
-            // 
-            this.bdsCompany.DataSource = typeof(SoCar.Data.Code);
-            // 
-            // bdsEvent
-            // 
-            this.bdsEvent.DataSource = this.bdsCode;
-            // 
-            // CalanderControl
-            // 
-            this.CalanderControl.AutoSize = false;
-            this.CalanderControl.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.CalanderControl.Location = new System.Drawing.Point(12, 152);
-            this.CalanderControl.Name = "CalanderControl";
-            this.CalanderControl.Size = new System.Drawing.Size(454, 302);
-            this.CalanderControl.StyleController = this.layoutControl1;
-            this.CalanderControl.TabIndex = 17;
-            // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.CalanderControl;
@@ -399,17 +421,6 @@
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
-            // teRentAt
-            // 
-            this.teRentAt.EditValue = new System.DateTime(2020, 7, 10, 0, 0, 0, 0);
-            this.teRentAt.Location = new System.Drawing.Point(67, 458);
-            this.teRentAt.Name = "teRentAt";
-            this.teRentAt.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.teRentAt.Size = new System.Drawing.Size(399, 24);
-            this.teRentAt.StyleController = this.layoutControl1;
-            this.teRentAt.TabIndex = 18;
-            // 
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.teRentAt;
@@ -418,17 +429,6 @@
             this.layoutControlItem10.Size = new System.Drawing.Size(458, 28);
             this.layoutControlItem10.Text = "대여시작";
             this.layoutControlItem10.TextSize = new System.Drawing.Size(52, 18);
-            // 
-            // tseUseTime
-            // 
-            this.tseUseTime.EditValue = System.TimeSpan.Parse("00:00:00");
-            this.tseUseTime.Location = new System.Drawing.Point(67, 486);
-            this.tseUseTime.Name = "tseUseTime";
-            this.tseUseTime.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.tseUseTime.Size = new System.Drawing.Size(399, 24);
-            this.tseUseTime.StyleController = this.layoutControl1;
-            this.tseUseTime.TabIndex = 19;
             // 
             // layoutControlItem11
             // 
@@ -446,15 +446,24 @@
             this.ClientSize = new System.Drawing.Size(478, 672);
             this.Controls.Add(this.layoutControl1);
             this.Name = "InsertRentForm";
-            this.Text = "제목";
+            this.Text = "대여 등록";
             this.Load += new System.EventHandler(this.InsertRentForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tseUseTime.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teRentAt.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CalanderControl.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueEvent.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsEvent)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueGoods.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsInsurance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueCompany.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCompany)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueCar.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueAddress.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueLocation.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
@@ -467,17 +476,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsInsurance)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCode)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCompany)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsEvent)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CalanderControl.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teRentAt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tseUseTime.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             this.ResumeLayout(false);
 
