@@ -12,7 +12,6 @@
         <EntityTypeShape EntityType="SocarModel.CodeCategory" Width="1.5" PointX="0.75" PointY="7.5" />
         <EntityTypeShape EntityType="SocarModel.Customer" Width="1.5" PointX="5.25" PointY="13" />
         <EntityTypeShape EntityType="SocarModel.Defect" Width="1.5" PointX="5.25" PointY="7.125" />
-        <EntityTypeShape EntityType="SocarModel.Event" Width="1.5" PointX="12" PointY="9.25" />
         <EntityTypeShape EntityType="SocarModel.Insurance" Width="1.5" PointX="5.25" PointY="4.25" />
         <EntityTypeShape EntityType="SocarModel.Location" Width="1.5" PointX="5.25" PointY="10.25" />
         <EntityTypeShape EntityType="SocarModel.Login" Width="1.5" PointX="0.75" PointY="0.75" />
@@ -29,9 +28,10 @@
         <AssociationConnector Association="SocarModel.FK_결함_코드" />
         <AssociationConnector Association="SocarModel.FK_결함_코드2" />
         <AssociationConnector Association="SocarModel.FK_위치_코드" />
-        <AssociationConnector Association="SocarModel.FK_이벤트_코드" />
         <AssociationConnector Association="SocarModel.FK_코드_코드카테고리" />
         <AssociationConnector Association="SocarModel.FK_대여_고객" />
+        <EntityTypeShape EntityType="SocarModel.Event" Width="1.5" PointX="12" PointY="9.25" />
+        <AssociationConnector Association="SocarModel.FK_이벤트_코드" />
         <AssociationConnector Association="SocarModel.FK_이벤트_대여" />
       </Diagram>
     </edmx:Diagrams>

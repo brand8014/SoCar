@@ -16,7 +16,7 @@ namespace SoCar.Data
     {
         public int EventId { get; set; }
         public int EventTypeCode { get; set; }
-        public int RentId { get; set; }
+        public Nullable<int> RentId { get; set; }
         public int RateOfDiscount { get; set; }
         public System.DateTime Period { get; set; }
     

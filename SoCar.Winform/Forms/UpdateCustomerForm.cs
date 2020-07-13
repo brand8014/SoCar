@@ -34,6 +34,16 @@ namespace SoCar.Winform.Forms
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (txeName.Text == "")
+            {
+                MessageBox.Show("이름을 입력하세요");
+                return;
+            }
+            if (txeCellNumber.Text == "")
+            {
+                MessageBox.Show("전화번호를 입력하세요");
+                return;
+            }
             WriteToEntity();
 
             try

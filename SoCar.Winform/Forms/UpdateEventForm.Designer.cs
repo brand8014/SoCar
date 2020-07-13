@@ -29,8 +29,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.cbbRentId = new System.Windows.Forms.ComboBox();
             this.cbbEventTypeId = new System.Windows.Forms.ComboBox();
+            this.bdsCode = new System.Windows.Forms.BindingSource(this.components);
             this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.txePeriod = new DevExpress.XtraEditors.TextEdit();
@@ -43,11 +43,10 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.bdsRent = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsCode = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txePeriod.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeRateOfDiscount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
@@ -58,14 +57,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsRent)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCode)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.cbbRentId);
             this.layoutControl1.Controls.Add(this.cbbEventTypeId);
             this.layoutControl1.Controls.Add(this.btnUpdate);
             this.layoutControl1.Controls.Add(this.btnClose);
@@ -79,18 +75,6 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // cbbRentId
-            // 
-            this.cbbRentId.DataSource = this.bdsRent;
-            this.cbbRentId.DisplayMember = "RentId";
-            this.cbbRentId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbRentId.FormattingEnabled = true;
-            this.cbbRentId.Location = new System.Drawing.Point(85, 42);
-            this.cbbRentId.Name = "cbbRentId";
-            this.cbbRentId.Size = new System.Drawing.Size(381, 26);
-            this.cbbRentId.TabIndex = 12;
-            this.cbbRentId.ValueMember = "RentId";
-            // 
             // cbbEventTypeId
             // 
             this.cbbEventTypeId.DataSource = this.bdsCode;
@@ -102,6 +86,10 @@
             this.cbbEventTypeId.Size = new System.Drawing.Size(381, 26);
             this.cbbEventTypeId.TabIndex = 11;
             this.cbbEventTypeId.ValueMember = "CodeId";
+            // 
+            // bdsCode
+            // 
+            this.bdsCode.DataSource = typeof(SoCar.Data.Code);
             // 
             // btnUpdate
             // 
@@ -125,16 +113,17 @@
             // 
             // txePeriod
             // 
-            this.txePeriod.Location = new System.Drawing.Point(85, 100);
+            this.txePeriod.Location = new System.Drawing.Point(85, 70);
             this.txePeriod.Name = "txePeriod";
             this.txePeriod.Size = new System.Drawing.Size(381, 24);
             this.txePeriod.StyleController = this.layoutControl1;
             this.txePeriod.TabIndex = 7;
             this.txePeriod.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.txePeriod_EditValueChanging);
+            this.txePeriod.Leave += new System.EventHandler(this.txePeriod_Leave);
             // 
             // txeRateOfDiscount
             // 
-            this.txeRateOfDiscount.Location = new System.Drawing.Point(85, 72);
+            this.txeRateOfDiscount.Location = new System.Drawing.Point(85, 42);
             this.txeRateOfDiscount.Name = "txeRateOfDiscount";
             this.txeRateOfDiscount.Size = new System.Drawing.Size(381, 24);
             this.txeRateOfDiscount.StyleController = this.layoutControl1;
@@ -152,8 +141,7 @@
             this.emptySpaceItem1,
             this.layoutControlItem6,
             this.layoutControlItem7,
-            this.layoutControlItem1,
-            this.layoutControlItem2});
+            this.layoutControlItem1});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(478, 244);
             this.Root.TextVisible = false;
@@ -163,10 +151,10 @@
             this.layoutControlItem3.AppearanceItemCaption.ForeColor = System.Drawing.Color.Black;
             this.layoutControlItem3.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem3.Control = this.txeRateOfDiscount;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 60);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 30);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(458, 28);
-            this.layoutControlItem3.Text = "할인율";
+            this.layoutControlItem3.Text = "할인률";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(70, 18);
             // 
             // layoutControlItem4
@@ -174,7 +162,7 @@
             this.layoutControlItem4.AppearanceItemCaption.ForeColor = System.Drawing.Color.Black;
             this.layoutControlItem4.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem4.Control = this.txePeriod;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 88);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 58);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(458, 28);
             this.layoutControlItem4.Text = "기간";
@@ -191,9 +179,9 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 116);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 86);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(458, 77);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(458, 107);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem6
@@ -231,24 +219,9 @@
             this.layoutControlItem1.Text = "이벤트 타입";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(70, 18);
             // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.AppearanceItemCaption.ForeColor = System.Drawing.Color.Black;
-            this.layoutControlItem2.AppearanceItemCaption.Options.UseForeColor = true;
-            this.layoutControlItem2.Control = this.cbbRentId;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 30);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(458, 30);
-            this.layoutControlItem2.Text = "대여ID";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(70, 18);
-            // 
             // bdsRent
             // 
             this.bdsRent.DataSource = typeof(SoCar.Data.Rent);
-            // 
-            // bdsCode
-            // 
-            this.bdsCode.DataSource = typeof(SoCar.Data.Code);
             // 
             // UpdateEventForm
             // 
@@ -261,6 +234,7 @@
             this.Load += new System.EventHandler(this.UpdateEventForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txePeriod.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeRateOfDiscount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
@@ -271,9 +245,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsRent)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCode)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -292,10 +264,8 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraEditors.SimpleButton btnUpdate;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
-        private System.Windows.Forms.ComboBox cbbRentId;
         private System.Windows.Forms.ComboBox cbbEventTypeId;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private System.Windows.Forms.BindingSource bdsCode;
         private System.Windows.Forms.BindingSource bdsRent;
     }

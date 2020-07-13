@@ -28,7 +28,7 @@ namespace SoCar.Winform
             //LoginProxy.Login = DataRepository.Login.Get("abc123", "abc123");
             Application.Run(new LoginForm());
             //Application.Run(new MainForm());
-            //hi
+            
 
         }
         private static void ProcessKiller_ShutDown(object sender, ProcessKiller.ShutDownEventArgs e)

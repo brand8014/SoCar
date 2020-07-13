@@ -32,10 +32,10 @@ namespace SoCar.Data
         public virtual DbSet<CodeCategory> CodeCategories { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Defect> Defects { get; set; }
-        public virtual DbSet<Event> Events { get; set; }
         public virtual DbSet<Insurance> Insurances { get; set; }
         public virtual DbSet<Location> Locations { get; set; }
         public virtual DbSet<Login> Logins { get; set; }
         public virtual DbSet<Rent> Rents { get; set; }
+        public virtual DbSet<Event> Events { get; set; }
     }
 }

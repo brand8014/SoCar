@@ -77,7 +77,7 @@
           </Key>
           <Property Name="EventId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="EventTypeCode" Type="int" Nullable="false" />
-          <Property Name="RentId" Type="int" Nullable="false" />
+          <Property Name="RentId" Type="int" />
           <Property Name="RateOfDiscount" Type="int" Nullable="false" />
           <Property Name="Period" Type="datetime" Nullable="false" />
         </EntityType>
@@ -235,7 +235,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_이벤트_대여">
-          <End Role="Rent" Type="Self.Rent" Multiplicity="1">
+          <End Role="Rent" Type="Self.Rent" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="Event" Type="Self.Event" Multiplicity="*" />
@@ -418,7 +418,6 @@
           <EntitySet Name="CodeCategories" EntityType="SocarModel.CodeCategory" />
           <EntitySet Name="Customers" EntityType="SocarModel.Customer" />
           <EntitySet Name="Defects" EntityType="SocarModel.Defect" />
-          <EntitySet Name="Events" EntityType="SocarModel.Event" />
           <EntitySet Name="Insurances" EntityType="SocarModel.Insurance" />
           <EntitySet Name="Locations" EntityType="SocarModel.Location" />
           <EntitySet Name="Logins" EntityType="SocarModel.Login" />
@@ -471,10 +470,6 @@
             <End Role="Code" EntitySet="Codes" />
             <End Role="Location" EntitySet="Locations" />
           </AssociationSet>
-          <AssociationSet Name="FK_이벤트_코드" Association="SocarModel.FK_이벤트_코드">
-            <End Role="Code" EntitySet="Codes" />
-            <End Role="Event" EntitySet="Events" />
-          </AssociationSet>
           <AssociationSet Name="FK_코드_코드카테고리" Association="SocarModel.FK_코드_코드카테고리">
             <End Role="CodeCategory" EntitySet="CodeCategories" />
             <End Role="Code" EntitySet="Codes" />
@@ -482,6 +477,11 @@
           <AssociationSet Name="FK_대여_고객" Association="SocarModel.FK_대여_고객">
             <End Role="Customer" EntitySet="Customers" />
             <End Role="Rent" EntitySet="Rents" />
+          </AssociationSet>
+          <EntitySet Name="Events" EntityType="SocarModel.Event" />
+          <AssociationSet Name="FK_이벤트_코드" Association="SocarModel.FK_이벤트_코드">
+            <End Role="Code" EntitySet="Codes" />
+            <End Role="Event" EntitySet="Events" />
           </AssociationSet>
           <AssociationSet Name="FK_이벤트_대여" Association="SocarModel.FK_이벤트_대여">
             <End Role="Rent" EntitySet="Rents" />
@@ -540,8 +540,8 @@
           <NavigationProperty Name="Defects" Relationship="SocarModel.FK_결함_코드" FromRole="Code" ToRole="Defect" />
           <NavigationProperty Name="Defects1" Relationship="SocarModel.FK_결함_코드2" FromRole="Code" ToRole="Defect" />
           <NavigationProperty Name="Locations" Relationship="SocarModel.FK_위치_코드" FromRole="Code" ToRole="Location" />
-          <NavigationProperty Name="Events" Relationship="SocarModel.FK_이벤트_코드" FromRole="Code" ToRole="Event" />
           <NavigationProperty Name="CodeCategory" Relationship="SocarModel.FK_코드_코드카테고리" FromRole="Code" ToRole="CodeCategory" />
+          <NavigationProperty Name="Events" Relationship="SocarModel.FK_이벤트_코드" FromRole="Code" ToRole="Event" />
         </EntityType>
         <EntityType Name="CodeCategory">
           <Key>
@@ -575,18 +575,6 @@
           <NavigationProperty Name="Car" Relationship="SocarModel.FK_결함_차" FromRole="Defect" ToRole="Car" />
           <NavigationProperty Name="Code" Relationship="SocarModel.FK_결함_코드" FromRole="Defect" ToRole="Code" />
           <NavigationProperty Name="Code1" Relationship="SocarModel.FK_결함_코드2" FromRole="Defect" ToRole="Code" />
-        </EntityType>
-        <EntityType Name="Event">
-          <Key>
-            <PropertyRef Name="EventId" />
-          </Key>
-          <Property Name="EventId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="EventTypeCode" Type="Int32" Nullable="false" />
-          <Property Name="RentId" Type="Int32" Nullable="false" />
-          <Property Name="RateOfDiscount" Type="Int32" Nullable="false" />
-          <Property Name="Period" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="Code" Relationship="SocarModel.FK_이벤트_코드" FromRole="Event" ToRole="Code" />
-          <NavigationProperty Name="Rent" Relationship="SocarModel.FK_이벤트_대여" FromRole="Event" ToRole="Rent" />
         </EntityType>
         <EntityType Name="Insurance">
           <Key>
@@ -789,18 +777,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_이벤트_코드">
-          <End Type="SocarModel.Code" Role="Code" Multiplicity="1" />
-          <End Type="SocarModel.Event" Role="Event" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Code">
-              <PropertyRef Name="CodeId" />
-            </Principal>
-            <Dependent Role="Event">
-              <PropertyRef Name="EventTypeCode" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_코드_코드카테고리">
           <End Type="SocarModel.CodeCategory" Role="CodeCategory" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -829,8 +805,32 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="EventId" />
+          </Key>
+          <Property Name="EventId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EventTypeCode" Type="Int32" Nullable="false" />
+          <Property Name="RentId" Type="Int32" />
+          <Property Name="RateOfDiscount" Type="Int32" Nullable="false" />
+          <Property Name="Period" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Code" Relationship="SocarModel.FK_이벤트_코드" FromRole="Event" ToRole="Code" />
+          <NavigationProperty Name="Rent" Relationship="SocarModel.FK_이벤트_대여" FromRole="Event" ToRole="Rent" />
+        </EntityType>
+        <Association Name="FK_이벤트_코드">
+          <End Type="SocarModel.Code" Role="Code" Multiplicity="1" />
+          <End Type="SocarModel.Event" Role="Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Code">
+              <PropertyRef Name="CodeId" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="EventTypeCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_이벤트_대여">
-          <End Type="SocarModel.Rent" Role="Rent" Multiplicity="1">
+          <End Type="SocarModel.Rent" Role="Rent" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
           <End Type="SocarModel.Event" Role="Event" Multiplicity="*" />
@@ -921,17 +921,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Events">
-            <EntityTypeMapping TypeName="SocarModel.Event">
-              <MappingFragment StoreEntitySet="Event">
-                <ScalarProperty Name="Period" ColumnName="Period" />
-                <ScalarProperty Name="RateOfDiscount" ColumnName="RateOfDiscount" />
-                <ScalarProperty Name="RentId" ColumnName="RentId" />
-                <ScalarProperty Name="EventTypeCode" ColumnName="EventTypeCode" />
-                <ScalarProperty Name="EventId" ColumnName="EventId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Insurances">
             <EntityTypeMapping TypeName="SocarModel.Insurance">
               <MappingFragment StoreEntitySet="Insurance">
@@ -970,6 +959,17 @@
                 <ScalarProperty Name="RentAt" ColumnName="RentAt" />
                 <ScalarProperty Name="CarId" ColumnName="CarId" />
                 <ScalarProperty Name="RentId" ColumnName="RentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Events">
+            <EntityTypeMapping TypeName="SocarModel.Event">
+              <MappingFragment StoreEntitySet="Event">
+                <ScalarProperty Name="Period" ColumnName="Period" />
+                <ScalarProperty Name="RateOfDiscount" ColumnName="RateOfDiscount" />
+                <ScalarProperty Name="RentId" ColumnName="RentId" />
+                <ScalarProperty Name="EventTypeCode" ColumnName="EventTypeCode" />
+                <ScalarProperty Name="EventId" ColumnName="EventId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
