@@ -306,7 +306,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3);
             this.Name = "InsertCarForm";
-            this.Text = "InsertCarForm";
+            this.Text = "차 등록";
             this.Load += new System.EventHandler(this.InsertCarForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

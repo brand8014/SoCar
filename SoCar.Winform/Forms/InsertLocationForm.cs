@@ -28,6 +28,11 @@ namespace SoCar.Winform.Forms
 
         private void btnInsertLocation_Click(object sender, EventArgs e)
         {
+            if(txeAddress.Text == "")
+            {
+                MessageBox.Show("상세주소를 입력하세요.");
+                return;
+            }
             _location = new Location();
             WriteToEntity();
             try

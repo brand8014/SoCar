@@ -34,6 +34,27 @@ namespace SoCar.Winform.Forms
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
+            if(txePrice.Text == "")
+            {
+                MessageBox.Show("가격을 입력하세요.");
+                return;
+            }
+            if(txeCarNum.Text == "")
+            {
+                MessageBox.Show("차 번호를 입력하세요.");
+                return;
+            }
+            if(txeMilage.Text =="")
+            {
+                MessageBox.Show("주행거리를 입력하세요");
+                return;
+            }
+            if(txeAccident.Text == "")
+            {
+                MessageBox.Show("사고횟수를 입력하세요");
+                return;
+            }
+
             _car = new Car();
             WriteToEntity();
             try

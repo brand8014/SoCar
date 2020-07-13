@@ -30,6 +30,22 @@ namespace SoCar.Winform.Forms
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
+            if(txeName.Text == "")
+            {
+                MessageBox.Show("이름을 입력하세요");
+                return;
+            }
+            if(txeCellNumber.Text == "")
+            {
+                MessageBox.Show("전화번호를 입력하세요.");
+                return;
+            }
+            if (txeBirth.Text == "")
+            {
+                MessageBox.Show("생년월일을 입력하세요.");
+                return;
+            }
+
             _customer = new Customer();
             WriteToEntity();
             try

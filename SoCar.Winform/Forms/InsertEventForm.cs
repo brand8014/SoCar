@@ -32,7 +32,16 @@ namespace SoCar.Winform.Forms
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-
+            if(txePeriod.Text == "")
+            {
+                MessageBox.Show("기간을 입력하세요");
+                return;
+            }
+            if (txeRateOfDiscount.Text == "")
+            {
+                MessageBox.Show("할인율을 입력하세요");
+                return;
+            }
             WriteToEntity();
             try
             {
@@ -51,7 +60,6 @@ namespace SoCar.Winform.Forms
         private void WriteToEntity()
         {
             _event.EventTypeCode = (int)cbbEventTypeCode.SelectedValue;
-            _event.RentId = (int)cbbCustomer.SelectedValue;
             _event.RateOfDiscount = int.Parse(txeRateOfDiscount.Text);
             _event.Period = DateTime.ParseExact(txePeriod.Text, "yyyyMMdd", null);
 
