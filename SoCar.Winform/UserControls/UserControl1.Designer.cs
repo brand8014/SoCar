@@ -47,6 +47,10 @@
             this.gvInsurance = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colCompanyName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colGoodsName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gvEvent = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colEventName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRateOfDiscount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPeriod = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gvCar = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colPrice1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIsRent = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -68,10 +72,6 @@
             this.gvLocation = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colLocationName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAddress = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gvEvent = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colEventName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRateOfDiscount = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPeriod = new DevExpress.XtraGrid.Columns.GridColumn();
             this.bdsCustomer = new System.Windows.Forms.BindingSource(this.components);
             this.bdsInsurance = new System.Windows.Forms.BindingSource(this.components);
             this.bdsRent = new System.Windows.Forms.BindingSource(this.components);
@@ -112,10 +112,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvInsurance)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvEvent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvRent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvLocation)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvEvent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsInsurance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsRent)).BeginInit();
@@ -227,10 +227,10 @@
             this.gridControl.TabIndex = 4;
             this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvInsurance,
+            this.gvEvent,
             this.gvCar,
             this.gvRent,
             this.gvLocation,
-            this.gvEvent,
             this.gvCustomer});
             this.gridControl.Click += new System.EventHandler(this.gridControl_Click);
             // 
@@ -245,6 +245,7 @@
             this.colGoodsName});
             this.gvInsurance.GridControl = this.gridControl;
             this.gvInsurance.Name = "gvInsurance";
+            this.gvInsurance.OptionsBehavior.ReadOnly = true;
             this.gvInsurance.DoubleClick += new System.EventHandler(this.gvInsurance_DoubleClick);
             // 
             // colCompanyName
@@ -264,6 +265,44 @@
             this.colGoodsName.Visible = true;
             this.colGoodsName.VisibleIndex = 1;
             this.colGoodsName.Width = 94;
+            // 
+            // gvEvent
+            // 
+            this.gvEvent.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colEventName,
+            this.colRateOfDiscount,
+            this.colPeriod});
+            this.gvEvent.GridControl = this.gridControl;
+            this.gvEvent.Name = "gvEvent";
+            this.gvEvent.OptionsBehavior.ReadOnly = true;
+            this.gvEvent.DoubleClick += new System.EventHandler(this.gvEvent_DoubleClick);
+            // 
+            // colEventName
+            // 
+            this.colEventName.FieldName = "EventName";
+            this.colEventName.MinWidth = 25;
+            this.colEventName.Name = "colEventName";
+            this.colEventName.Visible = true;
+            this.colEventName.VisibleIndex = 0;
+            this.colEventName.Width = 94;
+            // 
+            // colRateOfDiscount
+            // 
+            this.colRateOfDiscount.FieldName = "RateOfDiscount";
+            this.colRateOfDiscount.MinWidth = 25;
+            this.colRateOfDiscount.Name = "colRateOfDiscount";
+            this.colRateOfDiscount.Visible = true;
+            this.colRateOfDiscount.VisibleIndex = 2;
+            this.colRateOfDiscount.Width = 94;
+            // 
+            // colPeriod
+            // 
+            this.colPeriod.FieldName = "Period";
+            this.colPeriod.MinWidth = 25;
+            this.colPeriod.Name = "colPeriod";
+            this.colPeriod.Visible = true;
+            this.colPeriod.VisibleIndex = 1;
+            this.colPeriod.Width = 94;
             // 
             // gvCar
             // 
@@ -366,6 +405,7 @@
             this.colPrice});
             this.gvRent.GridControl = this.gridControl;
             this.gvRent.Name = "gvRent";
+            this.gvRent.OptionsBehavior.ReadOnly = true;
             this.gvRent.DoubleClick += new System.EventHandler(this.gvRent_DoubleClick);
             // 
             // colCustomerName
@@ -467,43 +507,6 @@
             this.colAddress.Visible = true;
             this.colAddress.VisibleIndex = 1;
             this.colAddress.Width = 94;
-            // 
-            // gvEvent
-            // 
-            this.gvEvent.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colEventName,
-            this.colRateOfDiscount,
-            this.colPeriod});
-            this.gvEvent.GridControl = this.gridControl;
-            this.gvEvent.Name = "gvEvent";
-            this.gvEvent.DoubleClick += new System.EventHandler(this.gvEvent_DoubleClick);
-            // 
-            // colEventName
-            // 
-            this.colEventName.FieldName = "EventName";
-            this.colEventName.MinWidth = 25;
-            this.colEventName.Name = "colEventName";
-            this.colEventName.Visible = true;
-            this.colEventName.VisibleIndex = 0;
-            this.colEventName.Width = 94;
-            // 
-            // colRateOfDiscount
-            // 
-            this.colRateOfDiscount.FieldName = "RateOfDiscount";
-            this.colRateOfDiscount.MinWidth = 25;
-            this.colRateOfDiscount.Name = "colRateOfDiscount";
-            this.colRateOfDiscount.Visible = true;
-            this.colRateOfDiscount.VisibleIndex = 2;
-            this.colRateOfDiscount.Width = 94;
-            // 
-            // colPeriod
-            // 
-            this.colPeriod.FieldName = "Period";
-            this.colPeriod.MinWidth = 25;
-            this.colPeriod.Name = "colPeriod";
-            this.colPeriod.Visible = true;
-            this.colPeriod.VisibleIndex = 1;
-            this.colPeriod.Width = 94;
             // 
             // bdsCustomer
             // 
@@ -825,10 +828,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsLocation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvInsurance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvEvent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvRent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvLocation)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvEvent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsInsurance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsRent)).EndInit();
