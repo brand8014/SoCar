@@ -33,6 +33,11 @@ namespace SoCar.Winform.Forms
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (txeGoods.Text == "")
+            {
+                MessageBox.Show("보험상품을 입력하세요");
+                return;
+            }
             WriteToEntity();
 
             try
@@ -52,6 +57,11 @@ namespace SoCar.Winform.Forms
         {
             _insurance.CompanyCode = int.Parse(lueCompanyCode.Text);
             _insurance.GoodsCode = int.Parse(txeGoods.Text);
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

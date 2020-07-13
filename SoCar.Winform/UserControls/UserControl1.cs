@@ -189,13 +189,15 @@ namespace SoCar.Winform.UserControls
         }
         private void gvCustomer_DoubleClick(object sender, EventArgs e)
         {
-            
             Customer customer = bdsCustomer.Current as Customer;
             if (customer == null)
                 return;
             UpdateCustomerForm form = new UpdateCustomerForm(customer);
             form.ShowDialog();
         }
+           
+
+        
         private void gvEvent_DoubleClick(object sender, EventArgs e)
         {
             Event @event = bdsEvent.Current as Event;

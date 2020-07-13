@@ -41,6 +41,11 @@ namespace SoCar.Winform.Forms
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (txeAddress.Text == "")
+            {
+                MessageBox.Show("주소를 입력하세요");
+                return;
+            }
             
             WriteToEntity();
 

@@ -34,6 +34,7 @@
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.txeGoods = new DevExpress.XtraEditors.TextEdit();
             this.lueCompanyCode = new DevExpress.XtraEditors.LookUpEdit();
+            this.bdsCodeForCompany = new System.Windows.Forms.BindingSource(this.components);
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -41,11 +42,11 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bdsCodeForCompany = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txeGoods.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueCompanyCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCodeForCompany)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -53,7 +54,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCodeForCompany)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -88,6 +88,7 @@
             this.btnClose.StyleController = this.layoutControl1;
             this.btnClose.TabIndex = 9;
             this.btnClose.Text = "닫기(&C)";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // txeGoods
             // 
@@ -113,6 +114,10 @@
             this.lueCompanyCode.Size = new System.Drawing.Size(399, 24);
             this.lueCompanyCode.StyleController = this.layoutControl1;
             this.lueCompanyCode.TabIndex = 4;
+            // 
+            // bdsCodeForCompany
+            // 
+            this.bdsCodeForCompany.DataSource = typeof(SoCar.Data.Code);
             // 
             // Root
             // 
@@ -191,10 +196,6 @@
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
-            // bdsCodeForCompany
-            // 
-            this.bdsCodeForCompany.DataSource = typeof(SoCar.Data.Code);
-            // 
             // UpdateInsuranceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -208,6 +209,7 @@
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txeGoods.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueCompanyCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCodeForCompany)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
@@ -215,7 +217,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCodeForCompany)).EndInit();
             this.ResumeLayout(false);
 
         }

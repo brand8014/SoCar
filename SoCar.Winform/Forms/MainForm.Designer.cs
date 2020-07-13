@@ -522,8 +522,6 @@
 
         private DevExpress.XtraEditors.LabelControl label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private DevExpress.Utils.ImageCollection imageCollection1;
     }
 }

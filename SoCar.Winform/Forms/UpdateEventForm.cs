@@ -30,7 +30,6 @@ namespace SoCar.Winform.Forms
         private void UpdateEventForm_Load(object sender, EventArgs e)
         {
             cbbEventTypeId.SelectedValue = _event.EventTypeCode;
-            cbbRentId.SelectedValue = _event.RentId;
             txeRateOfDiscount.Text = _event.RateOfDiscount.ToString();
             txePeriod.Text = _event.Period.Year.ToString() 
                 + (_event.Period.Month>=10?_event.Period.Month.ToString(): "0" 
@@ -41,6 +40,16 @@ namespace SoCar.Winform.Forms
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (txeRateOfDiscount.Text == "")
+            {
+                MessageBox.Show("할인률을 입력하세요");
+                return;
+            }
+            if (txePeriod.Text == "")
+            {
+                MessageBox.Show("기간을 입력하세요");
+                return;
+            }
             WriteToEntity();
 
             try
@@ -60,7 +69,7 @@ namespace SoCar.Winform.Forms
             _event.Period = DateTime.ParseExact(txePeriod.Text, "yyyyMMdd", null);
             _event.RateOfDiscount = int.Parse( txeRateOfDiscount.Text);
             _event.EventTypeCode = (int)cbbEventTypeId.SelectedValue;
-            _event.RentId = (int)cbbRentId.SelectedValue;
+            
             
         }
 
@@ -75,6 +84,11 @@ namespace SoCar.Winform.Forms
         }
 
         private void txePeriod_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            Helpers.InputConstraint.OnlyIntConstraint(txePeriod);
+        }
+
+        private void txePeriod_Leave(object sender, EventArgs e)
         {
             Helpers.InputConstraint.DateConstraint(txePeriod);
         }
