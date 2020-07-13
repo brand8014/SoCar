@@ -11,6 +11,7 @@ using SoCar.Data;
 using SoCar.Winform.Forms;
 using DevExpress.XtraEditors.Filtering.Templates;
 using DevExpress.XtraPrinting.Native;
+using DevExpress.XtraSpellChecker.Parser;
 
 namespace SoCar.Winform.UserControls
 {
